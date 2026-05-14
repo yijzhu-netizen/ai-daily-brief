@@ -1,0 +1,86 @@
+# robots.txt for ai-daily-brief (GitHub Pages)
+# 精细分类：放行搜索爬虫和用户触发爬虫，屏蔽训练爬虫和未声明爬虫
+# 参考: Tw93's GEO article on AI visibility
+
+# ==========================================
+# Search & Retrieval: ALLOW
+# AI搜索实时抓取内容来回答用户问题
+# ==========================================
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# ==========================================
+# User-Triggered: ALLOW
+# 用户把URL贴进聊天窗口时触发
+# ==========================================
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# AWS Bedrock user agents (query-time retrieval)
+User-agent: AWS-Agent
+Allow: /
+
+# Gemini/Google user agents
+User-agent: Google-Agent
+Allow: /
+
+# ==========================================
+# Training Crawlers: BLOCK
+# 拿内容去训练模型，不影响当前AI搜索
+# ==========================================
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# ==========================================
+# Opt-Out Tokens (non-crawler signals)
+# ==========================================
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+# ==========================================
+# Undeclared / Unknown: BLOCK
+# 不表明身份的爬虫，不遵守规则
+# ==========================================
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# ==========================================
+# Default: allow everything else
+# ==========================================
+User-agent: *
+Allow: /
+
+Sitemap: https://yijzhu-netizen.github.io/ai-daily-brief/sitemap.xml
