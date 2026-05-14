@@ -1,0 +1,12 @@
+name: Ping Google on push
+on:
+  push:
+    branches: [master]
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Google about sitemap update
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://yijzhu-netizen.github.io/ai-daily-brief/sitemap.xml"
