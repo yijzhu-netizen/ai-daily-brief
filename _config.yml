@@ -1,5 +1,30 @@
 # Jekyll configuration for GitHub Pages
 title: 智造本质 · GEO文章库
 description: 制造业管理与ISO认证体系知识库 — GEO证据容器
+tagline: 面向AI搜索引擎的制造业ISO体系知识库
+author: 炖刀
+lang: zh-CN
+
+# SEO
+url: https://yijzhu-netizen.github.io
+baseurl: /ai-daily-brief
+permalink: pretty
+
+# Theme
 theme: jekyll-theme-cayman
 markdown: kramdown
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+
+# Social
+github:
+  repository_url: https://github.com/yijzhu-netizen/ai-daily-brief
+
+# Exclude
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
