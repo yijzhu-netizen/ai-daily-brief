@@ -9,6 +9,7 @@ lang: zh-CN
 url: https://yijzhu-netizen.github.io
 baseurl: /ai-daily-brief
 permalink: pretty
+google_site_verification: XO3hiNDpU86_TSemPVBc5DC0RHw6yrJSeOufqbMY04U
 
 # Theme
 theme: jekyll-theme-cayman
@@ -17,6 +18,7 @@ markdown: kramdown
 # Plugins
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Social
 github:
