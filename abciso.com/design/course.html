@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>课程中心 — abciso.com</title>
+    <title>课程中心 — abcISO</title>
 <meta name="description" content="从零到体系负责人，两门课就够了。炖刀20年一线经验，浓缩成可直接落地的管理体系课程。" />
-<meta property="og:title" content="课程中心 — abciso.com" />
+<meta property="og:title" content="课程中心 — abcISO" />
 <meta property="og:description" content="从零到体系负责人，两门课就够了。不讲虚的，不讲段子。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://abciso.com/course" />
@@ -200,6 +200,39 @@
         .course-tag.gold {
             background:#FECE14; color:#000;
         }
+        .course-cta {
+            display:inline-flex; align-items:center; gap:6px;
+            margin-top:24px; padding:14px 36px;
+            background:#FECE14; color:#000; border-radius:10px;
+            font-weight:700; font-size:16px; transition:all 0.25s;
+            border:none; cursor:pointer;
+        }
+        .course-cta:hover {
+            transform:translateY(-2px);
+            box-shadow:0 6px 20px rgba(254,206,20,0.35);
+        }
+        .course-cta .arrow { font-size:18px; transition:transform 0.25s; }
+        .course-cta:hover .arrow { transform:translateX(4px); }
+
+        .trial-card {
+            margin-top:28px; padding:20px 0 0;
+            border-top:1px solid #e5e7eb;
+            display:flex; align-items:center; gap:24px;
+            justify-content:center; flex-wrap:wrap;
+        }
+        .trial-card img {
+            max-width:200px; border-radius:12px;
+            box-shadow:0 4px 16px rgba(0,0,0,0.08);
+        }
+        .trial-card .trial-text {
+            text-align:center;
+        }
+        .trial-card .trial-text h4 {
+            font-size:16px; font-weight:700; color:#000; margin-bottom:4px;
+        }
+        .trial-card .trial-text p {
+            font-size:13px; color:#6b7280; margin-bottom:8px;
+        }
 
         /* ===== TRUST ===== */
         .trust {
@@ -382,7 +415,7 @@
                 <a href="index.html">首页</a>
                 <a href="course.html">课程</a>
                 <a href="about.html">关于</a>
-                <a href="index.html#">知识星球</a>
+                <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener">知识星球</a>
                 <a href="download.html" class="nav-cta">资料下载 →</a>
             </div>
             <div class="hamburger">
@@ -403,7 +436,7 @@
                 一套管理思维 + 一套落地工具。不讲虚的，不讲段子。<br>
                 20年一线摸爬滚打，浓缩成两门让你能直接用的课。
             </p>
-            <a href="#" class="hero-cta">
+            <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener" class="hero-cta">
                 立即加入知识星球 · 299元/年
                 <span class="arrow">→</span>
             </a>
@@ -411,7 +444,8 @@
                 <span>📚 两门体系课程</span>
                 <span>📎 配套模板资料</span>
                 <span>💬 专属答疑社群</span>
-                <span>🔄 季度闭门交流</span>
+                <span>🔄 持续更新</span>
+                <span>🎁 3天免费体验</span>
             </div>
             <div class="hero-visual">
                 <img src="images/course_mindmap.jpg" alt="课程体系全景图" loading="lazy">
@@ -433,41 +467,57 @@
                 <div class="course-number">01</div>
                 <h3>AI时代，你更应该学会管理</h3>
                 <p class="course-intro">
-                    很多人说"管理是虚的"——那是你没见过好管理。这堂课不讲PPT画饼，不讲鸡汤段子。
-                    从目标拆解到团队赋能，从决策框架到向上管理，每一节都是我在一线摔出来的真东西。
-                    AI越强，管理越值钱。
+                    不打鸡血，不讲权谋，不画饼。对标罗宾斯《管理学》框架，用PDCA讲清楚管理是什么。<br>
+                    案例全来自20年审核一线的真实经历——苏州上市公司预判制裁囤库存、常州口罩公司把运气当能力、<br>
+                    电装车间十年把换模从24小时降到5分钟……每个案例有公司背景、有数据、有教训。<br>
+                    AI越强，管理越值钱。AI能帮你做D，但不能替代你的P和C。
                 </p>
                 <div class="course-grid">
                     <div class="module-list">
-                        <h4>📋 模块大纲</h4>
+                        <h4>📋 模块大纲（PDCA框架 · 16讲+番外篇）</h4>
                         <ul>
-                            <li>模块一：管理者的底层操作系统 —— 角色认知与思维切换</li>
-                            <li>模块二：目标拆解与执行体系 —— OKR × KPI 实战融合</li>
-                            <li>模块三：团队赋能与沟通心法 —— 不画饼，怎么让人跟着你干</li>
-                            <li>模块四：决策框架与风险判断 —— 信息不完备时如何做对选择</li>
-                            <li>模块五：向上管理与组织政治 —— 让老板成为你的资源</li>
-                            <li>模块六：AI工具赋能管理 —— 用AI提效，而不是被AI替代</li>
-                            <li>模块七：体系化复盘与持续进化 —— 打造你的管理飞轮</li>
+                            <li>模块一：入门——管理是什么（第1-2讲）——管理定义、管理史、中国管理现实</li>
+                            <li>模块二：P（计划）——定方向做决策（第3-5讲）——计划、决策、变革与创新</li>
+                            <li>模块三：D（执行）——搭班子带队伍（第6-13讲）——组织、人力、团队、战略、领导、激励、沟通、情绪智力</li>
+                            <li>模块四：C（控制）——管过程看结果（第14讲）——控制机制、过程管理、做减法</li>
+                            <li>模块五：A（改进+收口）（第15-16讲）——运营质量、持续改进、PDCA地图</li>
+                            <li>番外篇：用管理的方法用AI——Gate/Sage实战拆解</li>
                         </ul>
-                        <span class="module-tag">已更新至第5模块</span>
                     </div>
                     <div class="module-list">
                         <h4>🎯 适合谁</h4>
                         <div class="course-tags">
                             <span class="course-tag gold">新晋管理者</span>
-                            <span class="course-tag">储备干部</span>
+                            <span class="course-tag">技术转管理</span>
                             <span class="course-tag">创业团队负责人</span>
-                            <span class="course-tag">想突破瓶颈的骨干</span>
-                            <span class="course-tag">转型管理者</span>
+                            <span class="course-tag">组织骨干</span>
+                            <span class="course-tag">完全零基础</span>
                         </div>
-                        <div style="margin-top:28px;">
-                            <h4>📏 课程规格</h4>
+                        <div style="margin-top:24px;">
+                            <h4>✨ 亮点速览</h4>
                             <ul style="margin-top:8px;">
-                                <li>共 7 大模块 · 28 节视频课</li>
-                                <li>每节 15~25 分钟，总时长约 8 小时</li>
-                                <li>配套：管理工具模板包 + 案例拆解手册</li>
+                                <li>每讲扣住"AI来了管理是过时了还是更重要了"</li>
+                                <li>管理不是权谋——可验证、可复制、可证伪</li>
+                                <li>方法论内核：管P和C，不盯D</li>
+                                <li>番外篇：真实AI系统搭建全流程拆解</li>
                             </ul>
                         </div>
+                        <div style="margin-top:24px;">
+                            <h4>📏 课程规格</h4>
+                            <ul style="margin-top:8px;">
+                                <li>16讲 + 番外篇（文字课）</li>
+                                <li>每讲约15-20分钟阅读，总时长约5-6小时</li>
+                                <li>配套：每讲一个工具表（SMART/决策8步法/SBI反馈/控制跟踪…）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener" class="course-cta">加入学习 · 299元/年 <span class="arrow">→</span></a>
+                <div class="trial-card">
+                    <img src="images/trial-card-1.jpg" alt="3天免费体验卡" loading="lazy">
+                    <div class="trial-text">
+                        <h4>🎁 先试3天，再决定</h4>
+                        <p>扫码领取免费体验卡，零门槛试学</p>
                     </div>
                 </div>
             </div>
@@ -477,23 +527,22 @@
                 <div class="course-number">02</div>
                 <h3>能源管理体系：39节落地实操课</h3>
                 <p class="course-intro">
-                    能源管理不是"关灯拔插头"。这是一门系统科学——从ISO 50001体系搭建到能效审计，
-                    从能耗数据挖掘到碳资产管理。39节课，不讲理论，只讲"到现场怎么做"。
-                    适合所有想在能源、双碳领域建立体系化能力的人。
+                    覆盖GB/T 23331-2020（等同ISO 50001:2018）第4-10章核心条款，逐条配标准原文+实施要点+真实企业案例。<br>
+                    从基础认知到标准解读、配套国标、政策限额、行业应用、审核实务到认证资质，按这个路径走完，<br>
+                    你就能独立搭建/维护一套能真降能耗的能源管理体系。所有案例改编自真实审核经历，不瞎编。
                 </p>
                 <div class="course-grid">
                     <div class="module-list">
-                        <h4>📋 模块大纲</h4>
+                        <h4>📋 模块大纲（39课 · 7大模块）</h4>
                         <ul>
-                            <li>模块一：能源管理体系全景 —— ISO 50001 核心逻辑与框架</li>
-                            <li>模块二：能源评审与基准建立 —— 数据从哪来，怎么用</li>
-                            <li>模块三：能效指标与目标分解 —— 把KPI落到每台设备</li>
-                            <li>模块四：运行控制与优化 —— 现场改善的5个实战套路</li>
-                            <li>模块五：能源审计实战 —— 从查表到出报告，全流程拆解</li>
-                            <li>模块六：碳资产与能源数据管理 —— 用数字化手段提效</li>
-                            <li>模块七：体系持续改进与认证 —— 不折腾，过审核</li>
+                            <li>模块一：基础知识（第1-5课）——PDCA循环、标准框架、术语、统计计量</li>
+                            <li>模块二：标准条款解读（第6-17课）——GB/T 23331第4-10章逐条拆解</li>
+                            <li>模块三：配套国标（第18-23课）——GB/T 2589、GB/T 17167等6个核心国标实操</li>
+                            <li>模块四：政策与限额（第24-27课）——节能法、双碳、61项限额标准速查</li>
+                            <li>模块五：行业应用（第28-33课）——钢铁、化工、建材等8大行业实战</li>
+                            <li>模块六：审核实务（第34-37课）——内审全流程，从策划到整改</li>
+                            <li>模块七：认证与资质（第38-39课）——认证规则、审核员注册</li>
                         </ul>
-                        <span class="module-tag">全部更新完毕</span>
                     </div>
                     <div class="module-list">
                         <h4>🎯 适合谁</h4>
@@ -501,18 +550,34 @@
                             <span class="course-tag gold">能源管理人员</span>
                             <span class="course-tag">EHS 从业者</span>
                             <span class="course-tag">碳管理从业者</span>
-                            <span class="course-tag">工厂厂长</span>
+                            <span class="course-tag">工厂管理人员</span>
                             <span class="course-tag">体系工程师</span>
-                            <span class="course-tag">咨询顾问</span>
+                            <span class="course-tag">准审核员</span>
                         </div>
-                        <div style="margin-top:28px;">
+                        <div style="margin-top:24px;">
+                            <h4>✨ 课程特色</h4>
+                            <ul style="margin-top:8px;">
+                                <li>标准条款全覆盖，条款号经核对不混淆</li>
+                                <li>能碳协同——各行业碳市场进度单独成节</li>
+                                <li>案例全部改编自真实审核经历</li>
+                                <li>配套国标逐一解读实操要点</li>
+                            </ul>
+                        </div>
+                        <div style="margin-top:24px;">
                             <h4>📏 课程规格</h4>
                             <ul style="margin-top:8px;">
-                                <li>共 7 大模块 · 39 节视频课</li>
-                                <li>每节 12~20 分钟，总时长约 11 小时</li>
+                                <li>共 39 课 · 7 大模块</li>
                                 <li>配套：能源管理模板库 + 审计工具表 + 检查清单</li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+                <a href="https://t.zsxq.com/M6F9c" target="_blank" rel="noopener" class="course-cta">加入学习 · 299元/年 <span class="arrow">→</span></a>
+                <div class="trial-card">
+                    <img src="images/trial-card-2.jpg" alt="3天免费体验卡" loading="lazy">
+                    <div class="trial-text">
+                        <h4>🎁 先试3天，再决定</h4>
+                        <p>扫码领取免费体验卡，零门槛试学</p>
                     </div>
                 </div>
             </div>
@@ -529,12 +594,8 @@
                     10 + 10 = <span>20年一线经验</span>
                 </div>
                 <p class="trust-text">
-                    前10年，我在工厂、供应链、能源行业从基层做到负责人，
-                    亲手搭建过3套完整的能源管理体系，经历过6次外审、2次政府专项督查。
-                    后10年，我转型做管理咨询和培训，服务过16家企业、覆盖8个行业，
-                    帮他们从零搭体系、过认证、拿实效。
-                    这些踩过的坑、试错的经验、被毒打过之后才懂的"真方法"，
-                    就是这两门课的全部内容。
+                    前10年，我在工厂、供应链、能源行业从基层做到负责人，亲手搭建过数十套完整的管理体系，经历过多次外审和政府专项督查。<br><br>
+                    后10年，我转型做管理体系认证审核员，审核过500家企业、覆盖数十个行业，见过各式各样的管理方式，熟知存在的问题，实践之后才懂的"真方法"，就是这两门课的全部内容。
                 </p>
                 <div class="trust-stats">
                     <div class="trust-stat">
@@ -542,15 +603,15 @@
                         <div class="lbl">一线实战经验</div>
                     </div>
                     <div class="trust-stat">
-                        <div class="num"><span>16</span>+</div>
-                        <div class="lbl">服务企业</div>
+                        <div class="num"><span>500</span>+</div>
+                        <div class="lbl">审核企业</div>
                     </div>
                     <div class="trust-stat">
-                        <div class="num"><span>8</span></div>
+                        <div class="num"><span>数十</span></div>
                         <div class="lbl">覆盖行业</div>
                     </div>
                     <div class="trust-stat">
-                        <div class="num"><span>3</span>套</div>
+                        <div class="num"><span>数十</span>套</div>
                         <div class="lbl">从零搭建体系</div>
                     </div>
                 </div>
@@ -595,9 +656,9 @@
     <section class="cta-banner">
         <div class="container">
             <h2>体系化能力，是 <span class="gold">最稳的职场杠杆</span></h2>
-            <p>299元/年 ≈ 每天不到1块钱。两门体系课程、全套模板、专属答疑、季度交流，全部带走。</p>
-            <a href="#" class="cta-btn">
-                立即加入知识星球 · 299元/年
+            <p>299元/年 ≈ 每天不到1块钱。先试3天，不满意无理由退。两门体系课程、全套模板、专属答疑，全部带走。</p>
+            <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener" class="cta-btn">
+                免费体验3天
                 <span class="arrow">→</span>
             </a>
             <div class="cta-meta">
@@ -627,7 +688,7 @@
                 </div>
                 <div class="footer-col">
                     <h5>加入</h5>
-                    <a href="#">知识星球</a>
+                    <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener">知识星球</a>
                     <a href="#">会员权益</a>
                     <a href="#">常见问题</a>
                 </div>
@@ -639,7 +700,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>© 2026 abciso.com. All rights reserved.</span>
+&copy; 2026 abcISO. All rights reserved.
                 <span>以体系化思维，做有结果的事。</span>
             </div>
         </div>
