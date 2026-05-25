@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO 9001 质量管理体系 - 知识库 | abciso.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #1F2937;
+      background: #FFFFFF;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5, h6, .nav-brand, .btn, .tag, .pagination a {
+      font-family: 'Poppins', sans-serif;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+    }
+
+    /* ===== Navigation ===== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E5E7EB;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 22px;
+      color: #1F2937;
+    }
+    .nav-brand .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: #3B82F6;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .nav-brand span { color: #3B82F6; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 500;
+      color: #4B5563;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #3B82F6;
+      transition: width 0.2s;
+    }
+    .nav-links a:hover { color: #3B82F6; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: #3B82F6; }
+    .nav-links a.active::after { width: 100%; }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #3B82F6;
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: #2563EB; transform: translateY(-1px); }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #1F2937;
+      border-radius: 2px;
+      transition: 0.25s;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        gap: 0;
+        padding: 12px 24px 20px;
+        border-bottom: 1px solid #E5E7EB;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        padding: 12px 0;
+        width: 100%;
+        border-bottom: 1px solid #F3F4F6;
+      }
+      .nav-links a:last-child { border-bottom: none; }
+      .nav-cta { margin-top: 8px; justify-content: center; }
+      .hamburger { display: flex; }
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb {
+      padding: 20px 0 0;
+      font-size: 14px;
+      color: #6B7280;
+    }
+    .breadcrumb a {
+      color: #3B82F6;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: #2563EB; }
+    .breadcrumb .sep {
+      margin: 0 8px;
+      color: #9CA3AF;
+    }
+    .breadcrumb .current {
+      color: #4B5563;
+      font-weight: 500;
+    }
+
+    /* ===== Category Header ===== */
+    .category-header {
+      padding: 32px 0 40px;
+    }
+    .category-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .category-header h1 .emoji-deco {
+      margin-right: 8px;
+    }
+    .category-header .cat-desc {
+      font-size: 16px;
+      color: #6B7280;
+      max-width: 780px;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .category-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #EFF6FF;
+      color: #1D4ED8;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .tag:hover { background: #DBEAFE; }
+    .tag-standard { background: #FEF3C7; color: #B45309; }
+    .tag-standard:hover { background: #FDE68A; }
+    .tag-popular { background: #FCE7F3; color: #BE185D; }
+    .tag-popular:hover { background: #FBCFE8; }
+
+    @media (max-width: 768px) {
+      .category-header h1 { font-size: 26px; }
+      .category-header .cat-desc { font-size: 15px; }
+    }
+
+    /* ===== Meta Bar ===== */
+    .meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #F3F4F6;
+      margin-bottom: 28px;
+    }
+    .meta-bar .result-count {
+      font-size: 14px;
+      color: #6B7280;
+    }
+    .meta-bar .result-count strong {
+      color: #1F2937;
+      font-weight: 600;
+    }
+    .sort-select {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      padding: 6px 32px 6px 12px;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B7280' d='M6 8.825a.5.5 0 0 1-.354-.146L2.22 5.252a.5.5 0 1 1 .707-.707L6 7.618l3.074-3.073a.5.5 0 1 1 .707.707L6.354 8.68A.5.5 0 0 1 6 8.825z'/%3E%3C/svg%3E") no-repeat right 10px center;
+      appearance: none;
+      color: #374151;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .sort-select:focus {
+      outline: none;
+      border-color: #3B82F6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+    }
+
+    /* ===== Article List ===== */
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .article-card {
+      display: flex;
+      gap: 24px;
+      padding: 24px 28px;
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      transition: box-shadow 0.25s, border-color 0.25s;
+    }
+    .article-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-color: #BFDBFE;
+    }
+    .article-thumb {
+      flex-shrink: 0;
+      width: 200px;
+      height: 130px;
+      border-radius: 8px;
+      background: #F3F4F6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      overflow: hidden;
+    }
+    .article-body { flex: 1; min-width: 0; }
+    .article-body h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 8px;
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .article-card:hover .article-body h2 { color: #3B82F6; }
+    .article-body .article-excerpt {
+      font-size: 15px;
+      color: #6B7280;
+      line-height: 1.65;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: #9CA3AF;
+    }
+    .article-meta .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .article-meta .card-tags {
+      display: inline-flex;
+      gap: 6px;
+    }
+    .article-meta .card-tag {
+      display: inline-flex;
+      align-items: center;
+      background: #F3F4F6;
+      color: #4B5563;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .article-meta .card-tag.blue { background: #EFF6FF; color: #1D4ED8; }
+    .article-meta .card-tag.green { background: #ECFDF5; color: #047857; }
+    .article-meta .card-tag.amber { background: #FFFBEB; color: #B45309; }
+    .article-meta .card-tag.purple { background: #F5F3FF; color: #6D28D9; }
+
+    @media (max-width: 768px) {
+      .article-card { flex-direction: column; padding: 20px; }
+      .article-thumb { width: 100%; height: 180px; }
+      .article-body h2 { font-size: 18px; }
+      .article-meta { gap: 10px; }
+    }
+
+    /* ===== Pagination ===== */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 0 48px;
+    }
+    .pagination a, .pagination span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 12px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .pagination a {
+      color: #4B5563;
+      border: 1px solid #E5E7EB;
+    }
+    .pagination a:hover {
+      background: #EFF6FF;
+      border-color: #BFDBFE;
+      color: #3B82F6;
+    }
+    .pagination .active {
+      background: #3B82F6;
+      color: #fff;
+      border: 1px solid #3B82F6;
+    }
+    .pagination .ellipsis {
+      border: none;
+      color: #9CA3AF;
+    }
+    .pagination .prev-next {
+      font-family: 'Roboto', sans-serif;
+    }
+    .pagination .prev-next.disabled {
+      color: #D1D5DB;
+      border-color: #F3F4F6;
+      pointer-events: none;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: #111827;
+      color: #D1D5DB;
+      padding: 48px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #374151;
+      margin-bottom: 28px;
+    }
+    .footer-brand .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: #3B82F6;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    .footer-brand h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .footer-brand h3 span { color: #3B82F6; }
+    .footer-brand p {
+      font-size: 14px;
+      color: #9CA3AF;
+      line-height: 1.7;
+      max-width: 320px;
+    }
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col a {
+      font-size: 14px;
+      color: #9CA3AF;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: #3B82F6; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: #6B7280;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-socials a {
+      color: #9CA3AF;
+      font-size: 18px;
+      transition: color 0.2s;
+    }
+    .footer-socials a:hover { color: #3B82F6; }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== Utility ===== */
+    .text-blue { color: #3B82F6; }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="nav-brand">
+        <div class="logo-icon">A</div>
+        abci<span>so</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">首页</a></li>
+        <li><a href="/services/">服务</a></li>
+        <li><a href="/knowledge/" class="active">知识库</a></li>
+        <li><a href="/about/">关于我们</a></li>
+        <li><a href="/contact/" class="nav-cta">📞 联系我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== BREADCRUMB ==================== -->
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑导航">
+      <a href="/">🏠 首页</a>
+      <span class="sep">›</span>
+      <a href="/knowledge/">📚 知识库</a>
+      <span class="sep">›</span>
+      <span class="current">ISO 9001 质量管理体系</span>
+    </nav>
+  </div>
+
+  <!-- ==================== CATEGORY HEADER ==================== -->
+  <div class="container">
+    <header class="category-header">
+      <h1><span class="emoji-deco">✅</span> ISO 9001 质量管理体系</h1>
+      <p class="cat-desc">
+        ISO 9001 是国际标准化组织（ISO）制定的质量管理体系标准，适用于任何规模和行业的企业。
+        本分类收录了从体系建立、文件编写、内部审核到认证准备的全流程实战指南，帮助企业高效合规地运行 QMS。
+      </p>
+      <div class="category-tags">
+        <span class="tag">📄 标准解读</span>
+        <span class="tag tag-standard">📋 QMS 体系</span>
+        <span class="tag">📝 文件编写</span>
+        <span class="tag tag-popular">🔥 内部审核</span>
+        <span class="tag">✅ 认证指南</span>
+        <span class="tag">🛠️ 工具模板</span>
+      </div>
+    </header>
+  </div>
+
+  <!-- ==================== META BAR ==================== -->
+  <div class="container">
+    <div class="meta-bar">
+      <span class="result-count">共 <strong>24</strong> 篇文章</span>
+      <label for="sort" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">排序方式</label>
+      <select id="sort" class="sort-select">
+        <option>最新发布</option>
+        <option>最多阅读</option>
+        <option>按标题 A-Z</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- ==================== ARTICLE LIST ==================== -->
+  <div class="container">
+    <div class="article-list">
+
+      <!-- Card 1 -->
+      <article class="article-card">
+        <div class="article-thumb">📋</div>
+        <div class="article-body">
+          <h2>ISO 9001:2025 新版标准变更要点全解析</h2>
+          <p class="article-excerpt">
+            ISO 9001:2025 即将发布，本文深度对比 2015 版与 2025 版的核心变化，包括气候行动要求、数字化质量管理、知识管理强化等关键更新，帮助企业提前做好换版准备。
+          </p>
+          <div class="article-meta">
+            <span class="meta-item">📅 2026-03-15</span>
+            <span class="meta-item">⏱️ 8 分钟阅读</span>
+            <span class="card-tags">
+              <span class="card-tag blue">标准解读</span>
+              <span class="card-tag green">最新动态</span>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="article-card">
+        <div class="article-thumb">📝</div>
+        <div class="article-body">
+          <h2>质量管理体系文件架构：从质量手册到作业指导书</h2>
+          <p class="article-excerpt">
+            详解 ISO 9001 要求的四级文件架构——质量手册、程序文件、作业指导书和质量记录。附全套文件模板清单及编写要点，让体系文件不再流于形式。
+          </p>
+          <div class="article-meta">
+            <span class="meta-item">📅 2026-02-28</span>
+            <span class="meta-item">⏱️ 12 分钟阅读</span>
+            <span class="card-tags">
+              <span class="card-tag blue">文件编写</span>
+              <span class="card-tag purple">模板工具</span>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="article-card">
+        <div class="article-thumb">🔍</div>
+        <div class="article-body">
+          <h2>内部审核全流程实操指南（附检查表模板）</h2>
+          <p class="article-excerpt">
+            从审核策划、检查表编制、现场审核到不符合项整改，手把手教你完成一次高质量的 ISO 9001 内部审核。免费下载通用检查表模板。
+          </p>
+          <div class="article-meta">
+            <span class="meta-item">📅 2026-02-10</span>
+            <span class="meta-item">⏱️ 15 分钟阅读</span>
+            <span class="card-tags">
+              <span class="card-tag blue">内部审核</span>
+              <span class="card-tag amber">实战指南</span>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="article-card">
+        <div class="article-thumb">🎯</div>
+        <div class="article-body">
+          <h2>ISO 9001 认证全流程：从准备到获证的 6 个关键步骤</h2>
+          <p class="article-excerpt">
+            初次申请 ISO 9001 认证不知从何下手？本文梳理了差距分析、体系建立、试运行、内审、管理评审到正式审核的完整路径，附各阶段时间规划表。
+          </p>
+          <div class="article-meta">
+            <span class="meta-item">📅 2026-01-22</span>
+            <span class="meta-item">⏱️ 10 分钟阅读</span>
+            <span class="card-tags">
+              <span class="card-tag green">认证指南</span>
+              <span class="card-tag">新手入门</span>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="article-card">
+        <div class="article-thumb">📊</div>
+        <div class="article-body">
+          <h2>基于风险的思维：ISO 9001 风险管理在中小企业的最佳实践</h2>
+          <p class="article-excerpt">
+            ISO 9001:2015 强调基于风险的思维（Risk-based Thinking）。本文结合真实案例，展示中小企业如何用简单的风险登记表快速落地风险管理要求。
+          </p>
+          <div class="article-meta">
+            <span class="meta-item">📅 2026-01-05</span>
+            <span class="meta-item">⏱️ 9 分钟阅读</span>
+            <span class="card-tags">
+              <span class="card-tag purple">风险管理</span>
+              <span class="card-tag blue">QMS 体系</span>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="article-card">
+        <div class="article-thumb">🔄</div>
+        <div class="article-body">
+          <h2>管理评审会议怎么开？输入、输出与持续改进</h2>
+          <p class="article-excerpt">
+            管理评审是 ISO 9001 最高管理者参与体系运行的关键环节。本文提供会议议程模板、输入数据清单及输出报告范例，让管理评审真正驱动改进。
+          </p>
+          <div class="article-meta">
+            <span class="meta-item">📅 2025-12-18</span>
+            <span class="meta-item">⏱️ 7 分钟阅读</span>
+            <span class="card-tags">
+              <span class="card-tag amber">管理评审</span>
+              <span class="card-tag">持续改进</span>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="article-card">
+        <div class="article-thumb">🧪</div>
+        <div class="article-body">
+          <h2>ISO 9001 与 ISO 14001、ISO 45001 三标一体化整合方案</h2>
+          <p class="article-excerpt">
+            质量、环境、职业健康安全三体系如何高效整合？本文从 PDCA 循环、文件融合、内部审核协同三个维度，提供切实可行的一体化整合路线图。
+          </p>
+          <div class="article-meta">
+            <span class="meta-item">📅 2025-11-30</span>
+            <span class="meta-item">⏱️ 11 分钟阅读</span>
+            <span class="card-tags">
+              <span class="card-tag purple">三体系</span>
+              <span class="card-tag green">整合方案</span>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="article-card">
+        <div class="article-thumb">📈</div>
+        <div class="article-body">
+          <h2>质量目标如何设定与分解？从 KPI 到落地执行</h2>
+          <p class="article-excerpt">
+            解读 ISO 9001 对质量目标的要求，介绍 SMART 原则在目标设定中的应用，以及如何将公司级质量目标逐层分解到部门和个人，确保可测量、可追溯。
+          </p>
+          <div class="article-meta">
+            <span class="meta-item">📅 2025-11-12</span>
+            <span class="meta-item">⏱️ 8 分钟阅读</span>
+            <span class="card-tags">
+              <span class="card-tag blue">QMS 体系</span>
+              <span class="card-tag">KPI</span>
+            </span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- ==================== PAGINATION ==================== -->
+  <div class="container">
+    <nav class="pagination" aria-label="分页导航">
+      <a href="#" class="prev-next disabled" aria-disabled="true">‹ 上一页</a>
+      <span class="active">1</span>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <span class="ellipsis">···</span>
+      <a href="#">8</a>
+      <a href="#" class="prev-next">下一页 ›</a>
+    </nav>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-icon">A</div>
+          <h3>abci<span>so</span></h3>
+          <p>
+            专业的 ISO 管理体系认证咨询平台，为企业提供 ISO 9001、ISO 14001、ISO 45001 等认证一站式解决方案。
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>快速链接</h4>
+          <ul>
+            <li><a href="/">首页</a></li>
+            <li><a href="/services/">服务体系</a></li>
+            <li><a href="/knowledge/">知识库</a></li>
+            <li><a href="/about/">关于我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>服务项目</h4>
+          <ul>
+            <li><a href="#">ISO 9001 认证</a></li>
+            <li><a href="#">ISO 14001 认证</a></li>
+            <li><a href="#">ISO 45001 认证</a></li>
+            <li><a href="#">体系培训</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>联系方式</h4>
+          <ul>
+            <li><a href="mailto:info@abciso.com">📧 info@abciso.com</a></li>
+            <li><a href="tel:+8612345678900">📞 400-888-9999</a></li>
+            <li><a href="#">💬 在线咨询</a></li>
+            <li><a href="/contact/">📝 提交需求</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 abciso.com. All rights reserved. | <a href="/privacy/" style="color:#6B7280;">隐私政策</a></span>
+        <div class="footer-socials">
+          <a href="#" aria-label="微信">💬</a>
+          <a href="#" aria-label="微博">📱</a>
+          <a href="#" aria-label="LinkedIn">🔗</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== HAMBURGER SCRIPT ==================== -->
+  <script>
+    (function() {
+      var btn = document.getElementById('hamburger');
+      var nav = document.getElementById('navLinks');
+      if (btn && nav) {
+        btn.addEventListener('click', function() {
+          nav.classList.toggle('open');
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

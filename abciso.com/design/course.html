@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程中心 — abciso.com</title>
+<meta name="description" content="从零到体系负责人，两门课就够了。炖刀20年一线经验，浓缩成可直接落地的管理体系课程。" />
+<meta property="og:title" content="课程中心 — abciso.com" />
+<meta property="og:description" content="从零到体系负责人，两门课就够了。不讲虚的，不讲段子。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://abciso.com/course" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #111827;
+            background: #FFFFFF;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        img { max-width:100%; height:auto; display:block; }
+        a { text-decoration:none; color:inherit; }
+        ul { list-style:none; }
+        .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+        code, .code { font-family:'IBM Plex Mono', monospace; }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position:fixed; top:0; left:0; right:0;
+            background:#FFFFFF; border-bottom:1px solid #e5e7eb;
+            z-index:1000; height:72px;
+            display:flex; align-items:center;
+        }
+        .navbar .container {
+            display:flex; align-items:center; justify-content:space-between; width:100%;
+        }
+        .logo {
+            display:flex; align-items:center; gap:10px;
+        }
+        .logo-icon {
+            width:36px; height:36px; border-radius:50%;
+            background:#FECE14; display:flex; align-items:center; justify-content:center;
+            font-weight:800; font-size:18px; color:#000;
+        }
+        .logo-text {
+            font-weight:700; font-size:20px; color:#000;
+            letter-spacing:-0.3px;
+        }
+        .logo-text span { color:#FECE14; }
+        .nav-links { display:flex; align-items:center; gap:32px; }
+        .nav-links a {
+            font-size:14px; font-weight:500; color:#4b5563;
+            transition:color 0.2s;
+        }
+        .nav-links a:hover { color:#FECE14; }
+        .nav-cta {
+            display:inline-flex; align-items:center; gap:6px;
+            background:#000; color:#fff; padding:10px 24px; border-radius:8px;
+            font-weight:600; font-size:14px; transition:all 0.25s;
+        }
+        .nav-cta:hover { background:#FECE14; color:#000; }
+        .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+        .hamburger span { width:26px; height:3px; background:#000; border-radius:2px; }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding:140px 0 80px; text-align:center;
+            background: linear-gradient(180deg, #fefce8 0%, #FFFFFF 100%);
+            position:relative; overflow:hidden;
+        }
+        .hero::before {
+            content:''; position:absolute; top:-120px; right:-120px;
+            width:400px; height:400px; border-radius:50%;
+            background:radial-gradient(circle,rgba(254,206,20,0.12),transparent 70%);
+        }
+        .hero::after {
+            content:''; position:absolute; bottom:-80px; left:-80px;
+            width:300px; height:300px; border-radius:50%;
+            background:radial-gradient(circle,rgba(254,206,20,0.08),transparent 70%);
+        }
+        .hero .container { position:relative; z-index:1; }
+        .hero-visual { margin-top:40px; display:flex; justify-content:center; }
+        .hero-visual img { max-width:700px; border-radius:16px; box-shadow:0 12px 40px rgba(0,0,0,0.08); }
+        .hero-badge {
+            display:inline-flex; align-items:center; gap:6px;
+            background:#000; color:#FECE14; padding:6px 18px; border-radius:100px;
+            font-weight:600; font-size:13px; margin-bottom:24px;
+        }
+        .hero h1 {
+            font-size:52px; font-weight:800; color:#000;
+            line-height:1.15; letter-spacing:-1px; max-width:800px; margin:0 auto 20px;
+        }
+        .hero h1 .highlight {
+            background:linear-gradient(135deg,#FECE14,#f0b800);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+            background-clip:text;
+        }
+        .hero-sub {
+            font-size:18px; color:#6b7280; max-width:620px; margin:0 auto 36px;
+            line-height:1.7;
+        }
+        .hero-cta {
+            display:inline-flex; align-items:center; gap:10px;
+            background:#FECE14; color:#000; padding:16px 44px; border-radius:12px;
+            font-weight:700; font-size:18px; transition:all 0.25s;
+            box-shadow:0 4px 20px rgba(254,206,20,0.35);
+            border:none; cursor:pointer;
+        }
+        .hero-cta:hover {
+            transform:translateY(-2px);
+            box-shadow:0 8px 30px rgba(254,206,20,0.45);
+        }
+        .hero-cta .arrow { font-size:20px; transition:transform 0.25s; }
+        .hero-cta:hover .arrow { transform:translateX(4px); }
+        .hero-meta {
+            margin-top:24px; display:flex; align-items:center; justify-content:center; gap:24px;
+            font-size:14px; color:#9ca3af;
+        }
+        .hero-meta span { display:flex; align-items:center; gap:6px; }
+
+        /* ===== SECTION COMMON ===== */
+        section { padding:88px 0; }
+        .section-label {
+            display:inline-block;
+            font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+            color:#FECE14; margin-bottom:8px;
+        }
+        .section-title {
+            font-size:38px; font-weight:700; color:#000;
+            line-height:1.2; letter-spacing:-0.5px;
+        }
+        .section-desc {
+            font-size:16px; color:#6b7280; line-height:1.7; max-width:640px;
+        }
+
+        /* ===== COURSE CARDS ===== */
+        .courses { background:#FFFFFF; }
+        .courses-header { text-align:center; margin-bottom:56px; }
+        .course-card {
+            background:#FFFFFF; border:1px solid #e5e7eb; border-radius:20px;
+            padding:48px 44px; margin-bottom:40px;
+            transition:all 0.3s; position:relative; overflow:hidden;
+        }
+        .course-card:last-child { margin-bottom:0; }
+        .course-card:hover {
+            border-color:#FECE14; box-shadow:0 12px 48px rgba(0,0,0,0.06);
+        }
+        .course-card::before {
+            content:''; position:absolute; top:0; left:0; right:0; height:4px;
+            background:linear-gradient(90deg,#FECE14,#000); opacity:0.7;
+        }
+        .course-number {
+            display:inline-flex; align-items:center; justify-content:center;
+            width:44px; height:44px; border-radius:12px;
+            background:#FECE14; color:#000; font-weight:700; font-size:18px;
+            margin-bottom:16px;
+        }
+        .course-card h3 {
+            font-size:28px; font-weight:700; color:#000;
+            letter-spacing:-0.3px; margin-bottom:12px;
+        }
+        .course-intro {
+            font-size:15px; color:#6b7280; line-height:1.8; max-width:780px; margin-bottom:28px;
+        }
+        .course-grid {
+            display:grid; grid-template-columns:1fr 1fr; gap:40px;
+            align-items:start;
+        }
+        .module-list h4 {
+            font-size:14px; font-weight:600; color:#000; margin-bottom:14px;
+            text-transform:uppercase; letter-spacing:1px;
+        }
+        .module-list ul { display:flex; flex-direction:column; gap:6px; }
+        .module-list li {
+            display:flex; align-items:flex-start; gap:10px;
+            font-size:14px; color:#374151; line-height:1.6;
+        }
+        .module-list li::before {
+            content:''; flex-shrink:0; width:6px; height:6px; border-radius:50%;
+            background:#FECE14; margin-top:9px;
+        }
+        .module-tag {
+            display:inline-block; background:#fefce8; color:#a16207;
+            font-size:12px; font-weight:500; padding:2px 12px; border-radius:100px;
+            margin-top:8px;
+        }
+        .course-tags {
+            display:flex; flex-wrap:wrap; gap:8px; margin-top:20px;
+        }
+        .course-tag {
+            background:#f3f4f6; color:#374151; padding:6px 16px; border-radius:100px;
+            font-size:13px; font-weight:500;
+        }
+        .course-tag.gold {
+            background:#FECE14; color:#000;
+        }
+
+        /* ===== TRUST ===== */
+        .trust {
+            background:#fafafa; position:relative;
+        }
+        .trust-box {
+            background:#FFFFFF; border:2px solid #FECE14; border-radius:20px;
+            padding:56px 48px; text-align:center;
+            box-shadow:0 8px 32px rgba(254,206,20,0.10);
+            position:relative;
+        }
+        .trust-box::after {
+            content:'\201C'; position:absolute; top:20px; left:32px;
+            font-size:80px; color:rgba(254,206,20,0.15); font-family:Georgia,serif;
+            line-height:1;
+        }
+        .trust-label {
+            font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+            color:#FECE14; margin-bottom:8px;
+        }
+        .trust-box h2 {
+            font-size:36px; font-weight:700; color:#000;
+            margin-bottom:20px; line-height:1.3;
+        }
+        .trust-quote {
+            font-size:28px; font-weight:700; color:#000;
+            padding:16px 32px; background:#fefce8; border-radius:12px;
+            display:inline-block; margin-bottom:20px;
+        }
+        .trust-quote span { color:#FECE14; }
+        .trust-text {
+            font-size:15px; color:#6b7280; line-height:1.8; max-width:700px; margin:0 auto;
+        }
+        .trust-stats {
+            display:flex; justify-content:center; gap:48px; margin-top:32px;
+        }
+        .trust-stat { text-align:center; }
+        .trust-stat .num {
+            font-size:32px; font-weight:800; color:#000;
+        }
+        .trust-stat .num span { color:#FECE14; }
+        .trust-stat .lbl {
+            font-size:13px; color:#9ca3af; font-weight:500;
+        }
+
+        /* ===== VALUE ===== */
+        .value { background:#FFFFFF; }
+        .value-header { text-align:center; margin-bottom:52px; }
+        .value-grid {
+            display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
+        }
+        .value-item {
+            border:1px solid #e5e7eb; border-radius:16px; padding:36px 24px;
+            text-align:center; transition:all 0.3s;
+        }
+        .value-item:hover {
+            border-color:#FECE14; transform:translateY(-4px);
+            box-shadow:0 12px 32px rgba(0,0,0,0.05);
+        }
+        .value-icon {
+            width:60px; height:60px; border-radius:16px;
+            background:#fefce8; display:flex; align-items:center; justify-content:center;
+            margin:0 auto 18px; font-size:28px;
+        }
+        .value-item h4 {
+            font-size:17px; font-weight:700; color:#000; margin-bottom:8px;
+        }
+        .value-item p {
+            font-size:13px; color:#6b7280; line-height:1.7;
+        }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);
+            padding:80px 0; text-align:center; position:relative; overflow:hidden;
+        }
+        .cta-banner::before {
+            content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+            width:600px; height:600px; border-radius:50%;
+            background:radial-gradient(circle,rgba(254,206,20,0.06),transparent 60%);
+        }
+        .cta-banner .container { position:relative; z-index:1; }
+        .cta-banner h2 {
+            font-size:40px; font-weight:700; color:#fff;
+            letter-spacing:-0.5px; margin-bottom:12px;
+        }
+        .cta-banner .gold { color:#FECE14; }
+        .cta-banner p {
+            font-size:17px; color:#9ca3af; margin-bottom:36px; max-width:560px; margin-left:auto; margin-right:auto;
+        }
+        .cta-banner .cta-btn {
+            display:inline-flex; align-items:center; gap:10px;
+            background:#FECE14; color:#000; padding:18px 52px; border-radius:12px;
+            font-weight:700; font-size:20px; transition:all 0.25s;
+            border:none; cursor:pointer;
+        }
+        .cta-banner .cta-btn:hover {
+            transform:translateY(-2px);
+            box-shadow:0 8px 30px rgba(254,206,20,0.30);
+        }
+        .cta-banner .cta-btn .arrow { font-size:22px; transition:transform 0.25s; }
+        .cta-banner .cta-btn:hover .arrow { transform:translateX(4px); }
+        .cta-meta {
+            margin-top:20px; display:flex; justify-content:center; gap:28px;
+            font-size:13px; color:#6b7280;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background:#fafafa; border-top:1px solid #e5e7eb;
+            padding:48px 0 32px;
+        }
+        .footer-grid {
+            display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px;
+            margin-bottom:36px;
+        }
+        .footer-brand p {
+            font-size:13px; color:#6b7280; max-width:300px; margin-top:12px; line-height:1.7;
+        }
+        .footer-col h5 {
+            font-size:13px; font-weight:600; color:#000; text-transform:uppercase;
+            letter-spacing:1px; margin-bottom:16px;
+        }
+        .footer-col a {
+            display:block; font-size:14px; color:#6b7280; margin-bottom:10px;
+            transition:color 0.2s;
+        }
+        .footer-col a:hover { color:#FECE14; }
+        .footer-bottom {
+            border-top:1px solid #e5e7eb; padding-top:24px;
+            display:flex; justify-content:space-between; align-items:center;
+            font-size:13px; color:#9ca3af;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width:992px) {
+            .hero h1 { font-size:38px; }
+            .section-title { font-size:30px; }
+            .course-grid { grid-template-columns:1fr; gap:24px; }
+            .value-grid { grid-template-columns:repeat(2,1fr); }
+            .trust-stats { gap:32px; flex-wrap:wrap; }
+            .footer-grid { grid-template-columns:1fr 1fr; }
+        }
+        @media (max-width:768px) {
+            .nav-links { display:none; }
+            .hamburger { display:flex; }
+            .hero { padding:120px 0 56px; }
+            .hero h1 { font-size:30px; }
+            .hero-cta { padding:14px 32px; font-size:16px; }
+            .hero-meta { flex-direction:column; gap:8px; }
+            .section-title { font-size:26px; }
+            .course-card { padding:32px 24px; }
+            .course-card h3 { font-size:22px; }
+            .trust-box { padding:36px 24px; }
+            .trust-box h2 { font-size:26px; }
+            .trust-quote { font-size:20px; padding:12px 20px; }
+            .value-grid { grid-template-columns:1fr 1fr; gap:16px; }
+            .cta-banner h2 { font-size:28px; }
+            .cta-banner .cta-btn { padding:14px 36px; font-size:17px; }
+            .footer-grid { grid-template-columns:1fr; gap:24px; }
+            .footer-bottom { flex-direction:column; gap:8px; text-align:center; }
+        }
+        @media (max-width:480px) {
+            .value-grid { grid-template-columns:1fr; }
+            .trust-stats { flex-direction:column; gap:16px; }
+            .hero h1 { font-size:26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <span class="logo-text">abciso<span>.</span>com</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="course.html">课程</a>
+                <a href="about.html">关于</a>
+                <a href="index.html#">知识星球</a>
+                <a href="download.html" class="nav-cta">资料下载 →</a>
+            </div>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">📘 体系化管理 · 2026</div>
+            <h1>
+                从零到体系负责人，<br>
+                <span class="highlight">两门课就够了</span>
+            </h1>
+            <p class="hero-sub">
+                一套管理思维 + 一套落地工具。不讲虚的，不讲段子。<br>
+                20年一线摸爬滚打，浓缩成两门让你能直接用的课。
+            </p>
+            <a href="#" class="hero-cta">
+                立即加入知识星球 · 299元/年
+                <span class="arrow">→</span>
+            </a>
+            <div class="hero-meta">
+                <span>📚 两门体系课程</span>
+                <span>📎 配套模板资料</span>
+                <span>💬 专属答疑社群</span>
+                <span>🔄 季度闭门交流</span>
+            </div>
+            <div class="hero-visual">
+                <img src="images/course_mindmap.jpg" alt="课程体系全景图" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COURSES ===== -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="courses-header">
+                <div class="section-label">课程体系</div>
+                <h2 class="section-title">两门课，覆盖管理与落地全链路</h2>
+                <p class="section-desc" style="margin:12px auto 0;">从管理认知到实操方法，构建你的体系化能力。</p>
+            </div>
+
+            <!-- Course 1 -->
+            <div class="course-card">
+                <div class="course-number">01</div>
+                <h3>AI时代，你更应该学会管理</h3>
+                <p class="course-intro">
+                    很多人说"管理是虚的"——那是你没见过好管理。这堂课不讲PPT画饼，不讲鸡汤段子。
+                    从目标拆解到团队赋能，从决策框架到向上管理，每一节都是我在一线摔出来的真东西。
+                    AI越强，管理越值钱。
+                </p>
+                <div class="course-grid">
+                    <div class="module-list">
+                        <h4>📋 模块大纲</h4>
+                        <ul>
+                            <li>模块一：管理者的底层操作系统 —— 角色认知与思维切换</li>
+                            <li>模块二：目标拆解与执行体系 —— OKR × KPI 实战融合</li>
+                            <li>模块三：团队赋能与沟通心法 —— 不画饼，怎么让人跟着你干</li>
+                            <li>模块四：决策框架与风险判断 —— 信息不完备时如何做对选择</li>
+                            <li>模块五：向上管理与组织政治 —— 让老板成为你的资源</li>
+                            <li>模块六：AI工具赋能管理 —— 用AI提效，而不是被AI替代</li>
+                            <li>模块七：体系化复盘与持续进化 —— 打造你的管理飞轮</li>
+                        </ul>
+                        <span class="module-tag">已更新至第5模块</span>
+                    </div>
+                    <div class="module-list">
+                        <h4>🎯 适合谁</h4>
+                        <div class="course-tags">
+                            <span class="course-tag gold">新晋管理者</span>
+                            <span class="course-tag">储备干部</span>
+                            <span class="course-tag">创业团队负责人</span>
+                            <span class="course-tag">想突破瓶颈的骨干</span>
+                            <span class="course-tag">转型管理者</span>
+                        </div>
+                        <div style="margin-top:28px;">
+                            <h4>📏 课程规格</h4>
+                            <ul style="margin-top:8px;">
+                                <li>共 7 大模块 · 28 节视频课</li>
+                                <li>每节 15~25 分钟，总时长约 8 小时</li>
+                                <li>配套：管理工具模板包 + 案例拆解手册</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="course-card">
+                <div class="course-number">02</div>
+                <h3>能源管理体系：39节落地实操课</h3>
+                <p class="course-intro">
+                    能源管理不是"关灯拔插头"。这是一门系统科学——从ISO 50001体系搭建到能效审计，
+                    从能耗数据挖掘到碳资产管理。39节课，不讲理论，只讲"到现场怎么做"。
+                    适合所有想在能源、双碳领域建立体系化能力的人。
+                </p>
+                <div class="course-grid">
+                    <div class="module-list">
+                        <h4>📋 模块大纲</h4>
+                        <ul>
+                            <li>模块一：能源管理体系全景 —— ISO 50001 核心逻辑与框架</li>
+                            <li>模块二：能源评审与基准建立 —— 数据从哪来，怎么用</li>
+                            <li>模块三：能效指标与目标分解 —— 把KPI落到每台设备</li>
+                            <li>模块四：运行控制与优化 —— 现场改善的5个实战套路</li>
+                            <li>模块五：能源审计实战 —— 从查表到出报告，全流程拆解</li>
+                            <li>模块六：碳资产与能源数据管理 —— 用数字化手段提效</li>
+                            <li>模块七：体系持续改进与认证 —— 不折腾，过审核</li>
+                        </ul>
+                        <span class="module-tag">全部更新完毕</span>
+                    </div>
+                    <div class="module-list">
+                        <h4>🎯 适合谁</h4>
+                        <div class="course-tags">
+                            <span class="course-tag gold">能源管理人员</span>
+                            <span class="course-tag">EHS 从业者</span>
+                            <span class="course-tag">碳管理从业者</span>
+                            <span class="course-tag">工厂厂长</span>
+                            <span class="course-tag">体系工程师</span>
+                            <span class="course-tag">咨询顾问</span>
+                        </div>
+                        <div style="margin-top:28px;">
+                            <h4>📏 课程规格</h4>
+                            <ul style="margin-top:8px;">
+                                <li>共 7 大模块 · 39 节视频课</li>
+                                <li>每节 12~20 分钟，总时长约 11 小时</li>
+                                <li>配套：能源管理模板库 + 审计工具表 + 检查清单</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRUST ===== -->
+    <section class="trust" id="about">
+        <div class="container">
+            <div class="trust-box">
+                <div class="trust-label">为什么信我？</div>
+                <h2>因为这个行业，<br>没人比我更懂"从零搭体系"</h2>
+                <div class="trust-quote">
+                    10 + 10 = <span>20年一线经验</span>
+                </div>
+                <p class="trust-text">
+                    前10年，我在工厂、供应链、能源行业从基层做到负责人，
+                    亲手搭建过3套完整的能源管理体系，经历过6次外审、2次政府专项督查。
+                    后10年，我转型做管理咨询和培训，服务过16家企业、覆盖8个行业，
+                    帮他们从零搭体系、过认证、拿实效。
+                    这些踩过的坑、试错的经验、被毒打过之后才懂的"真方法"，
+                    就是这两门课的全部内容。
+                </p>
+                <div class="trust-stats">
+                    <div class="trust-stat">
+                        <div class="num"><span>20</span>年</div>
+                        <div class="lbl">一线实战经验</div>
+                    </div>
+                    <div class="trust-stat">
+                        <div class="num"><span>16</span>+</div>
+                        <div class="lbl">服务企业</div>
+                    </div>
+                    <div class="trust-stat">
+                        <div class="num"><span>8</span></div>
+                        <div class="lbl">覆盖行业</div>
+                    </div>
+                    <div class="trust-stat">
+                        <div class="num"><span>3</span>套</div>
+                        <div class="lbl">从零搭建体系</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VALUE ===== -->
+    <section class="value" id="value">
+        <div class="container">
+            <div class="value-header">
+                <div class="section-label">加入价值</div>
+                <h2 class="section-title">299元/年，拿走的不只是课</h2>
+                <p class="section-desc" style="margin:12px auto 0;">知识星球会员专属权益，每一项都为你的体系化成长设计。</p>
+            </div>
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-icon">📚</div>
+                    <h4>两门体系课程</h4>
+                    <p>管理课 + 能源课全部解锁，永久回看。持续更新迭代，不再额外收费。</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">📎</div>
+                    <h4>配套模板工具</h4>
+                    <p>管理工具包、审计模板、检查清单……拿来就能用，省去从零搭建的时间。</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💬</div>
+                    <h4>专属答疑社群</h4>
+                    <p>课程相关问题直接提问，工作日48小时内回复。你的真实案例也能拿来讨论。</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🔄</div>
+                    <h4>季度闭门交流</h4>
+                    <p>每季度一次线上闭门会，深度拆解一个专题，会员免费参加。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>体系化能力，是 <span class="gold">最稳的职场杠杆</span></h2>
+            <p>299元/年 ≈ 每天不到1块钱。两门体系课程、全套模板、专属答疑、季度交流，全部带走。</p>
+            <a href="#" class="cta-btn">
+                立即加入知识星球 · 299元/年
+                <span class="arrow">→</span>
+            </a>
+            <div class="cta-meta">
+                <span>📦 随到随学</span>
+                <span>🔄 持续更新</span>
+                <span>💰 支持7天无理由</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">A</div>
+                        <span class="logo-text">abciso<span>.</span>com</span>
+                    </a>
+                    <p>专注体系化管理与能源管理的实战内容。不讲虚的，只给能用的。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>课程</h5>
+                    <a href="#">AI时代的管理课</a>
+                    <a href="#">能源管理体系课</a>
+                    <a href="#">全部课程</a>
+                </div>
+                <div class="footer-col">
+                    <h5>加入</h5>
+                    <a href="#">知识星球</a>
+                    <a href="#">会员权益</a>
+                    <a href="#">常见问题</a>
+                </div>
+                <div class="footer-col">
+                    <h5>关于</h5>
+                    <a href="#">关于我</a>
+                    <a href="#">联系</a>
+                    <a href="#">隐私政策</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 abciso.com. All rights reserved.</span>
+                <span>以体系化思维，做有结果的事。</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

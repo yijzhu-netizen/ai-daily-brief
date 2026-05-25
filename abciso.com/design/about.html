@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于我们 — abciso.com</title>
+<meta name="description" content="关于abciso — 炖刀十年制造业管理经验，提供ISO认证体系实操知识与工具。" />
+<meta property="og:title" content="关于我们 — abciso.com" />
+<meta property="og:description" content="制造业管理与ISO认证体系实操知识库。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://abciso.com/about" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== Reset & Base ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{
+  font-family:'Roboto',sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  color:#111827;
+  background:#fff;
+}
+
+/* ===== Typography ===== */
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;font-weight:600;color:#111827;line-height:1.25}
+h1{font-size:2rem}      /* 32px */
+h2{font-size:1.5rem}    /* 24px */
+h3{font-size:1.25rem}   /* 20px */
+h4{font-size:1rem}      /* 16px */
+small,.text-small{font-size:.875rem}  /* 14px */
+.text-xs{font-size:.75rem}            /* 12px */
+code,.code{font-family:'Inconsolata',monospace}
+
+/* ===== Spacing (8pt grid) ===== */
+.section{padding:4rem 0}         /* 64px / 8pt×8 */
+.section-sm{padding:2rem 0}     /* 32px / 8pt×4 */
+.gap-1{margin-bottom:.5rem}      /* 8px */
+.gap-2{margin-bottom:1rem}       /* 16px */
+.gap-3{margin-bottom:1.5rem}     /* 24px */
+.gap-4{margin-bottom:2rem}       /* 32px */
+.gap-5{margin-bottom:3rem}       /* 48px */
+.gap-6{margin-bottom:4rem}       /* 64px */
+.p-1{padding:.5rem}
+.p-2{padding:1rem}
+.p-3{padding:1.5rem}
+.p-4{padding:2rem}
+
+/* ===== Container ===== */
+.container{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+
+/* ===== Nav ===== */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #f0f0f0;
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:3.5rem; /* 56px */
+}
+.nav-logo{
+  font-family:'Poppins',sans-serif;
+  font-size:1.25rem;font-weight:700;
+  color:#3B82F6;text-decoration:none;
+  display:flex;align-items:center;gap:.5rem;
+}
+.nav-logo span{color:#8B5CF6}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{
+  font-size:.875rem;font-weight:500;color:#4b5563;
+  text-decoration:none;transition:color .2s;
+  position:relative;
+}
+.nav-links a:hover{color:#3B82F6}
+.nav-links a.cta{
+  display:inline-flex;align-items:center;gap:.375rem;
+  background:#3B82F6;color:#fff;padding:.5rem 1.25rem;
+  border-radius:6px;font-weight:600;font-size:.875rem;
+  transition:background .2s;
+}
+.nav-links a.cta:hover{background:#2563EB;color:#fff}
+.nav-links .dropdown{position:relative;cursor:pointer}
+.nav-links .dropdown-label{
+  font-size:.875rem;font-weight:500;color:#4b5563;
+  display:flex;align-items:center;gap:.25rem;padding:.25rem 0;
+}
+.nav-links .dropdown-label::after{
+  content:"▼";font-size:.625rem;margin-left:.125rem;
+  transition:transform .2s;
+}
+.nav-links .dropdown:hover .dropdown-label::after{transform:rotate(180deg)}
+.nav-links .dropdown-menu{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  background:#fff;border:1px solid #e5e7eb;border-radius:8px;
+  padding:.5rem 0;min-width:180px;
+  opacity:0;visibility:hidden;transition:all .2s;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+.nav-links .dropdown:hover .dropdown-menu{opacity:1;visibility:visible}
+.nav-links .dropdown-menu a{
+  display:block;padding:.5rem 1.25rem;font-size:.875rem;
+  white-space:nowrap;
+}
+.nav-links .dropdown-menu a:hover{background:#f3f4f6;color:#3B82F6}
+.nav-toggle{display:none;background:none;border:none;font-size:1.5rem;color:#111827;cursor:pointer;padding:.25rem}
+
+/* ===== About Hero ===== */
+.about-hero{
+  padding:5rem 0 4rem;
+  text-align:center;
+}
+.about-hero h1{
+  font-size:2.5rem;margin-bottom:.75rem;
+  letter-spacing:-.02em;
+}
+.about-hero .subtitle{
+  font-size:1.125rem;color:#6b7280;
+  max-width:600px;margin:0 auto;
+  line-height:1.7;
+}
+.about-hero .badge{
+  display:inline-block;
+  background:#f0f7ff;border:1px solid #e0e7ff;border-radius:100px;
+  padding:.25rem 1rem;font-size:.75rem;color:#3B82F6;margin-bottom:1.5rem;
+  font-weight:500;
+}
+.about-hero .divider{
+  width:48px;height:3px;
+  background:linear-gradient(90deg,#3B82F6,#8B5CF6);
+  margin:1.5rem auto 0;
+  border-radius:2px;
+}
+
+/* ===== Profile Section (两栏) ===== */
+.profile-section{padding:4rem 0 3rem}
+.profile-grid{
+  display:grid;grid-template-columns:280px 1fr;gap:3rem;
+  align-items:start;
+}
+.profile-avatar{
+  width:280px;height:280px;
+  background:#e5e7eb;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:5rem;color:#9ca3af;margin:0 auto;
+  border:4px solid #f0f0f0;
+  flex-shrink:0;
+}
+.profile-content h2{
+  font-size:1.75rem;margin-bottom:.5rem;
+}
+.profile-content .role{
+  font-size:.875rem;color:#3B82F6;font-weight:500;
+  margin-bottom:1.25rem;
+}
+.profile-content p{
+  font-size:.9375rem;color:#4b5563;line-height:1.8;
+  margin-bottom:1rem;
+}
+.profile-content .highlight{
+  color:#3B82F6;font-weight:500;
+}
+
+/* ===== Trust Stats ===== */
+.stats-section{padding:3rem 0 5rem}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+}
+.stat-card{
+  text-align:center;padding:2rem 1rem;
+  background:#fafbfc;border:1px solid #f0f0f0;border-radius:12px;
+  transition:box-shadow .25s,border-color .25s;
+}
+.stat-card:hover{border-color:#e0e7ff;box-shadow:0 4px 16px rgba(59,130,246,.08)}
+.stat-card .stat-icon{font-size:2rem;margin-bottom:.75rem}
+.stat-card .stat-number{
+  font-family:'Poppins',sans-serif;
+  font-size:2.25rem;font-weight:700;
+  color:#111827;line-height:1.1;margin-bottom:.375rem;
+}
+.stat-card .stat-number span{color:#3B82F6}
+.stat-card .stat-label{
+  font-size:.875rem;color:#6b7280;font-weight:500;
+}
+
+/* ===== Mission Section (浅蓝背景) ===== */
+.mission-section{
+  padding:4rem 0;
+  background:#f0f7ff;
+}
+.mission-card{
+  max-width:800px;margin:0 auto;
+  text-align:center;
+}
+.mission-card .mission-icon{
+  width:56px;height:56px;border-radius:14px;
+  background:linear-gradient(135deg,#3B82F6,#8B5CF6);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.5rem;font-size:1.5rem;
+}
+.mission-card h2{
+  font-size:1.75rem;margin-bottom:1rem;
+}
+.mission-card p{
+  font-size:1rem;color:#4b5563;line-height:1.9;
+  text-align:left;margin-bottom:.75rem;
+}
+
+/* ===== Footer ===== */
+.footer{
+  padding:2.5rem 0;border-top:1px solid #f0f0f0;
+  text-align:center;
+}
+.footer p{font-size:.875rem;color:#6b7280}
+.footer .footer-brand{font-family:'Poppins',sans-serif;font-weight:700;color:#3B82F6;font-size:1.125rem;margin-bottom:.5rem}
+.footer .footer-brand span{color:#8B5CF6}
+
+/* ===== Responsive ===== */
+@media(max-width:900px){
+  .profile-grid{grid-template-columns:1fr;gap:2rem}
+  .profile-avatar{width:200px;height:200px;font-size:3.5rem}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:3.5rem;left:0;right:0;background:#fff;border-bottom:1px solid #f0f0f0;flex-direction:column;padding:1rem 1.5rem;gap:1rem;align-items:stretch}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .nav-links .dropdown-menu{position:static;opacity:1;visibility:visible;box-shadow:none;border:none;padding-left:1rem;min-width:auto;transform:none}
+  .about-hero h1{font-size:1.75rem}
+  .about-hero .subtitle{font-size:1rem}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat-card .stat-number{font-size:1.75rem}
+  .section{padding:2.5rem 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">abciso<span>.com</span></a>
+      <button class="nav-toggle" aria-label="菜单" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="news.html">行业动态</a></li>
+        <li class="dropdown">
+          <span class="dropdown-label">标准体系</span>
+          <div class="dropdown-menu">
+            <a href="#">ISO 9001 质量管理</a>
+            <a href="#">ISO 14001 环境管理</a>
+            <a href="#">ISO 45001 职业健康</a>
+            <a href="#">ISO 50001 能源管理</a>
+            <a href="#">AI 治理与合规</a>
+          </div>
+        </li>
+        <li><a href="download.html">资料下载</a></li>
+        <li><a href="course.html" class="cta">课程 →</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 标题区 ===== -->
+<section class="about-hero">
+  <div class="container">
+    <div class="badge">👤 关于站主</div>
+    <h1>关于炖刀</h1>
+    <p class="subtitle">10年制造业管理 + 10年ISO认证审核 = 20年一线经验</p>
+    <div class="divider"></div>
+  </div>
+</section>
+
+<!-- ===== 个人介绍（两栏） ===== -->
+<section class="profile-section">
+  <div class="container">
+    <div class="profile-grid">
+      <div class="profile-avatar">👤</div>
+      <div class="profile-content">
+        <h2>炖刀</h2>
+        <div class="role">🔍 ISO体系落地实战派 · 智造本质知识星球主理人</div>
+        <p>
+          在制造业摸爬滚打十年，从车间工艺员做到质量总监，亲手搭建过三套完整的ISO管理体系。
+          后来转型做ISO认证审核，又扎进审核一线十年，经手了<span class="highlight">200多家工厂</span>的认证审核与监督审核。
+        </p>
+        <p>
+          从作业指导书怎么写到管理评审怎么做，从内审检查表到不符合项整改，这些看似枯燥的标准条文背后，
+          我看到了太多企业"为认证而认证"的困境——体系文件堆了一柜子，实际管理还是老样子。
+        </p>
+        <p>
+          这就是我做这个站的原因：把<span class="highlight">20年的实战经验</span>沉淀下来，
+          用大白话讲清楚ISO标准到底怎么落地，让质量管理变成能帮企业赚钱的工具，而不是应付检查的累赘。
+        </p>
+        <p style="color:#9ca3af;font-size:.875rem;margin-top:1.5rem">
+          📍 曾任：某德资汽车零部件企业质量总监 · 某外资认证机构主任审核员 · 多家上市公司ISO体系顾问
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 信任数据区（4个数字卡片） ===== -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">⏳</div>
+        <div class="stat-number"><span>20</span>年</div>
+        <div class="stat-label">制造业 + 审核经验</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏭</div>
+        <div class="stat-number"><span>200</span>+</div>
+        <div class="stat-label">家工厂审核经历</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📝</div>
+        <div class="stat-number"><span>100</span>+</div>
+        <div class="stat-label">篇原创专业文章</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">💰</div>
+        <div class="stat-number"><span>5</span>亿</div>
+        <div class="stat-label">所服务企业总产值</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 做站初衷（浅蓝背景） ===== -->
+<section class="mission-section">
+  <div class="container">
+    <div class="mission-card">
+      <div class="mission-icon">🎯</div>
+      <h2>做站初衷</h2>
+      <p>
+        做了20年的质量和审核，我越来越觉得：<strong>ISO标准不该只是墙上的证书，更应该是车间里的工具。</strong>
+        很多企业花了几万块做认证，拿到的却是一套跟实际管理两张皮的体系文件——质量手册没人看，程序文件锁在柜子里，内审就是走过场。
+      </p>
+      <p>
+        这个站的目的很简单：<strong>用一线实战经验，帮企业把ISO体系做实、做透、做出价值。</strong>
+        每篇文章、每份资料、每个课程，都来自真实的审核现场和管理实践，不讲空话，只给方法。
+      </p>
+      <p>
+        如果你也在为ISO体系的落地头疼，欢迎加入我的知识星球「智造本质」。
+        这里有<span style="color:#3B82F6;font-weight:500">860+位同行</span>一起交流，每周分享实战案例与审核心得。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">abciso<span>.com</span></div>
+    <p>© 炖刀 · 10年制造业管理 + 10年ISO认证审核</p>
+    <p style="margin-top:.5rem;font-size:.75rem;color:#d1d5db">知识星球「智造本质」· 专注ISO体系落地与制造业管理提升</p>
+  </div>
+</footer>
+
+</body>
+</html>
