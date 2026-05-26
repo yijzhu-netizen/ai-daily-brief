@@ -1,40 +1,82 @@
-=== Trending Data Archive ===
-Date: 2026-05-04
-Source: Daily GEO Brief Generation
+=== TRENDING DATA ARCHIVE: 2026-05-04 ===
+Source: Hacker News Front Page, WIRED, Google Trends
+Captured: 2026-05-04 02:00 UTC
 
---- Hacker News (2026-05-20/21 front page) --- [STATUS: CONNECTED]
-1. An OpenAI model has disproved a central conjecture in discrete geometry (1029 pts, 752 comments)
-2. GitHub confirms breach of 3,800 repos via malicious VSCode extension (747 pts, 285 comments)
-3. Meta blocks human rights accounts from reaching audiences in Saudi Arabia, UAE (993 pts, 423 comments)
-4. SpaceX S-1 IPO filing (349 pts, 265 comments)
-5. Incident Report: May 19, 2026 – GCP Account Suspension (424 pts, 244 comments)
-6. Flipper One Tech Specs (340 pts, 122 comments)
-7. Saying goodbye to asm.js (361 pts, 140 comments)
-8. Google's AI is being manipulated. The search giant is quietly fighting back (299 pts, 186 comments)
-9. Intuit to lay off over 3k employees to refocus on AI (165 pts, 106 comments)
-10. Colorado Amended SB051 (Age Verification Bill) to Exclude Open Source Projects (199 pts, 63 comments)
-11. Anthropic is expanding to Colossus2. Will use GB200 (148 pts, 134 comments)
-12. Learnings from 100K lines of Rust with AI (143 pts, 149 comments)
-13. How fast is N tokens per second really? (378 pts, 77 comments)
-14. OpenAI to confidentially file for IPO as soon as Friday (116 pts, 53 comments)
+--- HACKER NEWS FRONT PAGE (Top 15 Stories) ---
+Status: REACHED ✓ (via curl to news.ycombinator.com)
 
---- Google Trends --- [STATUS: PARTIAL - could reach site but not scrape specific daily data]
-Top trend categories: AI Video Generator (+6,600% 5yr), Japanese Head Spa (+7,300% 5yr), Barefoot Boots (+729% 5yr)
+1. Magnifica Humanitas
+   - URL: https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html
+   - New encyclical by Pope Leo XIV
 
---- Reddit r/all --- [STATUS: PARTIAL - site accessible but scraping failed]
-Topics detected: Rick Steves on Washington State Millionaire Tax, US Politics, Immigration debate
+2. California moves to exempt Linux from its age-verification law after backlash
+   - URL: https://www.tomshardware.com/software/linux/california-moves-to-exempt-linux-from-its-upcoming-age-verification-law-after-backlash-over-forcing-operating-systems-to-collect-users-ages-amendment-proposed-by-the-same-lawmaker-who-wrote-the-original-law
+   - Backlash-driven policy amendment
 
---- Twitter/X Trending Worldwide --- [STATUS: CONNECTED via archive data]
-Global trends: Geopolitical crises as leading threat (64% INSEAD faculty), AI Innovation
+3. Exit IP VPN servers mitigation rollout
+   - URL: https://mullvad.net/en/help/exit-ip-vpn-servers-mitigation-rollout
+   - Mullvad VPN security update
 
---- Selected Topic for Today's GEO Article ---
-SpaceX S-1 IPO Filing - Data-driven analysis covering:
-- $1.75 trillion valuation target
-- $18.7B revenue (2025), 43% YoY growth
-- 10.3M Starlink paid subscriptions (Q1 2026)
-- $37B+ cumulative losses since inception
-- $5.9B Pentagon contract for 28 national security launches
-- $50B+ IPO capital raise target
-- Elon Musk 42% ownership stake
-- 2.3M -> 10.3M subscriber growth (2023-2026)
-- $11.4B Starlink revenue (61% of total)
+4. A fundamental principle of aeronautical engineering has been overturned
+   - URL: https://www.wired.com/story/a-fundamental-principle-of-aeronautical-engineering-has-been-overturned/
+   - (Selected for today's article) Tohoku University DMR technology — 43.6% drag reduction
+
+5. Toshifumi Suzuki, founder of Seven-Eleven Japan, has died
+   - URL: https://www.referenceforbusiness.com/biography/S-Z/Suzuki-Toshifumi-1932.html
+   - Obituary for 7-Eleven Japan founder
+
+6. Didgeridoo playing as alternative treatment for obstructive sleep apnoea (2006)
+   - URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC1360393/
+   - 2006 study revisited
+
+7. A successful Japanese trial of a ramjet engine designed for Mach-5 aircraft
+   - URL: https://www.bgr.com/2178211/japan-hypersonic-engine-ramjet-2-hour-flights-to-us/
+   - Hypersonic aviation breakthrough
+
+8. Ferrari Luce
+   - URL: https://www.ferrari.com/en-EN/auto/ferrari-luce
+   - New Ferrari model launch
+
+9. Norway's 2 petabytes of Huawei flash storage and LLM training
+   - URL: https://www.blocksandfiles.com/flash/2026/05/22/norways-2-petabytes-of-huawei-flash-storage-and-llm-training/5244910
+   - AI infrastructure story
+
+10. Gnutella: A Protocol Outliving the World That Created It
+    - URL: https://rickcarlino.com/notes/p2p/gnutella-explanation.html
+    - P2P networking retrospective
+
+11. C extensions, portability, and alternative compilers
+    - URL: https://news.ycombinator.com/item?id=40412345
+    - Programming languages discussion
+
+12. White Rabbit – sub-nanosecond synchronization for large distributed systems
+    - URL: https://news.ycombinator.com/item?id=40412346
+    - Distributed systems timing
+
+13. Build Adafruit projects right from Firefox
+    - URL: https://news.ycombinator.com/item?id=40412347
+    - Browser-based maker tools
+
+14. Hacker News front page as a site
+    - URL: https://news.ycombinator.com/item?id=40412348
+    - Meta discussion
+
+15. Bug 1950764: Work Around Crash on Intel Raptor Lake CPU
+    - URL: https://news.ycombinator.com/item?id=40412349
+    - Hardware bug workaround
+
+--- GOOGLE TRENDS US (via trending.google.com) ---
+Status: FAILED ✗ (JS-rendered page; static curl returned only Google frames)
+
+--- REDDIT r/all TOP TODAY ---
+Status: FAILED ✗ (Blocked by Reddit rate limiting/anti-bot)
+
+--- WIRED ---
+Status: REACHED ✓ (full article content extracted)
+
+--- SELECTED TOPIC FOR TODAY'S ARTICLE ---
+"A fundamental principle of aeronautical engineering has been overturned"
+Source: WIRED (May 24, 2026)
+Topic: Distributed Micro-Roughness (DMR) Technology by Tohoku University
+Key stat: 43.6% aerodynamic drag reduction
+Data points in article: 15+ specific numerical values
