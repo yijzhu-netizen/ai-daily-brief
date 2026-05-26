@@ -858,31 +858,31 @@
 </head>
 <body>
 
-    <!-- ============================================
-    NAVIGATION
-    ============================================ -->
-    <header class="navbar" role="banner">
-        <nav class="container" role="navigation" aria-label="主导航">
-            <a href="/" class="logo" aria-label="ABCISO 首页">
-                <span class="logo-icon">A</span>
-                <span>abcISO</span>
-            </a>
-            <button class="mobile-toggle" aria-label="切换菜单" aria-expanded="false" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open')">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="/">首页</a></li>
-                <li><a href="/iso-9001/" class="active">ISO 9001</a></li>
-                <li><a href="/iso-14001/">ISO 14001</a></li>
-                <li><a href="/iso-45001/">ISO 45001</a></li>
-                <li><a href="/resources/">资源中心</a></li>
-                <li><a href="/about/">关于我们</a></li>
-                <li><a href="/contact/" class="nav-cta">免费咨询</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- ===== Navigation ===== -->
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html" class="nav-logo">abcISO<span>.com</span></a>
+          <button class="nav-toggle" aria-label="菜单" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+          <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="news.html">行业动态</a></li>
+            <li class="dropdown">
+              <span class="dropdown-label">标准体系</span>
+              <div class="dropdown-menu">
+                <a href="#">ISO 9001 质量管理</a>
+                <a href="#">ISO 14001 环境管理</a>
+                <a href="#">ISO 45001 职业健康</a>
+                <a href="#">ISO 50001 能源管理</a>
+                <a href="#">AI 治理与合规</a>
+              </div>
+            </li>
+            <li><a href="download.html">资料下载</a></li>
+            <li><a href="course.html" class="cta">课程 →</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <!-- ============================================
     MAIN CONTENT
@@ -892,9 +892,7 @@
 
             <!-- Breadcrumb -->
             <nav class="breadcrumb" aria-label="面包屑导航">
-                <a href="/">首页</a>
-                <span class="separator">›</span>
-                <a href="/iso-9001/">ISO 9001</a>
+                <a href="index.html">首页</a>
                 <span class="separator">›</span>
                 <span class="current">ISO 9001质量管理体系认证全流程指南</span>
             </nav>
@@ -1204,51 +1202,11 @@
     <!-- ============================================
     FOOTER
     ============================================ -->
-    <footer class="site-footer" role="contentinfo">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="logo-text">abcISO</span>
-                    <p>
-                        专注于ISO管理体系认证知识分享与咨询服务。帮助中小企业高效、顺利地完成认证，实现管理升级。
-                    </p>
-                </div>
-                <div class="footer-col">
-                    <h4>认证服务</h4>
-                    <ul>
-                        <li><a href="/iso-9001/">ISO 9001 质量管理</a></li>
-                        <li><a href="/iso-14001/">ISO 14001 环境管理</a></li>
-                        <li><a href="/iso-45001/">ISO 45001 职业健康</a></li>
-                        <li><a href="/iso-27001/">ISO 27001 信息安全</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>资源中心</h4>
-                    <ul>
-                        <li><a href="/resources/knowledge-base/">知识库</a></li>
-                        <li><a href="/resources/templates/">文档模板</a></li>
-                        <li><a href="/resources/faq/">常见问题</a></li>
-                        <li><a href="/resources/blog/">行业博客</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>关于我们</h4>
-                    <ul>
-                        <li><a href="/about/">公司介绍</a></li>
-                        <li><a href="/about/team/">专家团队</a></li>
-                        <li><a href="/contact/">联系我们</a></li>
-                        <li><a href="/privacy/">隐私政策</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© 2026 abcISO All rights reserved.</span>
-                <span>
-                    <a href="/privacy/">隐私政策</a>
-                    <span style="margin: 0 8px; color: #374151;">·</span>
-                    <a href="/terms/">服务条款</a>
-                </span>
-            </div>
+            <div class="footer-brand">abcISO<span>.com</span></div>
+            <p>© 炖刀 · 10年制造业管理 + 10年ISO认证审核</p>
+            <p style="margin-top:.5rem;font-size:.75rem;color:#d1d5db">知识星球「智造本质」· 专注ISO体系落地与制造业管理提升</p>
         </div>
     </footer>
 

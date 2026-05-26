@@ -393,37 +393,38 @@
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<header class="navbar">
-    <div class="container">
-        <a href="/" class="logo">
-            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="8" fill="#3B82F6"/>
-                <path d="M8 22V10l8 6-8 6z" fill="white"/>
-                <path d="M16 22V10l8 6-8 6z" fill="white" opacity="0.6"/>
-            </svg>
-            ABCIso
-        </a>
-        <nav class="nav-links" id="navMenu">
-            <a href="/">首页</a>
-            <a href="/about.html">关于我们</a>
-            <a href="index.html">首页</a>
-            <a href="news.html">动态</a>
-            <a href="course.html">课程</a>
-            <a href="download.html">下载</a>
-        </nav>
-        <button class="menu-toggle" id="menuToggle" aria-label="菜单">
-            <span></span><span></span><span></span>
-        </button>
+<!-- ===== Navigation ===== -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">abcISO<span>.com</span></a>
+      <button class="nav-toggle" aria-label="菜单" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="news.html" style="color:#3B82F6">行业动态</a></li>
+        <li class="dropdown">
+          <span class="dropdown-label">标准体系</span>
+          <div class="dropdown-menu">
+            <a href="#">ISO 9001 质量管理</a>
+            <a href="#">ISO 14001 环境管理</a>
+            <a href="#">ISO 45001 职业健康</a>
+            <a href="#">ISO 50001 能源管理</a>
+            <a href="#">AI 治理与合规</a>
+          </div>
+        </li>
+        <li><a href="download.html">资料下载</a></li>
+        <li><a href="course.html" class="cta">课程 →</a></li>
+      </ul>
     </div>
-</header>
+  </div>
+</nav>
 
 <!-- ===== BREADCRUMB ===== -->
 <div class="breadcrumb">
     <div class="container">
-        <a href="/">首页</a>
+        <a href="index.html">首页</a>
         <span class="sep">/</span>
-        <a href="/news.html">行业动态</a>
+        <a href="news.html">行业动态</a>
         <span class="sep">/</span>
         <span class="current">全球供应链智能化转型加速，ABCIso 发布新一代溯源解决方案</span>
     </div>
@@ -475,7 +476,7 @@
             </div>
 
             <!-- Back Link -->
-            <a href="/news.html" class="back-link">
+            <a href="news.html" class="back-link">
                 <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
                 返回列表
             </a>
@@ -485,64 +486,14 @@
 </section>
 
 <!-- ===== FOOTER ===== -->
-<footer class="site-footer">
+<footer class="footer">
     <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="logo-text">ABCIso</div>
-                <p>致力于为企业提供专业的管理体系认证、供应链溯源及合规解决方案，助力企业高质量发展。</p>
-            </div>
-            <div>
-                <h4>快速链接</h4>
-                <ul>
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="about.html">关于我们</a></li>
-                    <li><a href="download.html">服务</a></li>
-                    <li><a href="news.html">行业动态</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>服务</h4>
-                <ul>
-                    <li><a href="download.html">ISO 认证</a></li>
-                    <li><a href="download.html">溯源方案</a></li>
-                    <li><a href="download.html">合规咨询</a></li>
-                    <li><a href="download.html">技术培训</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>联系方式</h4>
-                <ul>
-                    <li><a href="mailto:info@abciso.com">info@abciso.com</a></li>
-                    <li><a href="about.html">在线留言</a></li>
-                    <li><a href="about.html">商务合作</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 ABCIso. All rights reserved.
-        </div>
+        <div class="footer-brand">abcISO<span>.com</span></div>
+        <p>© 炖刀 · 10年制造业管理 + 10年ISO认证审核</p>
+        <p style="margin-top:.5rem;font-size:.75rem;color:#d1d5db">知识星球「智造本质」· 专注ISO体系落地与制造业管理提升</p>
     </div>
 </footer>
 
-<!-- ===== Mobile Menu Toggle ===== -->
-<script>
-    (function() {
-        const toggle = document.getElementById('menuToggle');
-        const menu   = document.getElementById('navMenu');
-        if (toggle && menu) {
-            toggle.addEventListener('click', function() {
-                menu.classList.toggle('open');
-            });
-            // Close menu on link click
-            menu.querySelectorAll('a').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    menu.classList.remove('open');
-                });
-            });
-        }
-    })();
-</script>
 
 </body>
 </html>

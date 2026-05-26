@@ -239,8 +239,32 @@ code,.code{font-family:'Inconsolata',monospace}
   .news-item .title{font-size:.875rem;order:1;flex-basis:100%}
   .news-item .source-tag{font-size:.625rem}
   .section{padding:2.5rem 0}
-  .pagination .page-btn{min-width:2rem;height:2rem;font-size:.8125rem}
 }
+
+/* ===== Source Tracker ===== */
+.source-tracker{padding:0 0 2rem}
+.source-tracker .tracker-label{font-size:.8125rem;font-weight:600;color:#6b7280;margin-bottom:.75rem;letter-spacing:.5px}
+.source-tracker .tracker-grid{display:flex;flex-wrap:wrap;gap:.5rem}
+.source-tracker .tracker-item{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:.5rem .875rem;
+  background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;
+  font-size:.8125rem;color:#374151;
+  transition:all .2s;text-decoration:none;
+}
+.source-tracker .tracker-item:hover{
+  background:#eff6ff;border-color:#93c5fd;color:#1d4ed8;
+}
+.source-tracker .tracker-icon{font-size:1rem;line-height:1}
+.source-tracker .tracker-name{font-weight:500}
+.source-tracker .tracker-desc{font-size:.6875rem;color:#9ca3af}
+
+@media(max-width:700px){
+  .source-tracker{padding:0 0 1.5rem}
+  .source-tracker .tracker-grid{gap:.375rem}
+  .source-tracker .tracker-item{font-size:.75rem;padding:.375rem .75rem}
+}
+
 </style>
 </head>
 <body>
@@ -249,11 +273,11 @@ code,.code{font-family:'Inconsolata',monospace}
 <nav class="nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">abcISO<span>.com</span></a>
+      <a href="index.html" class="nav-logo">abcISO<span>.com</span></a>
       <button class="nav-toggle" aria-label="菜单" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
       <ul class="nav-links">
-        <li><a href="#">首页</a></li>
-        <li><a href="#" style="color:#3B82F6">行业动态</a></li>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="news.html" style="color:#3B82F6">行业动态</a></li>
         <li class="dropdown">
           <span class="dropdown-label">知识库</span>
           <div class="dropdown-menu">
@@ -264,8 +288,8 @@ code,.code{font-family:'Inconsolata',monospace}
             <a href="#">AI 治理与合规</a>
           </div>
         </li>
-        <li><a href="#">资料下载</a></li>
-        <li><a href="#" class="cta">课程 →</a></li>
+        <li><a href="download.html">资料下载</a></li>
+        <li><a href="course.html" class="cta">课程 →</a></li>
       </ul>
     </div>
   </div>
@@ -276,6 +300,45 @@ code,.code{font-family:'Inconsolata',monospace}
   <div class="container">
     <h1>📰 行业动态</h1>
     <p>ISO认证、政策法规、行业标准最新资讯｜每日更新</p>
+  </div>
+</section>
+
+<!-- ===== 跟踪源站 ===== -->
+<section class="source-tracker">
+  <div class="container">
+    <div class="tracker-label">📡 跟踪源站</div>
+    <div class="tracker-grid">
+      <a href="https://std.samr.gov.cn/" target="_blank" rel="noopener" class="tracker-item">
+        <span class="tracker-icon">📑</span>
+        <span class="tracker-name">全国标准信息平台</span>
+        <span class="tracker-desc">国标发布/修订/废止</span>
+      </a>
+      <a href="https://www.cnca.gov.cn/" target="_blank" rel="noopener" class="tracker-item">
+        <span class="tracker-icon">✅</span>
+        <span class="tracker-name">认监委</span>
+        <span class="tracker-desc">认证规则/监管通报</span>
+      </a>
+      <a href="https://www.iso.org/" target="_blank" rel="noopener" class="tracker-item">
+        <span class="tracker-icon">🌐</span>
+        <span class="tracker-name">ISO官网</span>
+        <span class="tracker-desc">国际标准动态</span>
+      </a>
+      <a href="https://www.miit.gov.cn/" target="_blank" rel="noopener" class="tracker-item">
+        <span class="tracker-icon">🏭</span>
+        <span class="tracker-name">工信部</span>
+        <span class="tracker-desc">制造业/行业标准政策</span>
+      </a>
+      <a href="https://www.nea.gov.cn/" target="_blank" rel="noopener" class="tracker-item">
+        <span class="tracker-icon">⚡</span>
+        <span class="tracker-name">国家能源局</span>
+        <span class="tracker-desc">节能/双碳政策</span>
+      </a>
+      <a href="https://www.ndrc.gov.cn/" target="_blank" rel="noopener" class="tracker-item">
+        <span class="tracker-icon">📊</span>
+        <span class="tracker-name">发改委</span>
+        <span class="tracker-desc">产业政策/碳市场</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -295,68 +358,60 @@ code,.code{font-family:'Inconsolata',monospace}
 <section class="section-sm" style="padding-top:0;padding-bottom:5rem">
   <div class="container">
     <div class="news-list">
-
       <!-- 1 -->
-      <a href="#" class="news-item">
-        <span class="date">2026-05-24</span>
-        <span class="title">ISO发布2026版修订路线图</span>
-        <span class="source-tag">ISO官网</span>
+      <a href="http://www.sac.gov.cn/" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-25</span>
+        <span class="title">国家标准化管理委员会</span>
+        <span class="source-tag">全国标准信息平台</span>
         <span class="link-icon">🔗</span>
       </a>
-
       <!-- 2 -->
-      <a href="#" class="news-item">
-        <span class="date">2026-05-24</span>
-        <span class="title">CNAS更新实验室认可政策</span>
-        <span class="source-tag">CNAS</span>
+      <a href="http://ncse.ac.cn/" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-25</span>
+        <span class="title">国家市场监督管理总局国家标准技术审评中心</span>
+        <span class="source-tag">全国标准信息平台</span>
         <span class="link-icon">🔗</span>
       </a>
-
       <!-- 3 -->
-      <a href="#" class="news-item">
-        <span class="date">2026-05-23</span>
-        <span class="title">工信部印发制造业数字化转型方案</span>
-        <span class="source-tag">工信部</span>
-        <span class="link-icon">🔗</span>
-      </a>
-
-      <!-- 4 -->
-      <a href="#" class="news-item">
-        <span class="date">2026-05-22</span>
-        <span class="title">国标委发布2026年国家标准制修订计划</span>
-        <span class="source-tag">国标委</span>
-        <span class="link-icon">🔗</span>
-      </a>
-
-      <!-- 5 -->
-      <a href="#" class="news-item">
-        <span class="date">2026-05-21</span>
-        <span class="title">国家能源局印发能源行业标准管理办法</span>
-        <span class="source-tag">能源局</span>
-        <span class="link-icon">🔗</span>
-      </a>
-
-      <!-- 6 -->
-      <a href="#" class="news-item">
-        <span class="date">2026-05-20</span>
-        <span class="title">ISO 50001:2026修订版征求意见稿发布</span>
+      <a href="https://www.iso.org/news/2026/04/iso-14001-2026-published" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-25</span>
+        <span class="title">ISO 14001:2026 published – raising the bar for environmental performance</span>
         <span class="source-tag">ISO官网</span>
         <span class="link-icon">🔗</span>
       </a>
-
-      <!-- 7 -->
-      <a href="#" class="news-item">
-        <span class="date">2026-05-19</span>
-        <span class="title">市场监管总局发布认证认可条例修订草案</span>
+      <!-- 4 -->
+      <a href="https://www.iso.org/news/thought-leadership/rethinking-environmental-management-with-iso-14001" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-25</span>
+        <span class="title">From reporting to results: Rethinking environmental management with ISO 14001</span>
+        <span class="source-tag">ISO官网</span>
+        <span class="link-icon">🔗</span>
+      </a>
+      <!-- 5 -->
+      <a href="http://rzjg.cnca.cn/jgsp/base/tBaNotice/publicRZResultLists" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-25</span>
+        <span class="title">认证机构审批后公示（适用告知承诺）</span>
         <span class="source-tag">认监委</span>
         <span class="link-icon">🔗</span>
       </a>
-
+      <!-- 6 -->
+      <a href="https://www.sac.gov.cn/" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-25</span>
+        <span class="title">国家标准化管理委员会</span>
+        <span class="source-tag">认监委</span>
+        <span class="link-icon">🔗</span>
+      </a>
+      <!-- 7 -->
+      <a href="http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_201c377bbd1c485c8d642d2a39137ea0.html" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-25</span>
+        <span class="title">农业农村部 工业和信息化部联合召开农机装备补短板暨加快丘陵山区农业机械化工作推进会</span>
+        <span class="source-tag">工信部</span>
+        <span class="link-icon">🔗</span>
+      </a>
       <!-- 8 -->
-      <a href="#" class="news-item">
-        <span class="date">2026-05-18</span>
-        <span class="title">2026年世界认可日主题公布</span>
-        <span class="source-tag">CNAS</span>
+      <a href="http://www.nea.gov.cn/2024-09/23/c_1212399372.htm" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-25</span>
+        <span class="title">电力安全生产监管典型执法案例（29—31）</span>
+        <span class="source-tag">国家能源局</span>
         <span class="link-icon">🔗</span>
       </a>
 

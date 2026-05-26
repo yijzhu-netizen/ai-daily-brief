@@ -76,116 +76,62 @@
       padding: 0 24px;
     }
 
-    /* ===== NAVBAR ===== */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      width: 100%;
-      height: var(--nav-h);
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      transition: box-shadow 0.3s;
+    /* ===== Nav ===== */
+    .nav{
+      position:sticky;top:0;z-index:100;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid #f0f0f0;
     }
-
-    .navbar .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      height:3.5rem; /* 56px */
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 22px;
-      color: var(--text-dark);
+    .nav-logo{
+      font-family:'Poppins',sans-serif;
+      font-size:1.25rem;font-weight:700;
+      color:#3B82F6;text-decoration:none;
+      display:flex;align-items:center;gap:.5rem;
     }
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      background: var(--primary);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 700;
-      font-family: var(--font-display);
+    .nav-logo span{color:#8B5CF6}
+    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+    .nav-links a{
+      font-size:.875rem;font-weight:500;color:#4b5563;
+      text-decoration:none;transition:color .2s;
+      position:relative;
     }
-    .logo span {
-      color: var(--primary);
+    .nav-links a:hover{color:#3B82F6}
+    .nav-links a.cta{
+      display:inline-flex;align-items:center;gap:.375rem;
+      background:#3B82F6;color:#fff;padding:.5rem 1.25rem;
+      border-radius:6px;font-weight:600;font-size:.875rem;
+      transition:background .2s;
     }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
+    .nav-links a.cta:hover{background:#2563EB;color:#fff}
+    .nav-links .dropdown{position:relative;cursor:pointer}
+    .nav-links .dropdown-label{
+      font-size:.875rem;font-weight:500;color:#4b5563;
+      display:flex;align-items:center;gap:.25rem;padding:.25rem 0;
     }
-    .nav-links a {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text-mid);
-      padding: 6px 0;
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s;
+    .nav-links .dropdown-label::after{
+      content:"▼";font-size:.625rem;margin-left:.125rem;
+      transition:transform .2s;
     }
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
+    .nav-links .dropdown:hover .dropdown-label::after{transform:rotate(180deg)}
+    .nav-links .dropdown-menu{
+      position:absolute;top:100%;left:50%;transform:translateX(-50%);
+      background:#fff;border:1px solid #e5e7eb;border-radius:8px;
+      padding:.5rem 0;min-width:180px;
+      opacity:0;visibility:hidden;transition:all .2s;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
     }
-    .nav-links a.active {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
+    .nav-links .dropdown:hover .dropdown-menu{opacity:1;visibility:visible}
+    .nav-links .dropdown-menu a{
+      display:block;padding:.5rem 1.25rem;font-size:.875rem;
+      white-space:nowrap;
     }
-
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 20px;
-      background: var(--primary);
-      color: #fff !important;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 14px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      text-decoration: none !important;
-      border-bottom: none !important;
-    }
-    .nav-cta:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-    }
-
-    /* Mobile menu toggle */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .menu-toggle span {
-      display: block;
-      width: 24px;
-      height: 2.5px;
-      background: var(--text-dark);
-      border-radius: 2px;
-      transition: 0.25s;
-    }
+    .nav-links .dropdown-menu a:hover{background:#f3f4f6;color:#3B82F6}
+    .nav-toggle{display:none;background:none;border:none;font-size:1.5rem;color:#111827;cursor:pointer;padding:.25rem}
 
     /* ===== BREADCRUMB ===== */
     .breadcrumb-wrap {
@@ -587,67 +533,14 @@
       margin-top: 2px;
     }
 
-    /* ===== FOOTER ===== */
-    .footer {
-      background: var(--text-dark);
-      color: #CBD5E1;
-      padding: 48px 0 32px;
+    /* ===== Footer ===== */
+    .footer{
+      padding:2.5rem 0;border-top:1px solid #f0f0f0;
+      text-align:center;
     }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 32px;
-      margin-bottom: 36px;
-    }
-    .footer-brand .logo {
-      color: #fff;
-      margin-bottom: 12px;
-    }
-    .footer-brand p {
-      font-size: 14px;
-      line-height: 1.7;
-      color: #94A3B8;
-      max-width: 320px;
-    }
-    .footer-col h4 {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 15px;
-      color: #fff;
-      margin-bottom: 16px;
-    }
-    .footer-col ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .footer-col ul a {
-      font-size: 14px;
-      color: #94A3B8;
-      transition: color 0.2s;
-    }
-    .footer-col ul a:hover {
-      color: var(--primary);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 13px;
-      color: #64748B;
-    }
-    .footer-bottom a {
-      color: #94A3B8;
-    }
-    .footer-bottom a:hover {
-      color: var(--primary);
-    }
+    .footer p{font-size:.875rem;color:#6b7280}
+    .footer .footer-brand{font-family:'Poppins',sans-serif;font-weight:700;color:#3B82F6;font-size:1.125rem;margin-bottom:.5rem}
+    .footer .footer-brand span{color:#8B5CF6}
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 968px) {
@@ -753,36 +646,39 @@
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar">
+  <!-- ===== Navigation ===== -->
+  <nav class="nav">
     <div class="container">
-      <a href="#" class="logo">
-        <div class="logo-icon">A</div>
-        <span>ABCIso</span>
-      </a>
-      <button class="menu-toggle" aria-label="打开菜单" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="#">首页</a></li>
-        <li><a href="#">产品</a></li>
-        <li><a href="#" class="active">资料下载</a></li>
-        <li><a href="#">关于我们</a></li>
-        <li><a href="#" class="nav-cta">
-          <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          加入星球
-        </a></li>
-      </ul>
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">abcISO<span>.com</span></a>
+        <button class="nav-toggle" aria-label="菜单" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="news.html">行业动态</a></li>
+          <li class="dropdown">
+            <span class="dropdown-label">标准体系</span>
+            <div class="dropdown-menu">
+              <a href="#">ISO 9001 质量管理</a>
+              <a href="#">ISO 14001 环境管理</a>
+              <a href="#">ISO 45001 职业健康</a>
+              <a href="#">ISO 50001 能源管理</a>
+              <a href="#">AI 治理与合规</a>
+            </div>
+          </li>
+          <li><a href="download.html" style="color:#3B82F6">资料下载</a></li>
+          <li><a href="course.html" class="cta">课程 →</a></li>
+        </ul>
+      </div>
     </div>
-  </header>
+  </nav>
 
   <!-- ===== BREADCRUMB ===== -->
   <div class="breadcrumb-wrap">
     <div class="container">
       <nav class="breadcrumb" aria-label="面包屑导航">
-        <a href="#">首页</a>
+        <a href="index.html">首页</a>
         <span class="sep">›</span>
-        <a href="#">资料下载</a>
+        <a href="download.html">资料下载</a>
         <span class="sep">›</span>
         <span class="current">完整30天视频课程资料包</span>
       </nav>
@@ -903,7 +799,7 @@
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             立即加入知识星球
           </a>
-          <a href="#" class="btn-outline">了解更多</a>
+          <a href="course.html" class="btn-outline">了解更多</a>
         </div>
         <div class="cta-stats">
           <div class="cta-stat">
@@ -926,48 +822,9 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="logo">
-            <div class="logo-icon">A</div>
-            <span style="color:#fff;">ABCIso</span>
-          </div>
-          <p>专注于高质量设计资源与知识分享，帮助每一位创作者加速成长。</p>
-        </div>
-        <div class="footer-col">
-          <h4>快速链接</h4>
-          <ul>
-            <li><a href="#">首页</a></li>
-            <li><a href="#">产品</a></li>
-            <li><a href="#">资料下载</a></li>
-            <li><a href="#">关于我们</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>资源</h4>
-          <ul>
-            <li><a href="#">模板库</a></li>
-            <li><a href="#">教程</a></li>
-            <li><a href="#">设计系统</a></li>
-            <li><a href="#">更新日志</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>联系我们</h4>
-          <ul>
-            <li><a href="#">帮助中心</a></li>
-            <li><a href="#">商务合作</a></li>
-            <li><a href="#">加入我们</a></li>
-            <li><a href="#">知识星球</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2025 ABCIso. All rights reserved.</span>
-        <span>
-          <a href="#">隐私政策</a>  ·  <a href="#">服务条款</a>
-        </span>
-      </div>
+      <div class="footer-brand">abcISO<span>.com</span></div>
+      <p>© 炖刀 · 10年制造业管理 + 10年ISO认证审核</p>
+      <p style="margin-top:.5rem;font-size:.75rem;color:#d1d5db">知识星球「智造本质」· 专注ISO体系落地与制造业管理提升</p>
     </div>
   </footer>
 
