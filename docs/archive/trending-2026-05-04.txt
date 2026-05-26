@@ -1,0 +1,35 @@
+=== Trending Topics Archive - 2026-05-04 ===
+
+SOURCE: Hacker News (news.ycombinator.com)
+- Uber president says AI spending is getting 'harder to justify' (theverge.com) — 132 points
+- Magnifica Humanitas (vatican.va) — top story
+- California moves to exempt Linux from its age-verification law after backlash (tomshardware.com)
+- Uber blows through 2026 AI budget in 4 months — engineers burn through allocation
+- Andrew Macdonald, Uber COO: "very hard to draw a line between AI stats and useful consumer features"
+
+SOURCE: Google Trends / Reuters
+- Wall St set for higher open as AI optimism outweighs Middle East risks
+- S&P 500 advanced 0.70% to 7,526 points
+- Oil dropped to $97.59/barrel on Iran peace hopes
+- USMNT's Chris Richards tears ankle ligaments ahead of World Cup
+- ACM Awards 2026: Cody Johnson Wins Entertainer of the Year
+
+SOURCE: Reddit r/all / r/popular
+- Kenyan anti-poaching ranger stands guard over confiscated ivory
+- r/ArtificialInteligence: Uber COO says AI costs hard to justify
+
+SOURCE: World News (AP / CNN / Reuters)
+- Four killed as school minibus collides with train in Belgium
+- Russia threatens more Kyiv strikes, tells foreign nationals to leave
+- Australia confirms first diphtheria death amid worst outbreak in decades
+- Iran peace talks update
+
+SOURCE: AI Industry Data
+- Hyperscalers on track to spend $675 billion on AI infrastructure in 2026 (+63% YoY)
+- Gartner: worldwide AI spending to reach nearly $2 trillion in 2026
+- AI compute spending up 166% year-over-year in Q2 2025
+- U.S. companies spent $37 billion on generative AI in 2025
+- Fortune 500 spends $10M+ AI to save ~$500K labor (20:1 ROI gap)
+- 68% probability of no Fed rate changes through end of 2026
+
+=== End Archive ===
