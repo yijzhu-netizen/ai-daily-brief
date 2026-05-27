@@ -17,6 +17,7 @@ markdown: kramdown
 
 # Plugins
 plugins:
+  - jekyll-sitemap
   - jekyll-seo-tag
 
 # Social
