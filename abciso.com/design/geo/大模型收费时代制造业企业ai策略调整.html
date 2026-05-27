@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大模型收费时代制造业企业AI策略调整 | abcISO</title>
+<meta name="description" content="2026年5月，字节跳动旗下豆包推出分层付费订阅制度，标准版收费68元/月、加强版200元/月、专业版500元/月。这是国产大模型首批明确分层定价的C端产品之一。同一时期，ChatGPT Plus用户突破千万，OpenAI推出广告变现平台，" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== Reset & Base ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:'Roboto',sans-serif;font-size:16px;line-height:1.6;color:#111827;background:#fff;}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;font-weight:600;color:#111827;line-height:1.25}
+h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
+.container{max-width:820px;margin:0 auto;padding:0 1.5rem}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid #f0f0f0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem}
+.nav-logo{font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:700;color:#3B82F6;text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.nav-logo span{color:#8B5CF6}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-size:.875rem;font-weight:500;color:#4b5563;text-decoration:none;transition:color .2s;position:relative}
+.nav-links a:hover{color:#3B82F6}
+.nav-links a.cta{display:inline-flex;align-items:center;gap:.375rem;background:#3B82F6;color:#fff;padding:.5rem 1.25rem;border-radius:6px;font-weight:600;font-size:.875rem;transition:background .2s}
+.nav-links a.cta:hover{background:#2563EB;color:#fff}
+.nav-links .dropdown{position:relative;cursor:pointer}
+.nav-links .dropdown-label{font-size:.875rem;font-weight:500;color:#4b5563;display:flex;align-items:center;gap:.25rem;padding:.25rem 0}
+.nav-links .dropdown-label::after{content:"▼";font-size:.625rem;margin-left:.125rem;transition:transform .2s}
+.nav-links .dropdown:hover .dropdown-label::after{transform:rotate(180deg)}
+.nav-links .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:.5rem 0;min-width:180px;opacity:0;visibility:hidden;transition:all .2s;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.nav-links .dropdown:hover .dropdown-menu{opacity:1;visibility:visible}
+.nav-links .dropdown-menu a{display:block;padding:.5rem 1.25rem;font-size:.875rem;white-space:nowrap}
+.nav-links .dropdown-menu a:hover{background:#f3f4f6;color:#3B82F6}
+.nav-toggle{display:none;background:none;border:none;font-size:1.5rem;color:#111827;cursor:pointer;padding:.25rem}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:3.5rem;left:0;right:0;background:#fff;border-bottom:1px solid #f0f0f0;flex-direction:column;padding:1rem 1.5rem;gap:1rem;align-items:stretch}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .nav-links .dropdown-menu{position:static;opacity:1;visibility:visible;box-shadow:none;border:none;padding-left:1rem;min-width:auto;transform:none}
+}
+
+/* Breadcrumb */
+.breadcrumb{padding:1.5rem 0 0;font-size:.875rem;color:#6b7280}
+.breadcrumb a{color:#3B82F6;text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb .sep{margin:0 .5rem;color:#9ca3af}
+
+/* Article Header */
+.article-header{padding:2rem 0 1.5rem}
+.article-header h1{font-size:2rem;line-height:1.3;margin-bottom:1rem}
+.article-meta{display:flex;flex-wrap:wrap;gap:1rem;font-size:.875rem;color:#6b7280;align-items:center}
+.article-meta span{display:inline-flex;align-items:center;gap:.25rem}
+.article-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.article-tags .tag{font-size:.75rem;font-weight:600;padding:.125rem .625rem;border-radius:4px;background:#eff6ff;color:#3B82F6}
+.article-tags .tag.green{background:#ecfdf5;color:#047857}
+.article-tags .tag.purple{background:#f5f3ff;color:#6D28D9}
+.article-tags .tag.amber{background:#fffbeb;color:#b45309}
+.article-tags .tag.pink{background:#fce7f3;color:#be185d}
+
+/* Article Body */
+.article-body{padding:0 0 3rem}
+.article-body h2{font-size:1.5rem;margin:2rem 0 .75rem;padding-bottom:.5rem;border-bottom:1px solid #f0f0f0}
+.article-body h3{font-size:1.2rem;margin:1.5rem 0 .5rem}
+.article-body h2:first-child{margin-top:0}
+.article-body p{margin-bottom:1rem;line-height:1.8;color:#374151}
+.article-body strong{font-weight:600;color:#111}
+.article-body ul,.article-body ol{margin:0 0 1rem 1.5rem}
+.article-body li{margin-bottom:.375rem;line-height:1.7;color:#374151}
+.article-body li::marker{color:#3B82F6}
+.article-body blockquote{margin:1.5rem 0;padding:1rem 1.5rem;border-left:4px solid #3B82F6;background:#f8fafc;border-radius:0 8px 8px 0;color:#374151}
+.article-body blockquote p:last-child{margin-bottom:0}
+.article-body code{font-size:.875rem;background:#f3f4f6;padding:.125rem .375rem;border-radius:4px;font-family:'Consolas','Courier New',monospace}
+.article-body pre{margin:1rem 0;padding:1rem;background:#1f2937;color:#e5e7eb;border-radius:8px;overflow-x:auto;font-size:.875rem;line-height:1.5}
+.article-body pre code{background:none;padding:0;color:inherit}
+.article-body hr{margin:2rem 0;border:none;border-top:1px solid #f0f0f0}
+.article-body table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.875rem}
+.article-body th{background:#f8fafc;padding:.625rem .875rem;text-align:left;font-weight:600;border:1px solid #e5e7eb}
+.article-body td{padding:.5rem .875rem;border:1px solid #e5e7eb;color:#374151}
+.article-body tr:nth-child(even){background:#fafbfc}
+.article-body a{color:#3B82F6;text-decoration:none}
+.article-body a:hover{text-decoration:underline}
+
+/* Footer */
+.footer{padding:2.5rem 0;border-top:1px solid #f0f0f0;text-align:center}
+.footer p{font-size:.875rem;color:#6b7280}
+.footer .footer-brand{font-family:'Poppins',sans-serif;font-weight:700;color:#3B82F6;font-size:1.125rem;margin-bottom:.5rem}
+.footer .footer-brand span{color:#8B5CF6}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav">    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">abcISO<span>.com</span></a>
+        <button class="nav-toggle" aria-label="菜单" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+          <li><a href="../index.html">首页</a></li>
+          <li><a href="../news.html">行业动态</a></li>
+          <li><a href="../course.html" class="cta">课程 →</a></li>
+          <li><a href="../books/">著作</a></li>
+          <li class="dropdown">
+            <span class="dropdown-label">知识库</span>
+            <div class="dropdown-menu">
+              <a href="../kb-list.html#iso9001">ISO 9001 质量管理</a>
+              <a href="../kb-list.html#iso14001">ISO 14001 环境管理</a>
+              <a href="../kb-list.html#iso45001">ISO 45001 职业健康安全</a>
+              <a href="../kb-list.html#iso50001">ISO 50001 能源管理</a>
+              <a href="../kb-list.html#iso27001">ISO 27001 信息安全</a>
+              <a href="../kb-list.html#ai-governance">AI 治理与合规</a>
+              <a href="../kb-list.html#general">综合管理</a>
+            </div>
+          </li>
+          <li><a href="../download.html">资料下载</a></li>
+        </ul>
+      </div>
+    </div></nav>
+
+<!-- ===== Main ===== -->
+<main>
+  <div class="container">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="../kb-list.html">知识库</a>
+      <span class="sep">›</span>
+      <span class="current">大模型收费时代制造业企业AI策略调整…</span>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+      <div class="article-tags">
+        
+      </div>
+      <h1>大模型收费时代制造业企业AI策略调整</h1>
+      <div class="article-meta">
+        <span>📅 2026年5月14日</span>
+        <span>📂 AI 治理与合规</span>
+        <span>⏱️ 约 14 分钟阅读</span>
+      </div>
+    </header>
+
+    <!-- Article Body -->
+    <div class="article-body">
+
+<h2>2026年AI定价模式转折对制造业的影响</h2>
+<p>2026年5月，字节跳动旗下豆包推出分层付费订阅制度，标准版收费68元/月、加强版200元/月、专业版500元/月。这是国产大模型首批明确分层定价的C端产品之一。同一时期，ChatGPT Plus用户突破千万，OpenAI推出广告变现平台，智谱API定价提升83%。大模型行业正经历从"免费吸引用户"到"分层定价变现"的系统性转变。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">厂商</th>
+<th style="text-align: left;">当前定价策略</th>
+<th style="text-align: left;">关键数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">豆包</td>
+<td style="text-align: left;">免费基础版+三档付费（68/200/500元/月）</td>
+<td style="text-align: left;">月活3.45亿，日均Token120万亿</td>
+</tr>
+<tr>
+<td style="text-align: left;">ChatGPT</td>
+<td style="text-align: left;">Free/Go(8美元)/Plus(20美元)/Pro(200美元)</td>
+<td style="text-align: left;">Plus用户千万级，预计付费用户1.22亿</td>
+</tr>
+<tr>
+<td style="text-align: left;">智谱</td>
+<td style="text-align: left;">API定价提升83%</td>
+<td style="text-align: left;">调用量增长400%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Kimi</td>
+<td style="text-align: left;">输入价格上涨58%</td>
+<td style="text-align: left;">连续涨价</td>
+</tr>
+<tr>
+<td style="text-align: left;">百度文心</td>
+<td style="text-align: left;">2025年4月全面免费</td>
+<td style="text-align: left;">先收费后免费，策略反复</td>
+</tr>
+<tr>
+<td style="text-align: left;">DeepSeek</td>
+<td style="text-align: left;">完全免费</td>
+<td style="text-align: left;">开源模式</td>
+</tr>
+<tr>
+<td style="text-align: left;">Claude</td>
+<td style="text-align: left;">Pro(20美元)/Max 5x/Max 20x(200美元)</td>
+<td style="text-align: left;">最高端版200美元/月</td>
+</tr>
+</tbody>
+</table>
+<h2>大模型定价模式分化的驱动因素</h2>
+<h3>算力成本是不可持续的免费负担</h3>
+<p>字节跳动2025年在AI基础设施上投入超过1500亿元，其中约900亿元用于AI芯片采购。豆包日均Token使用量从2024年5月发布至今增长1000倍，达到120万亿。算力成本的增长速度超过了用户付费意愿的培养速度。据QuestMobile数据，2026年3月AI原生APP月活总规模达4.4亿——豆包3.45亿、通义千问1.66亿、DeepSeek 1.27亿——单季度新增用户超1.3亿。规模的膨胀直接推动了商业化进程。</p>
+<h3>定价策略分化出三条路径</h3>
+<p>中国大模型厂商的定价策略已分化为明确的三条路径。</p>
+<p>第一条是<strong>分层订阅路径</strong>，以豆包和智谱为代表。豆包保留免费基础版以维持用户基数，同时通过增值服务（PPT制作、表格分析、影视制作等生产工具场景）实现收费。智谱CEO张鹏在2025年业绩说明会上公开表示："2026年Q1智谱API调用定价提升83%，但市场供不应求，调用量反而增长400%。" 这一定价逻辑表明，企业客户对提价的容忍度高于预期，前提是模型能力足够支撑生产场景。</p>
+<p>第二条是<strong>免费开源路径</strong>，以DeepSeek和通义千问为代表。DeepSeek依靠开源模式和社区生态维持免费策略。通义千问通过发放补贴、用户激励等方式抢占市场份额。</p>
+<p>第三条是<strong>广告变现路径</strong>，以OpenAI为代表。2026年5月5日，OpenAI首席执行官Sam Altman推动推出ChatGPT自助广告管理工具（Ads Manager）测试版，预计2026年广告收入25亿美元。AI行业商业化正从纯订阅模式向订阅加广告的多元化模式演进。</p>
+<h3>定义：Token经济与分层定价</h3>
+<p><strong>Token</strong>：大模型处理文本的基本计量单位，1个中文汉字约等于1-2个Token。模型根据Token数量计费。<br />
+<strong>分层定价</strong>：同一产品按功能强度和使用额度划分为多个价格档位，用户按需选择。<br />
+<strong>API调用定价</strong>：面向开发者和企业的按Token消耗量计费模式，通常在百万Token级别计价。<br />
+<strong>智能体（Agent）</strong>：具备自主规划和执行能力的AI系统，可在不需要人工持续干预的情况下完成多步骤任务。高盛预测企业级智能体将推动全球Token消耗量2026-2030年增长24倍。</p>
+<h3>制造业企业面临的选择矩阵</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">企业类型</th>
+<th style="text-align: left;">推荐策略</th>
+<th style="text-align: left;">预算参考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">大型制造企业（营收&gt;10亿）</td>
+<td style="text-align: left;">混合部署：核心数据用私有化模型+通用场景用API调用</td>
+<td style="text-align: left;">年预算50-200万元</td>
+</tr>
+<tr>
+<td style="text-align: left;">中型制造企业（营收1-10亿）</td>
+<td style="text-align: left;">API调用为主：选择性价比最高的模型做特定场景（质检/排产/文档）</td>
+<td style="text-align: left;">年预算10-50万元</td>
+</tr>
+<tr>
+<td style="text-align: left;">小型制造企业（营收&lt;1亿）</td>
+<td style="text-align: left;">免费工具优先：按需使用开源模型+轻量SaaS工具</td>
+<td style="text-align: left;">年预算0-5万元</td>
+</tr>
+</tbody>
+</table>
+<h2>制造业AI应用加速的底层逻辑</h2>
+<h3>政策驱动为企业入场设定了时间表</h3>
+<p>2025年8月，国务院印发《关于深入实施"人工智能+"行动的意见》，明确提出到2027年智能体等应用普及率超过70%，到2030年超过90%。这不是推荐性指标，而是带KPI考核的硬性目标。配套政策同步推进：深圳2026年2月印发AI+先进制造业行动计划，提出到2027年开放100个应用场景、打造100个垂直行业模型及工业智能体；广州发布2026-2028年工作要点，计划培育100个以上垂类大模型。</p>
+<h3>企业AI采购逻辑从尝鲜转为算账</h3>
+<p>21世纪经济报道指出，企业采购大模型正在从"创新预算里的尝鲜测试"转变为"评估实际ROI的刚性投入"。商业逻辑从"卖API"转向"绑场景"——大模型厂商不再单纯卖算力接口，而是提供与具体生产场景绑定的解决方案。高盛研究报告预测，企业级智能体将推动全球Token消耗量从2026年到2030年增长24倍。Frost&amp;Sullivan预测中国AI芯片市场2025-2029年复合增长率53.7%。</p>
+<h2>AI收费趋势对制造业企业管理的影响</h2>
+<h3>三条可验证的结论</h3>
+<ol>
+<li>
+<p>若一家中型制造企业（年营收1-10亿元）在2026年启动AI工具采购，其最优策略是选择2-3个垂直场景（如质检AI、工艺排程、文档自动化）定向部署，而非全面铺开。过早的全场景AI覆盖将导致算力成本不可控，收费模式变动期内的ROI风险过高。</p>
+</li>
+<li>
+<p>若政府设定的2027年智能体普及率70%目标被严格执行，2026年下半年至2027年初将是制造企业AI工具选型的关键窗口期。错过此窗口的企业将在政府采购评分、行业标准评审中面临系统性劣势。</p>
+</li>
+<li>
+<p>若AI基础模型的免费产品持续存在（如DeepSeek、通义千问），且付费模型定价涨幅保持在年均30-50%区间，则中小制造企业应优先使用免费层的通用能力，仅在核心业务线部署付费工具。这种分层采购结构可将年AI投入控制在营收的0.1%-0.3%以内。</p>
+</li>
+</ol>
+<h3>适用范围</h3>
+<p>上述分析适用于中国制造业企业，特别是机械加工、电子制造、汽车零部件、化工等具有标准化流程的细分行业。政策导向型行业（受国务院AI行动计划直接覆盖）的受影响程度高于消费品制造行业。服务型制造企业（MES/ERP深度绑定型）的AI采纳节奏应快于离散制造企业。</p>
+<hr />
+<p><em>相关文章：</em><br />
+- <a href="/ai-daily-brief/zhishixingqiu-AI%E7%AE%A1%E7%90%86%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D/">《AI时代，你更应该学会管理》课程介绍</a></p>
+<p><em>信息来源：知识星球「智造本质」课程《AI时代，你更应该学会管理》</em></p>
+<p><em>本文写作日期：2026-05-13。AI模型定价策略处于快速变化期，建议关注后续季度数据更新。</em></p>
+<p><em>本文全部AI落地案例数据与策略框架来自知识星球「智造本质」课程《AI时代，你更应该学会管理》的企业实测记录。</em></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://schema.org&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Article&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;headline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;大模型收费时代制造业企业AI策略调整&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;基于2026年大模型定价模式转折的分析，为制造业企业提供AI工具选型和预算策略框架&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;datePublished&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-13&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dateModified&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-13&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Person&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;炖刀&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sameAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://zhuanlan.zhihu.com/zhizao-benzhi&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;publisher&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Organization&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;智造本质&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://zhuanlan.zhihu.com/zhizao-benzhi&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;制造业AI&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;大模型定价&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Token经济&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;豆包收费&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;人工智能+&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;企业AI策略&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;about&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Thing&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AI定价模式与制造业数字化转型&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<p><em>信息来源：知识星球「智造本质」课程《AI时代，你更应该学会管理》</em></p>
+<hr />
+<h2>附录A：术语表</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">术语</th>
+<th style="text-align: left;">英文</th>
+<th style="text-align: left;">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Token</td>
+<td style="text-align: left;">Token</td>
+<td style="text-align: left;">大模型处理文本的基本计量单位，1个中文汉字约等于1-2个Token。API调用按Token数量计费。</td>
+</tr>
+<tr>
+<td style="text-align: left;">分层定价</td>
+<td style="text-align: left;">Tiered Pricing</td>
+<td style="text-align: left;">同一产品按功能强度和使用额度划分为多个价格档位，用户按需选择。</td>
+</tr>
+<tr>
+<td style="text-align: left;">API调用定价</td>
+<td style="text-align: left;">API Pricing</td>
+<td style="text-align: left;">面向开发者和企业的按Token消耗量计费模式，通常在百万Token级别计价。</td>
+</tr>
+<tr>
+<td style="text-align: left;">智能体</td>
+<td style="text-align: left;">Agent</td>
+<td style="text-align: left;">具备自主规划和执行能力的AI系统，可在不需要人工持续干预的情况下完成多步骤任务。</td>
+</tr>
+<tr>
+<td style="text-align: left;">大语言模型</td>
+<td style="text-align: left;">LLM</td>
+<td style="text-align: left;">基于海量文本数据训练的大型神经网络模型，可理解和生成自然语言文本。</td>
+</tr>
+<tr>
+<td style="text-align: left;">模型微调</td>
+<td style="text-align: left;">Fine-tuning</td>
+<td style="text-align: left;">在预训练模型基础上，使用特定领域数据进一步训练以适配垂直场景。</td>
+</tr>
+<tr>
+<td style="text-align: left;">RAG</td>
+<td style="text-align: left;">Retrieval-Augmented Generation</td>
+<td style="text-align: left;">检索增强生成技术，在模型回答前先从知识库检索相关文档作为上下文。</td>
+</tr>
+<tr>
+<td style="text-align: left;">私有化部署</td>
+<td style="text-align: left;">On-premise Deployment</td>
+<td style="text-align: left;">将模型部署在企业内部服务器或私有云上，数据不出企业边界。</td>
+</tr>
+<tr>
+<td style="text-align: left;">SaaS工具</td>
+<td style="text-align: left;">Software as a Service</td>
+<td style="text-align: left;">软件即服务模式，通过互联网按需订阅使用AI应用，免去本地部署维护成本。</td>
+</tr>
+<tr>
+<td style="text-align: left;">MES</td>
+<td style="text-align: left;">Manufacturing Execution System</td>
+<td style="text-align: left;">制造执行系统，用于监控和管理生产车间实时执行过程的信息系统。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ERP</td>
+<td style="text-align: left;">Enterprise Resource Planning</td>
+<td style="text-align: left;">企业资源计划系统，整合企业财务、供应链、生产、人力等核心业务流程。</td>
+</tr>
+<tr>
+<td style="text-align: left;">算力</td>
+<td style="text-align: left;">Computing Power</td>
+<td style="text-align: left;">运行AI模型所需的计算资源，主要由GPU/TPU等AI芯片提供。</td>
+</tr>
+<tr>
+<td style="text-align: left;">模型量化</td>
+<td style="text-align: left;">Model Quantization</td>
+<td style="text-align: left;">降低模型参数精度的技术（如从FP16降至INT8），可减少显存占用和推理成本。</td>
+</tr>
+<tr>
+<td style="text-align: left;">混合部署</td>
+<td style="text-align: left;">Hybrid Deployment</td>
+<td style="text-align: left;">将核心敏感业务部署在私有化环境，非敏感通用场景调用云端API的组合方案。</td>
+</tr>
+</tbody>
+</table>
+<h2>附录B：主流大模型定价对比表</h2>
+<p>截至2026年5月，主要大模型厂商定价策略与价格明细对比如下：</p>
+<h3>B.1 C端订阅定价</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">厂商/产品</th>
+<th style="text-align: left;">免费层</th>
+<th style="text-align: left;">基础付费</th>
+<th style="text-align: left;">中间档</th>
+<th style="text-align: left;">高端档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">豆包</td>
+<td style="text-align: left;">✅ 基础版免费</td>
+<td style="text-align: left;">标准版 68元/月</td>
+<td style="text-align: left;">加强版 200元/月</td>
+<td style="text-align: left;">专业版 500元/月</td>
+</tr>
+<tr>
+<td style="text-align: left;">ChatGPT</td>
+<td style="text-align: left;">✅ Free可用</td>
+<td style="text-align: left;">Go $8/月 (~58元)</td>
+<td style="text-align: left;">Plus $20/月 (~145元)</td>
+<td style="text-align: left;">Pro $200/月 (~1450元)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Claude</td>
+<td style="text-align: left;">✅ 有限免费</td>
+<td style="text-align: left;">Pro $20/月 (~145元)</td>
+<td style="text-align: left;">Max 5x 约$100/月</td>
+<td style="text-align: left;">Max 20x $200/月 (~1450元)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Kimi</td>
+<td style="text-align: left;">✅ 基础免费</td>
+<td style="text-align: left;">标准版约60元/月</td>
+<td style="text-align: left;">加强版约180元/月</td>
+<td style="text-align: left;">专业版约480元/月</td>
+</tr>
+<tr>
+<td style="text-align: left;">百度文心</td>
+<td style="text-align: left;">✅ 全面免费</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">DeepSeek</td>
+<td style="text-align: left;">✅ 完全免费</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">通义千问</td>
+<td style="text-align: left;">✅ 免费+补贴</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table>
+<h3>B.2 API调用定价（参考价，单位：元/百万Tokens）</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">厂商</th>
+<th style="text-align: left;">输入价格</th>
+<th style="text-align: left;">输出价格</th>
+<th style="text-align: left;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">智谱GLM-4</td>
+<td style="text-align: left;">约0.15元</td>
+<td style="text-align: left;">约0.60元</td>
+<td style="text-align: left;">2026年Q1提升83%后价格</td>
+</tr>
+<tr>
+<td style="text-align: left;">豆包Pro</td>
+<td style="text-align: left;">约0.12元</td>
+<td style="text-align: left;">约0.50元</td>
+<td style="text-align: left;">分层浓度定价</td>
+</tr>
+<tr>
+<td style="text-align: left;">Kimi新模型</td>
+<td style="text-align: left;">约0.08元</td>
+<td style="text-align: left;">约0.35元</td>
+<td style="text-align: left;">输入价格涨58%</td>
+</tr>
+<tr>
+<td style="text-align: left;">DeepSeek-V4</td>
+<td style="text-align: left;">完全免费</td>
+<td style="text-align: left;">完全免费</td>
+<td style="text-align: left;">开源模型</td>
+</tr>
+<tr>
+<td style="text-align: left;">通义千问-Max</td>
+<td style="text-align: left;">约0.06元</td>
+<td style="text-align: left;">约0.25元</td>
+<td style="text-align: left;">补贴后实际更低</td>
+</tr>
+<tr>
+<td style="text-align: left;">ChatGPT GPT-4o</td>
+<td style="text-align: left;">约$2.50 (~18元)</td>
+<td style="text-align: left;">约$10.00 (~72元)</td>
+<td style="text-align: left;">美元计价</td>
+</tr>
+</tbody>
+</table>
+<h3>B.3 制造业场景成本估算（日均调用100万Tokens）</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模型</th>
+<th style="text-align: left;">月成本（按30天计）</th>
+<th style="text-align: left;">年度成本</th>
+<th style="text-align: left;">适用企业类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">通义千问-Max (API)</td>
+<td style="text-align: left;">~900元</td>
+<td style="text-align: left;">~1.1万元</td>
+<td style="text-align: left;">小型企业</td>
+</tr>
+<tr>
+<td style="text-align: left;">豆包Pro (API)</td>
+<td style="text-align: left;">~1,600元</td>
+<td style="text-align: left;">~1.9万元</td>
+<td style="text-align: left;">中小企业</td>
+</tr>
+<tr>
+<td style="text-align: left;">智谱GLM-4 (API)</td>
+<td style="text-align: left;">~2,000元</td>
+<td style="text-align: left;">~2.4万元</td>
+<td style="text-align: left;">中小企业</td>
+</tr>
+<tr>
+<td style="text-align: left;">ChatGPT GPT-4o (API)</td>
+<td style="text-align: left;">~16,200元</td>
+<td style="text-align: left;">~19.4万元</td>
+<td style="text-align: left;">中大型企业</td>
+</tr>
+<tr>
+<td style="text-align: left;">私有化部署DeepSeek（本地）</td>
+<td style="text-align: left;">一次性硬件约5-10万元+运维约3万/年</td>
+<td style="text-align: left;">见注</td>
+<td style="text-align: left;">大/中型企业</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>说明</strong>：API价格处于快速变动期，以上为参考区间，实际价格以厂商官网最新报价为准。私有化部署的硬件成本取决于GPU型号和并发量需求。</p>
+</blockquote>
+<h2>附录C：制造业企业AI部署预算规划模板</h2>
+<h3>C.1 预算规划流程四步法</h3>
+<p><strong>第一步：场景筛选</strong>——识别高ROI的AI落地场景</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">评估维度</th>
+<th style="text-align: left;">评分标准（1-5分）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">场景频次（该任务每周执行次数）</td>
+<td style="text-align: left;">1=每周≤10次，5=每周≥200次</td>
+</tr>
+<tr>
+<td style="text-align: left;">人工成本占比（该场景人力成本占部门总成本比例）</td>
+<td style="text-align: left;">1=&lt;5%，5=&gt;30%</td>
+</tr>
+<tr>
+<td style="text-align: left;">数据化成熟度（是否已有可用结构化数据）</td>
+<td style="text-align: left;">1=全人工，5=已有完整数据库</td>
+</tr>
+<tr>
+<td style="text-align: left;">模型能力匹配度（当前模型是否有明确能力支持）</td>
+<td style="text-align: left;">1=无现成方案，5=有成熟SaaS方案</td>
+</tr>
+<tr>
+<td style="text-align: left;">合规风险（数据安全合规要求等级）</td>
+<td style="text-align: left;">1=涉密极高，5=无合规要求</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第二步：计算总成本（TCO）</strong></p>
+<div class="codehilite"><pre><span></span><code>年TCO = 模型调用费 + 数据准备/标注费 + 集成开发费 + IT运维费 + 人员培训费
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">费用类别</th>
+<th style="text-align: left;">大企业参考</th>
+<th style="text-align: left;">中型企业参考</th>
+<th style="text-align: left;">小型企业参考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">模型调用费</td>
+<td style="text-align: left;">30-150万元</td>
+<td style="text-align: left;">5-25万元</td>
+<td style="text-align: left;">0-2万元</td>
+</tr>
+<tr>
+<td style="text-align: left;">数据准备/标注费</td>
+<td style="text-align: left;">10-50万元</td>
+<td style="text-align: left;">3-15万元</td>
+<td style="text-align: left;">1-3万元</td>
+</tr>
+<tr>
+<td style="text-align: left;">集成开发费</td>
+<td style="text-align: left;">20-80万元</td>
+<td style="text-align: left;">5-30万元</td>
+<td style="text-align: left;">1-5万元</td>
+</tr>
+<tr>
+<td style="text-align: left;">IT运维费</td>
+<td style="text-align: left;">10-30万元</td>
+<td style="text-align: left;">2-8万元</td>
+<td style="text-align: left;">0.5-2万元</td>
+</tr>
+<tr>
+<td style="text-align: left;">人员培训费</td>
+<td style="text-align: left;">5-20万元</td>
+<td style="text-align: left;">2-8万元</td>
+<td style="text-align: left;">0.5-2万元</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>年度总计参考</strong></td>
+<td style="text-align: left;"><strong>75-330万元</strong></td>
+<td style="text-align: left;"><strong>17-86万元</strong></td>
+<td style="text-align: left;"><strong>2.5-14万元</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>第三步：计算预期ROI</strong></p>
+<div class="codehilite"><pre><span></span><code>年ROI = (年节省人力成本 + 年质量损失降低额 + 年生产效率提升价值) / 年TCO
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">场景类型</th>
+<th style="text-align: left;">典型ROI区间</th>
+<th style="text-align: left;">回本周期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">质检AI（视觉检测）</td>
+<td style="text-align: left;">300%-800%</td>
+<td style="text-align: left;">3-8个月</td>
+</tr>
+<tr>
+<td style="text-align: left;">工艺参数排程</td>
+<td style="text-align: left;">200%-500%</td>
+<td style="text-align: left;">4-12个月</td>
+</tr>
+<tr>
+<td style="text-align: left;">文档自动化（报告/工单）</td>
+<td style="text-align: left;">100%-300%</td>
+<td style="text-align: left;">6-18个月</td>
+</tr>
+<tr>
+<td style="text-align: left;">客服/运维助手</td>
+<td style="text-align: left;">50%-200%</td>
+<td style="text-align: left;">12-24个月</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第四步：制定分阶段投入计划</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">阶段</th>
+<th style="text-align: left;">时间</th>
+<th style="text-align: left;">预算比例</th>
+<th style="text-align: left;">目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Pilot（试点）</td>
+<td style="text-align: left;">第1-3个月</td>
+<td style="text-align: left;">10-15%</td>
+<td style="text-align: left;">跑通1-2个场景，验证ROI</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scale（推广）</td>
+<td style="text-align: left;">第4-9个月</td>
+<td style="text-align: left;">40-50%</td>
+<td style="text-align: left;">扩展至3-5个场景，建立中台</td>
+</tr>
+<tr>
+<td style="text-align: left;">Optimize（优化）</td>
+<td style="text-align: left;">第10-12个月</td>
+<td style="text-align: left;">35-50%</td>
+<td style="text-align: left;">模型微调、成本优化、全企业铺开</td>
+</tr>
+</tbody>
+</table>
+<h3>C.2 成本控制建议</h3>
+<ol>
+<li><strong>模型量化推理</strong>：将对精度不敏感的场景使用8-bit/4-bit量化模型，推理成本降低50-70%。</li>
+<li><strong>缓存机制</strong>：对高频重复查询（如常见工艺参数查询、常见问题解答）建立语义缓存，减少重复API调用。</li>
+<li><strong>分级路由</strong>：简单任务走免费/低成本模型（如DeepSeek、通义千问），复杂任务走高端模型（如GPT-4o、Claude-Max），综合成本降低40-60%。</li>
+<li><strong>批量处理</strong>：非实时任务（如日报生成、周报汇总）安排在低峰时段批量处理，部分API有折扣。</li>
+<li><strong>开源替代</strong>：可用DeepSeek-V4或Qwen-3本地部署替代部分云端API调用。</li>
+</ol>
+<h2>附录D：AI部署时间线与关键里程碑</h2>
+<h3>D.1 政府政策时间表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">时间节点</th>
+<th style="text-align: left;">政策目标</th>
+<th style="text-align: left;">对企业的影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2026年下半年</td>
+<td style="text-align: left;">各省市出台AI+制造业实施细则</td>
+<td style="text-align: left;">企业需关注本地配套补贴和考核指标</td>
+</tr>
+<tr>
+<td style="text-align: left;">2027年</td>
+<td style="text-align: left;">智能体应用普及率≥70%</td>
+<td style="text-align: left;">政府采购评分、行业标准评审开始挂钩</td>
+</tr>
+<tr>
+<td style="text-align: left;">2028年</td>
+<td style="text-align: left;">开放100个应用场景、100个垂直行业模型（深圳目标）</td>
+<td style="text-align: left;">企业须具备至少1-2个已落地AI场景</td>
+</tr>
+<tr>
+<td style="text-align: left;">2029年</td>
+<td style="text-align: left;">AI芯片国产化率提升；算力成本预计下降40%</td>
+<td style="text-align: left;">私有化部署经济性拐点可能到来</td>
+</tr>
+<tr>
+<td style="text-align: left;">2030年</td>
+<td style="text-align: left;">智能体应用普及率≥90%</td>
+<td style="text-align: left;">未达标企业面临系统性竞争劣势</td>
+</tr>
+</tbody>
+</table>
+<h3>D.2 企业分阶段实施路线图</h3>
+<p><strong>阶段一：认知与规划（2026年6月-8月）</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">里程碑</th>
+<th style="text-align: left;">交付物</th>
+<th style="text-align: left;">负责人建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">● 完成企业内部AI场景盘点</td>
+<td style="text-align: left;">《AI落地机会矩阵》清单（不少于10个候选场景）</td>
+<td style="text-align: left;">CIO/数字化部门</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 选定2-3个试点场景</td>
+<td style="text-align: left;">《试点场景立项书》（含ROI测算）</td>
+<td style="text-align: left;">运营总监+IT负责人</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 完成数据就绪度评估</td>
+<td style="text-align: left;">《数据资产清单与质量评估报告》</td>
+<td style="text-align: left;">数据团队</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 确定采购策略</td>
+<td style="text-align: left;">《AI工具选型评估报告》（对比≥3家厂商）</td>
+<td style="text-align: left;">采购部门+IT团队</td>
+</tr>
+</tbody>
+</table>
+<p><strong>阶段二：试点验证（2026年9月-12月）</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">里程碑</th>
+<th style="text-align: left;">交付物</th>
+<th style="text-align: left;">评价标准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">● 完成首个场景POC部署</td>
+<td style="text-align: left;">《POC测试报告》</td>
+<td style="text-align: left;">准确率≥90%，响应延迟&lt;3秒</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 测算实际成本与ROI</td>
+<td style="text-align: left;">《试点阶段成本-收益分析》</td>
+<td style="text-align: left;">ROI≥150%或回本周期≤12个月</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 收集一线用户反馈</td>
+<td style="text-align: left;">《用户满意度调研报告》</td>
+<td style="text-align: left;">净推荐值（NPS）≥30</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 形成最佳实践文档</td>
+<td style="text-align: left;">《AI落地SOP与注意事项V1》</td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>阶段三：规模化推广（2027年1月-6月）</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">里程碑</th>
+<th style="text-align: left;">交付物</th>
+<th style="text-align: left;">关键动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">● 扩展至5-8个生产场景</td>
+<td style="text-align: left;">《场景拓展计划与资源配置表》</td>
+<td style="text-align: left;">优先高ROI场景</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 建立AI中台</td>
+<td style="text-align: left;">《AI能力中台架构设计文档》</td>
+<td style="text-align: left;">统一管理模型调用、权限、审计</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 全员AI工具培训</td>
+<td style="text-align: left;">《培训完成率统计》</td>
+<td style="text-align: left;">核心部门培训覆盖率≥80%</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 数据反馈闭环</td>
+<td style="text-align: left;">《模型效果监控与持续优化方案》</td>
+<td style="text-align: left;">建立bad case追踪机制</td>
+</tr>
+</tbody>
+</table>
+<p><strong>阶段四：深度优化（2027年7月-12月）</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">里程碑</th>
+<th style="text-align: left;">交付物</th>
+<th style="text-align: left;">目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">● 实施分级路由策略</td>
+<td style="text-align: left;">《模型路由策略配置文档》</td>
+<td style="text-align: left;">综合成本降低≥30%</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 私有化部署评估</td>
+<td style="text-align: left;">《自建/混合部署可行性分析报告》</td>
+<td style="text-align: left;">年调用量达阈值时的最优解</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 模型微调或RAG增强</td>
+<td style="text-align: left;">《微调模型评估报告》或《RAG知识库搭建方案》</td>
+<td style="text-align: left;">关键场景准确率提升至95%+</td>
+</tr>
+<tr>
+<td style="text-align: left;">● 完成政策合规自评</td>
+<td style="text-align: left;">《AI+政策合规自评报告》</td>
+<td style="text-align: left;">对标2027年70%普及率要求</td>
+</tr>
+</tbody>
+</table>
+<h3>D.3 风险预警与应对</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">风险</th>
+<th style="text-align: left;">发生概率</th>
+<th style="text-align: left;">影响程度</th>
+<th style="text-align: left;">应对措施</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">模型厂商涨价超预期（&gt;50%/年）</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">中</td>
+<td style="text-align: left;">绑定多家供应商，预留切换能力</td>
+</tr>
+<tr>
+<td style="text-align: left;">企业数据合规政策收紧</td>
+<td style="text-align: left;">中</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">优先部署数据脱敏方案，选择支持本地化的厂商</td>
+</tr>
+<tr>
+<td style="text-align: left;">试点场景效果不达预期</td>
+<td style="text-align: left;">中</td>
+<td style="text-align: left;">中</td>
+<td style="text-align: left;">采用MVP快速迭代，预留3个月缓冲期</td>
+</tr>
+<tr>
+<td style="text-align: left;">关键供应商停止服务</td>
+<td style="text-align: left;">低</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">保持至少2家备选供应商，核心模块做好开源替代方案</td>
+</tr>
+<tr>
+<td style="text-align: left;">内部人才不足</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">中</td>
+<td style="text-align: left;">提前6个月启动AI人才招聘或外部培训合作计划</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>附录编制日期：2026年5月。附录B/C/D中的价格与市场数据以当前公开信息为基准，实际实施时建议参考最新市场报价。</em></p>
+    </div>
+
+  </div>
+</main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">abcISO<span>.com</span></div>
+      <p>制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
+    </div>
+  </footer>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function(){
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+</body>
+</html>

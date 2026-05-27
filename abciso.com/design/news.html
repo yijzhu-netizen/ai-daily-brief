@@ -214,6 +214,23 @@ code,.code{font-family:'Inconsolata',monospace}
   display:inline-flex;align-items:center;gap:.375rem;
 }
 
+/* ===== Category Tag ===== */
+.cat-tag{
+  display:inline-flex;align-items:center;
+  font-size:.6875rem;font-weight:600;
+  padding:.125rem .5rem;
+  border-radius:4px;
+  white-space:nowrap;flex-shrink:0;
+  margin-right:.25rem;
+}
+.cat-tag.cat-iso{color:#8B5CF6;background:#f5f3ff}
+.cat-tag.cat-policy{color:#D97706;background:#fffbeb}
+.cat-tag.cat-standard{color:#3B82F6;background:#f0f7ff}
+
+/* ===== Filter JS transition ===== */
+.news-list{transition:opacity .2s}
+.news-list.filtering{opacity:.6}
+
 /* ===== Footer ===== */
 .footer{
   padding:2.5rem 0;border-top:1px solid #f0f0f0;
@@ -278,18 +295,23 @@ code,.code{font-family:'Inconsolata',monospace}
       <ul class="nav-links">
         <li><a href="index.html">首页</a></li>
         <li><a href="news.html" style="color:#3B82F6">行业动态</a></li>
+        <li><a href="course.html" class="cta">课程 →</a></li>
+        <li><a href="books/">著作</a></li>
         <li class="dropdown">
           <span class="dropdown-label">知识库</span>
           <div class="dropdown-menu">
-            <a href="#">ISO 9001 质量管理</a>
-            <a href="#">ISO 14001 环境管理</a>
-            <a href="#">ISO 45001 职业健康</a>
-            <a href="#">ISO 50001 能源管理</a>
-            <a href="#">AI 治理与合规</a>
+              <a href="kb-list.html#iso9001">ISO 9001 质量管理</a>
+              <a href="kb-list.html#iso14001">ISO 14001 环境管理</a>
+              <a href="kb-list.html#iso45001">ISO 45001 职业健康安全</a>
+              <a href="kb-list.html#iso50001">ISO 50001 能源管理</a>
+              <a href="kb-list.html#iso27001">ISO 27001 信息安全</a>
+              <a href="kb-list.html#ai-governance">AI 治理与合规</a>
+              <a href="kb-list.html#general">综合管理</a>
           </div>
         </li>
         <li><a href="download.html">资料下载</a></li>
-        <li><a href="course.html" class="cta">课程 →</a></li>
+        <li><a href="about.html">关于</a></li>
+
       </ul>
     </div>
   </div>
@@ -338,6 +360,21 @@ code,.code{font-family:'Inconsolata',monospace}
         <span class="tracker-name">发改委</span>
         <span class="tracker-desc">产业政策/碳市场</span>
       </a>
+      <a href="https://www.samr.gov.cn/" target="_blank" rel="noopener" class="tracker-item">
+        <span class="tracker-icon">🏛️</span>
+        <span class="tracker-name">市场监督总局</span>
+        <span class="tracker-desc">认证监管/CCC公告</span>
+      </a>
+      <a href="http://www.ccaa.org.cn" target="_blank" rel="noopener" class="tracker-item">
+        <span class="tracker-icon">📋</span>
+        <span class="tracker-name">CCAA</span>
+        <span class="tracker-desc">认证人员管理/公告</span>
+      </a>
+      <a href="https://flk.npc.gov.cn/" target="_blank" rel="noopener" class="tracker-item">
+        <span class="tracker-icon">⚖️</span>
+        <span class="tracker-name">法律法规数据库</span>
+        <span class="tracker-desc">国家法律/行政法规</span>
+      </a>
     </div>
   </div>
 </section>
@@ -359,79 +396,65 @@ code,.code{font-family:'Inconsolata',monospace}
   <div class="container">
     <div class="news-list">
       <!-- 1 -->
-      <a href="http://www.sac.gov.cn/" class="news-item" target="_blank" rel="noopener">
-        <span class="date">2026-05-26</span>
+      <a data-category="standard" href="http://www.sac.gov.cn/" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-27</span>
         <span class="title">国家标准化管理委员会</span>
+        <span class="cat-tag cat-standard">行业标准</span>
         <span class="source-tag">全国标准信息平台</span>
         <span class="link-icon">🔗</span>
       </a>
       <!-- 2 -->
-      <a href="http://ncse.ac.cn/" class="news-item" target="_blank" rel="noopener">
-        <span class="date">2026-05-26</span>
-        <span class="title">国家市场监督管理总局国家标准技术审评中心</span>
-        <span class="source-tag">全国标准信息平台</span>
+      <a data-category="iso" href="http://rzjg.cnca.cn/jgsp/base/tBaNotice/publicRZResultLists" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-27</span>
+        <span class="title">认证机构审批后公示（适用告知承诺）</span>
+        <span class="cat-tag cat-iso">ISO动态</span>
+        <span class="source-tag">认监委</span>
         <span class="link-icon">🔗</span>
       </a>
       <!-- 3 -->
-      <a href="http://rzjg.cnca.cn/jgsp/base/tBaNotice/publicRZResultLists" class="news-item" target="_blank" rel="noopener">
-        <span class="date">2026-05-26</span>
-        <span class="title">认证机构审批后公示（适用告知承诺）</span>
-        <span class="source-tag">认监委</span>
+      <a data-category="policy" href="http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_fb34c33be7554f329c84da4dce9582f9.html" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-27</span>
+        <span class="title">2026金砖国家新工业革命伙伴关系论坛在厦门开幕</span>
+        <span class="cat-tag cat-policy">政策法规</span>
+        <span class="source-tag">工信部</span>
         <span class="link-icon">🔗</span>
       </a>
       <!-- 4 -->
-      <a href="https://www.sac.gov.cn/" class="news-item" target="_blank" rel="noopener">
-        <span class="date">2026-05-26</span>
-        <span class="title">国家标准化管理委员会</span>
-        <span class="source-tag">认监委</span>
+      <a data-category="iso" href="https://www.iso.org/news/2026/04/iso-14001-2026-published" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-27</span>
+        <span class="title">ISO 14001:2026 published – raising the bar for environmental performance</span>
+        <span class="cat-tag cat-iso">ISO动态</span>
+        <span class="source-tag">ISO官网</span>
         <span class="link-icon">🔗</span>
       </a>
       <!-- 5 -->
-      <a href="http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_0c1667782ca9420eaf25aefbb62079c0.html" class="news-item" target="_blank" rel="noopener">
-        <span class="date">2026-05-26</span>
-        <span class="title">中国—东盟人工智能产业创新中心成立</span>
-        <span class="source-tag">工信部</span>
+      <a data-category="policy" href="https://www.samr.gov.cn/xw/gdt/art/2025/art_4bfdb24b34ab4317b98b2c0909ea29ba.html" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-27</span>
+        <span class="title">脚踏实地 开拓创新 加力推动 “十五五”市场监管工作起好步开好局 全国市场监管工作会议在京召开</span>
+        <span class="cat-tag cat-policy">政策法规</span>
+        <span class="source-tag">市场监督总局</span>
         <span class="link-icon">🔗</span>
       </a>
       <!-- 6 -->
-      <a href="http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_6c849c52bf464d909c5f8cc56f0fbe52.html" class="news-item" target="_blank" rel="noopener">
-        <span class="date">2026-05-26</span>
-        <span class="title">李乐成主持召开工业和信息化部就业促进工作领导小组2026年全体会议</span>
-        <span class="source-tag">工信部</span>
+      <a data-category="iso" href="https://www.cnas.org.cn/zxzx/rkwyhxx/art/2026/art_02906af8d0964815978b777443f8e41d.html" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-27</span>
+        <span class="title">我国参与国际认可协作再获新进展</span>
+        <span class="cat-tag cat-iso">ISO动态</span>
+        <span class="source-tag">CNAS</span>
         <span class="link-icon">🔗</span>
       </a>
       <!-- 7 -->
-      <a href="http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_94854975fc2946a08d7a64f0a2f512ef.html" class="news-item" target="_blank" rel="noopener">
-        <span class="date">2026-05-26</span>
-        <span class="title">工业和信息化部召开2026年审计工作会议</span>
-        <span class="source-tag">工信部</span>
-        <span class="link-icon">🔗</span>
-      </a>
-      <!-- 8 -->
-      <a href="http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_aeccc5eebaf14e7aaf4f1d12446ae6c5.html" class="news-item" target="_blank" rel="noopener">
-        <span class="date">2026-05-26</span>
-        <span class="title">工业和信息化部深入开展树立和践行正确政绩观学习教育督导工作</span>
-        <span class="source-tag">工信部</span>
+      <a data-category="standard" href="https://flk.npc.gov.cn/detail?bbbs=ff8081819e20a843019e3ef37f7d692e" class="news-item" target="_blank" rel="noopener">
+        <span class="date">2026-05-15</span>
+        <span class="title">行政法规制定程序条例</span>
+        <span class="cat-tag cat-standard">行业标准</span>
+        <span class="source-tag">法律法规数据库</span>
         <span class="link-icon">🔗</span>
       </a>
 
     </div>
-
     <!-- ===== 分页器 ===== -->
-    <div class="pagination">
-      <a href="#" class="page-btn disabled">
-        <span class="page-prev-next">‹ 上一页</span>
-      </a>
-      <a href="#" class="page-btn active">1</a>
-      <a href="#" class="page-btn">2</a>
-      <a href="#" class="page-btn">3</a>
-      <span class="page-dots">…</span>
-      <a href="#" class="page-btn">8</a>
-      <a href="#" class="page-btn">
-        <span class="page-prev-next">下一页 ›</span>
-      </a>
-    </div>
-
+    <div class="pagination"></div>
   </div>
 </section>
 
@@ -443,6 +466,125 @@ code,.code{font-family:'Inconsolata',monospace}
     <p style="margin-top:.5rem;font-size:.75rem;color:#d1d5db">知识星球「智造本质」· 专注ISO体系落地与制造业管理提升</p>
   </div>
 </footer>
+
+<script>
+;(function(){
+  var ITEMS_PER_PAGE = 15;
+  var tags = document.querySelectorAll('.filter-tag');
+  var items = document.querySelectorAll('.news-item');
+  var list = document.querySelector('.news-list');
+  var paginator = document.querySelector('.pagination');
+  var currentPage = 1;
+  var currentFilter = '\u5168\u90e8';
+
+  function getFilteredItems() {
+    if (currentFilter === '\u5168\u90e8') {
+      return Array.from(items);
+    }
+    var catLabels = {'iso':'ISO\u52a8\u6001','policy':'\u653f\u7b56\u6cd5\u89c4','standard':'\u884c\u4e1a\u6807\u51c6'};
+    return Array.from(items).filter(function(item){
+      var itemCat = item.getAttribute('data-category');
+      return catLabels[itemCat] === currentFilter;
+    });
+  }
+
+  function showPage(page) {
+    var filtered = getFilteredItems();
+    var totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+    if (page < 1) page = 1;
+    if (page > totalPages) page = totalPages;
+    currentPage = page;
+
+    // Hide all first
+    for (var i = 0; i < items.length; i++) {
+      items[i].style.display = 'none';
+    }
+
+    // Show only the filtered items on this page
+    var start = (page - 1) * ITEMS_PER_PAGE;
+    var end = Math.min(start + ITEMS_PER_PAGE, filtered.length);
+    for (var i = start; i < end; i++) {
+      filtered[i].style.display = '';
+    }
+
+    renderPagination(totalPages);
+  }
+
+  function renderPagination(totalPages) {
+    var buf = [];
+    // Prev button
+    if (currentPage > 1) {
+      buf.push('<a href="#" class="page-btn" data-page="' + (currentPage - 1) + '"><span class="page-prev-next">\u2039 \u4e0a\u4e00\u9875</span></a>');
+    } else {
+      buf.push('<a href="#" class="page-btn disabled"><span class="page-prev-next">\u2039 \u4e0a\u4e00\u9875</span></a>');
+    }
+
+    // Page buttons - smart range
+    var pages = getPageRange(currentPage, totalPages);
+    for (var i = 0; i < pages.length; i++) {
+      if (pages[i] === '...') {
+        buf.push('<span class="page-dots">\u2026</span>');
+      } else {
+        var active = (pages[i] === currentPage) ? ' active' : '';
+        buf.push('<a href="#" class="page-btn' + active + '" data-page="' + pages[i] + '">' + pages[i] + '</a>');
+      }
+    }
+
+    // Next button
+    if (currentPage < totalPages) {
+      buf.push('<a href="#" class="page-btn" data-page="' + (currentPage + 1) + '"><span class="page-prev-next">\u4e0b\u4e00\u9875 \u203a</span></a>');
+    } else {
+      buf.push('<a href="#" class="page-btn disabled"><span class="page-prev-next">\u4e0b\u4e00\u9875 \u203a</span></a>');
+    }
+
+    paginator.innerHTML = buf.join('');
+
+    // Bind click events on page buttons
+    var btns = paginator.querySelectorAll('.page-btn:not(.disabled)');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', function(e){
+        e.preventDefault();
+        var page = parseInt(this.getAttribute('data-page'));
+        if (!isNaN(page)) {
+          showPage(page);
+        }
+      });
+    }
+  }
+
+  function getPageRange(current, total) {
+    if (total <= 8) {
+      var out = [];
+      for (var i = 1; i <= total; i++) out.push(i);
+      return out;
+    }
+    var out = [];
+    out.push(1);
+    if (current > 3) out.push('...');
+    var st = Math.max(2, current - 1);
+    var en = Math.min(total - 1, current + 1);
+    for (var i = st; i <= en; i++) out.push(i);
+    if (current < total - 2) out.push('...');
+    out.push(total);
+    return out;
+  }
+
+  // Bind filter clicks
+  for (var i = 0; i < tags.length; i++) {
+    tags[i].addEventListener('click', function(){
+      currentFilter = this.textContent.trim();
+      for (var j = 0; j < tags.length; j++) {
+        tags[j].classList.remove('active');
+      }
+      this.classList.add('active');
+      showPage(1);
+    });
+  }
+
+  // Init
+  showPage(1);
+})();
+</script>
 
 </body>
 </html>

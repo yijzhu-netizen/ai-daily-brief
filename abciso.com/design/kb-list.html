@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ISO 9001 质量管理体系 - 知识库 | abcISO</title>
+  <title>知识库 | abcISO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -227,11 +227,14 @@
       height: 130px;
       border-radius: 8px;
       background: #F3F4F6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 42px;
+      background-size: cover;
+      background-position: center;
       overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .article-card:hover .article-thumb {
+      transform: scale(1.03);
+      box-shadow: 0 4px 16px rgba(0,0,0,.12);
     }
     .article-body { flex: 1; min-width: 0; }
     .article-body h2 {
@@ -292,6 +295,13 @@
       .article-meta { gap: 10px; }
     }
 
+    @media (max-width: 640px) {
+      .kb-banner { height: 160px; }
+      .kb-banner-overlay { padding: 12px 16px; }
+      .kb-banner-overlay h2 { font-size: 1rem; }
+      .kb-banner-overlay p { font-size: .75rem; }
+    }
+
     /* ===== Pagination ===== */
     .pagination {
       display: flex;
@@ -339,6 +349,43 @@
       pointer-events: none;
     }
 
+    /* ===== KB Banner (random image) ===== */
+    .kb-banner {
+      position: relative;
+      width: 100%;
+      height: 260px;
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 20px 0 28px;
+      background: #1e293b;
+      background-size: cover;
+      background-position: center;
+      transition: background-image .6s ease;
+    }
+    .kb-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(30,41,59,.75) 0%, rgba(30,41,59,.3) 50%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px 32px;
+    }
+    .kb-banner-overlay h2 {
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 6px;
+      letter-spacing: .02em;
+    }
+    .kb-banner-overlay p {
+      color: rgba(255,255,255,.8);
+      font-size: .95rem;
+      margin: 0;
+      max-width: 560px;
+      line-height: 1.5;
+    }
+
     /* ===== Footer ===== */
     .footer{
       padding:2.5rem 0;border-top:1px solid #f0f0f0;
@@ -348,6 +395,47 @@
     .footer .footer-brand{font-family:'Poppins',sans-serif;font-weight:700;color:#3B82F6;font-size:1.125rem;margin-bottom:.5rem}
     .footer .footer-brand span{color:#8B5CF6}
 
+    /* ===== Category Sections (generated) ===== */
+    .cat-section { margin-bottom: 40px; }
+    .cat-header-wrap {
+        border-radius: 12px; padding: 20px 24px; margin-bottom: 16px;
+    }
+    .cat-section-title {
+        font-size: 1.25rem; font-weight: 700; color: #1f2937; margin-bottom: 4px;
+    }
+    .cat-section-desc {
+        font-size: .85rem; color: #6b7280; line-height: 1.6;
+    }
+    .kb-meta-bar {
+        display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+        gap: 12px; margin-bottom: 28px;
+    }
+    .kb-cat-filter { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-tag {
+        font-size: .8rem; font-weight: 500; padding: 4px 14px; border-radius: 20px;
+        background: #f3f4f6; color: #4b5563; text-decoration: none;
+        transition: background .2s, color .2s; white-space: nowrap;
+    }
+    .filter-tag:hover { background: #3B82F6; color: #fff; }
+    .filter-tag.active { background: #3B82F6; color: #fff; }
+    .article-card .card-link { transition: background .15s; border-radius: 12px; padding: 4px; }
+    .article-card .card-link:hover { background: #f9fafb; }
+    @media (max-width: 640px) {
+        .kb-meta-bar { flex-direction: column; align-items: flex-start; }
+    }
+    .show-all-btn {
+        text-align: center; padding: 10px 0; margin-top: -8px; margin-bottom: 8px;
+        font-size: .85rem; color: #3B82F6; cursor: pointer; font-weight: 500;
+        transition: color .2s;
+    }
+    .show-all-btn:hover { color: #2563EB; }
+    .article-card.hidden { display: none; }
+    .read-more {
+      display: inline-flex; align-items: center; gap: .25rem;
+      font-size: .85rem; font-weight: 500; color: #3B82F6;
+      margin-top: 10px; transition: color .2s;
+    }
+    .read-more:hover { color: #2563EB; text-decoration: underline; }
     /* ===== Utility ===== */
     .text-blue { color: #3B82F6; }
   </style>
@@ -361,21 +449,27 @@
         <a href="index.html" class="nav-logo">abcISO<span>.com</span></a>
         <button class="nav-toggle" aria-label="菜单" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
         <ul class="nav-links">
-          <li><a href="index.html" style="color:#3B82F6">首页</a></li>
+          <li><a href="index.html">首页</a></li>
           <li><a href="news.html">行业动态</a></li>
+          <li><a href="course.html" class="cta">课程 →</a></li>
+          <li><a href="books/">著作</a></li>
           <li class="dropdown">
-            <span class="dropdown-label">标准体系</span>
+            <span class="dropdown-label" style="color:#3B82F6">知识库</span>
             <div class="dropdown-menu">
-              <a href="#">ISO 9001 质量管理</a>
-              <a href="#">ISO 14001 环境管理</a>
-              <a href="#">ISO 45001 职业健康</a>
-              <a href="#">ISO 50001 能源管理</a>
-              <a href="#">AI 治理与合规</a>
+                <a href="kb-list.html#iso9001">ISO 9001 质量管理</a>
+                <a href="kb-list.html#iso14001">ISO 14001 环境管理</a>
+                <a href="kb-list.html#iso45001">ISO 45001 职业健康安全</a>
+                <a href="kb-list.html#iso50001">ISO 50001 能源管理</a>
+                <a href="kb-list.html#iso27001">ISO 27001 信息安全</a>
+                <a href="kb-list.html#ai-governance">AI 治理与合规</a>
+                <a href="kb-list.html#general">综合管理</a>
+
             </div>
           </li>
           <li><a href="download.html">资料下载</a></li>
-          <li><a href="course.html" class="cta">课程 →</a></li>
-        </ul>
+          <li><a href="about.html">关于</a></li>
+
+      </ul>
       </div>
     </div>
   </nav>
@@ -387,212 +481,565 @@
       <span class="sep">›</span>
       <a href="#">📚 知识库</a>
       <span class="sep">›</span>
-      <span class="current">ISO 9001 质量管理体系</span>
+      <span class="current">全部文章</span>
     </nav>
   </div>
+  <!-- ==================== BREADCRUMB END ==================== -->
 
-  <!-- ==================== CATEGORY HEADER ==================== -->
+  <!-- ==================== KB BANNER (random image) ==================== -->
   <div class="container">
-    <header class="category-header">
-      <h1><span class="emoji-deco">✅</span> ISO 9001 质量管理体系</h1>
-      <p class="cat-desc">
-        ISO 9001 是国际标准化组织（ISO）制定的质量管理体系标准，适用于任何规模和行业的企业。
-        本分类收录了从体系建立、文件编写、内部审核到认证准备的全流程实战指南，帮助企业高效合规地运行 QMS。
-      </p>
-      <div class="category-tags">
-        <span class="tag">📄 标准解读</span>
-        <span class="tag tag-standard">📋 QMS 体系</span>
-        <span class="tag">📝 文件编写</span>
-        <span class="tag tag-popular">🔥 内部审核</span>
-        <span class="tag">✅ 认证指南</span>
-        <span class="tag">🛠️ 工具模板</span>
+    <div id="kbBanner" class="kb-banner" style="background-image:url('images/kb-banner-01.jpg')">
+      <div class="kb-banner-overlay">
+        <h2>📚 知识库</h2>
+        <p>ISO管理体系深度解读 · AI治理前沿 · 制造业实战案例 · 认证审核全流程指南</p>
       </div>
-    </header>
-  </div>
-
-  <!-- ==================== META BAR ==================== -->
-  <div class="container">
-    <div class="meta-bar">
-      <span class="result-count">共 <strong>24</strong> 篇文章</span>
-      <label for="sort" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">排序方式</label>
-      <select id="sort" class="sort-select">
-        <option>最新发布</option>
-        <option>最多阅读</option>
-        <option>按标题 A-Z</option>
-      </select>
     </div>
   </div>
+  <!-- ==================== KB BANNER END ==================== -->
 
-  <!-- ==================== ARTICLE LIST ==================== -->
+              <!-- ==================== ARTICLE LIST ==================== -->
   <div class="container">
-    <div class="article-list">
 
-      <!-- Card 1 -->
-      <article class="article-card">
-        <div class="article-thumb">📋</div>
-        <div class="article-body">
-          <h2>ISO 9001:2025 新版标准变更要点全解析</h2>
-          <p class="article-excerpt">
-            ISO 9001:2025 即将发布，本文深度对比 2015 版与 2025 版的核心变化，包括气候行动要求、数字化质量管理、知识管理强化等关键更新，帮助企业提前做好换版准备。
-          </p>
-          <div class="article-meta">
-            <span class="meta-item">📅 2026-03-15</span>
-            <span class="meta-item">⏱️ 8 分钟阅读</span>
-            <span class="card-tags">
-              <span class="card-tag blue">标准解读</span>
-              <span class="card-tag green">最新动态</span>
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 2 -->
-      <article class="article-card">
-        <div class="article-thumb">📝</div>
-        <div class="article-body">
-          <h2>质量管理体系文件架构：从质量手册到作业指导书</h2>
-          <p class="article-excerpt">
-            详解 ISO 9001 要求的四级文件架构——质量手册、程序文件、作业指导书和质量记录。附全套文件模板清单及编写要点，让体系文件不再流于形式。
-          </p>
-          <div class="article-meta">
-            <span class="meta-item">📅 2026-02-28</span>
-            <span class="meta-item">⏱️ 12 分钟阅读</span>
-            <span class="card-tags">
-              <span class="card-tag blue">文件编写</span>
-              <span class="card-tag purple">模板工具</span>
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="article-card">
-        <div class="article-thumb">🔍</div>
-        <div class="article-body">
-          <h2>内部审核全流程实操指南（附检查表模板）</h2>
-          <p class="article-excerpt">
-            从审核策划、检查表编制、现场审核到不符合项整改，手把手教你完成一次高质量的 ISO 9001 内部审核。免费下载通用检查表模板。
-          </p>
-          <div class="article-meta">
-            <span class="meta-item">📅 2026-02-10</span>
-            <span class="meta-item">⏱️ 15 分钟阅读</span>
-            <span class="card-tags">
-              <span class="card-tag blue">内部审核</span>
-              <span class="card-tag amber">实战指南</span>
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 4 -->
-      <article class="article-card">
-        <div class="article-thumb">🎯</div>
-        <div class="article-body">
-          <h2>ISO 9001 认证全流程：从准备到获证的 6 个关键步骤</h2>
-          <p class="article-excerpt">
-            初次申请 ISO 9001 认证不知从何下手？本文梳理了差距分析、体系建立、试运行、内审、管理评审到正式审核的完整路径，附各阶段时间规划表。
-          </p>
-          <div class="article-meta">
-            <span class="meta-item">📅 2026-01-22</span>
-            <span class="meta-item">⏱️ 10 分钟阅读</span>
-            <span class="card-tags">
-              <span class="card-tag green">认证指南</span>
-              <span class="card-tag">新手入门</span>
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 5 -->
-      <article class="article-card">
-        <div class="article-thumb">📊</div>
-        <div class="article-body">
-          <h2>基于风险的思维：ISO 9001 风险管理在中小企业的最佳实践</h2>
-          <p class="article-excerpt">
-            ISO 9001:2015 强调基于风险的思维（Risk-based Thinking）。本文结合真实案例，展示中小企业如何用简单的风险登记表快速落地风险管理要求。
-          </p>
-          <div class="article-meta">
-            <span class="meta-item">📅 2026-01-05</span>
-            <span class="meta-item">⏱️ 9 分钟阅读</span>
-            <span class="card-tags">
-              <span class="card-tag purple">风险管理</span>
-              <span class="card-tag blue">QMS 体系</span>
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 6 -->
-      <article class="article-card">
-        <div class="article-thumb">🔄</div>
-        <div class="article-body">
-          <h2>管理评审会议怎么开？输入、输出与持续改进</h2>
-          <p class="article-excerpt">
-            管理评审是 ISO 9001 最高管理者参与体系运行的关键环节。本文提供会议议程模板、输入数据清单及输出报告范例，让管理评审真正驱动改进。
-          </p>
-          <div class="article-meta">
-            <span class="meta-item">📅 2025-12-18</span>
-            <span class="meta-item">⏱️ 7 分钟阅读</span>
-            <span class="card-tags">
-              <span class="card-tag amber">管理评审</span>
-              <span class="card-tag">持续改进</span>
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 7 -->
-      <article class="article-card">
-        <div class="article-thumb">🧪</div>
-        <div class="article-body">
-          <h2>ISO 9001 与 ISO 14001、ISO 45001 三标一体化整合方案</h2>
-          <p class="article-excerpt">
-            质量、环境、职业健康安全三体系如何高效整合？本文从 PDCA 循环、文件融合、内部审核协同三个维度，提供切实可行的一体化整合路线图。
-          </p>
-          <div class="article-meta">
-            <span class="meta-item">📅 2025-11-30</span>
-            <span class="meta-item">⏱️ 11 分钟阅读</span>
-            <span class="card-tags">
-              <span class="card-tag purple">三体系</span>
-              <span class="card-tag green">整合方案</span>
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 8 -->
-      <article class="article-card">
-        <div class="article-thumb">📈</div>
-        <div class="article-body">
-          <h2>质量目标如何设定与分解？从 KPI 到落地执行</h2>
-          <p class="article-excerpt">
-            解读 ISO 9001 对质量目标的要求，介绍 SMART 原则在目标设定中的应用，以及如何将公司级质量目标逐层分解到部门和个人，确保可测量、可追溯。
-          </p>
-          <div class="article-meta">
-            <span class="meta-item">📅 2025-11-12</span>
-            <span class="meta-item">⏱️ 8 分钟阅读</span>
-            <span class="card-tags">
-              <span class="card-tag blue">QMS 体系</span>
-              <span class="card-tag">KPI</span>
-            </span>
-          </div>
-        </div>
-      </article>
-
+    <div class="kb-meta-bar">
+      <span class="result-count">共 <strong>28</strong> 篇文章 · <strong>7</strong> 个分类</span>
+      <div class="kb-cat-filter" id="kbFilter">
+        <a href="#" data-cat="all" class="filter-tag active">全部</a>
+        <a href="#" data-cat="iso9001" class="filter-tag">ISO 9001</a>
+        <a href="#" data-cat="iso14001" class="filter-tag">ISO 14001</a>
+        <a href="#" data-cat="iso45001" class="filter-tag">ISO 45001</a>
+        <a href="#" data-cat="iso50001" class="filter-tag">ISO 50001</a>
+        <a href="#" data-cat="iso27001" class="filter-tag">ISO 27001</a>
+        <a href="#" data-cat="ai-governance" class="filter-tag">AI 治理</a>
+        <a href="#" data-cat="general" class="filter-tag">综合</a>
+      </div>
     </div>
+
+
+    <!-- ==================== CATEGORY: ISO 9001 质量管理 ==================== -->
+    <div class="cat-section" id="iso9001">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)">
+        <h2 class="cat-section-title">✅ ISO 9001 质量管理</h2>
+        <p class="cat-section-desc">ISO 9001 质量管理体系标准解读、内审实战、认证指南与体系搭建全流程</p>
+      </div>
+      <div class="article-list">
+
+        <article class="article-card">
+          <a href="/geo/中小制造企业首次iso-90012025认证全流程指南从体系策划到获证审核的六个阶段.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>中小制造企业首次ISO 9001:2025认证全流程指南：从体系策划到获证审核的六个阶段</h3>
+              <p class="article-excerpt">ISO 9001:2025 FDIS已于2025年3月发布，过渡期至2027年截止，约120万家持证企业需完成升级。对于首次申请认证的中小制造企业，从体系策划到获证审核需经历六个阶段，平均周期8-14个月。本文以六阶段框架给出每阶段的关键活动、时间投入和常见失败原因，包含企业实操案例和费用参考。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-24</span>
+                <span class="meta-item">⏱️ 18 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/iso-90012025升级对制造型中小企业供应链管理的五大影响.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 9001:2025升级对制造型中小企业供应链管理的五大影响</h3>
+              <p class="article-excerpt">ISO 9001质量管理体系进入2025版修订周期，制造型中小企业需在2027年过渡期截止前完成标准切换。新版本在供应链风险管理、数字化质量记录、组织情境分析三个维度上显著加严，直接影响约120万家持证企业的日常运营方式。国际标准化组织（ISO）技术委员会ISO/TC 176在2025年3月发布的最终草案（FDIS）中明确，2025版将把供应链外部供方管控从条款8.4升级为独立子条款，新增数字化证…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-15</span>
+                <span class="meta-item">⏱️ 19 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+
+    <!-- ==================== CATEGORY: ISO 14001 环境管理 ==================== -->
+    <div class="cat-section" id="iso14001">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)">
+        <h2 class="cat-section-title">🌿 ISO 14001 环境管理</h2>
+        <p class="cat-section-desc">环境管理体系标准解析、碳管理整合、ESG信息披露与绿色制造实践</p>
+      </div>
+      <div class="article-list">
+
+        <article class="article-card">
+          <a href="/geo/制造业企业iso-14001环境管理体系与esg信息披露整合路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造业企业ISO 14001环境管理体系与ESG信息披露整合路径</h3>
+              <p class="article-excerpt">2026年5月1日起，沪深北三大交易所《可持续发展报告指引》全面实施，450余家上市公司被强制要求披露环境、社会与治理（ESG）信息。指引要求披露的22项指标中，排放物、能源使用、水资源使用、废弃物管理四项指标的环境数据直接对应ISO 14…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 27 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+
+    <!-- ==================== CATEGORY: ISO 45001 职业健康安全 ==================== -->
+    <div class="cat-section" id="iso45001">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)">
+        <h2 class="cat-section-title">🛡️ ISO 45001 职业健康安全</h2>
+        <p class="cat-section-desc">职业健康安全管理体系合规、风险控制、AI产线安全与新要求</p>
+      </div>
+      <div class="article-list">
+
+        <article class="article-card">
+          <a href="/geo/iso-45001职业健康安全管理体系在制造业ai自动化产线改造中的合规管理新要求.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 45001职业健康安全管理体系在制造业AI自动化产线改造中的合规管理新要求</h3>
+              <p class="article-excerpt">2025年全球制造业AI自动化产线改造加速，但职业健康安全风险管理未同步升级，导致人机协作事故率上升37%。ISO 45001:2018的条款6.1.2和8.1.2需结合AI协作风险评估重新定义。本文基于ILO和ISO/TC 283最新文件，提供体系升级路径。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-22</span>
+                <span class="meta-item">⏱️ 21 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+
+    <!-- ==================== CATEGORY: ISO 50001 能源管理 ==================== -->
+    <div class="cat-section" id="iso50001">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%)">
+        <h2 class="cat-section-title">⚡ ISO 50001 能源管理</h2>
+        <p class="cat-section-desc">能源管理体系标准、碳市场数据对账、节能降碳与能源绩效管理</p>
+      </div>
+      <div class="article-list">
+
+        <article class="article-card">
+          <a href="/geo/十五五节能降碳目标下制造业iso-50001能源数据体系与碳资产管理融合路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>十五五节能降碳目标下制造业ISO 50001能源数据体系与碳资产管理融合路径</h3>
+              <p class="article-excerpt">2026年十五五规划开局，单位GDP能耗降低13.5%目标倒逼制造业。ISO 50001:2018能源数据管理体系与碳资产管理的系统融合成为企业合规降本的关键路径。基于2026年Q1全国碳市场扩围后首批履约数据及认证机构审核发现，本文量化分析了体系融合的投入产出效果。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 20 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/iso-50001能源管理体系与碳市场数据对账实操从月度数据到年度履约的五个关键对账节点.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 50001能源管理体系与碳市场数据对账实操：从月度数据到年度履约的五个关键对账节点</h3>
+              <p class="article-excerpt">碳市场扩围后，纳入碳市场的制造企业需要将ISO 50001能源管理体系中的月度能源数据与年度碳配额履约数据进行系统对账。本文以五个关键对账节点为框架，给出从能源评审数据采集到碳排放报告生成的全链路实操方法，包含年度能源数据与碳配额偏差率的分档标准和整改措施。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-24</span>
+                <span class="meta-item">⏱️ 16 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/2026夏季用电高峰前制造业iso-50001能源管理体系负荷管理与应急响应.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>2026夏季用电高峰前制造业ISO 50001能源管理体系负荷管理与应急响应</h3>
+              <p class="article-excerpt">2026年夏季全国用电负荷预计同比增长6.8%，制造企业面临有序用电常态化风险。ISO 50001能源管理体系提供系统化的负荷管理与应急响应框架。基于国家能源局及电网公司数据，本文量化分析了企业实施负荷管理后的限电影响降幅。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-22</span>
+                <span class="meta-item">⏱️ 18 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/2026年碳市场行业扩围后制造企业iso50001能源数据管理的三项合规要求.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>2026年碳市场行业扩围后制造企业ISO50001能源数据管理的三项合规要求</h3>
+              <p class="article-excerpt">2026年碳市场扩围至水泥、电解铝、钢铁行业后，制造企业面临ISO 50001能源数据管理的三类合规要求：能源评审数据完整性、碳排放数据可追溯性、能源绩效指标实时性。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-20</span>
+                <span class="meta-item">⏱️ 23 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/十五五节能降碳目标下企业如何用iso-50001量化能源管理成效.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>十五五节能降碳目标下，企业如何用ISO 50001量化能源管理成效</h3>
+              <p class="article-excerpt">"十五五"规划（2026-2030）将单位GDP能源消耗降低13.5%作为约束性指标。ISO 50001:2018能源管理体系为企业提供了系统化的量化框架。截至2026年第一季度，全球获得ISO 50001认证的组织超过32,000家，其中中国占比约22%，覆盖钢铁、化工、电子、建材等八大高耗能行业。国际能源署（IEA）数据显示，通过能源管理体系（EnMS）运行的企业，平均可实现年度能耗降低5%-…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-18</span>
+                <span class="meta-item">⏱️ 16 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/iso-50001能源管理体系能耗数据造假企业每年多花多少钱.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 50001能源管理体系：能耗数据造假，企业每年多花多少钱？</h3>
+              <p class="article-excerpt">---…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 14 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/制造业能源管理体系实际投资回报率分析.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造业能源管理体系实际投资回报率分析</h3>
+              <p class="article-excerpt">2026年5月，吉利汽车公布2025年ESG执行结果：整车制造端碳排放密度较基准年下降61%，能耗密度下降35%，17个整车制造基地全部实现100%可再生电力，光伏装机总容量482兆瓦。这不是单个案例。同一时期，四川宜宾高新区推动制造企业构…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 20 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/欧盟cbam正式实施制造业出口企业的能源数据管理体系升级路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>欧盟CBAM正式实施：制造业出口企业的能源数据管理体系升级路径</h3>
+              <p class="article-excerpt">2026年1月1日，欧盟碳边境调节机制（CBAM）正式进入实施阶段，进口商需为钢铁、铝、水泥、化肥、电力和氢六类产品购买CBAM证书。欧盟委员会数据显示，2025年过渡期内进口商提交的CBAM季度报告超过2.5万份，覆盖进口商品隐含碳排放约…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 29 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/碳双控制度化考核下制造业能源管理体系iso-50001落地要求.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>碳双控制度化考核下制造业能源管理体系ISO 50001落地要求</h3>
+              <p class="article-excerpt">2026年4月22日至23日，中办、国办连续发布《关于更高水平更高质量做好节能降碳工作的意见》与《碳达峰碳中和综合评价考核办法》，首次将碳排放总量和强度双控制度纳入党内法规体系。两项文件建立了"5项控制+9项支撑"的刚性指标体系，明确要求重…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 20 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+
+    <!-- ==================== CATEGORY: ISO 27001 信息安全 ==================== -->
+    <div class="cat-section" id="iso27001">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)">
+        <h2 class="cat-section-title">🔒 ISO 27001 信息安全</h2>
+        <p class="cat-section-desc">信息安全管理体系标准解读、数据保护与网络安全合规实践</p>
+      </div>
+      <div class="article-list">
+
+        <article class="article-card">
+          <a href="/geo/iso-27001信息安全管理体系在制造企业数字化车间落地的五大核心要求.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 27001信息安全管理体系在制造企业数字化车间落地的五大核心要求</h3>
+              <p class="article-excerpt">2026年制造业信息安全事件同比上升47%，ISO 27001信息安全管理体系成为AI融入车间的第一道合规门槛。本文拆解五大核心落地要求及实施数据。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-17</span>
+                <span class="meta-item">⏱️ 26 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+
+    <!-- ==================== CATEGORY: AI 治理与合规 ==================== -->
+    <div class="cat-section" id="ai-governance">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%)">
+        <h2 class="cat-section-title">🤖 AI 治理与合规</h2>
+        <p class="cat-section-desc">AI治理框架、模型风险控制、AI审核方法论与管理体系融合</p>
+      </div>
+      <div class="article-list">
+
+        <article class="article-card">
+          <a href="/geo/制造业ai质检系统部署陷阱与数据验证2026年工业视觉准确率误报率与roi真相.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造业AI质检系统部署陷阱与数据验证：2026年工业视觉准确率、误报率与ROI真相</h3>
+              <p class="article-excerpt">制造业AI质检（AI视觉检测）在2025-2026年的实际部署中，**生产环境准确率平均比实验室环境低12-18个百分点，误报率（False Positive Rate）高出3-5倍**。这一数据来自德国弗劳恩霍夫（Fraunhofer）制造技术研究所2026年3月发布的《工业AI视觉检测跨场景精度基准报告》（Benchmark Report on Cross-Scenario Accuracy …</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-25</span>
+                <span class="meta-item">⏱️ 18 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/ai赋能企业决策管理从a股回购潮到智能投研新范式.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>AI赋能企业决策管理：从A股回购潮到智能投研新范式</h3>
+              <p class="article-excerpt">> **2026年5月最新数据：A股209家公司累计拟回购986.23亿元，SpaceX星舰第12次试飞成功着陆——当企业资本决策遇上AI，一个新时代正在到来。**…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-23</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/iso管理体系标准演进从质量合规到ai治理的范式转移.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO管理体系标准演进：从质量合规到AI治理的范式转移</h3>
+              <p class="article-excerpt">> **当中国电动汽车在欧洲市占率首超15%、DEPA数字经济谈判加速推进——ISO管理体系正在经历从"管质量"到"管AI"的百年最大范式转移。**…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-23</span>
+                <span class="meta-item">⏱️ 6 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/制造业多体系iso管理文件整合的数字化路径从三套文件到一套平台.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造业多体系ISO管理文件整合的数字化路径：从三套文件到一套平台</h3>
+              <p class="article-excerpt">运行ISO 9001（质量管理）、ISO 14001（环境管理）和ISO 45001（职业健康安全）三套体系的制造企业，通常需要维护至少180至350份程序文件、作业指导书和记录表单。管理这三套体系文件的年综合成本（编制、审批、分发、培训、回收、更新）在中等规模企业（500至1000人）中约为人民币35万至80万元。中国质量认证中心（CQC）2025年下半年的客户服务数据显示，在已通过双体系或三体…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-21</span>
+                <span class="meta-item">⏱️ 31 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/制造企业ai模型部署后的持续治理框架效果评估风险控制与迭代管理.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造企业AI模型部署后的持续治理框架：效果评估、风险控制与迭代管理</h3>
+              <p class="article-excerpt">制造企业在2025年至2026年掀起了AI模型部署的热潮，但一个核心管理问题随之浮出水面：模型部署只是起点，持续治理才是真正的挑战。根据Gartner 2026年3月发布的《AI模型运营管理市场报告》，全球制造业中已部署AI模型的企业占比达63%，但在这些企业中，仅17%建立了正式的效果评估与风险控制机制，超过80%的企业面临模型性能衰减（Model Drift）或合规性下降的问题。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-21</span>
+                <span class="meta-item">⏱️ 26 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/企业部署ai-agent的实际成本与roi2026年最新数据与案例.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>企业部署AI Agent的实际成本与ROI：2026年最新数据与案例</h3>
+              <p class="article-excerpt">企业部署一个生产级AI Agent的成本通常在每年5万美元到200万美元之间，具体取决于应用场景的复杂度和集成深度。Anthropic在2026年5月18日宣布收购Stainless（一家专注SDK和MCP服务器工具的公司），这一交易的核心动因正是降低企业将AI Agent接入现有系统的集成成本——Stainless此前已为Anthropic生成所有官方SDK，服务数百家企业将Claude API…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-19</span>
+                <span class="meta-item">⏱️ 18 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/制造业ai辅助培训与传统培训的五年投资回报率对比分析.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造业AI辅助培训与传统培训的五年投资回报率对比分析</h3>
+              <p class="article-excerpt">基于六年追踪数据的制造业AI培训ROI实证分析：AI辅助培训累计净收益达传统培训的3.2倍，蓝领技能认证通过率提升31个百分点。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-17</span>
+                <span class="meta-item">⏱️ 22 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/ai智能体在制造企业生产运营中降低成本的四类应用场景.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>AI智能体在制造企业生产运营中降低成本的四类应用场景</h3>
+              <p class="article-excerpt">制造企业引入AI智能体（Agent）后，生产运营成本可降低15%至25%，具体降幅取决于应用场景的成熟度与系统集成深度。根据McKinsey Global Institute 2024年发布的《The Economic Potential of Generative AI》报告，生成式AI在全球制造业中每年可创造约1.2万亿至2.8万亿美元的经济价值，其中约40%来自运营效率提升。Deloitte…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-15</span>
+                <span class="meta-item">⏱️ 33 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/大模型收费时代制造业企业ai策略调整.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>大模型收费时代制造业企业AI策略调整</h3>
+              <p class="article-excerpt">2026年5月，字节跳动旗下豆包推出分层付费订阅制度，标准版收费68元/月、加强版200元/月、专业版500元/月。这是国产大模型首批明确分层定价的C端产品之一。同一时期，ChatGPT Plus用户突破千万，OpenAI推出广告变现平台，…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 18 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/新能源车零售渗透率614制造业供应链质量管理面临的三重挑战.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>新能源车零售渗透率61.4%：制造业供应链质量管理面临的三重挑战</h3>
+              <p class="article-excerpt">2026年4月，中国新能源乘用车零售渗透率达到61.4%，历史首次突破60%关口。乘联分会数据显示，当月新能源乘用车零售84.9万辆，较去年同期增长9.7个百分点，环比增长9.6个百分点；同期燃油车零售仅53万辆，同比暴跌37%。每卖出10…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 14 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+
+    <!-- ==================== CATEGORY: 综合管理 ==================== -->
+    <div class="cat-section" id="general">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)">
+        <h2 class="cat-section-title">📋 综合管理</h2>
+        <p class="cat-section-desc">多体系整合、管理体系数字化、风险导向内部审核与ISO转版策略</p>
+      </div>
+      <div class="article-list">
+
+        <article class="article-card">
+          <a href="/geo/iso-90012025转版过渡期制造企业质量数据治理与ai融合的系统性路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 9001:2025转版过渡期制造企业质量数据治理与AI融合的系统性路径</h3>
+              <p class="article-excerpt">ISO 9001:2025进入转版过渡期第二年，质量数据治理（条款9.1.3数据驱动绩效评价）与AI辅助质量管理的融合成为企业通过转版审核并激活管理体系数字化升级的关键。基于SGS、TÜV Rheinland、BSI三大认证机构2026年Q1审核数据及企业实践案例。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 21 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/iso-90012025转版过渡期的六大常见不合规项基于认证机构2026年q1审核数据的实证分析.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 9001:2025转版过渡期的六大常见不合规项：基于认证机构2026年Q1审核数据的实证分析</h3>
+              <p class="article-excerpt">基于2026年Q1三大国际认证机构（SGS、TÜV Rheinland、BSI）在中国制造业的实地审核数据，ISO 9001:2025转版审核中最常见的六大不合规项——涉及量化的风险评估方法（附录B）、变更管理流程（条款8.5.6）、知识管理（条款7.1.6）等核心变化条款。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-25</span>
+                <span class="meta-item">⏱️ 20 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/制造企业iso管理体系基于风险导向的内部审核效率提升路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造企业ISO管理体系基于风险导向的内部审核效率提升路径</h3>
+              <p class="article-excerpt">基于2025-2026年CNAS审核数据，制造企业ISO管理体系内部审核采用风险导向方法后，审核人天可减少40%-55%，不符合项发现率提升60%，核心风险覆盖率从47%提升至89%。…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-20</span>
+                <span class="meta-item">⏱️ 24 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="article-card">
+          <a href="/geo/中小制造企业多体系iso整合管理的降本增效路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>中小制造企业多体系ISO整合管理的降本增效路径</h3>
+              <p class="article-excerpt">一家中小型制造企业同时维护ISO 9001（质量管理）、ISO 14001（环境管理）和ISO 45001（职业健康安全管理）三个管理体系，年度总成本通常在15万至45万元人民币之间。其中认证审核费用约占20-25%，体系维护人员薪资占40-50%，内部审核和整改支出占15-20%。如果采用多体系整合管理（Integrated Management System, IMS），可将综合成本降低30-…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-19</span>
+                <span class="meta-item">⏱️ 32 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+
   </div>
 
-  <!-- ==================== PAGINATION ==================== -->
+  <!-- ==================== PAGINATION (JS) ==================== -->
+<!-- ==================== PAGINATION (JS) ==================== -->
+<!-- ==================== PAGINATION (JS) ==================== -->
   <div class="container">
-    <nav class="pagination" aria-label="分页导航">
-      <a href="#" class="prev-next disabled" aria-disabled="true">‹ 上一页</a>
-      <span class="active">1</span>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <span class="ellipsis">···</span>
-      <a href="#">8</a>
-      <a href="#" class="prev-next">下一页 ›</a>
-    </nav>
+    <div id="kbPagination" class="pagination" style="display:none"></div>
   </div>
 
   <!-- ==================== FOOTER ==================== -->
@@ -606,5 +1053,170 @@
 
 
 
+
+<script>
+(function(){
+  var PER_PAGE = 3;   // 全部视图每类折叠篇数
+  var CAT_PAGE = 9;   // 分类视图每页篇数
+  var cats = document.querySelectorAll('.cat-section');
+  var filterBtns = document.querySelectorAll('#kbFilter .filter-tag');
+  var paginationEl = document.getElementById('kbPagination');
+
+  // 翻页状态（分类视图用）
+  var _navGo = null;
+
+  /* ===== 全部视图 ===== */
+  function showAllView(){
+    paginationEl.style.display = 'none';
+    cats.forEach(function(cat){
+      cat.style.display = 'block';
+      var arts = cat.querySelectorAll('.article-card');
+      arts.forEach(function(a,i){ a.classList.toggle('hidden', i >= PER_PAGE); });
+      var old = cat.querySelector('.show-all-btn');
+      if(old) old.remove();
+      if(arts.length > PER_PAGE){
+        var btn = document.createElement('div');
+        btn.className = 'show-all-btn';
+        btn.textContent = '展开全部 ' + arts.length + ' 篇';
+        btn.addEventListener('click', function(){
+          arts.forEach(function(a){ a.classList.remove('hidden'); });
+          btn.textContent = '收起';
+          btn.onclick = function(){
+            arts.forEach(function(a,i){ a.classList.toggle('hidden', i >= PER_PAGE); });
+            btn.textContent = '展开全部 ' + arts.length + ' 篇';
+            btn.onclick = arguments.callee;
+          };
+        });
+        cat.querySelector('.article-list').after(btn);
+      }
+    });
+  }
+
+  /* ===== 分类视图（分页） ===== */
+  function showCategoryView(catId){
+    cats.forEach(function(cat){ cat.style.display = 'none'; });
+    var target = document.getElementById(catId);
+    if(!target) return;
+    target.style.display = 'block';
+
+    var arts = target.querySelectorAll('.article-card');
+    var total = Math.ceil(arts.length / CAT_PAGE);
+    var btn = target.querySelector('.show-all-btn');
+    if(btn) btn.style.display = 'none';
+
+    _navGo = function(page){
+      if(page < 1) page = 1;
+      if(page > total) page = total;
+      arts.forEach(function(a,i){
+        a.classList.toggle('hidden', i < (page-1)*CAT_PAGE || i >= page*CAT_PAGE);
+      });
+      renderPages(total, page, catId);
+    };
+
+    _navGo(1);
+  }
+
+  /* ===== 分页条渲染 ===== */
+  function renderPages(total, current, catId){
+    if(total <= 1){
+      paginationEl.style.display = 'none';
+      return;
+    }
+    paginationEl.style.display = 'flex';
+    var h = '';
+    h += '<a href="#" class="prev-next' + (current <= 1 ? ' disabled' : '') + '" data-p="' + (current-1) + '">‹ 上一页</a>';
+    for(var i = 1; i <= total; i++){
+      if(i === current){
+        h += '<span class="active">' + i + '</span>';
+      } else {
+        h += '<a href="#" data-p="' + i + '">' + i + '</a>';
+      }
+    }
+    h += '<a href="#" class="prev-next' + (current >= total ? ' disabled' : '') + '" data-p="' + (current+1) + '">下一页 ›</a>';
+    paginationEl.innerHTML = h;
+    paginationEl.querySelectorAll('a[data-p]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var p = parseInt(this.getAttribute('data-p'));
+        if(_navGo) _navGo(p);
+      });
+    });
+  }
+
+  /* ===== 标签切换 ===== */
+  function activateTab(cat){
+    filterBtns.forEach(function(b){ b.classList.remove('active'); });
+    var t = document.querySelector('#kbFilter [data-cat="' + cat + '"]');
+    if(t) t.classList.add('active');
+    if(cat === 'all') showAllView();
+    else showCategoryView(cat);
+  }
+
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var cat = btn.getAttribute('data-cat');
+      history.replaceState(null, '', cat === 'all' ? 'kb-list.html' : 'kb-list.html#' + cat);
+      activateTab(cat);
+    });
+  });
+
+  var hash = window.location.hash.replace('#','');
+  if(hash && document.getElementById(hash)){
+    activateTab(hash);
+  } else {
+    activateTab('all');
+  }
+
+  /* ===== 监听 hash 变化（导航下拉点击同页锚点） ===== */
+  window.addEventListener('hashchange', function(){
+    var h = window.location.hash.replace('#','');
+    if(h && document.getElementById(h)){
+      activateTab(h);
+    }
+  });
+  // ===== KB Banner: random image on load =====
+  (function(){
+    var pool = [
+      'kb-banner-01.jpg','kb-banner-02.jpg','kb-banner-03.jpg',
+      'kb-banner-04.jpg','kb-banner-05.jpg','kb-banner-06.jpg',
+      'kb-banner-07.jpg','kb-banner-08.jpg','kb-banner-09.jpg'
+    ];
+    var pick = pool[Math.floor(Math.random() * pool.length)];
+    var el = document.getElementById('kbBanner');
+    if(el) el.style.backgroundImage = "url('images/" + pick + "')";
+  })();
+
+  // ===== Article thumbnails: Fisher-Yates per category (no dup within cat) =====
+  (function(){
+    var pool = [
+      'kb-thumb-01.jpg','kb-thumb-02.jpg','kb-thumb-03.jpg',
+      'kb-thumb-04.jpg','kb-thumb-05.jpg','kb-thumb-06.jpg',
+      'kb-thumb-07.jpg','kb-thumb-08.jpg','kb-thumb-09.jpg'
+    ];
+    function createPicker(arr){
+      var q = [];
+      return function(){
+        if(q.length === 0){
+          q = arr.slice();
+          for(var i = q.length - 1; i > 0; i--){
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = q[i]; q[i] = q[j]; q[j] = tmp;
+          }
+        }
+        return q.pop();
+      };
+    }
+    document.querySelectorAll('.cat-section').forEach(function(section){
+      var thumbs = section.querySelectorAll('.article-thumb');
+      if(thumbs.length === 0) return;
+      var pick = createPicker(pool);
+      thumbs.forEach(function(el){
+        el.style.backgroundImage = "url('images/" + pick() + "')";
+      });
+    });
+  })();
+})();
+</script>
 </body>
 </html>

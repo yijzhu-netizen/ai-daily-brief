@@ -187,6 +187,46 @@ code,.code{font-family:'Inconsolata',monospace}
   font-size:.875rem;color:#6b7280;font-weight:500;
 }
 
+/* ===== Flight Map ===== */
+.flight-section{
+  padding:2.5rem 0;
+}
+.flight-section .container{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.flight-content{
+  max-width:800px;margin:0 auto;
+  background:#0f172a;
+  border-radius:16px;
+  padding:2rem;
+  color:#e2e8f0;
+}
+.flight-header{text-align:center;margin-bottom:1.5rem}
+.flight-header h2{font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:700;color:#f1f5f9;margin-bottom:.25rem}
+.flight-header p{font-size:.8125rem;color:#94a3b8;line-height:1.6;max-width:480px;margin:0 auto}
+.flight-image{
+  border-radius:12px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 4px 20px rgba(0,0,0,.3);
+  margin-bottom:1.25rem;
+}
+.flight-image img{display:block;width:100%;height:auto}
+.flight-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
+  text-align:center;
+}
+.flight-stat .f-number{
+  font-family:'Poppins',sans-serif;
+  font-size:1.375rem;font-weight:700;
+  color:#60A5FA;line-height:1.2;
+}
+.flight-stat .f-number span{color:#A78BFA}
+.flight-stat .f-label{
+  font-size:.75rem;color:#94a3b8;margin-top:.125rem;
+}
+@media(max-width:700px){
+  .flight-stats{grid-template-columns:1fr;gap:1rem}
+  .flight-stat{display:flex;gap:.75rem;align-items:center;justify-content:center}
+}
+
 /* ===== Mission Section (浅蓝背景) ===== */
 .mission-section{
   padding:4rem 0;
@@ -249,18 +289,23 @@ code,.code{font-family:'Inconsolata',monospace}
       <ul class="nav-links">
         <li><a href="index.html">首页</a></li>
         <li><a href="news.html">行业动态</a></li>
+        <li><a href="course.html" class="cta">课程 →</a></li>
+        <li><a href="books/">著作</a></li>
         <li class="dropdown">
-          <span class="dropdown-label">标准体系</span>
+          <span class="dropdown-label">知识库</span>
           <div class="dropdown-menu">
-            <a href="#">ISO 9001 质量管理</a>
-            <a href="#">ISO 14001 环境管理</a>
-            <a href="#">ISO 45001 职业健康</a>
-            <a href="#">ISO 50001 能源管理</a>
-            <a href="#">AI 治理与合规</a>
+              <a href="kb-list.html#iso9001">ISO 9001 质量管理</a>
+              <a href="kb-list.html#iso14001">ISO 14001 环境管理</a>
+              <a href="kb-list.html#iso45001">ISO 45001 职业健康安全</a>
+              <a href="kb-list.html#iso50001">ISO 50001 能源管理</a>
+              <a href="kb-list.html#iso27001">ISO 27001 信息安全</a>
+              <a href="kb-list.html#ai-governance">AI 治理与合规</a>
+              <a href="kb-list.html#general">综合管理</a>
+
           </div>
         </li>
         <li><a href="download.html">资料下载</a></li>
-        <li><a href="course.html" class="cta">课程 →</a></li>
+        <li><a href="about.html" style="color:#3B82F6">关于</a></li>
       </ul>
     </div>
   </div>
@@ -280,22 +325,21 @@ code,.code{font-family:'Inconsolata',monospace}
 <section class="profile-section">
   <div class="container">
     <div class="profile-grid">
-      <div class="profile-avatar">👤</div>
+      <div class="profile-avatar"><img src="images/avatar.jpg" alt="炖刀" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
       <div class="profile-content">
         <h2>炖刀</h2>
         <div class="role">🔍 ISO体系落地实战派 · 智造本质知识星球主理人</div>
         <p>
-          在制造业摸爬滚打十年，从车间工艺员做到质量总监，亲手搭建过三套完整的ISO管理体系。
+          在制造业摸爬滚打十年，从车间工艺员做到质量总监，亲手搭建过数十套完整的ISO管理体系。
           后来转型做ISO认证审核，又扎进审核一线十年，经手了<span class="highlight">500多家工厂</span>的认证审核与监督审核。
         </p>
         <p>
           从作业指导书怎么写到管理评审怎么做，从内审检查表到不符合项整改，这些看似枯燥的标准条文背后，
           我看到了太多企业"为认证而认证"的困境——体系文件堆了一柜子，实际管理还是老样子。
         </p>
-        <p>
-          这就是我做这个站的原因：把<span class="highlight">20年的实战经验</span>沉淀下来，
-          用大白话讲清楚ISO标准到底怎么落地，让质量管理变成能帮企业赚钱的工具，而不是应付检查的累赘。
-        </p>
+          <p>
+           这就是我做这个站的原因：把20年的实战经验沉淀下来，用大白话讲清楚ISO标准到底怎么落地，让管理体系变成能帮企业赚钱的工具，而不是应付检查的累赘。
+          </p>
         <p style="color:#9ca3af;font-size:.875rem;margin-top:1.5rem">
           📍 曾任：某德资汽车零部件企业质量总监 · 某外资认证机构主任审核员 · 多家上市公司ISO体系顾问
         </p>
@@ -332,6 +376,35 @@ code,.code{font-family:'Inconsolata',monospace}
   </div>
 </section>
 
+<!-- ===== 飞行轨迹 ===== -->
+<section class="flight-section">
+  <div class="container">
+    <div class="flight-content">
+    <div class="flight-header">
+      <h2>✈️ 21万公里的审核之路</h2>
+      <p>十年认证审核，从东北老工业基地到珠三角的工厂车间，飞行里程见证了这个行业的地理跨度。</p>
+    </div>
+    <div class="flight-image">
+      <img src="images/flight-map.jpg" alt="炖刀飞行轨迹图 — 覆盖东南亚与中国主要制造业城市，累计218,877公里" loading="lazy">
+    </div>
+    <div class="flight-stats">
+      <div class="flight-stat">
+        <div class="f-number">218,877 <span>公里</span></div>
+        <div class="f-label">累计飞行里程</div>
+      </div>
+      <div class="flight-stat">
+        <div class="f-number"><span>189</span> 次</div>
+        <div class="f-label">飞行航段</div>
+      </div>
+      <div class="flight-stat">
+        <div class="f-number">约 <span>5.5</span> 圈</div>
+        <div class="f-label">绕地球赤道</div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 做站初衷（浅蓝背景） ===== -->
 <section class="mission-section">
   <div class="container">
@@ -351,6 +424,41 @@ code,.code{font-family:'Inconsolata',monospace}
         目前有两门体系课可供学习：<a href="https://t.zsxq.com/lWQ5E" style="color:#3B82F6;font-weight:500" target="_blank" rel="noopener">《AI时代，你更应该学会管理》</a>和<a href="https://t.zsxq.com/M6F9c" style="color:#3B82F6;font-weight:500" target="_blank" rel="noopener">《能源管理体系：39节落地实操课》</a>。
         这里有<span style="color:#3B82F6;font-weight:500">860+位同行</span>一起交流，每周分享实战案例与审核心得。
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 关于本站 ===== -->
+<section class="section" style="background:#fff">
+  <div class="container">
+    <div class="mission-card">
+      <div class="mission-icon">🌐</div>
+      <h2>关于abcISO这个站</h2>
+      <p>
+        abcISO 是一个<strong>GEO（生成式引擎优化）+ 独立站</strong>内容平台，所有文章均由AI辅助撰写、人工审核后发布。每天上午8点自动生产GEO文章，9点采集行业动态，10点全量部署上线——不依赖第三方平台，内容自主可控。
+      </p>
+      <p>
+        技术架构：纯静态HTML + Nginx托管，首屏加载<strong>112ms</strong>。已集成自动化的知识库生成管线、新闻聚合爬虫、以及AI驱动的文章生产流程。每篇文章针对AI搜索引擎（如Perplexity、百度AI搜索）做了结构化优化，确保专业内容被AI准确引用。
+      </p>
+      <p>
+        内容覆盖：ISO 9001质量管理、ISO 14001环境管理、ISO 45001职业健康安全、ISO 50001能源管理、ISO 27001信息安全、AI治理与合规六大板块，累计<strong>30+篇GEO文章</strong>与持续更新的行业动态。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 联系与社群 ===== -->
+<section class="section" style="background:#fafbfc;border-top:1px solid #f0f0f0">
+  <div class="container" style="text-align:center">
+    <div style="font-size:2rem;margin-bottom:1rem">💬</div>
+    <h2 style="font-size:1.5rem;margin-bottom:.75rem">联系与社群</h2>
+    <p style="color:#6b7280;max-width:500px;margin:0 auto 2rem;line-height:1.7">
+      更多实操案例、审核模板和体系落地方法，欢迎加入知识星球「智造本质」，
+      与860+制造业同行一起交流。
+    </p>
+    <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap">
+      <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:.5rem;background:#3B82F6;color:#fff;padding:.75rem 2rem;border-radius:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;text-decoration:none;transition:background .2s">知识星球「智造本质」</a>
+      <a href="https://t.zsxq.com/M6F9c" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:.5rem;background:#8B5CF6;color:#fff;padding:.75rem 2rem;border-radius:8px;font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;text-decoration:none;transition:background .2s">能源管理落地课</a>
     </div>
   </div>
 </section>

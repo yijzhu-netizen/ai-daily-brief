@@ -135,6 +135,31 @@
             transition: 0.3s;
         }
 
+        /* ===== Dropdown ===== */
+        .dropdown { position:relative; cursor:pointer; }
+        .dropdown-label {
+            font-size:0.925rem; font-weight:500; color:var(--gray-600);
+            display:flex; align-items:center; gap:4px; padding:4px 0;
+        }
+        .dropdown-label::after {
+            content:"▼"; font-size:0.625rem; margin-left:2px;
+            transition:transform .2s;
+        }
+        .dropdown:hover .dropdown-label::after { transform:rotate(180deg); }
+        .dropdown-menu {
+            position:absolute; top:100%; left:50%; transform:translateX(-50%);
+            background:#fff; border:1px solid #e5e7eb; border-radius:8px;
+            padding:8px 0; min-width:180px;
+            opacity:0; visibility:hidden; transition:all .2s;
+            box-shadow:0 8px 24px rgba(0,0,0,.08);
+        }
+        .dropdown:hover .dropdown-menu { opacity:1; visibility:visible; }
+        .dropdown-menu a {
+            display:block; padding:8px 20px; font-size:0.875rem;
+            white-space:nowrap; color:var(--gray-600) !important;
+        }
+        .dropdown-menu a:hover { background:#f3f4f6; color:var(--blue) !important; }
+
         /* ===== Hero / Page Header ===== */
         .page-header {
             padding: 120px 0 60px;
@@ -175,56 +200,70 @@
             font-weight: 400;
         }
 
-        /* ===== Free Resources Grid (2×2) ===== */
-        .free-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
+        /* ===== Free Resources List (table-style) ===== */
+        .download-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 12px;
         }
-        .free-card {
+        .download-row {
             background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 28px;
-            transition: box-shadow 0.25s, transform 0.2s;
-            display: flex;
-            flex-direction: column;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            transition: box-shadow 0.2s;
         }
-        .free-card:hover {
-            box-shadow: 0 8px 30px rgba(59,130,246,0.08);
-            transform: translateY(-3px);
+        .download-row:hover {
+            box-shadow: 0 2px 12px rgba(59,130,246,0.06);
         }
-        .free-card h3 {
-            font-size: 1.15rem;
+        .download-row td {
+            padding: 20px 16px;
+            vertical-align: middle;
+            font-size: 0.9rem;
+        }
+        .download-row .col-icon {
+            width: 52px;
+            text-align: center;
+            font-size: 1.5rem;
+            padding-right: 0;
+        }
+        .download-row .col-info {
+            width: auto;
+        }
+        .download-row .col-info .file-name {
+            font-size: 1rem;
             font-weight: 600;
             color: var(--gray-800);
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
-        .free-card .file-tags {
+        .download-row .col-info .file-desc {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+        .download-row .col-info .file-meta {
             display: flex;
-            gap: 8px;
-            margin-bottom: 10px;
+            gap: 6px;
+            flex-wrap: wrap;
         }
-        .free-card .file-tags span {
-            font-size: 0.75rem;
+        .download-row .col-info .file-meta .meta-tag {
+            font-size: 0.7rem;
             font-weight: 500;
-            padding: 3px 10px;
+            padding: 2px 8px;
             border-radius: 20px;
             background: var(--gray-100);
             color: var(--gray-600);
         }
-        .free-card .file-tags .tag-pdf { background: #FEE2E2; color: #DC2626; }
-        .free-card .file-tags .tag-xlsx { background: #DCFCE7; color: #16A34A; }
-        .free-card .file-tags .tag-docx { background: #DBEAFE; color: #2563EB; }
-        .free-card .file-tags .tag-pptx { background: #FEF3C7; color: #D97706; }
-        .free-card .desc {
-            font-size: 0.9rem;
-            color: var(--gray-500);
-            line-height: 1.6;
-            margin-bottom: 18px;
-            flex: 1;
+        .download-row .col-info .file-meta .tag-pdf { background: #FEE2E2; color: #DC2626; }
+        .download-row .col-info .file-meta .tag-xlsx { background: #DCFCE7; color: #16A34A; }
+        .download-row .col-info .file-meta .tag-docx { background: #DBEAFE; color: #2563EB; }
+        .download-row .col-info .file-meta .tag-pptx { background: #FEF3C7; color: #D97706; }
+        .download-row .col-action {
+            width: 120px;
+            text-align: right;
+            padding-right: 20px;
         }
-        .free-card .btn-download {
+        .download-row .btn-download {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -233,30 +272,55 @@
             color: #fff;
             border: none;
             border-radius: 8px;
-            padding: 10px 24px;
+            padding: 9px 18px;
             font-family: 'Poppins', sans-serif;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             font-weight: 600;
             cursor: pointer;
             transition: background 0.2s, transform 0.15s;
-            align-self: flex-start;
+            white-space: nowrap;
         }
-        .free-card .btn-download:hover {
+        .download-row .btn-download:hover {
             background: var(--blue-dark);
             transform: translateY(-1px);
         }
-        .free-card .card-footer {
-            margin-top: 14px;
-            font-size: 0.8rem;
-            color: var(--gray-400);
-            border-top: 1px dashed var(--gray-200);
-            padding-top: 12px;
+        .badge-new {
+            display: inline-block;
+            font-size: 0.6rem;
+            font-weight: 700;
+            background: #FEE2E2;
+            color: #DC2626;
+            padding: 1px 7px;
+            border-radius: 10px;
+            margin-left: 6px;
+            vertical-align: middle;
         }
-        .free-card .card-footer a {
+
+        /* ===== Show More/Less Toggle ===== */
+        .toggle-more-wrap {
+            text-align: center;
+            margin-top: 8px;
+        }
+        .btn-toggle-more {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: transparent;
             color: var(--blue);
-            font-weight: 500;
+            border: 1px solid var(--blue);
+            border-radius: 8px;
+            padding: 10px 32px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
         }
-        .free-card .card-footer a:hover { text-decoration: underline; }
+        .btn-toggle-more:hover {
+            background: var(--blue);
+            color: #fff;
+        }
 
         /* ===== Members-Only / Locked Section ===== */
         .members-section {
@@ -475,7 +539,6 @@
 
         /* ===== Responsive ===== */
         @media (max-width: 900px) {
-            .free-grid { grid-template-columns: 1fr; gap: 20px; }
             .members-grid { grid-template-columns: 1fr 1fr; }
             .page-header h1 { font-size: 2rem; }
             .cta-banner h2 { font-size: 1.6rem; }
@@ -503,6 +566,7 @@
             }
             .nav-toggle { display: flex; }
             .nav-links .nav-cta { width: 100%; text-align: center; }
+            .nav-links .dropdown-menu { position:static; opacity:1; visibility:visible; box-shadow:none; border:none; padding-left:1rem; min-width:auto; transform:none; }
             .page-header { padding: 100px 0 48px; }
             .page-header h1 { font-size: 1.75rem; }
             .members-grid { grid-template-columns: 1fr; }
@@ -516,10 +580,14 @@
         }
         @media (max-width: 480px) {
             .container { padding: 0 16px; }
-            .free-card { padding: 20px; }
             .member-card { padding: 20px; }
             .page-header h1 { font-size: 1.5rem; }
             .section-title { font-size: 1.35rem; }
+        }
+        @media (max-width: 600px) {
+            .download-row .col-icon { display: none; }
+            .download-row .col-action { width: 90px; }
+            .download-row .col-action .btn-download { font-size: 0.75rem; padding: 7px 12px; }
         }
     </style>
 </head>
@@ -536,11 +604,25 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="course.html">课程</a></li>
-                <li><a href="download.html" class="active">📥 下载</a></li>
-                <li><a href="about.html">关于</a></li>
-                <li><a href="course.html" class="nav-cta">✨ 加入星球</a></li>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="news.html">行业动态</a></li>
+            <li><a href="course.html" class="nav-cta">课程 →</a></li>
+            <li><a href="books/">著作</a></li>
+            <li class="dropdown">
+                <span class="dropdown-label">知识库</span>
+                <div class="dropdown-menu">
+                    <a href="kb-list.html#iso9001">ISO 9001 质量管理</a>
+                    <a href="kb-list.html#iso14001">ISO 14001 环境管理</a>
+                    <a href="kb-list.html#iso45001">ISO 45001 职业健康安全</a>
+                    <a href="kb-list.html#iso50001">ISO 50001 能源管理</a>
+                    <a href="kb-list.html#iso27001">ISO 27001 信息安全</a>
+                    <a href="kb-list.html#ai-governance">AI 治理与合规</a>
+                    <a href="kb-list.html#general">综合管理</a>
+                </div>
+            </li>
+            <li><a href="download.html" class="active">资料下载</a></li>
+            <li><a href="about.html">关于</a></li>
+            
             </ul>
         </div>
     </nav>
@@ -558,64 +640,136 @@
         <div class="container">
             <h2 class="section-title">📂 免费资料区</h2>
             <p class="section-subtitle">无需注册，点击即可下载常用模板与工具</p>
-            <div class="free-grid">
+            <div class="free-list">
+                <table class="download-table" id="fileTable">
 
-                <!-- Card 1 -->
-                <div class="free-card">
-                    <h3>工作计划模板 · 周报月报</h3>
-                    <div class="file-tags">
-                        <span class="tag-xlsx">XLSX</span>
-                        <span>18 KB</span>
-                    </div>
-                    <p class="desc">标准周报/月报模板，自动统计进度与工时，适合团队日常汇报。</p>
-                    <button class="btn-download">⬇ 立即下载</button>
-                    <div class="card-footer">
-                        想要全套30份模板？→ <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener">加入知识星球</a>
-                    </div>
+                    <!-- Row 1 — 关于印发认证规则通知 -->
+                    <tr class="download-row">
+                        <td class="col-icon">📄</td>
+                        <td class="col-info">
+                            <div class="file-name">国认监发【2025】9号 关于进一步规范管理体系认证活动的通知<span class="badge-new">NEW</span></div>
+                            <div class="file-desc">国家认监委2025年发布的核心文件，进一步规范管理体系认证活动，提升认证有效性。认证机构、审核员及获证组织必读。</div>
+                            <div class="file-meta">
+                                <span class="meta-tag tag-pdf">PDF</span>
+                                <span class="meta-tag">178 KB</span>
+                                <span class="meta-tag">国家认监委</span>
+                            </div>
+                        </td>
+                        <td class="col-action">
+                            <a href="downloads/国认监发【2025】9号 关于进一步规范管理体系认证活动的通知.pdf" class="btn-download" download>⬇ 下载</a>
+                        </td>
+                    </tr>
+
+                    <!-- Row 2 — 质量管理体系认证规则 -->
+                    <tr class="download-row">
+                        <td class="col-icon">📄</td>
+                        <td class="col-info">
+                            <div class="file-name">质量管理体系认证规则-2026<span class="badge-new">NEW</span></div>
+                            <div class="file-desc">2026版质量管理体系认证规则完整正式文本，涵盖认证依据、审核程序、证书管理、监督审核等全部条款。</div>
+                            <div class="file-meta">
+                                <span class="meta-tag tag-pdf">PDF</span>
+                                <span class="meta-tag">478 KB</span>
+                                <span class="meta-tag">质量管理</span>
+                            </div>
+                        </td>
+                        <td class="col-action">
+                            <a href="downloads/质量管理体系认证规则-2026.pdf" class="btn-download" download>⬇ 下载</a>
+                        </td>
+                    </tr>
+
+                    <!-- Row 3 — 认秘函释义 -->
+                    <tr class="download-row">
+                        <td class="col-icon">📄</td>
+                        <td class="col-info">
+                            <div class="file-name">认秘函[2025]28号 附件·新版质量管理体系认证规则释义<span class="badge-new">NEW</span></div>
+                            <div class="file-desc">认监委对2026版质量管理体系认证规则的逐条释义，帮助认证人员准确理解新版规则的变化要点与实施要求。</div>
+                            <div class="file-meta">
+                                <span class="meta-tag tag-pdf">PDF</span>
+                                <span class="meta-tag">586 KB</span>
+                                <span class="meta-tag">质量管理</span>
+                            </div>
+                        </td>
+                        <td class="col-action">
+                            <a href="downloads/认秘函[2025]28号 附件 新版质量管理体系认证规则释义.pdf" class="btn-download" download>⬇ 下载</a>
+                        </td>
+                    </tr>
+
+                    <!-- Row 4 — 附件1 环境 -->
+                    <tr class="download-row">
+                        <td class="col-icon">📄</td>
+                        <td class="col-info">
+                            <div class="file-name">国认监发【2025】9号 附件1·环境管理体系认证规则</div>
+                            <div class="file-desc">环境管理体系认证规则正式文本，依据GB/T 24001-2016/ISO 14001:2015，规范环境管理体系认证活动。</div>
+                            <div class="file-meta">
+                                <span class="meta-tag tag-pdf">PDF</span>
+                                <span class="meta-tag">507 KB</span>
+                                <span class="meta-tag">环境管理</span>
+                            </div>
+                        </td>
+                        <td class="col-action">
+                            <a href="downloads/国认监发【2025】9号 附件1 环境管理体系认证规则.pdf" class="btn-download" download>⬇ 下载</a>
+                        </td>
+                    </tr>
+
+                    <!-- ===== Hidden (more) rows ===== -->
+                    <tbody id="moreFiles" style="display:none">
+
+                    <!-- Row 5 — 附件2 职业健康安全 -->
+                    <tr class="download-row">
+                        <td class="col-icon">📄</td>
+                        <td class="col-info">
+                            <div class="file-name">国认监发【2025】9号 附件2·职业健康安全管理体系认证规则</div>
+                            <div class="file-desc">职业健康安全管理体系认证规则正式文本，依据GB/T 45001-2020/ISO 45001:2018，规范职业健康安全管理体系认证活动。</div>
+                            <div class="file-meta">
+                                <span class="meta-tag tag-pdf">PDF</span>
+                                <span class="meta-tag">451 KB</span>
+                                <span class="meta-tag">职业健康安全</span>
+                            </div>
+                        </td>
+                        <td class="col-action">
+                            <a href="downloads/国认监发【2025】9号 附件2 职业健康安全管理体系认证规则.pdf" class="btn-download" download>⬇ 下载</a>
+                        </td>
+                    </tr>
+
+                    <!-- Row 6 — 附件5 能源 -->
+                    <tr class="download-row">
+                        <td class="col-icon">📄</td>
+                        <td class="col-info">
+                            <div class="file-name">国认监发【2025】9号 附件5·能源管理体系认证规则</div>
+                            <div class="file-desc">能源管理体系认证规则正式文本，依据GB/T 23331-2020/ISO 50001:2018，规范能源管理体系认证活动。</div>
+                            <div class="file-meta">
+                                <span class="meta-tag tag-pdf">PDF</span>
+                                <span class="meta-tag">1.4 MB</span>
+                                <span class="meta-tag">能源管理</span>
+                            </div>
+                        </td>
+                        <td class="col-action">
+                            <a href="downloads/国认监发【2025】9号 附件5 能源管理体系认证规则.pdf" class="btn-download" download>⬇ 下载</a>
+                        </td>
+                    </tr>
+
+                    <!-- Row 9 — 常见问题解答 -->
+                    <tr class="download-row">
+                        <td class="col-icon">📄</td>
+                        <td class="col-info">
+                            <div class="file-name">新版《质量管理体系认证规则》常见问题解答（二）</div>
+                            <div class="file-desc">认监委针对2026版质量管理体系认证规则的常见问题二次解答，进一步澄清审核周期、人日计算、多体系结合审核等实操问题。</div>
+                            <div class="file-meta">
+                                <span class="meta-tag tag-pdf">PDF</span>
+                                <span class="meta-tag">391 KB</span>
+                                <span class="meta-tag">质量管理</span>
+                            </div>
+                        </td>
+                        <td class="col-action">
+                            <a href="downloads/新版《质量管理体系认证规则》常见问题解答（二）.pdf" class="btn-download" download>⬇ 下载</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <div class="toggle-more-wrap">
+                    <button class="btn-toggle-more" id="toggleMoreBtn">显示全部 ⬇</button>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="free-card">
-                    <h3>数据分析仪表盘</h3>
-                    <div class="file-tags">
-                        <span class="tag-xlsx">XLSX</span>
-                        <span>42 KB</span>
-                    </div>
-                    <p class="desc">销售/运营数据看板，含可视化图表与动态筛选，一键适配你的数据。</p>
-                    <button class="btn-download">⬇ 立即下载</button>
-                    <div class="card-footer">
-                        想要全套30份模板？→ <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener">加入知识星球</a>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="free-card">
-                    <h3>商业计划书框架（BP）</h3>
-                    <div class="file-tags">
-                        <span class="tag-docx">DOCX</span>
-                        <span>36 KB</span>
-                    </div>
-                    <p class="desc">专业级BP结构模板，覆盖市场分析、财务预测、团队介绍等模块。</p>
-                    <button class="btn-download">⬇ 立即下载</button>
-                    <div class="card-footer">
-                        想要全套30份模板？→ <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener">加入知识星球</a>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="free-card">
-                    <h3>项目管理甘特图</h3>
-                    <div class="file-tags">
-                        <span class="tag-xlsx">XLSX</span>
-                        <span>28 KB</span>
-                    </div>
-                    <p class="desc">轻量甘特图模板，自动计算工期与关键路径，适用于中小项目。</p>
-                    <button class="btn-download">⬇ 立即下载</button>
-                    <div class="card-footer">
-                        想要全套30份模板？→ <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener">加入知识星球</a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -684,6 +838,8 @@
                 </div>
 
             </div>
+
+
         </div>
     </section>
 
@@ -707,7 +863,7 @@
         </div>
     </footer>
 
-    <!-- ===== Mobile Nav Toggle ===== -->
+    <!-- ===== Mobile Nav Toggle + Show More ===== -->
     <script>
         const toggle = document.getElementById('navToggle');
         const links = document.getElementById('navLinks');
@@ -717,6 +873,19 @@
                 toggle.classList.toggle('open');
             });
         }
+        function initToggle() {
+            const more = document.getElementById('moreFiles');
+            const btn = document.getElementById('toggleMoreBtn');
+            if (!more || !btn) return;
+            const count = more.querySelectorAll('tr').length;
+            btn.innerHTML = '显示全部 ' + count + ' 个文件 ⬇';
+            btn.addEventListener('click', function() {
+                const hidden = more.style.display === 'none';
+                more.style.display = hidden ? '' : 'none';
+                btn.innerHTML = hidden ? '收起 ⬆' : '显示全部 ' + count + ' 个文件 ⬇';
+            });
+        }
+        document.addEventListener('DOMContentLoaded', initToggle);
     </script>
 </body>
 </html>
