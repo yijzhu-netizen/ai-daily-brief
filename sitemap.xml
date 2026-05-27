@@ -2,9 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yijzhu-netizen.github.io/ai-daily-brief/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://yijzhu-netizen.github.io/ai-daily-brief/general/ISO9001-2025转版过渡期制造企业质量数据治理与AI融合的系统性路径</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yijzhu-netizen.github.io/ai-daily-brief/ai-governance/制造企业AI-Agent安全治理基准-LLM幻觉率提示注入频率与AI系统审计的2026年实证数据</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yijzhu-netizen.github.io/ai-daily-brief/general/2026年制造业ISO管理体系认证市场全景数据-八类标准审核缺陷率与认证机构竞争格局</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yijzhu-netizen.github.io/ai-daily-brief/ai-governance/AI%E6%99%BA%E8%83%BD%E4%BD%93%E5%9C%A8%E5%88%B6%E9%80%A0%E4%BC%81%E4%B8%9A%E7%94%9F%E4%BA%A7%E8%BF%90%E8%90%A5%E4%B8%AD%E9%99%8D%E4%BD%8E%E6%88%90%E6%9C%AC%E7%9A%84%E5%9B%9B%E7%B1%BB%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF</loc>
