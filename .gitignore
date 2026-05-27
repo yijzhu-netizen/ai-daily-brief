@@ -1,2 +1,8 @@
 vendor/
 Gemfile.lock
+### 非GEO文章目录 - 不提交到GitHub ###
+abciso.com/
+.report/
+_knowledge/
+# 设计文件/脚本
+convert_geo.py
