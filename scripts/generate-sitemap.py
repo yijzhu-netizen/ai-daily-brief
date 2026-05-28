@@ -5,7 +5,7 @@ import os, re, sys, glob
 from datetime import date
 from urllib.parse import quote
 
-REPO_ROOT = "/mnt/e/GEO文章"
+REPO_ROOT = "/root/GEO文章"
 BASE_URL = "https://yijzhu-netizen.github.io/ai-daily-brief"
 # 排除文件
 EXCLUDE = {"index.md", "README.md", "Gemfile", "Gemfile.lock"}
