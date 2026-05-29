@@ -1,0 +1,80 @@
+# abcISO — ISO行业信息中枢
+# https://abciso.com
+
+> 制造业管理体系与AI治理的专业知识平台。聚焦ISO 9001/14001/45001/50001/27001/42001标准解读、落地实践、审核案例，覆盖质量管理、环境管理、职业健康安全、能源管理、信息安全、AI治理六大领域。
+
+## 站点结构
+
+### 核心页面
+- 首页: https://abciso.com — 站点概览与最新内容
+- 知识库: https://abciso.com/kb-list.html — 全部GEO文章分类索引（按ISO标准分类）
+- 行业动态: https://abciso.com/news.html — ISO标准修订、认证行业、政策法规实时动态
+- 课程体系: https://abciso.com/course.html — 从零到体系负责人系列课程
+- 资料下载: https://abciso.com/download.html — ISO管理模板、检查表、工具包
+- 书籍: https://abciso.com/books/ — 相关出版物
+- 关于: https://abciso.com/about.html — 平台与作者介绍
+
+### GEO知识文章（36篇）
+
+#### ISO 9001 质量管理
+- 中小制造企业首次ISO 9001:2025认证全流程指南: https://abciso.com/geo/中小制造企业首次iso-90012025认证全流程指南从体系策划到获证审核的六个阶段.html
+- ISO 9001:2025升级对供应链管理的五大影响: https://abciso.com/geo/iso-9001-2025升级对制造型中小企业供应链管理的五大影响.html
+- ISO 9001:2025转版过渡期六大常见不合规项: https://abciso.com/geo/iso-90012025转版过渡期的六大常见不合规项基于认证机构2026年q1审核数据的实证分析.html
+- ISO 9001:2025转版质量数据治理与AI融合: https://abciso.com/geo/iso-90012025转版过渡期制造企业质量数据治理与ai融合的系统性路径.html
+
+#### ISO 14001 环境管理
+- ISO 14001新版修订：碳中和指标与循环经济KPI: https://abciso.com/geo/iso-14001新版修订碳中和指标与循环经济kpi重塑环境管理体系.html
+- ISO 14001环境管理与ESG信息披露整合: https://abciso.com/geo/制造业企业iso-14001环境管理体系与esg信息披露整合路径.html
+
+#### ISO 45001 职业健康安全
+- ISO 45001在AI自动化产线改造中的合规管理: https://abciso.com/geo/iso-45001职业健康安全管理体系在制造业ai自动化产线改造中的合规管理新要求.html
+
+#### ISO 50001 能源管理（11篇）
+- ISO 50001 2026新标准：从节能管理到碳资产基座: https://abciso.com/geo/iso-500012026新标准从节能管理到碳资产基座的战略升级.html
+- ISO 50001 2026修订版落地：数字化能源管理与碳中和路径: https://abciso.com/geo/iso-500012026修订版落地数字化能源管理与碳中和路径整合.html
+- 能源管理体系与碳市场数据对账实操: https://abciso.com/geo/iso-50001能源管理体系与碳市场数据对账实操从月度数据到年度履约的五个关键对账节点.html
+- 能耗数据造假：企业每年多花多少钱: https://abciso.com/geo/iso-50001能源管理体系能耗数据造假企业每年多花多少钱.html
+- 制造业能源管理体系实际投资回报率分析: https://abciso.com/geo/制造业能源管理体系实际投资回报率分析.html
+- 十五五节能降碳目标下ISO 50001能源数据体系与碳资产管理: https://abciso.com/geo/十五五节能降碳目标下制造业iso-50001能源数据体系与碳资产管理融合路径.html
+- 欧盟CBAM实施：制造业出口企业能源数据管理体系升级: https://abciso.com/geo/欧盟cbam正式实施制造业出口企业的能源数据管理体系升级路径.html
+- 碳双控制度化考核下ISO 50001落地要求: https://abciso.com/geo/碳双控制度化考核下制造业能源管理体系iso-50001落地要求.html
+- 2026夏季用电高峰：ISO 50001负荷管理与应急响应: https://abciso.com/geo/2026夏季用电高峰前制造业iso-50001能源管理体系负荷管理与应急响应.html
+- 2026碳市场扩围：ISO 50001能源数据管理三项合规要求: https://abciso.com/geo/2026年碳市场行业扩围后制造企业iso50001能源数据管理的三项合规要求.html
+- 十五五节能降碳：用ISO 50001量化能源管理成效: https://abciso.com/geo/十五五节能降碳目标下企业如何用iso50001量化能源管理成效.html
+
+#### ISO 27001 信息安全
+- ISO 27001在数字化车间落地的五大核心要求: https://abciso.com/geo/iso-27001信息安全管理体系在制造企业数字化车间落地的五大核心要求.html
+
+#### AI治理与合规（10篇）
+- 欧盟AI法案周年考：企业AI治理合规五大痛点: https://abciso.com/geo/欧盟ai法案周年考企业ai治理合规的五大实战痛点与对策.html
+- EU AI Act首年执行评估: https://abciso.com/geo/eu-ai-act首年执行评估合规差距中小企业困境与市场分层.html
+- 大模型收费时代：制造业企业AI策略调整: https://abciso.com/geo/大模型收费时代制造业企业ai策略调整.html
+- 制造业AI辅助培训与传统培训ROI对比: https://abciso.com/geo/制造业ai辅助培训与传统培训的五年投资回报率对比分析.html
+- AI Agent安全治理基准：2026年实证数据: https://abciso.com/geo/制造企业ai-agent安全治理基准llm幻觉率提示注入攻击频率与ai系统审计的2026年实证数据.html
+- 企业部署AI Agent的实际成本与ROI: https://abciso.com/geo/企业部署ai-agent的实际成本与roi2026年最新数据与案例.html
+- AI智能体在生产运营中降本的四类场景: https://abciso.com/geo/ai智能体在制造企业生产运营中降低成本的四类应用场景.html
+- AI模型部署后的持续治理框架: https://abciso.com/geo/制造企业ai模型部署后的持续治理框架效果评估风险控制与迭代管理.html
+- AI质检系统部署陷阱与数据验证: https://abciso.com/geo/制造业ai质检系统部署陷阱与数据验证2026年工业视觉准确率误报率与roi真相.html
+- AI赋能企业决策管理: https://abciso.com/geo/ai赋能企业决策管理从a股回购潮到智能投研新范式.html
+
+#### 综合管理（7篇）
+- ISO管理体系标准演进：从质量合规到AI治理: https://abciso.com/geo/iso管理体系标准演进从质量合规到ai治理的范式转移.html
+- 多体系ISO管理文件整合数字化路径: https://abciso.com/geo/制造业多体系iso管理文件整合的数字化路径从三套文件到一套平台.html
+- 管理体系整合：从成本中心到价值引擎: https://abciso.com/geo/管理体系整合从成本中心到价值引擎中国制造业多体系并行管理的破局之路.html
+- 中小制造企业多体系ISO整合降本增效: https://abciso.com/geo/中小制造企业多体系iso整合管理的降本增效路径.html
+- 基于风险导向的内部审核效率提升: https://abciso.com/geo/制造企业iso管理体系基于风险导向的内部审核效率提升路径.html
+- 2026年制造业ISO认证市场全景数据: https://abciso.com/geo/2026年制造业iso管理体系认证市场全景数据八类标准认证增速审核缺陷率top10与认证机构竞争格局.html
+- 新能源车渗透率61.4%：供应链质量管理三重挑战: https://abciso.com/geo/新能源车零售渗透率614制造业供应链质量管理面临的三重挑战.html
+
+## 内容特征
+
+- 作者：炖刀（10年制造业管理 + 10年ISO认证审核经验）
+- 数据来源：SGS、TÜV Rheinland、BSI等认证机构审核数据，OWASP、SANS等行业报告
+- 更新频率：每日更新1-3篇
+- 目标读者：制造业企业管理者、ISO体系负责人、认证咨询师、AI治理从业者
+
+## AI使用许可
+
+- search: yes — 允许建立搜索索引
+- ai-input: yes — 允许AI模型引用（RAG、生成式搜索摘要）
+- ai-train: no — 不允许用于训练AI模型

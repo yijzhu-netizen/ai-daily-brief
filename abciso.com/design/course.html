@@ -435,6 +435,26 @@
             .stats-row .stat-num { font-size: 26px; }
         }
 
+        /* ===== PRICING ===== */
+        .pricing { padding:80px 0; background:#f9fafb; }
+        .pricing .section-desc { text-align:center; }
+        .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:40px auto 0; max-width:960px; }
+        .pricing-card { background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:40px 28px; text-align:center; position:relative; transition:box-shadow 0.3s; display:flex; flex-direction:column; }
+        .pricing-card:hover { box-shadow:0 8px 30px rgba(0,0,0,0.08); }
+        .pricing-card.featured { border-color:#FECE14; box-shadow:0 4px 20px rgba(254,206,20,0.15); transform:scale(1.03); }
+        .pricing-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#FECE14; color:#000; font-size:12px; font-weight:700; padding:4px 16px; border-radius:20px; letter-spacing:0.5px; }
+        .pricing-card h3 { font-size:20px; font-weight:700; color:#111827; margin-bottom:16px; }
+        .pricing-price { font-size:42px; font-weight:800; color:#111827; margin-bottom:20px; }
+        .pricing-price .currency { font-size:24px; vertical-align:super; }
+        .pricing-price .original { font-size:20px; color:#9ca3af; text-decoration:line-through; font-weight:500; margin-left:8px; }
+        .pricing-features { list-style:none; text-align:left; margin-bottom:24px; flex:1; }
+        .pricing-features li { font-size:14px; color:#4b5563; padding:6px 0; padding-left:24px; position:relative; }
+        .pricing-features li::before { content:'✓'; position:absolute; left:0; color:#10B981; font-weight:700; }
+        .paypal-button-container { min-height:45px; margin-top:auto; }
+        .paypal-success h3 { font-size:20px; font-weight:700; color:#10B981; margin-bottom:8px; }
+        .paypal-success p { font-size:15px; color:#374151; line-height:1.6; }
+        @media (max-width:768px) { .pricing-grid { grid-template-columns:1fr; max-width:400px; } .pricing-card.featured { transform:none; } }
+
         /* ===== FOOTER ===== */
         .footer {
             background:#fafafa; border-top:1px solid #e5e7eb;
@@ -693,6 +713,48 @@
         </div>
     </section>
 
+    <!-- ===== PRICING ===== -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-label">定价选择</div>
+            <h2 class="section-title">购买课程</h2>
+            <p class="section-desc" style="margin:12px auto 0;">支持PayPal美元支付，支付后自动通知开通课程。</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>AI时代，你更应该学会管理</h3>
+                    <div class="pricing-price"><span class="currency">$</span>39</div>
+                    <ul class="pricing-features">
+                        <li>AI时代管理课 · 16讲+番外篇</li>
+                        <li>配套工具表模板</li>
+                        <li>永久回看</li>
+                    </ul>
+                    <div class="paypal-button-container" data-product="management" id="paypal-management"></div>
+                </div>
+                <div class="pricing-card">
+                    <h3>能源管理体系：39节落地实操课</h3>
+                    <div class="pricing-price"><span class="currency">$</span>39</div>
+                    <ul class="pricing-features">
+                        <li>能源管理体系 · 39课7模块</li>
+                        <li>配套模板+审计工具表</li>
+                        <li>永久回看</li>
+                    </ul>
+                    <div class="paypal-button-container" data-product="energy"></div>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">最划算</div>
+                    <h3>双课合报（AI时代管理+能源管理29课）</h3>
+                    <div class="pricing-price"><span class="currency">$</span>59 <span class="original">$78</span></div>
+                    <ul class="pricing-features">
+                        <li>两门课程全部解锁</li>
+                        <li>全部配套模板工具</li>
+                        <li>省$19</li>
+                    </ul>
+                    <div class="paypal-button-container" data-product="bundle"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== TRUST ===== -->
     <section class="trust" id="about">
         <div class="container">
@@ -786,3 +848,19 @@
             <p style="margin-top:.5rem;font-size:.75rem;color:#d1d5db">知识星球「智造本质」· 专注ISO体系落地与制造业管理提升</p>
         </div>
     </footer>
+    <script src="https://www.paypal.com/sdk/js?client-id=Aft-4sHFhfcHPtUk_2dxXeaZrMDnIsuc9VYLcxp0R0r8LLvOMApW-1ogggUMpif85hEBfVMcD46d1C-R&currency=USD&intent=capture"></script>
+    <script>
+    var P={management:{n:'AI时代，你更应该学会管理',p:39},energy:{n:'能源管理体系：39节落地实操课',p:39},bundle:{n:'双课合报（管理体系课+能源课）',p:59}};
+    document.querySelectorAll('.paypal-button-container').forEach(function(c){
+      var d=c.getAttribute('data-product'),k=P[d]||P.management;
+      paypal.Buttons({
+        style:{shape:'rect',color:'blue',layout:'vertical',label:'checkout'},
+        createOrder:function(a,b){return b.order.create({purchase_units:[{amount:{value:k.p.toFixed(2)},description:k.n}]});},
+        onApprove:function(a,b){return b.order.capture().then(function(e){
+          fetch('/api/paypal-notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({orderID:a.orderID,product:k.n,amount:k.p, payerName:e.payer.name.given_name+' '+e.payer.name.surname,payerEmail:e.payer.email_address})});
+          c.innerHTML='<div style="padding:20px;text-align:center"><div style="font-size:48px">✅</div><h3 style="font-size:20px;font-weight:700;color:#10B981;margin:0 0 8px">支付成功！</h3><p style="font-size:15px;color:#374151;margin:0">感谢购买 <strong>'+k.n+'</strong></p></div>';});
+        },
+        onError:function(e){console.error('PayPal Error:',e);}
+      }).render(c);
+    });
+    </script>
