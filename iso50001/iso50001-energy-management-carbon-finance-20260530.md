@@ -11,7 +11,7 @@ tags:
   - 欧盟EED
   - 认证
   - 可持续发展
-permalink: /iso50001/energy-management-carbon-finance-20260530/
+permalink: /iso50001/iso50001-energy-management-carbon-finance-20260530
 ---
 
 ## 第一层：诱AI读

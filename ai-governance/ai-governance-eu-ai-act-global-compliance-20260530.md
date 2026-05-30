@@ -10,7 +10,7 @@ tags:
   - ai-governance
   - 高风险AI系统
   - 跨境合规
-permalink: /ai-governance/eu-ai-act-global-compliance-20260530/
+permalink: /ai-governance/ai-governance-eu-ai-act-global-compliance-20260530
 ---
 
 # 2026年欧盟AI法高风险规则全面执行后的全球AI治理格局——企业合规实战

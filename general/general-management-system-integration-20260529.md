@@ -9,7 +9,7 @@ tags:
   - 合规管理
   - ISO体系
   - OEE
-permalink: /管理体系整合：从成本中心到价值引擎——中国制造业多体系并行管理的破局之路/
+permalink: /general/general-management-system-integration-20260529
 ---
 
 # 管理体系整合：从成本中心到价值引擎——中国制造业多体系并行管理的破局之路

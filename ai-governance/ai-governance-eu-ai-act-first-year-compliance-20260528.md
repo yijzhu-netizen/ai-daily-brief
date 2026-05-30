@@ -3,7 +3,7 @@ title: "EU AI Act首年执行评估：合规差距、中小企业困境与市场
 date: 2026-05-28
 description: "基于EC联合研究中心、McKinsey及Politico Europe等来源的数据，评估EU AI Act生效一周年后的合规现状、中小企业困境及市场分层效应。"
 tags: [EU AI Act, AI监管, 合规, 中小企业, 市场分层]
-permalink: "/ai-governance/eu-ai-act-first-year-compliance-20260528"
+permalink: /ai-governance/ai-governance-eu-ai-act-first-year-compliance-20260528
 ---
 
 # EU AI Act首年执行评估：合规差距、中小企业困境与市场分层
