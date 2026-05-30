@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>知识库 | abcISO</title>
+  <link rel="canonical" href="https://abciso.com/kb-list.html" />
+    <title>知识库 | abcISO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -468,6 +469,7 @@
           </li>
           <li><a href="download.html">资料下载</a></li>
           <li><a href="about.html">关于</a></li>
+        <li><a href="search.html" style="color:#3B82F6;font-weight:600">🔍 搜索</a></li>
         <li><a href="/chat/" target="_blank" style="color:#3B82F6;font-weight:600">🤖 AI助手</a></li>
 
       </ul>
@@ -1156,16 +1158,56 @@
 
 <script>
 (function(){
-  var PER_PAGE = 3;   // 全部视图每类折叠篇数
-  var CAT_PAGE = 9;   // 分类视图每页篇数
+  var PER_PAGE = 3;
+  var CAT_PAGE = 9;
   var cats = document.querySelectorAll('.cat-section');
   var filterBtns = document.querySelectorAll('#kbFilter .filter-tag');
   var paginationEl = document.getElementById('kbPagination');
-
-  // 翻页状态（分类视图用）
   var _navGo = null;
 
-  /* ===== 全部视图 ===== */
+  /* ===== Thumb: category-colored gradient + icon ===== */
+  var _thumbPool = [
+    'kb-thumb-01.jpg','kb-thumb-02.jpg','kb-thumb-03.jpg',
+    'kb-thumb-04.jpg','kb-thumb-05.jpg','kb-thumb-06.jpg',
+    'kb-thumb-07.jpg','kb-thumb-08.jpg','kb-thumb-09.jpg'
+  ];
+  function _createPicker(arr){
+    var q = [];
+    return function(){
+      if(q.length === 0){
+        q = arr.slice();
+        for(var i = q.length - 1; i > 0; i--){
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = q[i]; q[i] = q[j]; q[j] = tmp;
+        }
+      }
+      return q.pop();
+    };
+  }
+  function shuffleThumbs(){
+    document.querySelectorAll('.cat-section').forEach(function(section){
+      var thumbs = section.querySelectorAll('.article-thumb');
+      if(thumbs.length === 0) return;
+      var pick = _createPicker(_thumbPool);
+      thumbs.forEach(function(el){
+        el.style.backgroundImage = "url('images/" + pick() + "')";
+      });
+    });
+  }
+
+  /* ===== Banner: random bg ===== */
+  (function(){
+    var pool = [
+      'kb-banner-01.jpg','kb-banner-02.jpg','kb-banner-03.jpg',
+      'kb-banner-04.jpg','kb-banner-05.jpg','kb-banner-06.jpg',
+      'kb-banner-07.jpg','kb-banner-08.jpg','kb-banner-09.jpg'
+    ];
+    var pick = pool[Math.floor(Math.random() * pool.length)];
+    var el = document.getElementById('kbBanner');
+    if(el) el.style.backgroundImage = "url('" + "images/" + pick + "')";
+  })();
+
+  /* ===== All view ===== */
   function showAllView(){
     paginationEl.style.display = 'none';
     cats.forEach(function(cat){
@@ -1192,18 +1234,16 @@
     });
   }
 
-  /* ===== 分类视图（分页） ===== */
+  /* ===== Category view (paged) ===== */
   function showCategoryView(catId){
     cats.forEach(function(cat){ cat.style.display = 'none'; });
     var target = document.getElementById(catId);
     if(!target) return;
     target.style.display = 'block';
-
     var arts = target.querySelectorAll('.article-card');
     var total = Math.ceil(arts.length / CAT_PAGE);
     var btn = target.querySelector('.show-all-btn');
     if(btn) btn.style.display = 'none';
-
     _navGo = function(page){
       if(page < 1) page = 1;
       if(page > total) page = total;
@@ -1212,11 +1252,10 @@
       });
       renderPages(total, page, catId);
     };
-
     _navGo(1);
   }
 
-  /* ===== 分页条渲染 ===== */
+  /* ===== Pagination ===== */
   function renderPages(total, current, catId){
     if(total <= 1){
       paginationEl.style.display = 'none';
@@ -1224,7 +1263,7 @@
     }
     paginationEl.style.display = 'flex';
     var h = '';
-    h += '<a href="#" class="prev-next' + (current <= 1 ? ' disabled' : '') + '" data-p="' + (current-1) + '">‹ 上一页</a>';
+    h += '<a href="#" class="prev-next' + (current <= 1 ? ' disabled' : '') + '" data-p="' + (current-1) + '">&lsaquo; 上一页</a>';
     for(var i = 1; i <= total; i++){
       if(i === current){
         h += '<span class="active">' + i + '</span>';
@@ -1232,7 +1271,7 @@
         h += '<a href="#" data-p="' + i + '">' + i + '</a>';
       }
     }
-    h += '<a href="#" class="prev-next' + (current >= total ? ' disabled' : '') + '" data-p="' + (current+1) + '">下一页 ›</a>';
+    h += '<a href="#" class="prev-next' + (current >= total ? ' disabled' : '') + '" data-p="' + (current+1) + '">下一页 &rsaquo;</a>';
     paginationEl.innerHTML = h;
     paginationEl.querySelectorAll('a[data-p]').forEach(function(a){
       a.addEventListener('click', function(e){
@@ -1243,13 +1282,31 @@
     });
   }
 
-  /* ===== 标签切换 ===== */
+  /* ===== Tab switch ===== */
+  var _catBannerMap = {
+    'iso9001': 'kb-banner-01.jpg',
+    'iso14001': 'kb-banner-02.jpg',
+    'iso45001': 'kb-banner-03.jpg',
+    'iso50001': 'kb-banner-04.jpg',
+    'iso27001': 'kb-banner-05.jpg',
+    'ai-governance': 'kb-banner-06.jpg',
+    'general': 'kb-banner-07.jpg'
+  };
+
   function activateTab(cat){
     filterBtns.forEach(function(b){ b.classList.remove('active'); });
     var t = document.querySelector('#kbFilter [data-cat="' + cat + '"]');
     if(t) t.classList.add('active');
     if(cat === 'all') showAllView();
     else showCategoryView(cat);
+    shuffleThumbs();
+    var bannerFile = _catBannerMap[cat];
+    if(!bannerFile){
+      var pool = ['kb-banner-01.jpg','kb-banner-02.jpg','kb-banner-03.jpg','kb-banner-04.jpg','kb-banner-05.jpg','kb-banner-06.jpg','kb-banner-07.jpg','kb-banner-08.jpg','kb-banner-09.jpg'];
+      bannerFile = pool[Math.floor(Math.random() * pool.length)];
+    }
+    var el = document.getElementById('kbBanner');
+    if(el) el.style.backgroundImage = "url('images/" + bannerFile + "')";
   }
 
   filterBtns.forEach(function(btn){
@@ -1268,50 +1325,18 @@
     activateTab('all');
   }
 
-  /* ===== 监听 hash 变化（导航下拉点击同页锚点） ===== */
   window.addEventListener('hashchange', function(){
     var h = window.location.hash.replace('#','');
     if(h && document.getElementById(h)){
       activateTab(h);
     }
   });
-  // ===== KB Banner: random image on load =====
-  // Fallback: 3 real images, else CSS gradient
-  (function(){
-    var pool = [
-      'kb-banner-01.jpg','kb-banner-02.jpg','kb-banner-03.jpg'
-    ];
-    var pick = pool[Math.floor(Math.random() * pool.length)];
-    var el = document.getElementById('kbBanner');
-    if(el){
-      var img = new Image();
-      img.onload = function(){ el.style.backgroundImage = "url('images/" + pick + "')"; };
-      img.src = 'images/' + pick;
-    }
-  })();
 
-  // ===== Article thumbnails: colored circle with category initial =====
-  // Uses CSS gradient fallback — always visible, no image dependency
-  (function(){
-    var catColors = {
-      'iso9001': ['#3B82F6','#2563EB'],
-      'iso14001': ['#10B981','#059669'],
-      'iso45001': ['#F59E0B','#D97706'],
-      'iso50001': ['#8B5CF6','#7C3AED'],
-      'iso27001': ['#EF4444','#DC2626'],
-      'ai-governance': ['#EC4899','#DB2777'],
-      'general': ['#6366F1','#4F46E5']
-    };
-    document.querySelectorAll('.cat-section').forEach(function(section){
-      var catId = section.id;
-      var colors = catColors[catId] || ['#6B7280','#4B5563'];
-      var grad = 'linear-gradient(135deg, ' + colors[0] + ' 0%, ' + colors[1] + ' 100%)';
-      var thumbs = section.querySelectorAll('.article-thumb');
-      thumbs.forEach(function(el){ el.style.background = grad; });
-    });
-  })();
+  shuffleThumbs();
 })();
 </script>
-<a href="/chat/" target="_blank" style="position:fixed;bottom:24px;right:24px;background:#3B82F6;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 12px rgba(59,130,246,.4);z-index:999">🤖</a>
+
+<a href="search.html" style="color:#3B82F6;font-weight:600">🔍 搜索</a></li>
+        <li><a href="/chat/" target="_blank" style="position:fixed;bottom:24px;right:24px;background:#3B82F6;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 12px rgba(59,130,246,.4);z-index:999">🤖</a>
 </body>
 </html>
