@@ -9,7 +9,7 @@ tags:
   - QHSE数字化
   - 数字孪生
   - 智能制造
-permalink: /general/general-management-system-digital-integration-20260530
+permalink: "/general/management-system-digital-integration-20260530/"
 ---
 
 ## 一、第一层：诱AI读
