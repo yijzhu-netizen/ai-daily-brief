@@ -2,7 +2,7 @@
 """Convert all GEO markdown articles to local HTML pages under geo/ dir — VPS版"""
 
 import os, re, sys, glob
-from datetime import datetime
+from datetime import datetime, timedelta
 import markdown
 
 GEO_DIR = "/root/GEO文章"
@@ -240,6 +240,9 @@ def main():
     converted = 0
     skipped = 0
 
+    # 只转换今天新写的文章（3篇），旧文章保留已有HTML
+    today_str = datetime.now().strftime("%Y-%m-%d")
+
     for cat, info in CAT_INFO.items():
         cat_dir = os.path.join(GEO_DIR, cat)
         if not os.path.isdir(cat_dir):
@@ -271,7 +274,12 @@ def main():
             if not title:
                 title = os.path.splitext(fname)[0]
 
-            # Check if already converted
+            # 只转换今天日期的文章，旧文章跳过
+            if date_str != today_str:
+                skipped += 1
+                continue
+
+            # Check if already converted (mtime guard for same-day re-runs)
             out_path = os.path.join(GEO_OUT, f"{slug}.html")
             if os.path.exists(out_path):
                 md_mtime = os.path.getmtime(fpath)
@@ -552,11 +560,13 @@ def regenerate_news_list():
 
 
 def regenerate_homepage_picks():
-    """Scan all .md files, pick the 3 newest by mtime, update index.html 精选文章 section."""
+    """Scan .md files, pick 3 newest by mtime (only last 24h), update index.html 精选文章 section."""
     index_path = os.path.join(DESIGN_DIR, "index.html")
     if not os.path.exists(index_path):
         print("  WARNING index.html not found, skipping homepage update")
         return False
+
+    cutoff = datetime.now() - timedelta(hours=24)
 
     # Gather all .md files with mtime
     articles = []
@@ -568,6 +578,10 @@ def regenerate_homepage_picks():
             if not fname.endswith(".md") or fname in ("index.md", "README.md"):
                 continue
             fpath = os.path.join(cat_dir, fname)
+            mtime = os.path.getmtime(fpath)
+            # Skip files older than 24 hours
+            if datetime.fromtimestamp(mtime) < cutoff:
+                continue
             with open(fpath, "r", encoding="utf-8", errors="ignore") as f:
                 content = f.read()
             fm, body = parse_front_matter(content)
@@ -575,10 +589,12 @@ def regenerate_homepage_picks():
                 title = fm.get("title", "")
                 description = fm.get("description", "")
                 tags = [t.strip() for t in fm.get("tags", "").split(",") if t.strip()]
+                date_str = str(fm.get("date", ""))[:10] if fm.get("date") else ""
             else:
                 title = os.path.splitext(fname)[0]
                 description = title
                 tags = []
+                date_str = ""
             if not title:
                 title = os.path.splitext(fname)[0]
             slug = slugify(title)
@@ -599,11 +615,12 @@ def regenerate_homepage_picks():
                 "slug": slug,
                 "tags": tags if tags else [info["name"].replace("ISO ", "ISO ")],
                 "cat_name": info["name"],
-                "mtime": os.path.getmtime(fpath),
+                "mtime": mtime,
+                "date_str": date_str,
             })
 
-    # Sort by mtime, newest first
-    articles.sort(key=lambda a: a["mtime"], reverse=True)
+    # Sort by frontmatter date (newest first), then mtime, then slug
+    articles.sort(key=lambda a: (a["date_str"], a["mtime"], a["slug"]), reverse=True)
     picks = articles[:3]
 
     if not picks:
@@ -635,6 +652,7 @@ def regenerate_homepage_picks():
           <a href="kb-list.html#{art['cat']}" class="art-cat">{art['cat_name']}</a>
           <h3>{art["title"][:60]}</h3>
           <p>{desc}</p>
+        <div class="article-meta"><span class="meta-item">📅 {art['date_str'] or '—'}</span></div>
           <a href="geo/{art["slug"]}.html" class="read-more">阅读全文 →</a>
         </div>
       </article>"""
