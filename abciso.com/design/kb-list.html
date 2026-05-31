@@ -1259,36 +1259,27 @@
   var _navGo = null;
 
   /* ===== Thumb: category-specific real images ===== */
-  var _catThumbMap = {
-    'iso9001': ['art_01.jpg', 'art_11.jpg'],
-    'iso14001': ['art_03.jpg', 'art_12.jpg'],
-    'iso45001': ['art_04.jpg', 'art_13.jpg'],
-    'iso50001': ['art_14.jpg', 'art_06.jpg'],
-    'iso27001': ['art_05.jpg', 'art_15.jpg'],
-    'ai-governance': ['art_07.jpg', 'art_16.jpg'],
-    'general': ['art_17.jpg', 'art_09.jpg']
-  };
-  function _createPicker(arr){
-    var q = [];
-    return function(){
-      if(q.length === 0){
-        q = arr.slice();
-        for(var i = q.length - 1; i > 0; i--){
-          var j = Math.floor(Math.random() * (i + 1));
-          var tmp = q[i]; q[i] = q[j]; q[j] = tmp;
-        }
-      }
-      return q.pop();
-    };
-  }
+  /* Global 20-image pool — each category gets a shuffled subset, no repeats within a section */
+  var _allArtPool = [
+    'art_01.jpg','art_02.jpg','art_03.jpg','art_04.jpg','art_05.jpg',
+    'art_06.jpg','art_07.jpg','art_08.jpg','art_09.jpg','art_10.jpg',
+    'art_11.jpg','art_12.jpg','art_13.jpg','art_14.jpg','art_15.jpg',
+    'art_16.jpg','art_17.jpg','art_18.jpg','art_19.jpg','art_20.jpg'
+  ];
   function shuffleThumbs(){
     document.querySelectorAll('.cat-section').forEach(function(section){
       var thumbs = section.querySelectorAll('.article-thumb');
       if(thumbs.length === 0) return;
-      var pool = _catThumbMap[section.id] || _catThumbMap['general'];
-      var pick = _createPicker(pool);
-      thumbs.forEach(function(el){
-        el.style.backgroundImage = "url('images/" + pick() + "')";
+      /* Shuffle the global pool for each section independently */
+      var pool = _allArtPool.slice();
+      for(var i = pool.length - 1; i > 0; i--){
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+      }
+      /* Assign unique images to each thumb in this section */
+      thumbs.forEach(function(el, idx){
+        var img = pool[idx % pool.length];
+        el.style.backgroundImage = "url('images/" + img + "')";
       });
     });
   }
