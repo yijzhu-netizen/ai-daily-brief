@@ -36,14 +36,6 @@ NAVBAR_HTML = """\
       </div>
     </div>"""
 
-FOOTER_HTML = """\
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-brand">abcISO<span>.com</span></div>
-      <p>制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
-    </div>
-  </footer>"""
-
 CSS_ARTICLE = """
 /* ===== Reset & Base ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -120,6 +112,16 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 .footer p{font-size:.875rem;color:#6b7280}
 .footer .footer-brand{font-family:'Poppins',sans-serif;font-weight:700;color:#3B82F6;font-size:1.125rem;margin-bottom:.5rem}
 .footer .footer-brand span{color:#8B5CF6}
+/* CTA Card */
+.cta-article{display:flex;gap:1rem;padding:1.5rem;margin:0 1.5rem 2rem;background:linear-gradient(135deg,#f0f7ff,#faf5ff);border:1px solid #e0e7ff;border-radius:12px;max-width:820px}
+.cta-icon{font-size:2rem;line-height:1;flex-shrink:0}
+.cta-body h3{font-size:1.125rem;margin-bottom:.375rem}
+.cta-body>p{font-size:.875rem;color:#4b5563;margin-bottom:.75rem;line-height:1.5}
+.cta-list{list-style:none;padding:0;margin:0 0 1rem;display:flex;flex-direction:column;gap:.375rem}
+.cta-list li{font-size:.875rem;color:#374151;line-height:1.4}
+.btn-cta-planet{display:inline-flex;align-items:center;gap:.375rem;background:#8B5CF6;color:#fff;padding:.5rem 1.25rem;border-radius:6px;font-weight:600;font-size:.875rem;text-decoration:none;transition:background .2s}
+.btn-cta-planet:hover{background:#7C3AED;color:#fff}
+@media(max-width:600px){.cta-article{flex-direction:column;align-items:flex-start;padding:1.25rem;margin:0 1rem 1.5rem}}
 """
 
 
@@ -170,6 +172,7 @@ def generate_article_page(title, date_str, description, tags, body_html, categor
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} | abcISO</title>
+<link rel="canonical" href="https://abciso.com/geo/{slug}.html" />
 <meta name="description" content="{description[:160]}" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -213,7 +216,29 @@ def generate_article_page(title, date_str, description, tags, body_html, categor
   </div>
 </main>
 
-{FOOTER_HTML}
+    <!-- CTA Card: 星球引流 -->
+    <div class="cta-article">
+      <div class="cta-icon">📘</div>
+      <div class="cta-body">
+        <h3>知识星球「智造本质」</h3>
+        <p>10年制造业管理 + 10年ISO认证审核实操经验浓缩。<br>
+        完整数据来源、合规模板、课程序列，都在这里。</p>
+        <ul class="cta-list">
+          <li>📄 本文引用的完整文献清单与工具模板</li>
+          <li>📚 从零落地的管理体系实操课程（39节）</li>
+          <li>🔍 审核员视角的真实案例库（持续更新）</li>
+        </ul>
+        <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener" class="btn-cta-planet">加入星球 → 299元/年</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-brand">abcISO<span>.com</span></div>
+        <p>制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
+      </div>
+    </footer>
 
 <script>
 document.querySelector('.nav-toggle').addEventListener('click', function(){{
@@ -432,7 +457,7 @@ def regenerate_kb_list():
                 display_date = f"{d.year}-{d.month:02d}-{d.day:02d}"
 
             article_html = f"""        <article class="article-card">
-          <a href="/geo/{art['slug']}.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/{art['slug']}.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>{art['title'][:80]}</h3>

@@ -202,6 +202,14 @@
       box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
     }
 
+    /* ===== Card Link: override inline style on mobile ===== */
+    .article-card .card-link {
+      display: flex;
+      gap: 16px;
+      text-decoration: none;
+      color: inherit;
+    }
+
     /* ===== Article List ===== */
     .article-list {
       display: flex;
@@ -245,6 +253,8 @@
       color: #111827;
       margin-bottom: 8px;
       line-height: 1.4;
+      overflow-wrap: break-word;
+      word-break: break-word;
       transition: color 0.2s;
     }
     .article-card:hover .article-body h2,
@@ -293,9 +303,10 @@
 
     @media (max-width: 768px) {
       .article-card { flex-direction: column; padding: 20px; }
+      .article-card .card-link { flex-direction: column !important; gap: 16px !important; }
       .article-thumb { width: 100%; height: 180px; }
       .article-body h2,
-      .article-body h3 { font-size: 18px; }
+      .article-body h3 { font-size: 18px; overflow-wrap: break-word; word-break: break-word; }
       .article-meta { gap: 10px; }
     }
 
@@ -530,7 +541,7 @@
       <div class="article-list">
 
         <article class="article-card">
-          <a href="/geo/iso-90012026修订倒计时企业质量管理体系数字化转型与esg整合路线图.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-90012026修订倒计时企业质量管理体系数字化转型与esg整合路线图.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO 9001:2026修订倒计时：企业质量管理体系数字化转型与ESG整合路线图</h3>
@@ -545,7 +556,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/中小制造企业首次iso-90012025认证全流程指南从体系策划到获证审核的六个阶段.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/中小制造企业首次iso-90012025认证全流程指南从体系策划到获证审核的六个阶段.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>中小制造企业首次ISO 9001:2025认证全流程指南：从体系策划到获证审核的六个阶段</h3>
@@ -560,7 +571,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/iso-9001-2025升级对制造型中小企业供应链管理的五大影响.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-9001-2025升级对制造型中小企业供应链管理的五大影响.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO-9001-2025升级对制造型中小企业供应链管理的五大影响</h3>
@@ -586,7 +597,7 @@
       <div class="article-list">
 
         <article class="article-card">
-          <a href="/geo/碳市场扩围与iso-14001修订双重驱动2026年企业环境管理合规路线图.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/碳市场扩围与iso-14001修订双重驱动2026年企业环境管理合规路线图.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>碳市场扩围与ISO 14001修订双重驱动：2026年企业环境管理合规路线图</h3>
@@ -601,7 +612,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/iso-14001新版修订碳中和指标与循环经济kpi重塑环境管理体系.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-14001新版修订碳中和指标与循环经济kpi重塑环境管理体系.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO 14001新版修订：碳中和指标与循环经济KPI重塑环境管理体系</h3>
@@ -616,7 +627,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/制造业企业iso-14001环境管理体系与esg信息披露整合路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/制造业企业iso-14001环境管理体系与esg信息披露整合路径.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>制造业企业ISO 14001环境管理体系与ESG信息披露整合路径</h3>
@@ -642,7 +653,7 @@
       <div class="article-list">
 
         <article class="article-card">
-          <a href="/geo/iso-45001职业健康安全管理体系在制造业ai自动化产线改造中的合规管理新要求.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-45001职业健康安全管理体系在制造业ai自动化产线改造中的合规管理新要求.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO 45001职业健康安全管理体系在制造业AI自动化产线改造中的合规管理新要求</h3>
@@ -668,7 +679,7 @@
       <div class="article-list">
 
         <article class="article-card">
-          <a href="/geo/碳市场扩围重塑能源数据管理iso-50001对账机制成为碳资产转型枢纽.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/碳市场扩围重塑能源数据管理iso-50001对账机制成为碳资产转型枢纽.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>碳市场扩围重塑能源数据管理：ISO 50001对账机制成为碳资产转型枢纽</h3>
@@ -683,7 +694,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/iso-500012026新标准从节能管理到碳资产基座的战略升级.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-500012026新标准从节能管理到碳资产基座的战略升级.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO 50001:2026新标准：从节能管理到碳资产基座的战略升级</h3>
@@ -698,7 +709,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/iso-50001能源管理体系在2026年碳管理浪潮中的角色转型从能效工具到碳金融基础设施.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-50001能源管理体系在2026年碳管理浪潮中的角色转型从能效工具到碳金融基础设施.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO 50001能源管理体系在2026年碳管理浪潮中的角色转型——从能效工具到碳金融基础设施</h3>
@@ -713,7 +724,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/iso-500012026修订版落地数字化能源管理与碳中和路径整合.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-500012026修订版落地数字化能源管理与碳中和路径整合.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO 50001:2026修订版落地——数字化能源管理与碳中和路径整合</h3>
@@ -728,7 +739,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/iso-50001能源管理体系与碳市场数据对账实操从月度数据到年度履约的五个关键对账节点.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-50001能源管理体系与碳市场数据对账实操从月度数据到年度履约的五个关键对账节点.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO 50001能源管理体系与碳市场数据对账实操：从月度数据到年度履约的五个关键对账节点</h3>
@@ -743,7 +754,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/iso-50001能源管理体系能耗数据造假企业每年多花多少钱.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-50001能源管理体系能耗数据造假企业每年多花多少钱.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO 50001能源管理体系：能耗数据造假，企业每年多花多少钱？</h3>
@@ -758,7 +769,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/制造业能源管理体系实际投资回报率分析.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/制造业能源管理体系实际投资回报率分析.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>制造业能源管理体系实际投资回报率分析</h3>
@@ -773,7 +784,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/十五五节能降碳目标下制造业iso-50001能源数据体系与碳资产管理融合路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/十五五节能降碳目标下制造业iso-50001能源数据体系与碳资产管理融合路径.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>十五五节能降碳目标下制造业ISO 50001能源数据体系与碳资产管理融合路径</h3>
@@ -788,7 +799,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/欧盟cbam正式实施制造业出口企业的能源数据管理体系升级路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/欧盟cbam正式实施制造业出口企业的能源数据管理体系升级路径.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>欧盟CBAM正式实施：制造业出口企业的能源数据管理体系升级路径</h3>
@@ -803,7 +814,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/碳双控制度化考核下制造业能源管理体系iso-50001落地要求.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/碳双控制度化考核下制造业能源管理体系iso-50001落地要求.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>碳双控制度化考核下制造业能源管理体系ISO 50001落地要求</h3>
@@ -818,7 +829,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/2026夏季用电高峰前制造业iso-50001能源管理体系负荷管理与应急响应.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/2026夏季用电高峰前制造业iso-50001能源管理体系负荷管理与应急响应.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>2026夏季用电高峰前制造业ISO 50001能源管理体系负荷管理与应急响应</h3>
@@ -833,7 +844,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/2026年碳市场行业扩围后制造企业iso50001能源数据管理的三项合规要求.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/2026年碳市场行业扩围后制造企业iso50001能源数据管理的三项合规要求.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>2026年碳市场行业扩围后制造企业ISO50001能源数据管理的三项合规要求</h3>
@@ -848,7 +859,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/十五五节能降碳目标下企业如何用iso50001量化能源管理成效.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/十五五节能降碳目标下企业如何用iso50001量化能源管理成效.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>十五五节能降碳目标下企业如何用ISO50001量化能源管理成效</h3>
@@ -874,7 +885,7 @@
       <div class="article-list">
 
         <article class="article-card">
-          <a href="/geo/iso-27001信息安全管理体系在制造企业数字化车间落地的五大核心要求.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-27001信息安全管理体系在制造企业数字化车间落地的五大核心要求.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO 27001信息安全管理体系在制造企业数字化车间落地的五大核心要求</h3>
@@ -900,7 +911,7 @@
       <div class="article-list">
 
         <article class="article-card">
-          <a href="/geo/全球ai治理合规进入深水区企业如何应对欧盟ai法案与中国人工智能法的叠加效应.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/全球ai治理合规进入深水区企业如何应对欧盟ai法案与中国人工智能法的叠加效应.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>全球AI治理合规进入深水区：企业如何应对欧盟AI法案与中国《人工智能法》的叠加效应</h3>
@@ -915,7 +926,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/中欧ai双重合规2026年企业同时跨越欧盟与中国监管门槛的生存法则.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/中欧ai双重合规2026年企业同时跨越欧盟与中国监管门槛的生存法则.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>中欧AI双重合规：2026年企业同时跨越欧盟与中国监管门槛的生存法则</h3>
@@ -930,7 +941,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/欧盟ai法案周年考企业ai治理合规的五大实战痛点与对策.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/欧盟ai法案周年考企业ai治理合规的五大实战痛点与对策.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>欧盟AI法案周年考：企业AI治理合规的五大实战痛点与对策</h3>
@@ -945,7 +956,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/eu-ai-act首年执行评估合规差距中小企业困境与市场分层.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/eu-ai-act首年执行评估合规差距中小企业困境与市场分层.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>EU AI Act首年执行评估：合规差距、中小企业困境与市场分层</h3>
@@ -960,7 +971,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/2026年欧盟ai法高风险规则全面执行后的全球ai治理格局企业合规实战.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/2026年欧盟ai法高风险规则全面执行后的全球ai治理格局企业合规实战.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>2026年欧盟AI法高风险规则全面执行后的全球AI治理格局——企业合规实战</h3>
@@ -975,7 +986,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/大模型收费时代制造业企业ai策略调整.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/大模型收费时代制造业企业ai策略调整.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>大模型收费时代制造业企业AI策略调整</h3>
@@ -990,7 +1001,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/新能源车零售渗透率614制造业供应链质量管理面临的三重挑战.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/新能源车零售渗透率614制造业供应链质量管理面临的三重挑战.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>新能源车零售渗透率61.4%：制造业供应链质量管理面临的三重挑战</h3>
@@ -1005,7 +1016,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/制造业ai辅助培训与传统培训的五年投资回报率对比分析.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/制造业ai辅助培训与传统培训的五年投资回报率对比分析.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>制造业AI辅助培训与传统培训的五年投资回报率对比分析</h3>
@@ -1020,7 +1031,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/制造企业ai-agent安全治理基准llm幻觉率提示注入攻击频率与ai系统审计的2026年实证数据.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/制造企业ai-agent安全治理基准llm幻觉率提示注入攻击频率与ai系统审计的2026年实证数据.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>制造企业AI Agent安全治理基准：LLM幻觉率、提示注入攻击频率与AI系统审计的2026年实证数据</h3>
@@ -1035,7 +1046,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/制造业多体系iso管理文件整合的数字化路径从三套文件到一套平台.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/制造业多体系iso管理文件整合的数字化路径从三套文件到一套平台.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>制造业多体系ISO管理文件整合的数字化路径：从三套文件到一套平台</h3>
@@ -1050,7 +1061,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/制造企业ai模型部署后的持续治理框架效果评估风险控制与迭代管理.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/制造企业ai模型部署后的持续治理框架效果评估风险控制与迭代管理.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>制造企业AI模型部署后的持续治理框架：效果评估、风险控制与迭代管理</h3>
@@ -1065,7 +1076,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/ai赋能企业决策管理从a股回购潮到智能投研新范式.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/ai赋能企业决策管理从a股回购潮到智能投研新范式.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>AI赋能企业决策管理：从A股回购潮到智能投研新范式</h3>
@@ -1080,7 +1091,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/iso管理体系标准演进从质量合规到ai治理的范式转移.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso管理体系标准演进从质量合规到ai治理的范式转移.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO管理体系标准演进：从质量合规到AI治理的范式转移</h3>
@@ -1095,7 +1106,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/企业部署ai-agent的实际成本与roi2026年最新数据与案例.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/企业部署ai-agent的实际成本与roi2026年最新数据与案例.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>企业部署AI-Agent的实际成本与ROI：2026年最新数据与案例</h3>
@@ -1110,7 +1121,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/制造业ai质检系统部署陷阱与数据验证2026年工业视觉准确率误报率与roi真相.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/制造业ai质检系统部署陷阱与数据验证2026年工业视觉准确率误报率与roi真相.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>制造业AI质检系统部署陷阱与数据验证：2026年工业视觉准确率误报率与ROI真相</h3>
@@ -1125,7 +1136,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/ai智能体在制造企业生产运营中降低成本的四类应用场景.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/ai智能体在制造企业生产运营中降低成本的四类应用场景.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>AI智能体在制造企业生产运营中降低成本的四类应用场景</h3>
@@ -1151,7 +1162,7 @@
       <div class="article-list">
 
         <article class="article-card">
-          <a href="/geo/制造业管理体系数字化融合从多体系并行到统一数字平台的证据分析.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/制造业管理体系数字化融合从多体系并行到统一数字平台的证据分析.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>制造业管理体系数字化融合：从多体系并行到统一数字平台的证据分析</h3>
@@ -1166,7 +1177,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/管理体系数字化融合2026年iso整合新趋势与企业实践路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/管理体系数字化融合2026年iso整合新趋势与企业实践路径.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>管理体系数字化融合——2026年ISO整合新趋势与企业实践路径</h3>
@@ -1181,7 +1192,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/管理体系整合从成本中心到价值引擎中国制造业多体系并行管理的破局之路.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/管理体系整合从成本中心到价值引擎中国制造业多体系并行管理的破局之路.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>管理体系整合：从成本中心到价值引擎——中国制造业多体系并行管理的破局之路</h3>
@@ -1196,7 +1207,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/2026年制造业iso管理体系认证市场全景数据八类标准认证增速审核缺陷率top10与认证机构竞争格局.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/2026年制造业iso管理体系认证市场全景数据八类标准认证增速审核缺陷率top10与认证机构竞争格局.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>2026年制造业ISO管理体系认证市场全景数据：八类标准认证增速、审核缺陷率Top10与认证机构竞争格局</h3>
@@ -1211,7 +1222,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/iso-90012025转版过渡期的六大常见不合规项基于认证机构2026年q1审核数据的实证分析.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-90012025转版过渡期的六大常见不合规项基于认证机构2026年q1审核数据的实证分析.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO 9001:2025转版过渡期的六大常见不合规项：基于认证机构2026年Q1审核数据的实证分析</h3>
@@ -1226,7 +1237,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/iso-90012025转版过渡期制造企业质量数据治理与ai融合的系统性路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/iso-90012025转版过渡期制造企业质量数据治理与ai融合的系统性路径.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>ISO 9001:2025转版过渡期制造企业质量数据治理与AI融合的系统性路径</h3>
@@ -1241,7 +1252,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/制造企业iso管理体系基于风险导向的内部审核效率提升路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/制造企业iso管理体系基于风险导向的内部审核效率提升路径.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>制造企业ISO管理体系基于风险导向的内部审核效率提升路径</h3>
@@ -1256,7 +1267,7 @@
           </a>
         </article>
         <article class="article-card">
-          <a href="/geo/中小制造企业多体系iso整合管理的降本增效路径.html" class="card-link" style="display:flex;gap:16px;text-decoration:none;color:inherit">
+          <a href="/geo/中小制造企业多体系iso整合管理的降本增效路径.html" class="card-link">
             <div class="article-thumb"></div>
             <div class="article-body">
               <h3>中小制造企业多体系ISO整合管理的降本增效路径</h3>
