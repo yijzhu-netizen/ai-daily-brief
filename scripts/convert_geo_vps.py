@@ -133,6 +133,24 @@ def slugify(title):
     return s[:80]
 
 
+def extract_title_from_body(body):
+    """Extract title from first # heading in markdown body, fallback to None."""
+    m = re.match(r'^#\s+(.+?)(?:\s*\{|$)', body, re.MULTILINE)
+    if m:
+        return m.group(1).strip()
+    return None
+
+def extract_date_from_filename(fname):
+    """Extract date from filename pattern *-YYYYMMDD.md, fallback to file mtime."""
+    m = re.search(r'(\d{8})\.md$', fname)
+    if m:
+        try:
+            d = datetime.strptime(m.group(1), "%Y%m%d")
+            return d.strftime("%Y-%m-%d")
+        except ValueError:
+            pass
+    return None
+
 def parse_front_matter(content):
     m = re.match(r"^---\n(.*?)\n---\n", content, re.DOTALL)
     if not m:
@@ -290,17 +308,20 @@ def main():
                 tags = [t.strip() for t in fm.get("tags", "").split(",") if t.strip()]
                 slug = slugify(title) if title else os.path.splitext(fname)[0]
             else:
-                title = os.path.splitext(fname)[0]
-                date_str = "2026-01-01"
+                title = extract_title_from_body(body) or os.path.splitext(fname)[0]
+                date_str = extract_date_from_filename(fname) or "2026-01-01"
                 description = title
                 tags = []
                 slug = slugify(title) if title else os.path.splitext(fname)[0]
 
             if not title:
-                title = os.path.splitext(fname)[0]
+                title = extract_title_from_body(body) or os.path.splitext(fname)[0]
 
             # 只转换今天日期的文章，旧文章跳过
             if date_str != today_str:
+                # 文件名含今天日期但frontmatter没日期 → 可能是忘了frontmatter
+                if extract_date_from_filename(fname) == today_str:
+                    print(f"  ⚠ WARNING: {fname} filename has today's date but frontmatter date is missing/invalid, skipping. Consider adding frontmatter.")
                 skipped += 1
                 continue
 
@@ -402,11 +423,12 @@ def regenerate_kb_list():
                 date_str = fm.get("date", "")
                 description = fm.get("description", "")
             else:
-                title = os.path.splitext(fname)[0]
-                date_str = "2026-01-01"
+                title = extract_title_from_body(body) or os.path.splitext(fname)[0]
+                # Try filename date → mtime → hard fallback
+                date_str = extract_date_from_filename(fname) or datetime.fromtimestamp(os.path.getmtime(fpath)).strftime("%Y-%m-%d")
                 description = title
             if not title:
-                title = os.path.splitext(fname)[0]
+                title = extract_title_from_body(body) or os.path.splitext(fname)[0]
             slug = slugify(title)
 
             # Fallback description from first paragraph
@@ -616,12 +638,12 @@ def regenerate_homepage_picks():
                 tags = [t.strip() for t in fm.get("tags", "").split(",") if t.strip()]
                 date_str = str(fm.get("date", ""))[:10] if fm.get("date") else ""
             else:
-                title = os.path.splitext(fname)[0]
+                title = extract_title_from_body(body) or os.path.splitext(fname)[0]
                 description = title
                 tags = []
-                date_str = ""
+                date_str = extract_date_from_filename(fname) or ""
             if not title:
-                title = os.path.splitext(fname)[0]
+                title = extract_title_from_body(body) or os.path.splitext(fname)[0]
             slug = slugify(title)
 
             # First paragraph for description fallback
