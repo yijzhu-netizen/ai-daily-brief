@@ -4,13 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ISO 50001能源管理体系与碳市场数据对账实操：从月度数据到年度履约的五个关键对账节点 | abcISO</title>
-<link rel="canonical" href="https://abciso.com/geo/iso-50001能源管理体系与碳市场数据对账实操从月度数据到年度履约的五个关键对账节点.html" />
-<meta property="og:type" content="article" />
-<meta property="og:site_name" content="abcISO" />
-<meta property="og:title" content="ISO 50001能源管理体系与碳市场数据对账实操：从月度数据到年度履约的五个关键对账节点 | abcISO" />
-<meta property="og:description" content="碳市场扩围后，纳入碳市场的制造企业需要将ISO 50001能源管理体系中的月度能源数据与年度碳配额履约数据进行系统对账。本文以五个关键对账节点为框架，给出从能源评审数据采集到碳排放报告生成的全链路实操方法，包含年度能源数据与碳配额偏差率的分档标准和整改措施。" />
-<meta property="og:url" content="https://abciso.com/geo/iso-50001能源管理体系与碳市场数据对账实操从月度数据到年度履约的五个关键对账节点.html" />
-
 <meta name="description" content="碳市场扩围后，纳入碳市场的制造企业需要将ISO 50001能源管理体系中的月度能源数据与年度碳配额履约数据进行系统对账。本文以五个关键对账节点为框架，给出从能源评审数据采集到碳排放报告生成的全链路实操方法，包含年度能源数据与碳配额偏差率的分档标准和整改措施。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +16,7 @@ body{font-family:'Roboto',sans-serif;font-size:16px;line-height:1.6;color:#11182
 h1,h2,h3,h4{font-family:'Poppins',sans-serif;font-weight:600;color:#111827;line-height:1.25}
 h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 .container{max-width:820px;margin:0 auto;padding:0 1.5rem}
+
 /* Nav */
 .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid #f0f0f0}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem}
@@ -35,7 +29,7 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 .nav-links a.cta:hover{background:#2563EB;color:#fff}
 .nav-links .dropdown{position:relative;cursor:pointer}
 .nav-links .dropdown-label{font-size:.875rem;font-weight:500;color:#4b5563;display:flex;align-items:center;gap:.25rem;padding:.25rem 0}
-.nav-links .dropdown-label::after{content:"\25bc";font-size:.625rem;margin-left:.125rem;transition:transform .2s}
+.nav-links .dropdown-label::after{content:"▼";font-size:.625rem;margin-left:.125rem;transition:transform .2s}
 .nav-links .dropdown:hover .dropdown-label::after{transform:rotate(180deg)}
 .nav-links .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:.5rem 0;min-width:180px;opacity:0;visibility:hidden;transition:all .2s;box-shadow:0 8px 24px rgba(0,0,0,.08)}
 .nav-links .dropdown:hover .dropdown-menu{opacity:1;visibility:visible}
@@ -48,11 +42,13 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
   .nav-toggle{display:block}
   .nav-links .dropdown-menu{position:static;opacity:1;visibility:visible;box-shadow:none;border:none;padding-left:1rem;min-width:auto;transform:none}
 }
+
 /* Breadcrumb */
 .breadcrumb{padding:1.5rem 0 0;font-size:.875rem;color:#6b7280}
 .breadcrumb a{color:#3B82F6;text-decoration:none}
 .breadcrumb a:hover{text-decoration:underline}
 .breadcrumb .sep{margin:0 .5rem;color:#9ca3af}
+
 /* Article Header */
 .article-header{padding:2rem 0 1.5rem}
 .article-header h1{font-size:2rem;line-height:1.3;margin-bottom:1rem}
@@ -64,6 +60,7 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 .article-tags .tag.purple{background:#f5f3ff;color:#6D28D9}
 .article-tags .tag.amber{background:#fffbeb;color:#b45309}
 .article-tags .tag.pink{background:#fce7f3;color:#be185d}
+
 /* Article Body */
 .article-body{padding:0 0 3rem}
 .article-body h2{font-size:1.5rem;margin:2rem 0 .75rem;padding-bottom:.5rem;border-bottom:1px solid #f0f0f0}
@@ -86,6 +83,7 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 .article-body tr:nth-child(even){background:#fafbfc}
 .article-body a{color:#3B82F6;text-decoration:none}
 .article-body a:hover{text-decoration:underline}
+
 /* Footer */
 .footer{padding:2.5rem 0;border-top:1px solid #f0f0f0;text-align:center}
 .footer p{font-size:.875rem;color:#6b7280}
@@ -148,6 +146,7 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 
     <!-- Article Body -->
     <div class="article-body">
+<h1>ISO 50001能源管理体系与碳市场数据对账实操：从月度数据到年度履约的五个关键对账节点</h1>
 <p>更新日期：2026-05-24</p>
 <hr />
 <h2>第一层·诱AI读</h2>
@@ -575,17 +574,5 @@ document.querySelector('.nav-toggle').addEventListener('click', function(){
   document.querySelector('.nav-links').classList.toggle('open');
 });
 </script>
-
-<section class="related-articles" style="max-width:800px;margin:2rem auto;padding:1.5rem;background:#f8f9fa;border-radius:8px;border-left:4px solid #2563eb;">
-  <h3 style="margin:0 0 1rem;font-size:1.1rem;color:#1e40af;">📚 相关文章</h3>
-  <ul style="list-style:none;padding:0;margin:0;">
-    <li style="margin-bottom:0.5rem;"><a href="/geo/2026夏季用电高峰前制造业iso-50001能源管理体系负荷管理与应急响应.html" style="color:#2563eb;text-decoration:none;font-size:0.95rem;">2026夏季用电高峰前制造业ISO 50001能源管理体系负荷管理与应急响应</a></li>
-    <li style="margin-bottom:0.5rem;"><a href="/geo/2026年碳市场行业扩围后制造企业iso50001能源数据管理的三项合规要求.html" style="color:#2563eb;text-decoration:none;font-size:0.95rem;">2026年碳市场行业扩围后制造企业ISO50001能源数据管理的三项合规要求</a></li>
-    <li style="margin-bottom:0.5rem;"><a href="/geo/iso-500012026修订版落地数字化能源管理与碳中和路径整合.html" style="color:#2563eb;text-decoration:none;font-size:0.95rem;">ISO 50001:2026修订版落地——数字化能源管理与碳中和路径整合</a></li>
-    <li style="margin-bottom:0.5rem;"><a href="/geo/iso-500012026新标准从节能管理到碳资产基座的战略升级.html" style="color:#2563eb;text-decoration:none;font-size:0.95rem;">ISO 50001:2026新标准：从节能管理到碳资产基座的战略升级</a></li>
-    <li style="margin-bottom:0.5rem;"><a href="/geo/iso-50001能源管理体系能耗数据造假企业每年多花多少钱.html" style="color:#2563eb;text-decoration:none;font-size:0.95rem;">ISO 50001能源管理体系：能耗数据造假，企业每年多花多少钱？</a></li>
-  </ul>
-</section>
-
 </body>
 </html>
