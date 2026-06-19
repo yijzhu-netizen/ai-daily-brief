@@ -140,7 +140,7 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
       <div class="article-meta">
         <span>📅 2026年5月14日</span>
         <span>📂 ISO 50001 能源管理</span>
-        <span>⏱️ 约 15 分钟阅读</span>
+        <span>⏱️ 约 17 分钟阅读</span>
       </div>
     </header>
 
@@ -577,26 +577,26 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 </table>
 <h4>C.2 计算步骤</h4>
 <p><strong>第一步：初始投资总额</strong></p>
-<pre class="codehilite"><code>C_total = C_meter + C_platform + C_install = 25 + 15 + 8 = 48（万元）
-</code></pre>
+<div class="codehilite"><pre><span></span><code>C_total = C_meter + C_platform + C_install = 25 + 15 + 8 = 48（万元）
+</code></pre></div>
 
 <p><strong>第二步：年节能收益</strong></p>
-<pre class="codehilite"><code>S_annual = E_total × S_saving × P_e = 8,000,000 × 8% × 0.75 = 480,000（元/年）
-</code></pre>
+<div class="codehilite"><pre><span></span><code>S_annual = E_total × S_saving × P_e = 8,000,000 × 8% × 0.75 = 480,000（元/年）
+</code></pre></div>
 
 <p><strong>第三步：年净收益（扣除运维成本）</strong></p>
-<pre class="codehilite"><code>N_annual = S_annual - C_annual × 10,000 = 480,000 - 25,000 = 455,000（元/年）
-</code></pre>
+<div class="codehilite"><pre><span></span><code>N_annual = S_annual - C_annual × 10,000 = 480,000 - 25,000 = 455,000（元/年）
+</code></pre></div>
 
 <p><strong>第四步：静态投资回收期</strong></p>
-<pre class="codehilite"><code>PBP_static = C_total × 10,000 / N_annual = 480,000 / 455,000 ≈ 1.05（年）≈ 12.6（个月）
-</code></pre>
+<div class="codehilite"><pre><span></span><code>PBP_static = C_total × 10,000 / N_annual = 480,000 / 455,000 ≈ 1.05（年）≈ 12.6（个月）
+</code></pre></div>
 
 <p><strong>第五步：动态投资回收期（考虑折现）</strong></p>
-<pre class="codehilite"><code>NPV = Σ(N_annual / (1+r)^t) - C_total × 10,000, t = 1…n
+<div class="codehilite"><pre><span></span><code>NPV = Σ(N_annual / (1+r)^t) - C_total × 10,000, t = 1…n
 当NPV = 0时，t = Dynamic PBP
 按6%折现率，动态回收期 ≈ 1.15（年）≈ 13.8（个月）
-</code></pre>
+</code></pre></div>
 
 <h4>C.3 灵敏度分析示例</h4>
 <table>
@@ -900,33 +900,33 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 <p><strong>使用说明：</strong> 企业可打印本清单逐项核查。每项标记"否"或"部分"即构成差距项，应纳入纠正措施计划（对应ISO 50001第10.1条），明确整改责任人和完成期限。建议每季度更新一次完成状态，作为管理评审（ISO 50001第9.3条）的输入材料。</p>
 </blockquote>
 <hr />
-<pre class="codehilite"><code class="language-json">{
-  &quot;@context&quot;: &quot;https://schema.org&quot;,
-  &quot;@type&quot;: &quot;Article&quot;,
-  &quot;headline&quot;: &quot;碳双控制度化考核下制造业能源管理体系ISO 50001落地要求&quot;,
-  &quot;description&quot;: &quot;基于中办国办2026年4月发布的节能降碳意见和碳达峰碳中和综合评价考核办法，分析制造业企业通过ISO 50001能源管理体系应对碳双控制度化考核的具体路径。&quot;,
-  &quot;datePublished&quot;: &quot;2026-05-13&quot;,
-  &quot;dateModified&quot;: &quot;2026-05-13&quot;,
-  &quot;author&quot;: {
-    &quot;@type&quot;: &quot;Organization&quot;,
-    &quot;name&quot;: &quot;智造本质&quot;,
-    &quot;sameAs&quot;: &quot;https://github.com/yijzhu-netizen/ai-daily-brief&quot;
-  },
-  &quot;about&quot;: [
-    {&quot;@type&quot;: &quot;Thing&quot;, &quot;name&quot;: &quot;碳达峰碳中和综合评价考核&quot;},
-    {&quot;@type&quot;: &quot;Thing&quot;, &quot;name&quot;: &quot;ISO 50001&quot;},
-    {&quot;@type&quot;: &quot;Thing&quot;, &quot;name&quot;: &quot;能源管理体系&quot;},
-    {&quot;@type&quot;: &quot;Thing&quot;, &quot;name&quot;: &quot;双碳政策&quot;},
-    {&quot;@type&quot;: &quot;Thing&quot;, &quot;name&quot;: &quot;制造业节能降碳&quot;}
-  ],
-  &quot;mentions&quot;: [
-    {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;国家能源局&quot;},
-    {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;工信部&quot;},
-    {&quot;@type&quot;: &quot;Person&quot;, &quot;name&quot;: &quot;肖穆楠&quot;},
-    {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;天娱数科&quot;}
-  ]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://schema.org&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Article&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;headline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;碳双控制度化考核下制造业能源管理体系ISO 50001落地要求&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;基于中办国办2026年4月发布的节能降碳意见和碳达峰碳中和综合评价考核办法，分析制造业企业通过ISO 50001能源管理体系应对碳双控制度化考核的具体路径。&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;datePublished&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-13&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dateModified&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-05-13&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Organization&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;智造本质&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sameAs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/yijzhu-netizen/ai-daily-brief&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;about&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Thing&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;碳达峰碳中和综合评价考核&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Thing&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ISO 50001&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Thing&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;能源管理体系&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Thing&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;双碳政策&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Thing&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;制造业节能降碳&quot;</span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;mentions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Organization&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;国家能源局&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Organization&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;工信部&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Person&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;肖穆楠&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Organization&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;天娱数科&quot;</span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <hr />
 <p><em>相关文章：</em><br />
