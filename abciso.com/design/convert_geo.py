@@ -5,8 +5,8 @@ import os, re, sys, subprocess, glob
 from datetime import datetime
 import markdown
 
-GEO_DIR = "/mnt/e/GEO文章"
-DESIGN_DIR = "/mnt/e/GEO文章/abciso.com/design"
+GEO_DIR = "/root/GEO文章"
+DESIGN_DIR = "/root/GEO文章/abciso.com/design"
 GEO_OUT = os.path.join(DESIGN_DIR, "geo")
 VPS = "root@161.153.39.190:/var/www/abciso/"
 
@@ -33,6 +33,7 @@ NAVBAR_HTML = """\
             </div>
           </li>
           <li><a href="../download.html">资料下载</a></li>
+          <li><a href="/chat/" target="_blank" style="color:#3B82F6;font-weight:600">🤖 AI助手</a></li>
         </ul>
       </div>
     </div>"""
@@ -266,6 +267,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function(){{
   document.querySelector('.nav-links').classList.toggle('open');
 }});
 </script>
+<a href="/chat/" target="_blank" style="position:fixed;bottom:24px;right:24px;background:#3B82F6;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 12px rgba(59,130,246,.4);z-index:999">🤖</a>
 </body>
 </html>"""
 

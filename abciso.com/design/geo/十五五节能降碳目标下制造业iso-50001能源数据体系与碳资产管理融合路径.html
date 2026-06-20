@@ -89,17 +89,6 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 .footer p{font-size:.875rem;color:#6b7280}
 .footer .footer-brand{font-family:'Poppins',sans-serif;font-weight:700;color:#3B82F6;font-size:1.125rem;margin-bottom:.5rem}
 .footer .footer-brand span{color:#8B5CF6}
-/* ===== CTA Card ===== */
-.cta-article{margin:2.5rem 0;padding:1.75rem 2rem;background:linear-gradient(135deg,#f0f7ff 0%,#e8f0fe 100%);border:1px solid #c7dffb;border-radius:12px;display:flex;gap:1.25rem;align-items:flex-start}
-.cta-icon{font-size:2.25rem;line-height:1;flex-shrink:0}
-.cta-body h3{font-size:1.125rem;font-weight:700;color:#1e3a5f;margin:0 0 .5rem}
-.cta-body p{font-size:.875rem;color:#475569;line-height:1.7;margin:0 0 .75rem}
-.cta-list{list-style:none;padding:0;margin:0 0 1rem}
-.cta-list li{font-size:.875rem;color:#374151;padding:.25rem 0;line-height:1.6}
-.btn-cta-planet{display:inline-block;background:#3B82F6;color:#fff;font-weight:600;font-size:.875rem;padding:.625rem 1.5rem;border-radius:8px;text-decoration:none;transition:background .2s}
-.btn-cta-planet:hover{background:#2563EB}
-@media(max-width:640px){.cta-article{flex-direction:column;padding:1.25rem}}
-
 </style>
 </head>
 <body>
@@ -127,6 +116,7 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
             </div>
           </li>
           <li><a href="../download.html">资料下载</a></li>
+          <li><a href="/chat/" target="_blank" style="color:#3B82F6;font-weight:600">🤖 AI助手</a></li>
         </ul>
       </div>
     </div></nav>
@@ -725,24 +715,7 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
   </div>
 </main>
 
-
-    <!-- CTA Card -->
-    <div class="cta-article">
-      <div class="cta-icon">📘</div>
-      <div class="cta-body">
-        <h3>搜索知识星球【智造本质】</h3>
-        <p>10年制造业管理 + 10年ISO认证审核实操经验浓缩。<br>
-        两门体系实操课程 + 完整文献清单 + 真实审核案例库。</p>
-        <ul class="cta-list">
-          <li>📚 《AI时代，你更应该学会管理》— 16讲+番外篇，管理体系通识课</li>
-          <li>⚡ 《能源管理体系：39节落地实操课》— ISO 50001体系搭建与审核实务</li>
-          <li>📄 本文引用的完整文献清单、合规模板与工具</li>
-        </ul>
-        <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener" class="btn-cta-planet">加入星球 → 299元/年</a>
-      </div>
-    </div>
-
-    <footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer-brand">abcISO<span>.com</span></div>
       <p>制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
@@ -754,5 +727,6 @@ document.querySelector('.nav-toggle').addEventListener('click', function(){
   document.querySelector('.nav-links').classList.toggle('open');
 });
 </script>
+<a href="/chat/" target="_blank" style="position:fixed;bottom:24px;right:24px;background:#3B82F6;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 12px rgba(59,130,246,.4);z-index:999">🤖</a>
 </body>
 </html>
