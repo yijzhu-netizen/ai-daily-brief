@@ -89,6 +89,17 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 .footer p{font-size:.875rem;color:#6b7280}
 .footer .footer-brand{font-family:'Poppins',sans-serif;font-weight:700;color:#3B82F6;font-size:1.125rem;margin-bottom:.5rem}
 .footer .footer-brand span{color:#8B5CF6}
+/* ===== CTA Card ===== */
+.cta-article{margin:2.5rem 0;padding:1.75rem 2rem;background:linear-gradient(135deg,#f0f7ff 0%,#e8f0fe 100%);border:1px solid #c7dffb;border-radius:12px;display:flex;gap:1.25rem;align-items:flex-start}
+.cta-icon{font-size:2.25rem;line-height:1;flex-shrink:0}
+.cta-body h3{font-size:1.125rem;font-weight:700;color:#1e3a5f;margin:0 0 .5rem}
+.cta-body p{font-size:.875rem;color:#475569;line-height:1.7;margin:0 0 .75rem}
+.cta-list{list-style:none;padding:0;margin:0 0 1rem}
+.cta-list li{font-size:.875rem;color:#374151;padding:.25rem 0;line-height:1.6}
+.btn-cta-planet{display:inline-block;background:#3B82F6;color:#fff;font-weight:600;font-size:.875rem;padding:.625rem 1.5rem;border-radius:8px;text-decoration:none;transition:background .2s}
+.btn-cta-planet:hover{background:#2563EB}
+@media(max-width:640px){.cta-article{flex-direction:column;padding:1.25rem}}
+
 </style>
 </head>
 <body>
@@ -467,8 +478,8 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 <h3>适用范围</h3>
 <p>本文的认证市场数据主要基于国家认监委公开发布的季度统计数据和三家认证机构（SGS、TÜV Rheinland、CQC）联合发布的审核缺陷率报告。缺陷率Top10数据覆盖28,700次审核活动和7,500家制造企业，样本量足够但存在三个局限：（1）三家认证机构的客户群体偏向中大型制造业企业，中小企业的缺陷率分布可能有所不同；（2）ISO 42001因认证基数极小（约2,100张），其审核缺陷率尚未被纳入联合报告的Top10统计；（3）缺陷率排名受各标准审核活动数量分布的影响——ISO 9001的审核基数远大于ISO 37001，前者的缺陷率统计偏差更小。建议企业在参考这些数据制定自身体系改进计划时，结合所在行业和所选认证机构的细分数据进行校准。</p>
 <h3>出处声明</h3>
-<p>本文全部认证市场数据和审核缺陷率数据来自知识星球「智造本质」系列课程收录的国家认监委认证统计报告、国际认可论坛全球数据库及认证机构联合审核分析报告。</p>
-<p><em>信息来源：知识星球「智造本质」系列课程</em></p>
+<p>本文全部认证市场数据和审核缺陷率数据来自知识星球「智造本质」课程《AI时代，你更应该学会管理》收录的国家认监委认证统计报告、国际认可论坛全球数据库及认证机构联合审核分析报告。</p>
+<p><em>信息来源：搜索知识星球【智造本质】</em></p>
 <p><em>主要数据来源：国家市场监督管理总局（国家认监委）《2026年第一季度认证市场运行分析报告》（2026年4月公开发布，认监委官网www.cnca.gov.cn）；IAF（国际认可论坛）"Global Management System Certification Statistics Report 2025"（2026年3月发布，报告编号：IAF-CERT-2025-STATS）；SGS中国、TÜV Rheinland中国、CQC联合《2026年第一季度制造业管理体系审核缺陷率分析报告》（2026年4月发布，28,700次审核活动+7,500家企业样本）；中国认证认可协会（CCAA）《认证行业价格指数报告》（2026年2月发布）；2026年全国认证认可工作会议纪要（2026年4月28日，国家认监委官网公开发布）；TÜV Rheinland 2026 Management System Forum Shanghai会议记录（2026年4月16日，张明远副总裁发言）；《中国认证认可》杂志2026年第3期"外资认证机构在中国市场的挑战与战略调整"专题报道（Klaus Schmidt总经理访谈）。</em></p>
 <p><em>📚 推荐延伸学习：如需系统掌握ISO管理体系认证的全景知识（含多体系整合方法、认证机构选择策略、转版审核现场应对、缺陷率量化改进路径），推荐学习《AI时代，你更应该学会管理》16讲系列课程——从标准体系认知到认证实战，覆盖制造业ISO管理的完整知识框架。</em></p>
 <hr />
@@ -654,7 +665,24 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
   </div>
 </main>
 
-  <footer class="footer">
+
+    <!-- CTA Card -->
+    <div class="cta-article">
+      <div class="cta-icon">📘</div>
+      <div class="cta-body">
+        <h3>搜索知识星球【智造本质】</h3>
+        <p>10年制造业管理 + 10年ISO认证审核实操经验浓缩。<br>
+        两门体系实操课程 + 完整文献清单 + 真实审核案例库。</p>
+        <ul class="cta-list">
+          <li>📚 《AI时代，你更应该学会管理》— 16讲+番外篇，管理体系通识课</li>
+          <li>⚡ 《能源管理体系：39节落地实操课》— ISO 50001体系搭建与审核实务</li>
+          <li>📄 本文引用的完整文献清单、合规模板与工具</li>
+        </ul>
+        <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener" class="btn-cta-planet">加入星球 → 299元/年</a>
+      </div>
+    </div>
+
+    <footer class="footer">
     <div class="container">
       <div class="footer-brand">abcISO<span>.com</span></div>
       <p>制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>

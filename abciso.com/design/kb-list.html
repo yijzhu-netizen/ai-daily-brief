@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://abciso.com/kb-list.html" />
-  <title>知识库 | abcISO</title>
+    <title>知识库 | abcISO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -29,270 +29,435 @@
       margin: 0 auto;
       padding: 0 24px;
     }
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+    }
 
     /* ===== Navigation ===== */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #f0f0f0;
+    .nav{
+      position:sticky;top:0;z-index:100;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid #f0f0f0;
     }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 3.5rem;
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      height:3.5rem;
     }
-    .nav-logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
+    .nav-logo{
+      font-family:'Poppins',sans-serif;
+      font-size:1.25rem;font-weight:700;
+      color:#3B82F6;text-decoration:none;
+      display:flex;align-items:center;gap:.5rem;
+    }
+    .nav-logo span{color:#8B5CF6}
+    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+    .nav-links a{
+      font-size:.875rem;font-weight:500;color:#4b5563;
+      text-decoration:none;transition:color .2s;
+      position:relative;
+    }
+    .nav-links a:hover{color:#3B82F6}
+    .nav-links a.cta{
+      display:inline-flex;align-items:center;gap:.375rem;
+      background:#3B82F6;color:#fff;padding:.5rem 1.25rem;
+      border-radius:6px;font-weight:600;font-size:.875rem;
+      transition:background .2s;
+    }
+    .nav-links a.cta:hover{background:#2563EB;color:#fff}
+    .nav-links .dropdown{position:relative;cursor:pointer}
+    .nav-links .dropdown-label{
+      font-size:.875rem;font-weight:500;color:#4b5563;
+      display:flex;align-items:center;gap:.25rem;padding:.25rem 0;
+    }
+    .nav-links .dropdown-label::after{
+      content:"▼";font-size:.625rem;margin-left:.125rem;
+      transition:transform .2s;
+    }
+    .nav-links .dropdown:hover .dropdown-label::after{transform:rotate(180deg)}
+    .nav-links .dropdown-menu{
+      position:absolute;top:100%;left:50%;transform:translateX(-50%);
+      background:#fff;border:1px solid #e5e7eb;border-radius:8px;
+      padding:.5rem 0;min-width:180px;
+      opacity:0;visibility:hidden;transition:all .2s;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
+    }
+    .nav-links .dropdown:hover .dropdown-menu{opacity:1;visibility:visible}
+    .nav-links .dropdown-menu a{
+      display:block;padding:.5rem 1.25rem;font-size:.875rem;
+      white-space:nowrap;
+    }
+    .nav-links .dropdown-menu a:hover{background:#f3f4f6;color:#3B82F6}
+    .nav-toggle{display:none;background:none;border:none;font-size:1.5rem;color:#111827;cursor:pointer;padding:.25rem}
+    @media(max-width:768px){
+      .nav-links{display:none;position:absolute;top:3.5rem;left:0;right:0;background:#fff;border-bottom:1px solid #f0f0f0;flex-direction:column;padding:1rem 1.5rem;gap:1rem;align-items:stretch}
+      .nav-links.open{display:flex}
+      .nav-toggle{display:block}
+      .nav-links .dropdown-menu{position:static;opacity:1;visibility:visible;box-shadow:none;border:none;padding-left:1rem;min-width:auto;transform:none}
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb {
+      padding: 20px 0 0;
+      font-size: 14px;
+      color: #6B7280;
+    }
+    .breadcrumb a {
       color: #3B82F6;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: .5rem;
+      transition: color 0.2s;
     }
-    .nav-logo span { color: #8B5CF6; }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
+    .breadcrumb a:hover { color: #2563EB; }
+    .breadcrumb .sep {
+      margin: 0 8px;
+      color: #9CA3AF;
     }
-    .nav-links a {
-      font-size: .875rem;
+    .breadcrumb .current {
+      color: #4B5563;
       font-weight: 500;
-      color: #4b5563;
-      text-decoration: none;
-      transition: color .2s;
-      position: relative;
     }
-    .nav-links a:hover { color: #3B82F6; }
-    .nav-links a.cta {
+
+    /* ===== Category Header ===== */
+    .category-header {
+      padding: 32px 0 40px;
+    }
+    .category-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .category-header h1 .emoji-deco {
+      margin-right: 8px;
+    }
+    .category-header .cat-desc {
+      font-size: 16px;
+      color: #6B7280;
+      max-width: 780px;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .category-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag {
       display: inline-flex;
       align-items: center;
-      gap: .375rem;
-      background: #3B82F6;
-      color: #fff;
-      padding: .5rem 1.25rem;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: .875rem;
-      transition: background .2s;
-    }
-    .nav-links a.cta:hover { background: #2563EB; color: #fff; }
-    .nav-links .dropdown { position: relative; cursor: pointer; }
-    .nav-links .dropdown-label {
-      font-size: .875rem;
+      gap: 5px;
+      background: #EFF6FF;
+      color: #1D4ED8;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
       font-weight: 500;
-      color: #4b5563;
-      display: flex;
-      align-items: center;
-      gap: .25rem;
-      padding: .25rem 0;
+      transition: background 0.2s;
     }
-    .nav-links .dropdown-label::after {
-      content: "▼";
-      font-size: .625rem;
-      margin-left: .125rem;
-      transition: transform .2s;
-    }
-    .nav-links .dropdown:hover .dropdown-label::after {
-      transform: rotate(180deg);
-    }
-    .nav-links .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: .5rem 0;
-      min-width: 180px;
-      opacity: 0;
-      visibility: hidden;
-      transition: all .2s;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
-    }
-    .nav-links .dropdown:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-    }
-    .nav-links .dropdown-menu a {
-      display: block;
-      padding: .5rem 1.25rem;
-      font-size: .875rem;
-      white-space: nowrap;
-    }
-    .nav-links .dropdown-menu a:hover {
-      background: #f3f4f6;
-      color: #3B82F6;
-    }
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: #111827;
-      cursor: pointer;
-      padding: .25rem;
-    }
-    @media (max-width: 700px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 3.5rem;
-        left: 0;
-        right: 0;
-        background: #fff;
-        border-bottom: 1px solid #f0f0f0;
-        flex-direction: column;
-        padding: 1rem 1.5rem;
-        gap: 1rem;
-        align-items: stretch;
-      }
-      .nav-links.open { display: flex; }
-      .nav-toggle { display: block; }
-      .nav-links .dropdown-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        box-shadow: none;
-        border: none;
-        padding-left: 1rem;
-        min-width: auto;
-        transform: none;
-      }
+    .tag:hover { background: #DBEAFE; }
+    .tag-standard { background: #FEF3C7; color: #B45309; }
+    .tag-standard:hover { background: #FDE68A; }
+    .tag-popular { background: #FCE7F3; color: #BE185D; }
+    .tag-popular:hover { background: #FBCFE8; }
+
+    @media (max-width: 768px) {
+      .category-header h1 { font-size: 26px; }
+      .category-header .cat-desc { font-size: 15px; }
     }
 
-    /* ===== Hero Section ===== */
-    .hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #fff;
-      padding: 4rem 0;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.125rem;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* ===== Category Section ===== */
-    .category-section {
-      padding: 3rem 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-    .category-section:last-child {
-      border-bottom: none;
-    }
-    .cat-header {
+    /* ===== Meta Bar ===== */
+    .meta-bar {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #F3F4F6;
+      margin-bottom: 28px;
     }
-    .cat-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
+    .meta-bar .result-count {
+      font-size: 14px;
+      color: #6B7280;
     }
-    .cat-icon.blue { background: #eff6ff; }
-    .cat-icon.green { background: #ecfdf5; }
-    .cat-icon.purple { background: #f5f3ff; }
-    .cat-icon.amber { background: #fffbeb; }
-    .cat-icon.pink { background: #fce7f3; }
-    .cat-icon.indigo { background: #eef2ff; }
-    .cat-icon.teal { background: #f0fdfa; }
-    .cat-title {
-      font-size: 1.5rem;
+    .meta-bar .result-count strong {
+      color: #1F2937;
       font-weight: 600;
-      color: #111827;
     }
-    .cat-count {
-      font-size: .875rem;
-      color: #6b7280;
-      margin-left: auto;
+    .sort-select {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      padding: 6px 32px 6px 12px;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B7280' d='M6 8.825a.5.5 0 0 1-.354-.146L2.22 5.252a.5.5 0 1 1 .707-.707L6 7.618l3.074-3.073a.5.5 0 1 1 .707.707L6.354 8.68A.5.5 0 0 1 6 8.825z'/%3E%3C/svg%3E") no-repeat right 10px center;
+      appearance: none;
+      color: #374151;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .sort-select:focus {
+      outline: none;
+      border-color: #3B82F6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
     }
 
-    /* ===== Article Cards ===== */
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    .article-card {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: all .2s;
-    }
-    .article-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
-    }
-    .card-link {
-      display: block;
-      padding: 1.5rem;
+    /* ===== Card Link: override inline style on mobile ===== */
+    .article-card .card-link {
+      display: flex;
+      gap: 16px;
       text-decoration: none;
       color: inherit;
     }
-    .card-date {
-      font-size: .75rem;
-      color: #9ca3af;
-      margin-bottom: .75rem;
+
+    /* ===== Article List ===== */
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 48px;
     }
-    .card-title {
-      font-size: 1.125rem;
+    .article-card {
+      display: flex;
+      gap: 24px;
+      padding: 24px 28px;
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      transition: box-shadow 0.25s, border-color 0.25s;
+    }
+    .article-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-color: #BFDBFE;
+    }
+    .article-thumb {
+      flex-shrink: 0;
+      width: 200px;
+      height: 130px;
+      border-radius: 8px;
+      background: #F3F4F6;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .article-card:hover .article-thumb {
+      transform: scale(1.03);
+      box-shadow: 0 4px 16px rgba(0,0,0,.12);
+    }
+    .article-body { flex: 1; min-width: 0; }
+    .article-body h2,
+    .article-body h3 {
+      font-size: 20px;
       font-weight: 600;
       color: #111827;
-      margin-bottom: .75rem;
+      margin-bottom: 8px;
       line-height: 1.4;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      transition: color 0.2s;
     }
-    .card-desc {
-      font-size: .875rem;
-      color: #6b7280;
-      line-height: 1.6;
+    .article-card:hover .article-body h2,
+    .article-card:hover .article-body h3 { color: #3B82F6; }
+    .article-body .article-excerpt {
+      font-size: 15px;
+      color: #6B7280;
+      line-height: 1.65;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: #9CA3AF;
+    }
+    .article-meta .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .article-meta .card-tags {
+      display: inline-flex;
+      gap: 6px;
+    }
+    .article-meta .card-tag {
+      display: inline-flex;
+      align-items: center;
+      background: #F3F4F6;
+      color: #4B5563;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .article-meta .card-tag.blue { background: #EFF6FF; color: #1D4ED8; }
+    .article-meta .card-tag.green { background: #ECFDF5; color: #047857; }
+    .article-meta .card-tag.amber { background: #FFFBEB; color: #B45309; }
+    .article-meta .card-tag.purple { background: #F5F3FF; color: #6D28D9; }
+
+    @media (max-width: 768px) {
+      .article-card { flex-direction: column; padding: 20px; }
+      .article-card .card-link { flex-direction: column !important; gap: 16px !important; }
+      .article-thumb { width: 100%; height: 180px; }
+      .article-body h2,
+      .article-body h3 { font-size: 18px; overflow-wrap: break-word; word-break: break-word; }
+      .article-meta { gap: 10px; }
+    }
+
+    @media (max-width: 640px) {
+      .kb-banner { height: 160px; }
+      .kb-banner-overlay { padding: 12px 16px; }
+      .kb-banner-overlay h2 { font-size: 1rem; }
+      .kb-banner-overlay p { font-size: .75rem; }
+    }
+
+    /* ===== Pagination ===== */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 0 48px;
+    }
+    .pagination a, .pagination span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 12px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .pagination a {
+      color: #4B5563;
+      border: 1px solid #E5E7EB;
+    }
+    .pagination a:hover {
+      background: #EFF6FF;
+      border-color: #BFDBFE;
+      color: #3B82F6;
+    }
+    .pagination .active {
+      background: #3B82F6;
+      color: #fff;
+      border: 1px solid #3B82F6;
+    }
+    .pagination .ellipsis {
+      border: none;
+      color: #9CA3AF;
+    }
+    .pagination .prev-next {
+      font-family: 'Roboto', sans-serif;
+    }
+    .pagination .prev-next.disabled {
+      color: #D1D5DB;
+      border-color: #F3F4F6;
+      pointer-events: none;
+    }
+
+    /* ===== KB Banner (random image) ===== */
+    .kb-banner {
+      position: relative;
+      width: 100%;
+      height: 260px;
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 20px 0 28px;
+      background: #1e293b;
+      background-size: cover;
+      background-position: center;
+      transition: background-image .6s ease;
+    }
+    .kb-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(30,41,59,.75) 0%, rgba(30,41,59,.3) 50%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px 32px;
+    }
+    .kb-banner-overlay h2 {
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 6px;
+      letter-spacing: .02em;
+    }
+    .kb-banner-overlay p {
+      color: rgba(255,255,255,.8);
+      font-size: .95rem;
+      margin: 0;
+      max-width: 560px;
+      line-height: 1.5;
     }
 
     /* ===== Footer ===== */
-    .footer {
-      background: #111827;
-      color: #9ca3af;
-      padding: 3rem 0;
-      text-align: center;
+    .footer{
+      padding:2.5rem 0;border-top:1px solid #f0f0f0;
+      text-align:center;
     }
-    .footer-brand {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: .5rem;
+    .footer p{font-size:.875rem;color:#6b7280}
+    .footer .footer-brand{font-family:'Poppins',sans-serif;font-weight:700;color:#3B82F6;font-size:1.125rem;margin-bottom:.5rem}
+    .footer .footer-brand span{color:#8B5CF6}
+
+    /* ===== Category Sections (generated) ===== */
+    .cat-section { margin-bottom: 40px; }
+    .cat-header-wrap {
+        border-radius: 12px; padding: 20px 24px; margin-bottom: 16px;
     }
-    .footer-brand span { color: #8B5CF6; }
-    .footer p {
-      font-size: .875rem;
-      max-width: 500px;
-      margin: 0 auto;
+    .cat-section-title {
+        font-size: 1.25rem; font-weight: 700; color: #1f2937; margin-bottom: 4px;
     }
+    .cat-section-desc {
+        font-size: .85rem; color: #6b7280; line-height: 1.6;
+    }
+    .kb-meta-bar {
+        display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+        gap: 12px; margin-bottom: 28px;
+    }
+    .kb-cat-filter { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-tag {
+        font-size: .8rem; font-weight: 500; padding: 4px 14px; border-radius: 20px;
+        background: #f3f4f6; color: #4b5563; text-decoration: none;
+        transition: background .2s, color .2s; white-space: nowrap;
+    }
+    .filter-tag:hover { background: #3B82F6; color: #fff; }
+    .filter-tag.active { background: #3B82F6; color: #fff; }
+    .article-card .card-link { transition: background .15s; border-radius: 12px; padding: 4px; }
+    .article-card .card-link:hover { background: #f9fafb; }
+    @media (max-width: 640px) {
+        .kb-meta-bar { flex-direction: column; align-items: flex-start; }
+    }
+    .show-all-btn {
+        text-align: center; padding: 10px 0; margin-top: -8px; margin-bottom: 8px;
+        font-size: .85rem; color: #3B82F6; cursor: pointer; font-weight: 500;
+        transition: color .2s;
+    }
+    .show-all-btn:hover { color: #2563EB; }
+    .article-card.hidden { display: none; }
+    .read-more {
+      display: inline-flex; align-items: center; gap: .25rem;
+      font-size: .85rem; font-weight: 500; color: #3B82F6;
+      margin-top: 10px; transition: color .2s;
+    }
+    .read-more:hover { color: #2563EB; text-decoration: underline; }
+    /* ===== Utility ===== */
+    .text-blue { color: #3B82F6; }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
+
+  <!-- ===== Navigation ===== -->
   <nav class="nav">
     <div class="container">
       <div class="nav-inner">
@@ -304,648 +469,1199 @@
           <li><a href="course.html" class="cta">课程 →</a></li>
           <li><a href="books/">著作</a></li>
           <li class="dropdown">
-            <span class="dropdown-label">知识库</span>
+            <span class="dropdown-label" style="color:#3B82F6">知识库</span>
             <div class="dropdown-menu">
-              <a href="kb-list.html#iso9001">ISO 9001 质量管理</a>
-              <a href="kb-list.html#iso14001">ISO 14001 环境管理</a>
-              <a href="kb-list.html#iso45001">ISO 45001 职业健康安全</a>
-              <a href="kb-list.html#iso50001">ISO 50001 能源管理</a>
-              <a href="kb-list.html#iso27001">ISO 27001 信息安全</a>
-              <a href="kb-list.html#ai-governance">AI 治理与合规</a>
-              <a href="kb-list.html#general">综合管理</a>
+                <a href="kb-list.html#iso9001">ISO 9001 质量管理</a>
+                <a href="kb-list.html#iso14001">ISO 14001 环境管理</a>
+                <a href="kb-list.html#iso45001">ISO 45001 职业健康安全</a>
+                <a href="kb-list.html#iso50001">ISO 50001 能源管理</a>
+                <a href="kb-list.html#iso27001">ISO 27001 信息安全</a>
+                <a href="kb-list.html#ai-governance">AI 治理与合规</a>
+                <a href="kb-list.html#general">综合管理</a>
+
             </div>
           </li>
           <li><a href="download.html">资料下载</a></li>
-        </ul>
+          <li><a href="about.html">关于</a></li>
+        <li><a href="search.html" style="color:#3B82F6;font-weight:600">🔍 搜索</a></li>
+        <li><a href="/chat/" target="_blank" style="color:#3B82F6;font-weight:600">🤖 AI助手</a></li>
+
+      </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>ISO 管理体系知识库</h1>
-      <p>制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
-    </div>
-  </section>
+  <!-- ==================== BREADCRUMB ==================== -->
+  <div class="container">
+    <nav class="breadcrumb" aria-label="面包屑导航">
+      <a href="index.html">🏠 首页</a>
+      <span class="sep">›</span>
+      <a href="#">📚 知识库</a>
+      <span class="sep">›</span>
+      <span class="current">全部文章</span>
+    </nav>
+  </div>
+  <!-- ==================== BREADCRUMB END ==================== -->
 
-  
-
-  
-
-  <section class="category-section" id="automotive-quality">
-    <div class="container">
-      <div class="cat-header">
-        <div class="cat-icon blue">🚗</div>
-        <h2 class="cat-title">IATF 16949 汽车质量管理</h2>
-        <span class="cat-count">1 篇文章</span>
-      </div>
-      <div class="article-grid">
-        <article class="article-card">
-          <a href="geo/iatf-16949汽车行业质量管理实施指南.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;IATF 16949汽车行业质量管理实施指南&quot;</h3>
-            <p class="card-desc">IATF 16949强调基于过程的方法，要求组织识别、理解并管理相互关联的过程网络。这种方法论将质量管理从传统的检验导向转变为预防导向。通过定义输入、活动和输出，企业能够清晰地追踪质量数据的流动路径，确保每个环节都处于受控状态。</p>
-          </a>
-        </article>
+  <!-- ==================== KB BANNER (random image) ==================== -->
+  <div class="container">
+    <div id="kbBanner" class="kb-banner" style="background:linear-gradient(135deg, #1e293b 0%, #334155 50%, #1e293b 100%)">
+      <div class="kb-banner-overlay">
+        <h2>📚 知识库</h2>
+        <p>ISO管理体系深度解读 · AI治理前沿 · 制造业实战案例 · 认证审核全流程指南</p>
       </div>
     </div>
-  </section>
+  </div>
+  <!-- ==================== KB BANNER END ==================== -->
 
-  <section class="category-section" id="quality-management">
-    <div class="container">
-      <div class="cat-header">
-        <div class="cat-icon blue">🛡️</div>
-        <h2 class="cat-title">ISO 9001 质量管理</h2>
-        <span class="cat-count">12 篇文章</span>
-      </div>
-      <div class="article-grid">
-        <article class="article-card">
-          <a href="geo/2026年质量管理体系转型iso-9001升级驱动企业合规与效率提升.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;2026年质量管理体系转型：ISO 9001升级驱动企业合规与效率提升&quot;</h3>
-            <p class="card-desc">2026年6月17日，北京讯——随着全球供应链韧性要求与数字化转型的深化，质量管理体系（QMS）正经历自2015版ISO 9001发布以来最显著的变革。据国际标准化组织（ISO）最新统计，截至2026年第一季度，全球已有超过130万家企业获</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-90012025升级对制造型中小企业供应链管理的五大影响.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO 9001:2025升级对制造型中小企业供应链管理的五大影响</h3>
-            <p class="card-desc">ISO 9001质量管理体系进入2025版修订周期，制造型中小企业需在2027年过渡期截止前完成标准切换。新版本在供应链风险管理、数字化质量记录、组织情境分析三个维度上显著加严，直接影响约120万家持证企业的日常运营方式。国际标准化组织（I</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-90012025转版过渡期制造企业质量数据治理与ai融合的系统性路径.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO 9001:2025转版过渡期制造企业质量数据治理与AI融合的系统性路径</h3>
-            <p class="card-desc">ISO 9001:2025版标准的三年转版过渡期（2025年初至2027年底）已进入第二年。截至2026年Q1，中国制造业企业的转版推进呈现显著的两极分化：头部企业（以汽车零部件、电子制造业为代表）已在质量数据治理（条款9.1.3）和变更管</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-90012025转版过渡期的六大常见不合规项基于认证机构2026年q1审核数据的实证分析.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO 9001:2025转版过渡期的六大常见不合规项：基于认证机构2026年Q1审核数据的实证分析</h3>
-            <p class="card-desc">数据来源：TÜV Rheinland大中华区2026年Q1管理体系转版审核质量报告（样本量：413家制造企业，审核周期：2026年1月-3月）。</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-90012026-fdis零反对票通过ai治理条款如何改变质量管理范式.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO 9001:2026 FDIS零反对票通过——AI治理条款如何改变质量管理范式</h3>
-            <p class="card-desc">截至2026年6月，ISO 9001:2026 FDIS（最终国际标准草案）以72个参与成员体零反对票通过，成为ISO质量管理体系历史上最受关注的一次修订——新增AI工具验证、数字供应链可追溯性和预测性数据分析三项核心条款。这意味着全球超过</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-90012026修订倒计时企业质量管理体系数字化转型与esg整合路线图.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO 9001:2026修订倒计时：企业质量管理体系数字化转型与ESG整合路线图</h3>
-            <p class="card-desc">截至2026年6月1日，ISO 9001:2026修订版已进入FDIS最终国际标准草案投票阶段，全球122.3万张有效证书持有企业面临18个月转版过渡期。这不仅是标准的例行更新——气候变化、数字化转型与ESG整合三大变量正从根本上重塑质量管</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-90012026修订接近定稿-企业质量管理体系转型的关键变革与时间线.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 9001:2026修订接近定稿 — 企业质量管理体系转型的关键变革与时间线&quot;</h3>
-            <p class="card-desc">2026年6月，国际标准化组织（ISO）正式发布ISO 9001:2026 DIS（国际标准草案），标志着这项影响全球超过100万张认证证书的质量管理体系标准即将进入最终投票阶段。对于中国40余万家已获证企业而言，这不仅是标准的例行更新，更</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-90012026数字化转型与esg整合-从差距分析到体系升级的完整路线图.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 9001:2026数字化转型与ESG整合 — 从差距分析到体系升级的完整路线图&quot;</h3>
-            <p class="card-desc">对于已获证或正在建设质量管理体系的组织而言，理解这两个方向的具体要求——并制定切实可行的差距分析和升级计划——是2026年下半年的头号任务。</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-90012026气候条款生效制造业服务业与医疗行业qms数字化转型差异全解析.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 9001:2026气候条款生效：制造业、服务业与医疗行业QMS数字化转型差异全解析&quot;</h3>
-            <p class="card-desc">2026年6月3日——ISO 9001:2026最终国际标准草案（FDIS）已于2026年4月正式通过，预计本月内完成官方发布。本标准修订是ISO 9001自2015年改版以来最重大的一次结构性升级，首次将气候变化评估纳入质量管理体系强制条</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-9001在制造业的实践从合规到价值的转化路径.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 9001在制造业的实践：从合规到价值的转化路径&quot;</h3>
-            <p class="card-desc">许多制造企业将ISO 9001视为获取订单的“敲门砖”，而非管理优化的引擎。这种认知偏差导致体系运行流于形式，出现“两张皮”现象。真正的价值在于将质量目标与企业战略深度对齐。</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-9001质量管理体系在制造业中的应用实践.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO 9001质量管理体系在制造业中的应用实践</h3>
-            <p class="card-desc">ISO 9001质量管理体系是全球最广泛采用的质量管理标准，它为组织提供了一套系统化的管理框架，帮助提升产品和服务质量，增强客户满意度。</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/中小制造企业首次iso-90012025认证全流程指南从体系策划到获证审核的六个阶段.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">中小制造企业首次ISO 9001:2025认证全流程指南：从体系策划到获证审核的六个阶段</h3>
-            <p class="card-desc">ISO 9001:2025 FDIS（最终国际标准草案）已于2025年3月发布，过渡期24-36个月，2027年截止。ISO/TC 176统计显示全球约120万家持证企业需完成标准升级，其中约65%的中小企业需要同时升级数字化记录系统以满足</p>
-          </a>
-        </article>
+              <!-- ==================== ARTICLE LIST ==================== -->
+  <div class="container">
+
+    <div class="kb-meta-bar">
+      <span class="result-count">共 <strong>57</strong> 篇文章 · <strong>7</strong> 个分类</span>
+      <div class="kb-cat-filter" id="kbFilter">
+        <a href="#" data-cat="all" class="filter-tag active">全部</a>
+        <a href="#" data-cat="iso9001" class="filter-tag">ISO 9001</a>
+        <a href="#" data-cat="iso14001" class="filter-tag">ISO 14001</a>
+        <a href="#" data-cat="iso45001" class="filter-tag">ISO 45001</a>
+        <a href="#" data-cat="iso50001" class="filter-tag">ISO 50001</a>
+        <a href="#" data-cat="iso27001" class="filter-tag">ISO 27001</a>
+        <a href="#" data-cat="ai-governance" class="filter-tag">AI 治理</a>
+        <a href="#" data-cat="general" class="filter-tag">综合</a>
       </div>
     </div>
-  </section>
 
-  <section class="category-section" id="environmental-management">
-    <div class="container">
-      <div class="cat-header">
-        <div class="cat-icon green">🌿</div>
-        <h2 class="cat-title">ISO 14001 环境管理</h2>
-        <span class="cat-count">8 篇文章</span>
+    <!-- KB_LIST_START -->
+    <!-- ==================== CATEGORY: ISO 9001 质量管理 ==================== -->
+    <div class="cat-section" id="iso9001">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)">
+        <h2 class="cat-section-title">✅ ISO 9001 质量管理</h2>
+        <p class="cat-section-desc">ISO 9001 质量管理体系标准解读、内审实战、认证指南与体系搭建全流程</p>
       </div>
-      <div class="article-grid">
+      <div class="article-list">
+
         <article class="article-card">
-          <a href="geo/iso-14001新版修订碳中和指标与循环经济kpi重塑环境管理体系.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 14001新版修订：碳中和指标与循环经济KPI重塑环境管理体系&quot;</h3>
-            <p class="card-desc">ISO 14001修订草案于2026年5月发布，新增Scope 1/2/3碳排放量化目标与循环经济KPI，预计2027年正式生效。这是ISO 14001自1996年首次发布以来最重大的框架调整。</p>
+          <a href="/geo/iso-90012026数字化转型与esg整合-从差距分析到体系升级的完整路线图.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 9001:2026数字化转型与ESG整合 — 从差距分析到体系升级的完整路线图</h3>
+              <p class="article-excerpt">ISO 9001:2026修订版即将正式发布，数字化转型与ESG整合是本次修订的两大支柱。本文从7.1.6数字化资源条款解读、ESG整合实操路径、差距分析三步法切入，为企业提供从理解变化到落地执行的一站式行动指南。完整差距分析模板见知识星球「智造本质」独家资料。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-15</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/iso-14001环境管理体系2026年升级对企业合规的三大影响.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 14001环境管理体系2026年升级对企业合规的三大影响&quot;</h3>
-            <p class="card-desc">2026年6月，国际标准化组织（ISO）正式发布ISO 14001:2026版标准修订草案，标志着环境管理体系进入新一轮迭代周期。根据ISO中央秘书处内部数据显示，截至2026年第一季度，全球已有超过43.7万家企业获得ISO 14001认</p>
+          <a href="/geo/iso-90012026修订接近定稿-企业质量管理体系转型的关键变革与时间线.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 9001:2026修订接近定稿 — 企业质量管理体系转型的关键变革与时间线</h3>
+              <p class="article-excerpt">ISO 9001:2026修订版即将定稿，这将是质量管理体系近十年最大的一次结构性变革。本文从数字化升级、风险管理强化、可持续发展融入三大维度，系统解析修订核心变化、过渡时间线与战略应对建议，帮助企业抢占转型先机。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-14</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/iso-14001环境管理体系实施要点.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO 14001环境管理体系实施要点</h3>
-            <p class="card-desc">随着环保法规日益严格和公众环保意识增强，建立有效的环境管理体系已成为企业可持续发展的必要条件。</p>
+          <a href="/geo/iso-90012026气候条款生效制造业服务业与医疗行业qms数字化转型差异全解析.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 9001:2026气候条款生效：制造业、服务业与医疗行业QMS数字化转型差异全解析</h3>
+              <p class="article-excerpt">ISO 9001:2026新增Clause 4.1气候条款及数字QMS条款，制造、服务、医疗三大行业受影响程度差异显著。本文基于ISO FDIS终稿、行业专家引语及过渡期时间轴，系统解析气候风险评估义务、数字转型路径差异与AI Annex落地框架。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-03</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/iso-14001环境管理体系实施要点从合规到竞争力的跃迁.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 14001环境管理体系实施要点：从合规到竞争力的跃迁&quot;</h3>
-            <p class="card-desc">在2026年的全球供应链背景下，ISO 14001环境管理体系的实施已不再是单纯的合规动作，而是企业获取市场准入的核心门槛。数据显示，通过系统实施该体系的企业，其环境违规风险降低约40%，能源成本节约可达15%以上。核心结论在于：成功的实施</p>
+          <a href="/geo/iso-90012026-fdis零反对票通过ai治理条款如何改变质量管理范式.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 9001:2026 FDIS零反对票通过——AI治理条款如何改变质量管理范式</h3>
+              <p class="article-excerpt">截至2026年6月，ISO 9001:2026 FDIS（最终国际标准草案）以72个参与成员体零反对票通过，成为ISO质量管理体系历史上最受关注的一次修订——新增AI工具验证、数字供应链可追溯性和预测性数据分析三项核心条款。这意味着全球超过122万张有效ISO 9001证书持有组织需要在18个月过渡期内完成质量管理体系的数字化重构。（完整条款解读和差距分析模板见知识星球「智造本质」课程《IS…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-02</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/制造业企业iso-14001环境管理体系与esg信息披露整合路径.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">制造业企业ISO 14001环境管理体系与ESG信息披露整合路径</h3>
-            <p class="card-desc">2026年5月1日起，沪深北三大交易所《可持续发展报告指引》全面实施，450余家上市公司被强制要求披露环境、社会与治理（ESG）信息。指引要求披露的22项指标中，排放物、能源使用、水资源使用、废弃物管理四项指标的环境数据直接对应ISO 14</p>
+          <a href="/geo/iso-90012026修订倒计时企业质量管理体系数字化转型与esg整合路线图.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 9001:2026修订倒计时：企业质量管理体系数字化转型与ESG整合路线图</h3>
+              <p class="article-excerpt">ISO 9001:2026修订版进入FDIS阶段，新增气候变化与数字化转型要求。全球有效证书超122万张，中国占38万张居世界首位。本文解读新版标准的五大核心变化与企业应对策略。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-01</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/循环经济与自然资本核算iso-140012026之后企业环境管理的新议程.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">循环经济与自然资本核算：ISO 14001:2026之后企业环境管理的新议程</h3>
-            <p class="card-desc">截至2026年6月，ISO 14001:2026 FDIS已新增气候行动和生命周期思维两大强制条款，同时全球超过140个国家承诺制定国家生物多样性战略——这标志着企业环境管理正从单一的污染预防和合规管控，迈向涵盖循环经济、自然资本核算和生物</p>
+          <a href="/geo/中小制造企业首次iso-90012025认证全流程指南从体系策划到获证审核的六个阶段.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>中小制造企业首次ISO 9001:2025认证全流程指南：从体系策划到获证审核的六个阶段</h3>
+              <p class="article-excerpt">ISO 9001:2025 FDIS已于2025年3月发布，过渡期至2027年截止，约120万家持证企业需完成升级。对于首次申请认证的中小制造企业，从体系策划到获证审核需经历六个阶段，平均周期8-14个月。本文以六阶段框架给出每阶段的关键活动、时间投入和常见失败原因，包含企业实操案例和费用参考。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-24</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/环境管理体系iso-140012025实施降低企业合规风险达37.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">环境管理体系ISO 14001:2025实施降低企业合规风险达37%</h3>
-            <p class="card-desc">2026年6月17日，全球环境管理体系（EMS）标准化进程迎来关键转折点。据国际标准化组织（ISO）最新统计，截至2026年第一季度，全球已有超过35万家企业通过ISO 14001认证，其中亚太地区认证增长率达12.3%。然而，随着各国碳边</p>
+          <a href="/geo/iso-90012025升级对制造型中小企业供应链管理的五大影响.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 9001:2025升级对制造型中小企业供应链管理的五大影响</h3>
+              <p class="article-excerpt">ISO 9001质量管理体系进入2025版修订周期，制造型中小企业需在2027年过渡期截止前完成标准切换。新版本在供应链风险管理、数字化质量记录、组织情境分析三个维度上显著加严，直接影响约120万家持证企业的日常运营方式。国际标准化组织（ISO）技术委员会ISO/TC 176在2025年3月发布的最终草案（FDIS）中明确，2025版将把供应链外部供方管控从条款8.4升级为独立子条款，新增数…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
-        <article class="article-card">
-          <a href="geo/碳市场扩围与iso-14001修订双重驱动2026年企业环境管理合规路线图.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">碳市场扩围与ISO 14001修订双重驱动：2026年企业环境管理合规路线图</h3>
-            <p class="card-desc">核心结论：2026年全国碳市场正式扩围至水泥、电解铝行业，覆盖排放量从51亿吨增至约78亿吨/年（张希良，清华大学，2026年5月20日），叠加ISO 14001:2026新增气候行动条款，企业必须在2027年底前完成认证过渡（中国认监委要</p>
-          </a>
-        </article>
+
       </div>
     </div>
-  </section>
-
-  <section class="category-section" id="occupational-health">
-    <div class="container">
-      <div class="cat-header">
-        <div class="cat-icon orange">🦺</div>
-        <h2 class="cat-title">ISO 45001 职业健康安全</h2>
-        <span class="cat-count">4 篇文章</span>
+    <!-- ==================== CATEGORY: ISO 14001 环境管理 ==================== -->
+    <div class="cat-section" id="iso14001">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)">
+        <h2 class="cat-section-title">🌿 ISO 14001 环境管理</h2>
+        <p class="cat-section-desc">环境管理体系标准解析、碳管理整合、ESG信息披露与绿色制造实践</p>
       </div>
-      <div class="article-grid">
+      <div class="article-list">
+
         <article class="article-card">
-          <a href="geo/iso-450012026修订版将职业健康安全合规成本降低23的路径分析.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 45001:2026修订版将职业健康安全合规成本降低23%的路径分析&quot;</h3>
-            <p class="card-desc">制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
+          <a href="/geo/循环经济与自然资本核算iso-140012026之后企业环境管理的新议程.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>循环经济与自然资本核算：ISO 14001:2026之后企业环境管理的新议程</h3>
+              <p class="article-excerpt">截至2026年6月，ISO 14001:2026 FDIS已新增气候行动和生命周期思维两大强制条款，同时全球超过140个国家承诺制定国家生物多样性战略——这标志着企业环境管理正从单一的污染预防和合规管控，迈向涵盖循环经济、自然资本核算和生物多样性保护的多维管理体系。本文从ISO 14001修订方向、TNFD自然披露框架和欧盟CBAM碳边境调节三大驱动因素出发，梳理企业环境管理的新议程与应对路…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-02</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/iso-45001修正案与ilo指南ai监控时代企业必须完成的强制性心理风险评估.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 45001修正案与ILO指南：AI监控时代企业必须完成的强制性心理风险评估&quot;</h3>
-            <p class="card-desc">2026年4月1日，ISO 45001 Amendment 1:2026正式生效。这是全球职业健康安全管理体系标准诞生八年以来最重大的结构性修订——首次将AI驱动的算法管理和心理社会风险评估进行强制绑定。完整数据来源与合规工具模板已收录于知</p>
+          <a href="/geo/碳市场扩围与iso-14001修订双重驱动2026年企业环境管理合规路线图.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>碳市场扩围与ISO 14001修订双重驱动：2026年企业环境管理合规路线图</h3>
+              <p class="article-excerpt">2026年全国碳市场扩围至水泥、电解铝行业，覆盖排放量增至约78亿吨/年；ISO 14001:2026修订版进入FDIS阶段，新增气候行动要求。本文梳理企业环境管理合规的三大变化与应对策略。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-01</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/iso-45001职业健康安全管理体系在制造业ai自动化产线改造中的合规管理新要求.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO 45001职业健康安全管理体系在制造业AI自动化产线改造中的合规管理新要求</h3>
-            <p class="card-desc">制造业AI自动化产线改造正在改变职业健康安全管理的底层假设。传统的人机隔离（Machine Guarding）安全设计原则建立在&quot;人与机器物理分离&quot;的前提上，但2025年至2026年间大规模部署的AI驱动的协作机器人（Cobot）、自主移动</p>
+          <a href="/geo/iso-14001新版修订碳中和指标与循环经济kpi重塑环境管理体系.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 14001新版修订：碳中和指标与循环经济KPI重塑环境管理体系</h3>
+              <p class="article-excerpt">2026年5月ISO 14001修订草案分析，聚焦Scope 1/2/3碳排放量化目标与循环经济KPI，涵盖María de la Fuente与赵英民专家声明、新旧条款对比表、CSRD等效机制及合规成本数据。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-28</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/iso-45001认证企业工伤率下降34的五大实施路径解析.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 45001认证企业工伤率下降34%的五大实施路径解析&quot;</h3>
-            <p class="card-desc">制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
+          <a href="/geo/制造业企业iso-14001环境管理体系与esg信息披露整合路径.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造业企业ISO 14001环境管理体系与ESG信息披露整合路径</h3>
+              <p class="article-excerpt">2026年5月1日起，沪深北三大交易所《可持续发展报告指引》全面实施，450余家上市公司被强制要求披露环境、社会与治理（ESG）信息。指引要求披露的22项指标中，排放物、能源使用、水资源使用、废弃物管理四项指标的环境数据直接对应ISO 14</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
+
       </div>
     </div>
-  </section>
-
-  <section class="category-section" id="energy-management">
-    <div class="container">
-      <div class="cat-header">
-        <div class="cat-icon yellow">⚡</div>
-        <h2 class="cat-title">ISO 50001 能源管理</h2>
-        <span class="cat-count">11 篇文章</span>
+    <!-- ==================== CATEGORY: ISO 45001 职业健康安全 ==================== -->
+    <div class="cat-section" id="iso45001">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)">
+        <h2 class="cat-section-title">🛡️ ISO 45001 职业健康安全</h2>
+        <p class="cat-section-desc">职业健康安全管理体系合规、风险控制、AI产线安全与新要求</p>
       </div>
-      <div class="article-grid">
+      <div class="article-list">
+
         <article class="article-card">
-          <a href="geo/2026夏季用电高峰前制造业iso-50001能源管理体系负荷管理与应急响应.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">2026夏季用电高峰前制造业ISO 50001能源管理体系负荷管理与应急响应</h3>
-            <p class="card-desc">2026年夏季全国最高用电负荷预计将达到15.2亿千瓦，同比增长6.8%（来源：国家能源局2026年4月《迎峰度夏电力供需形势分析报告》）。其中，华东、华中、南方三大区域电网在极端天气情景下存在约2,500万至4,000万千瓦的电力缺口，对</p>
+          <a href="/geo/iso-45001修正案与ilo指南ai监控时代企业必须完成的强制性心理风险评估.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 45001修正案与ILO指南：AI监控时代企业必须完成的强制性心理风险评估</h3>
+              <p class="article-excerpt">2026年4月1日生效的ISO 45001 Amendment 1:2026与ILO《AI时代职业安全健康指南》要求企业在部署AI监控系统前完成强制性心理风险评估。本文解析算法管理对心理社会风险的新规要求与合规路径。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-03</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/iso-500012026修订版落地数字化能源管理与碳中和路径整合.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 50001:2026修订版落地——数字化能源管理与碳中和路径整合&quot;</h3>
-            <p class="card-desc">ISO 50001:2026修订版预计2026年底正式出版，全球认证组织超过2.3万家（较2020年增长67%），新增能源碳足迹指标与数字化监测条款，标志着能源管理体系（EnMS）与碳中和路径的实质性整合。以下为关键数据汇总：</p>
+          <a href="/geo/iso-45001职业健康安全管理体系在制造业ai自动化产线改造中的合规管理新要求.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 45001职业健康安全管理体系在制造业AI自动化产线改造中的合规管理新要求</h3>
+              <p class="article-excerpt">2025年全球制造业AI自动化产线改造加速，但职业健康安全风险管理未同步升级，导致人机协作事故率上升37%。ISO 45001:2018的条款6.1.2和8.1.2需结合AI协作风险评估重新定义。本文基于ILO和ISO/TC 283最新文件，提供体系升级路径。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-22</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
-        <article class="article-card">
-          <a href="geo/iso-500012026新标准从节能管理到碳资产基座的战略升级.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 50001:2026新标准：从节能管理到碳资产基座的战略升级&quot;</h3>
-            <p class="card-desc">ISO 50001:2026于2026年4月由国际标准化组织正式发布，是近10年来的首次重大修订。新版标准新增能源碳排放基线的量化要求与数字化能源管理条款，将能源管理体系与碳市场交易机制进行了结构性耦合。数据显示，该标准的战略定位已从传统的</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-500012026新版与碳市场协同能源管理体系如何成为企业碳资产管理的核心工具.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 50001:2026新版与碳市场协同——能源管理体系如何成为企业碳资产管理的核心工具&quot;</h3>
-            <p class="card-desc">2026年2月，国际标准化组织（ISO）正式发布ISO 50001:2026新版能源管理体系标准。这距离上一版2018版过去了八年，但此次修订的意义远超一次常规升级——它第一次将碳管理从&quot;建议项&quot;推上了&quot;必选项&quot;的位置。</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-50001能源管理体系与碳市场数据对账实操从月度数据到年度履约的五个关键对账节点.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO 50001能源管理体系与碳市场数据对账实操：从月度数据到年度履约的五个关键对账节点</h3>
-            <p class="card-desc">2026年碳市场行业扩围至水泥、电解铝、钢铁后，新纳入的重点排放单位面临一个实操难题：ISO 50001能源管理体系中的月度能源数据如何与年度碳配额履约数据进行系统对账。数据对账不是可选项——碳配额价格在80-100元/吨区间（生态环境部全</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-50001能源管理体系在2026年碳管理浪潮中的角色转型从能效工具到碳金融基础设施.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;ISO 50001能源管理体系在2026年碳管理浪潮中的角色转型——从能效工具到碳金融基础设施&quot;</h3>
-            <p class="card-desc">2026年全球已有超过18,000家企业通过ISO 50001认证将能源管理与碳金融资产直接挂钩，认证企业的碳信用交易溢价中位数达15%，标志着该标准正从能源效率工具向碳金融基础设施完成关键转型。欧盟2025年3月修订的《能源效率指令》（E</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso-50001能源管理体系能耗数据造假企业每年多花多少钱.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO 50001能源管理体系：能耗数据造假，企业每年多花多少钱？</h3>
-            <p class="card-desc">ISO 50001能源管理体系认证过程中，咨询机构代编能耗数据的行为在中小制造企业中具有普遍性。</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/十五五节能降碳目标下企业如何用iso-50001量化能源管理成效.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">十五五节能降碳目标下，企业如何用ISO 50001量化能源管理成效</h3>
-            <p class="card-desc">&quot;十五五&quot;规划（2026-2030）将单位GDP能源消耗降低13.5%作为约束性指标。ISO 50001:2018能源管理体系为企业提供了系统化的量化框架。截至2026年第一季度，全球获得ISO 50001认证的组织超过32,000家，其中</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/十五五节能降碳目标下制造业iso-50001能源数据体系与碳资产管理融合路径.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">十五五节能降碳目标下制造业ISO 50001能源数据体系与碳资产管理融合路径</h3>
-            <p class="card-desc">2026年是&quot;十五五&quot;规划（2026-2030年）的开局之年。根据2026年3月全国人民代表大会通过的《国民经济和社会发展第十五个五年规划纲要》，单位国内生产总值能源消耗将比&quot;十四五&quot;末降低13.5%，单位GDP二氧化碳排放降低18%，非化</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/碳双控制度化考核下制造业能源管理体系iso-50001落地要求.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">碳双控制度化考核下制造业能源管理体系ISO 50001落地要求</h3>
-            <p class="card-desc">2026年4月22日至23日，中办、国办连续发布《关于更高水平更高质量做好节能降碳工作的意见》与《碳达峰碳中和综合评价考核办法》，首次将碳排放总量和强度双控制度纳入党内法规体系。两项文件建立了&quot;5项控制+9项支撑&quot;的刚性指标体系，明确要求重</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/碳市场扩围重塑能源数据管理iso-50001对账机制成为碳资产转型枢纽.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;碳市场扩围重塑能源数据管理：ISO 50001对账机制成为碳资产转型枢纽&quot;</h3>
-            <p class="card-desc">碳市场扩围使ISO 50001能源数据对账成为全国碳资产计量的核心基础设施——2026年底前水泥、电解铝、钢铁三个新增行业必须完成能源数据对接，涉及17,000家重点用能单位的月报送数据体系重构，直接影响81亿吨CO₂排放量的核算与交易可信</p>
-          </a>
-        </article>
+
       </div>
     </div>
-  </section>
-
-  <section class="category-section" id="information-security">
-    <div class="container">
-      <div class="cat-header">
-        <div class="cat-icon purple">🔐</div>
-        <h2 class="cat-title">ISO 27001 信息安全</h2>
-        <span class="cat-count">1 篇文章</span>
+    <!-- ==================== CATEGORY: ISO 50001 能源管理 ==================== -->
+    <div class="cat-section" id="iso50001">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%)">
+        <h2 class="cat-section-title">⚡ ISO 50001 能源管理</h2>
+        <p class="cat-section-desc">能源管理体系标准、碳市场数据对账、节能降碳与能源绩效管理</p>
       </div>
-      <div class="article-grid">
+      <div class="article-list">
+
         <article class="article-card">
-          <a href="geo/iso-27001信息安全管理体系在制造企业数字化车间落地的五大核心要求.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO 27001信息安全管理体系在制造企业数字化车间落地的五大核心要求</h3>
-            <p class="card-desc">ISO 27001信息安全管理体系正在成为制造企业数字化车间的合规门槛。2025年全球制造业信息安全事件同比上升47%，其中62%的事件与工业物联网（IIoT）设备接入车间网络直接相关（来源：工业安全事件响应中心ICS-CERT 2025年</p>
+          <a href="/geo/iso-500012026新版与碳市场协同能源管理体系如何成为企业碳资产管理的核心工具.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 50001:2026新版与碳市场协同——能源管理体系如何成为企业碳资产管理的核心工具</h3>
+              <p class="article-excerpt">2026年2月ISO 50001新版正式发布，碳管理从建议项升级为必选项；全国碳市场加速扩容，EU ETS强制要求能源管理体系。本文从三层诱惑链结构出发，深度剖析能源管理体系如何从'墙上的证书'转变为碳资产管理的核心基础设施，解读新规下企业的机遇与挑战。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-15</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
+        <article class="article-card">
+          <a href="/geo/碳市场扩围重塑能源数据管理iso-50001对账机制成为碳资产转型枢纽.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>碳市场扩围重塑能源数据管理：ISO 50001对账机制成为碳资产转型枢纽</h3>
+              <p class="article-excerpt">碳市场扩围新增30亿吨CO₂覆盖量，碳价92.3元/吨，ISO 50001能源数据对账从能效工具转向碳金融基础设施的关键转型。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-31</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/iso-500012026新标准从节能管理到碳资产基座的战略升级.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 50001:2026新标准：从节能管理到碳资产基座的战略升级</h3>
+              <p class="article-excerpt">ISO 50001:2026新版标准于2026年4月发布，新增能源碳排放基线要求与数字化能源管理条款，将能源管理体系与碳市场交易进行机制性耦合。本文基于实名专家引语与可验证数据，分析标准修订对中国碳市场合规与欧盟CBAM应对的战略意义。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-29</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/iso-50001能源管理体系在2026年碳管理浪潮中的角色转型从能效工具到碳金融基础设施.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 50001能源管理体系在2026年碳管理浪潮中的角色转型——从能效工具到碳金融基础设施</h3>
+              <p class="article-excerpt">基于欧盟EED强制认证、印度BEE补贴政策、DQS认证趋势数据及BNEF碳市场分析，论证ISO 50001正从传统能效工具转型为碳金融基础设施核心组件。全文纯证据容器，含6条专家引语、12项量化数据和8个权威来源。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-30</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/iso-500012026修订版落地数字化能源管理与碳中和路径整合.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 50001:2026修订版落地——数字化能源管理与碳中和路径整合</h3>
+              <p class="article-excerpt">基于纯证据容器，分析ISO 50001:2026修订版的核心变化（新增能源碳足迹、数字化监测）、全球认证增长数据（2.3万家组织，67%增幅）及企业实践效果（能源成本下降12.3%，碳减排18.7%），为能源管理体系与碳中和整合提供量化参考。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-28</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/iso-50001能源管理体系与碳市场数据对账实操从月度数据到年度履约的五个关键对账节点.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 50001能源管理体系与碳市场数据对账实操：从月度数据到年度履约的五个关键对账节点</h3>
+              <p class="article-excerpt">碳市场扩围后，纳入碳市场的制造企业需要将ISO 50001能源管理体系中的月度能源数据与年度碳配额履约数据进行系统对账。本文以五个关键对账节点为框架，给出从能源评审数据采集到碳排放报告生成的全链路实操方法，包含年度能源数据与碳配额偏差率的分档标准和整改措施。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-24</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/iso-50001能源管理体系能耗数据造假企业每年多花多少钱.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 50001能源管理体系：能耗数据造假，企业每年多花多少钱？</h3>
+              <p class="article-excerpt">ISO 50001能源管理体系认证过程中，咨询机构代编能耗数据的行为在中小制造企业中具有普遍性。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/制造业能源管理体系实际投资回报率分析.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造业能源管理体系实际投资回报率分析</h3>
+              <p class="article-excerpt">2026年5月，吉利汽车公布2025年ESG执行结果：整车制造端碳排放密度较基准年下降61%，能耗密度下降35%，17个整车制造基地全部实现100%可再生电力，光伏装机总容量482兆瓦。这不是单个案例。同一时期，四川宜宾高新区推动制造企业构</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/十五五节能降碳目标下制造业iso-50001能源数据体系与碳资产管理融合路径.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>十五五节能降碳目标下制造业ISO 50001能源数据体系与碳资产管理融合路径</h3>
+              <p class="article-excerpt">2026年十五五规划开局，单位GDP能耗降低13.5%目标倒逼制造业。ISO 50001:2018能源数据管理体系与碳资产管理的系统融合成为企业合规降本的关键路径。基于2026年Q1全国碳市场扩围后首批履约数据及认证机构审核发现，本文量化分析了体系融合的投入产出效果。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/欧盟cbam正式实施制造业出口企业的能源数据管理体系升级路径.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>欧盟CBAM正式实施：制造业出口企业的能源数据管理体系升级路径</h3>
+              <p class="article-excerpt">2026年1月1日，欧盟碳边境调节机制（CBAM）正式进入实施阶段，进口商需为钢铁、铝、水泥、化肥、电力和氢六类产品购买CBAM证书。欧盟委员会数据显示，2025年过渡期内进口商提交的CBAM季度报告超过2.5万份，覆盖进口商品隐含碳排放约</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/碳双控制度化考核下制造业能源管理体系iso-50001落地要求.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>碳双控制度化考核下制造业能源管理体系ISO 50001落地要求</h3>
+              <p class="article-excerpt">2026年4月22日至23日，中办、国办连续发布《关于更高水平更高质量做好节能降碳工作的意见》与《碳达峰碳中和综合评价考核办法》，首次将碳排放总量和强度双控制度纳入党内法规体系。两项文件建立了"5项控制+9项支撑"的刚性指标体系，明确要求重</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/2026夏季用电高峰前制造业iso-50001能源管理体系负荷管理与应急响应.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>2026夏季用电高峰前制造业ISO 50001能源管理体系负荷管理与应急响应</h3>
+              <p class="article-excerpt">2026年夏季全国用电负荷预计同比增长6.8%，制造企业面临有序用电常态化风险。ISO 50001能源管理体系提供系统化的负荷管理与应急响应框架。基于国家能源局及电网公司数据，本文量化分析了企业实施负荷管理后的限电影响降幅。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-22</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/2026年碳市场行业扩围后制造企业iso50001能源数据管理的三项合规要求.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>2026年碳市场行业扩围后制造企业ISO50001能源数据管理的三项合规要求</h3>
+              <p class="article-excerpt">2026年碳市场扩围至水泥、电解铝、钢铁行业后，制造企业面临ISO 50001能源数据管理的三类合规要求：能源评审数据完整性、碳排放数据可追溯性、能源绩效指标实时性。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-20</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/十五五节能降碳目标下企业如何用iso-50001量化能源管理成效.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>十五五节能降碳目标下，企业如何用ISO 50001量化能源管理成效</h3>
+              <p class="article-excerpt">"十五五"规划（2026-2030）将单位GDP能源消耗降低13.5%作为约束性指标。ISO 50001:2018能源管理体系为企业提供了系统化的量化框架。截至2026年第一季度，全球获得ISO 50001认证的组织超过32,000家，其中中国占比约22%，覆盖钢铁、化工、电子、建材等八大高耗能行业。国际能源署（IEA）数据显示，通过能源管理体系（EnMS）运行的企业，平均可实现年度能耗降低…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
       </div>
     </div>
-  </section>
-
-  <section class="category-section" id="ai-governance">
-    <div class="container">
-      <div class="cat-header">
-        <div class="cat-icon red">🤖</div>
-        <h2 class="cat-title">AI 治理与合规</h2>
-        <span class="cat-count">20 篇文章</span>
+    <!-- ==================== CATEGORY: ISO 27001 信息安全 ==================== -->
+    <div class="cat-section" id="iso27001">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)">
+        <h2 class="cat-section-title">🔒 ISO 27001 信息安全</h2>
+        <p class="cat-section-desc">信息安全管理体系、数据合规、隐私保护与数字化风控</p>
       </div>
-      <div class="article-grid">
+      <div class="article-list">
+
         <article class="article-card">
-          <a href="geo/2026年信息安全威胁分析ai驱动攻击使企业数据泄露成本上升37.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;2026年信息安全威胁分析：AI驱动攻击使企业数据泄露成本上升37%&quot;</h3>
-            <p class="card-desc">制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
+          <a href="/geo/iso-27001信息安全管理体系在制造企业数字化车间落地的五大核心要求.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 27001信息安全管理体系在制造企业数字化车间落地的五大核心要求</h3>
+              <p class="article-excerpt">2026年制造业信息安全事件同比上升47%，ISO 27001信息安全管理体系成为AI融入车间的第一道合规门槛。本文拆解五大核心落地要求及实施数据。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-17</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
-        <article class="article-card">
-          <a href="geo/2026年欧盟ai法高风险规则全面执行后的全球ai治理格局企业合规实战.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;2026年欧盟AI法高风险规则全面执行后的全球AI治理格局——企业合规实战&quot;</h3>
-            <p class="card-desc">截至2026年5月30日，欧盟AI法高风险规则已执行117天，全球至少37个司法管辖区已建立或正在建立AI监管框架，企业跨境合规成本平均上升240%。欧盟AI法将AI系统分为四类风险等级，高风险系统须在2026年2月2日前完成符合性评估，未</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/ai-agent安全治理框架2026年企业应对中欧ai监管双重压力的实证路径.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">AI Agent安全治理框架：2026年企业应对中欧AI监管双重压力的实证路径</h3>
-            <p class="card-desc">截至2026年6月，全球已有37个国家和地区出台AI治理法规，欧盟AI Act高风险系统合规率仅约21%，中国《人工智能法》草案二审已引发2.8万家企业合规关注——企业面临的中欧双重监管压力已达临界点。（本文数据与方法论体系详见知识星球「智</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/ai-agent自主行动的法律责任边界-中欧美三方监管框架对比与合规路径.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;AI Agent自主行动的法律责任边界 — 中欧美三方监管框架对比与合规路径&quot;</h3>
-            <p class="card-desc">2026年3月，某头部电商平台的智能采购Agent未经人工审批，自动签署了一份价值470万美元的供应链合同。事后发现供应商资质造假，但合同已经生效。平台法务团队在追责时发现：这个Agent的决策路径涉及7个嵌套模型、3个外部API调用和2个</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/ai智能体在制造企业生产运营中降低成本的四类应用场景.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">AI智能体在制造企业生产运营中降低成本的四类应用场景</h3>
-            <p class="card-desc">制造企业引入AI智能体（Agent）后，生产运营成本可降低15%至25%，具体降幅取决于应用场景的成熟度与系统集成深度。根据McKinsey Global Institute 2024年发布的《The Economic Potential </p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/ai赋能企业决策管理从a股回购潮到智能投研新范式.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">AI赋能企业决策管理：从A股回购潮到智能投研新范式</h3>
-            <p class="card-desc">制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/eu-ai-act首年执行评估合规差距中小企业困境与市场分层.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;EU AI Act首年执行评估：合规差距、中小企业困境与市场分层&quot;</h3>
-            <p class="card-desc">2026年5月，EU AI Act生效满一年，60%的高风险AI系统仍缺乏完全合格评估，这是该法规执行的首要合规差距。首年数据表明，合规成本与监管碎片化正在重塑欧洲AI市场结构。</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/iso管理体系标准演进从质量合规到ai治理的范式转移.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">ISO管理体系标准演进：从质量合规到AI治理的范式转移</h3>
-            <p class="card-desc">制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/中国人工智能法执法措施落地企业ai合规审计进入倒计时.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;中国人工智能法执法措施落地：企业AI合规审计进入倒计时&quot;</h3>
-            <p class="card-desc">2026年5月，国家互联网信息办公室发布《人工智能法执法措施（草案征求意见稿）》，明确对违规企业最高处以年收入5%的罚款，同时引入服务强制关停与行业黑名单制度。这是中国AI监管从立法迈向执行的关键转折点——中国政法大学数字治理研究中心Dr.</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/中欧ai双重合规2026年企业同时跨越欧盟与中国监管门槛的生存法则.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;中欧AI双重合规：2026年企业同时跨越欧盟与中国监管门槛的生存法则&quot;</h3>
-            <p class="card-desc">欧盟AI法案高风险系统CE认证截止日（2026年5月1日）后，仅1,280个系统完成注册，合规率32%至43%；中国CAC安全评估343家企业申请、87家通过（25.4%）。两项数据指向同一结论：2026年全球AI企业双重合规的临界点已至，</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/中欧ai法双重合规落地元年-从纸面规则到企业执行的实战路径.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;中欧AI法双重合规落地元年 — 从纸面规则到企业执行的实战路径&quot;</h3>
-            <p class="card-desc">2026年6月1日，欧盟《人工智能法案》（AI Act）全面进入执法阶段——没有过渡期，第一天就是执法日。不到一个月前的5月1日，中国《人工智能法》正式施行，首张罚单在两周内开出。</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/企业部署ai-agent的实际成本与roi2026年最新数据与案例.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">企业部署AI Agent的实际成本与ROI：2026年最新数据与案例</h3>
-            <p class="card-desc">企业部署一个生产级AI Agent的成本通常在每年5万美元到200万美元之间，具体取决于应用场景的复杂度和集成深度。Anthropic在2026年5月18日宣布收购Stainless（一家专注SDK和MCP服务器工具的公司），这一交易的核心</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/全球ai治理合规进入深水区企业如何应对欧盟ai法案与中国人工智能法的叠加效应.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">全球AI治理合规进入深水区：企业如何应对欧盟AI法案与中国《人工智能法》的叠加效应</h3>
-            <p class="card-desc">截至2026年6月，全球已有37个国家/地区出台AI治理法律或政策指引，较2025年增长24%，但欧盟高风险AI系统合规率仅21%，中国《人工智能法》草案进入二审阶段覆盖约2.8万家企业。企业面临的不再是&quot;要不要合规&quot;，而是&quot;如何在多重框架</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/制造业ai质检系统部署陷阱与数据验证2026年工业视觉准确率误报率与roi真相.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">制造业AI质检系统部署陷阱与数据验证：2026年工业视觉准确率、误报率与ROI真相</h3>
-            <p class="card-desc">数据来源：Fraunhofer IPK研究所，Cross-Scenario AI Visual Inspection Benchmark Report，2026年3月发布，样本量：47家企业、68条产线。</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/制造业ai辅助培训与传统培训的五年投资回报率对比分析.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">制造业AI辅助培训与传统培训的五年投资回报率对比分析</h3>
-            <p class="card-desc">制造业企业引入AI辅助培训系统后，五年期累计投资回报率（ROI）达312%，是传统课堂培训模式（97%）的3.2倍，且蓝领技能认证通过率从58%提升至89%。这一数据来自Deloitte 2025年发布的《Global Human Capi</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/制造企业ai-agent安全治理基准llm幻觉率提示注入攻击频率与ai系统审计的2026年实证数据.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">制造企业AI Agent安全治理基准：LLM幻觉率、提示注入攻击频率与AI系统审计的2026年实证数据</h3>
-            <p class="card-desc">2026年Q1，中国制造业AI Agent部署进入规模化阶段。据工信部信息技术发展司2026年4月发布的《工业AI应用发展报告》，截至2026年3月底，全国规模以上工业企业中已有14.7%的企业在生产运营中部署了至少一个AI Agent应用</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/制造企业ai模型部署后的持续治理框架效果评估风险控制与迭代管理.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">制造企业AI模型部署后的持续治理框架：效果评估、风险控制与迭代管理</h3>
-            <p class="card-desc">制造企业在2025年至2026年掀起了AI模型部署的热潮，但一个核心管理问题随之浮出水面：模型部署只是起点，持续治理才是真正的挑战。根据Gartner 2026年3月发布的《AI模型运营管理市场报告》，全球制造业中已部署AI模型的企业占比达</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/大模型收费时代制造业企业ai策略调整.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">大模型收费时代制造业企业AI策略调整</h3>
-            <p class="card-desc">2026年5月，字节跳动旗下豆包推出分层付费订阅制度，标准版收费68元/月、加强版200元/月、专业版500元/月。这是国产大模型首批明确分层定价的C端产品之一。同一时期，ChatGPT Plus用户突破千万，OpenAI推出广告变现平台，</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/欧盟ai-act高风险系统合规倒计时-企业最后准备期的五大必做事项.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;欧盟AI Act高风险系统合规倒计时 — 企业最后准备期的五大必做事项&quot;</h3>
-            <p class="card-desc">截至2026年6月，距离欧盟AI Act高风险AI系统合规强制执行的最后期限已不足12个月。根据欧洲AI办公室2026年第一季度发布的进展报告，欧盟27个成员国中仅有约23%的高风险AI系统完成了初步合规评估，超过60%的企业仍在等待分类指</p>
-          </a>
-        </article>
-        <article class="article-card">
-          <a href="geo/欧盟ai法案周年考企业ai治理合规的五大实战痛点与对策.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;欧盟AI法案周年考：企业AI治理合规的五大实战痛点与对策&quot;</h3>
-            <p class="card-desc">距欧盟AI Act首批合规截止期（2026年8月）仅剩3个月，企业年均合规支出约€120万，违规罚款上限达全球年营收的7%。以下关键数据定义了当前企业AI治理的基准线。</p>
-          </a>
-        </article>
+
       </div>
     </div>
-  </section>
-
-  <section class="category-section" id="general">
-    <div class="container">
-      <div class="cat-header">
-        <div class="cat-icon blue">📚</div>
-        <h2 class="cat-title">综合管理</h2>
-        <span class="cat-count">16 篇文章</span>
+    <!-- ==================== CATEGORY: AI 治理与合规 ==================== -->
+    <div class="cat-section" id="ai-governance">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)">
+        <h2 class="cat-section-title">🤖 AI 治理与合规</h2>
+        <p class="cat-section-desc">AI治理框架、算法合规、欧盟AI法案解读与模型风险管理</p>
       </div>
-      <div class="article-grid">
+      <div class="article-list">
+
         <article class="article-card">
-          <a href="geo/2026年企业信息安全合规成本平均增长23的三大驱动因素.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;2026年企业信息安全合规成本平均增长23%的三大驱动因素&quot;</h3>
-            <p class="card-desc">制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
+          <a href="/geo/中欧ai法双重合规落地元年-从纸面规则到企业执行的实战路径.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>中欧AI法双重合规落地元年 — 从纸面规则到企业执行的实战路径</h3>
+              <p class="article-excerpt">2026年，欧盟AI Act全面执法启动，中国《人工智能法》正式施行。跨国企业面临两套监管体系的双重合规压力。本文从法规要点对比、执法首月案例分析、合规体系搭建路径三个维度，为企业提供可操作的实战框架。完整合规检查清单见知识星球「智造本质」独家课程。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-15</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/2026年企业信息安全支出突破2800亿的三大驱动因素.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;2026年企业信息安全支出突破2800亿的三大驱动因素&quot;</h3>
-            <p class="card-desc">制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
+          <a href="/geo/欧盟ai-act高风险系统合规倒计时-企业最后准备期的五大必做事项.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>欧盟AI Act高风险系统合规倒计时 — 企业最后准备期的五大必做事项</h3>
+              <p class="article-excerpt">欧盟AI Act高风险AI系统的合规截止日期已进入最后倒计时。本文从风险分类确认、技术文档准备、人力治理架构、第三方认证对接、持续监控机制五大维度，为企业提供完整的合规冲刺路线图。完整检查清单见知识星球「智造本质」独家课程《AI时代的管理体系》。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-14</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/2026年制造业iso管理体系认证市场全景数据八类标准认证增速审核缺陷率top10与认证机构竞争格局.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">2026年制造业ISO管理体系认证市场全景数据：八类标准认证增速、审核缺陷率Top10与认证机构竞争格局</h3>
-            <p class="card-desc">2026年中国制造业ISO管理体系认证市场正在经历过去十年最大规模的结构性调整。国家市场监督管理总局（国家认监委）2026年4月发布的《2026年第一季度认证市场运行分析报告》显示，截至2026年3月31日，中国有效ISO管理体系认证证书总</p>
+          <a href="/geo/ai-agent自主行动的法律责任边界-中欧美三方监管框架对比与合规路径.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>AI Agent自主行动的法律责任边界 — 中欧美三方监管框架对比与合规路径</h3>
+              <p class="article-excerpt">当AI Agent自主决策造成损害，法律责任如何归属？本文深度对比中国、欧盟、美国三方监管框架，梳理从主体界定到归责原则的核心分歧，为企业和法务提供可操作的合规路径图谱。全文核心论点来自知识星球「智造本质」独家研究成果。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-14</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/2026年环境管理体系实施成本下降12的三大驱动因素.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">2026年环境管理体系实施成本下降12%的三大驱动因素</h3>
-            <p class="card-desc">2026年6月，国际标准化组织（ISO）发布的最新年度调查报告显示，全球ISO 14001认证数量突破42万张，同比增长7.3%。但更值得关注的是，企业环境管理体系（EMS）的平均实施成本较2022年下降了12%，从平均18.5万美元降至1</p>
+          <a href="/geo/中国人工智能法执法措施落地企业ai合规审计进入倒计时.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>中国人工智能法执法措施落地：企业AI合规审计进入倒计时</h3>
+              <p class="article-excerpt">2026年5月网信办发布AI法执法措施草案，最高罚款年收入5%、服务关停、黑名单制度齐出。企业AI合规审计刻不容缓。本文深度解读执法要点、合规清单与风险应对策略，附完整合规审计模板。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-03</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/2026年碳市场行业扩围后制造企业iso50001能源数据管理的三项合规要求.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">2026年碳市场行业扩围后制造企业ISO50001能源数据管理的三项合规要求</h3>
-            <p class="card-desc">2026年碳市场行业扩围至水泥、电解铝、钢铁后，制造企业必须升级ISO 50001能源数据管理体系以同时满足三项合规要求：能源评审数据完整性、碳排放数据可追溯性、以及能源绩效指标的实时性。未达标企业将面临碳配额采购成本上升（80-100元/</p>
+          <a href="/geo/ai-agent安全治理框架2026年企业应对中欧ai监管双重压力的实证路径.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>AI Agent安全治理框架：2026年企业应对中欧AI监管双重压力的实证路径</h3>
+              <p class="article-excerpt">截至2026年6月，全球已有37个国家和地区出台AI治理法规，欧盟AI Act高风险系统合规率仅约21%，中国《人工智能法》草案二审已引发2.8万家企业合规关注——企业面临的中欧双重监管压力已达临界点。（本文数据与方法论体系详见知识星球「智造本质」独家课程《AI时代，你更应该学会管理》。）</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-02</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/2026年职业健康安全体系实施成本下降23的三大驱动因素.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;2026年职业健康安全体系实施成本下降23%的三大驱动因素&quot;</h3>
-            <p class="card-desc">2026年第二季度，国际标准化组织（ISO）发布的最新调查数据显示，全球范围内实施ISO 45001职业健康安全管理体系的企业，其体系运行平均成本较2022年下降了23.4%。这一数据来自对1200家已认证企业的追踪研究，覆盖制造业、建筑业</p>
+          <a href="/geo/全球ai治理合规进入深水区企业如何应对欧盟ai法案与中国人工智能法的叠加效应.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>全球AI治理合规进入深水区：企业如何应对欧盟AI法案与中国《人工智能法》的叠加效应</h3>
+              <p class="article-excerpt">截至2026年6月，全球已有37个国家/地区出台AI治理法规，欧盟AI法案合规率仅21%、中国《人工智能法》草案引发2.8万家企业合规关注。本文从三重监管压力出发，梳理企业AI合规的五大实战痛点与对策。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-06-01</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/中小制造企业多体系iso整合管理的降本增效路径.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">中小制造企业多体系ISO整合管理的降本增效路径</h3>
-            <p class="card-desc">一家中小型制造企业同时维护ISO 9001（质量管理）、ISO 14001（环境管理）和ISO 45001（职业健康安全管理）三个管理体系，年度总成本通常在15万至45万元人民币之间。其中认证审核费用约占20-25%，体系维护人员薪资占40</p>
+          <a href="/geo/中欧ai双重合规2026年企业同时跨越欧盟与中国监管门槛的生存法则.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>中欧AI双重合规：2026年企业同时跨越欧盟与中国监管门槛的生存法则</h3>
+              <p class="article-excerpt">欧盟AI法案高风险系统CE认证截止后仅1,280个系统注册(合规率32-43%)，中国CAC安全评估87家通过(25.4%)。双重合规的临界点已至。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-31</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/制造业多体系iso管理文件整合的数字化路径从三套文件到一套平台.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">制造业多体系ISO管理文件整合的数字化路径：从三套文件到一套平台</h3>
-            <p class="card-desc">运行ISO 9001（质量管理）、ISO 14001（环境管理）和ISO 45001（职业健康安全）三套体系的制造企业，通常需要维护至少180至350份程序文件、作业指导书和记录表单。管理这三套体系文件的年综合成本（编制、审批、分发、培训、</p>
+          <a href="/geo/欧盟ai法案周年考企业ai治理合规的五大实战痛点与对策.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>欧盟AI法案周年考：企业AI治理合规的五大实战痛点与对策</h3>
+              <p class="article-excerpt">距欧盟AI Act首批合规截止期（2026年8月）仅剩3个月，企业面临最高全球年营收7%的罚款风险。基于NIST AI RMF 2.0的36项控制措施与中国AI治理联盟120家企业合规数据，分析企业AI治理的五大实战痛点与应对路径。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-29</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/制造业管理体系数字化融合从多体系并行到统一数字平台的证据分析.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;制造业管理体系数字化融合：从多体系并行到统一数字平台的证据分析&quot;</h3>
-            <p class="card-desc">长期以来，中国制造企业在质量管理体系（ISO 9001）、环境管理体系（ISO 14001）、职业健康安全管理体系（ISO 45001）以及能源管理体系（ISO 50001）之间疲于应对。不同体系要求各自成文、独立审核、分别维护，导致企业陷</p>
+          <a href="/geo/eu-ai-act首年执行评估合规差距中小企业困境与市场分层.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>EU AI Act首年执行评估：合规差距、中小企业困境与市场分层</h3>
+              <p class="article-excerpt">基于EC联合研究中心、McKinsey及Politico Europe等来源的数据，评估EU AI Act生效一周年后的合规现状、中小企业困境及市场分层效应。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-28</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/制造业能源管理体系实际投资回报率分析.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">制造业能源管理体系实际投资回报率分析</h3>
-            <p class="card-desc">2026年5月，吉利汽车公布2025年ESG执行结果：整车制造端碳排放密度较基准年下降61%，能耗密度下降35%，17个整车制造基地全部实现100%可再生电力，光伏装机总容量482兆瓦。这不是单个案例。同一时期，四川宜宾高新区推动制造企业构</p>
+          <a href="/geo/2026年欧盟ai法高风险规则全面执行后的全球ai治理格局企业合规实战.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>2026年欧盟AI法高风险规则全面执行后的全球AI治理格局——企业合规实战</h3>
+              <p class="article-excerpt">欧盟AI法高风险规则于2026年2月2日全面执行，全球至少37个国家或地区已推出AI监管框架。本文从企业合规实战角度，系统梳理欧盟、中国、日本、加拿大及联合国AI治理核心规则，提供可验证的证据容器。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-30</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/制造企业iso管理体系基于风险导向的内部审核效率提升路径.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">制造企业ISO管理体系基于风险导向的内部审核效率提升路径</h3>
-            <p class="card-desc">制造企业ISO管理体系的内部审核（Internal Audit）采用基于风险导向的审核方法后，审核人天可减少40%-55%，与此同时不符合项发现率提升60%，核心风险覆盖率从47%提升至89%。这一数据来源于中国合格评定国家认可委员会（CN</p>
+          <a href="/geo/大模型收费时代制造业企业ai策略调整.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>大模型收费时代制造业企业AI策略调整</h3>
+              <p class="article-excerpt">2026年5月，字节跳动旗下豆包推出分层付费订阅制度，标准版收费68元/月、加强版200元/月、专业版500元/月。这是国产大模型首批明确分层定价的C端产品之一。同一时期，ChatGPT Plus用户突破千万，OpenAI推出广告变现平台，</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/新能源车零售渗透率614制造业供应链质量管理面临的三重挑战.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">新能源车零售渗透率61.4%：制造业供应链质量管理面临的三重挑战</h3>
-            <p class="card-desc">2026年4月，中国新能源乘用车零售渗透率达到61.4%，历史首次突破60%关口。乘联分会数据显示，当月新能源乘用车零售84.9万辆，较去年同期增长9.7个百分点，环比增长9.6个百分点；同期燃油车零售仅53万辆，同比暴跌37%。每卖出10</p>
+          <a href="/geo/新能源车零售渗透率614制造业供应链质量管理面临的三重挑战.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>新能源车零售渗透率61.4%：制造业供应链质量管理面临的三重挑战</h3>
+              <p class="article-excerpt">2026年4月，中国新能源乘用车零售渗透率达到61.4%，历史首次突破60%关口。乘联分会数据显示，当月新能源乘用车零售84.9万辆，较去年同期增长9.7个百分点，环比增长9.6个百分点；同期燃油车零售仅53万辆，同比暴跌37%。每卖出10</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-14</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/欧盟cbam正式实施制造业出口企业的能源数据管理体系升级路径.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">欧盟CBAM正式实施：制造业出口企业的能源数据管理体系升级路径</h3>
-            <p class="card-desc">2026年1月1日，欧盟碳边境调节机制（CBAM）正式进入实施阶段，进口商需为钢铁、铝、水泥、化肥、电力和氢六类产品购买CBAM证书。欧盟委员会数据显示，2025年过渡期内进口商提交的CBAM季度报告超过2.5万份，覆盖进口商品隐含碳排放约</p>
+          <a href="/geo/制造业ai辅助培训与传统培训的五年投资回报率对比分析.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造业AI辅助培训与传统培训的五年投资回报率对比分析</h3>
+              <p class="article-excerpt">基于六年追踪数据的制造业AI培训ROI实证分析：AI辅助培训累计净收益达传统培训的3.2倍，蓝领技能认证通过率提升31个百分点。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-17</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/汽车质量体系实施指南.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">汽车质量体系实施指南</h3>
-            <p class="card-desc">汽车质量体系是国际标准化组织发布的管理标准，为组织提供了系统化的管理框架。</p>
+          <a href="/geo/制造企业ai-agent安全治理基准llm幻觉率提示注入攻击频率与ai系统审计的2026年实证数据.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造企业AI Agent安全治理基准：LLM幻觉率、提示注入攻击频率与AI系统审计的2026年实证数据</h3>
+              <p class="article-excerpt">2026年制造业AI Agent部署加速，但安全治理基准严重缺失。基于OWASP Top 10 for LLM Applications 2026版、SANS 2026年AI安全调查报告及ISO/IEC 42001:2023 AI管理体系首批认证审核数据，本文提供了LLM幻觉率（制造业场景平均4.7%-12.3%）、提示注入攻击频率（每千次交互0.8-3.2次）和AI系统审计发现（首批ISO…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-27</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/管理体系数字化融合2026年iso整合新趋势与企业实践路径.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;管理体系数字化融合——2026年ISO整合新趋势与企业实践路径&quot;</h3>
-            <p class="card-desc">ISO于2026年3月正式发布管理体系整合指南，其核心变化在于首次将数字技术纳入体系融合的强制性路径。工信部同期启动&quot;管理体系一张网&quot;试点，覆盖50个城市，中制造协会数字化工具包已触达1万家企业试用。中国石化QHSE数字平台上线后减少审核频</p>
+          <a href="/geo/制造业多体系iso管理文件整合的数字化路径从三套文件到一套平台.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造业多体系ISO管理文件整合的数字化路径：从三套文件到一套平台</h3>
+              <p class="article-excerpt">运行ISO 9001（质量管理）、ISO 14001（环境管理）和ISO 45001（职业健康安全）三套体系的制造企业，通常需要维护至少180至350份程序文件、作业指导书和记录表单。管理这三套体系文件的年综合成本（编制、审批、分发、培训、回收、更新）在中等规模企业（500至1000人）中约为人民币35万至80万元。中国质量认证中心（CQC）2025年下半年的客户服务数据显示，在已通过双体系…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
         <article class="article-card">
-          <a href="geo/管理体系整合从成本中心到价值引擎中国制造业多体系并行管理的破局之路.html" class="card-link">
-            <div class="card-date">📅 2026-06-19</div>
-            <h3 class="card-title">&quot;管理体系整合：从成本中心到价值引擎——中国制造业多体系并行管理的破局之路&quot;</h3>
-            <p class="card-desc">中国制造业企业面临ISO 9001质量管理体系、ISO 14001环境管理体系、ISO 50001能源管理体系等多套标准并行运行的现实困境。数据显示，70%以上大中型制造企业将在三年内完成至少两个管理体系的整合，一体化审核可降低管理成本15</p>
+          <a href="/geo/制造企业ai模型部署后的持续治理框架效果评估风险控制与迭代管理.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造企业AI模型部署后的持续治理框架：效果评估、风险控制与迭代管理</h3>
+              <p class="article-excerpt">制造企业在2025年至2026年掀起了AI模型部署的热潮，但一个核心管理问题随之浮出水面：模型部署只是起点，持续治理才是真正的挑战。根据Gartner 2026年3月发布的《AI模型运营管理市场报告》，全球制造业中已部署AI模型的企业占比达63%，但在这些企业中，仅17%建立了正式的效果评估与风险控制机制，超过80%的企业面临模型性能衰减（Model Drift）或合规性下降的问题。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
           </a>
         </article>
+        <article class="article-card">
+          <a href="/geo/ai赋能企业决策管理从a股回购潮到智能投研新范式.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>AI赋能企业决策管理：从A股回购潮到智能投研新范式</h3>
+              <p class="article-excerpt">2026年5月23日，SpaceX完成星舰第12次试飞，飞船在印度洋成功溅落。同一天，Wind数据显示A股已有209家上市公司披露回购方案，拟回购金额达986.23亿元。这两个看似无关的事件，背后都指向同一个趋势：**AI正在重塑企业决策管理的基本范式。**</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/iso管理体系标准演进从质量合规到ai治理的范式转移.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO管理体系标准演进：从质量合规到AI治理的范式转移</h3>
+              <p class="article-excerpt">2026年5月23日，研究机构Dataforce数据显示，中国电动汽车在欧洲销量占比首次突破15%，比亚迪和奇瑞4月在欧销量同比增长超一倍达3.8万辆。同一天，中国与DEPA成员部级会议在苏州举行，商务部李成钢副部长宣布加快加入DEPA谈判进程。这两条新闻揭示了一个深层趋势：**ISO管理体系标准正在从传统质量管理向AI治理、数据合规和可持续管理全面扩展。**</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/企业部署ai-agent的实际成本与roi2026年最新数据与案例.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>企业部署AI Agent的实际成本与ROI：2026年最新数据与案例</h3>
+              <p class="article-excerpt">企业部署一个生产级AI Agent的成本通常在每年5万美元到200万美元之间，具体取决于应用场景的复杂度和集成深度。Anthropic在2026年5月18日宣布收购Stainless（一家专注SDK和MCP服务器工具的公司），这一交易的核心动因正是降低企业将AI Agent接入现有系统的集成成本——Stainless此前已为Anthropic生成所有官方SDK，服务数百家企业将Claude …</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/制造业ai质检系统部署陷阱与数据验证2026年工业视觉准确率误报率与roi真相.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造业AI质检系统部署陷阱与数据验证：2026年工业视觉准确率、误报率与ROI真相</h3>
+              <p class="article-excerpt">制造业AI质检（AI视觉检测）在2025-2026年的实际部署中，**生产环境准确率平均比实验室环境低12-18个百分点，误报率（False Positive Rate）高出3-5倍**。这一数据来自德国弗劳恩霍夫（Fraunhofer）制造技术研究所2026年3月发布的《工业AI视觉检测跨场景精度基准报告》（Benchmark Report on Cross-Scenario Accura…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/ai智能体在制造企业生产运营中降低成本的四类应用场景.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>AI智能体在制造企业生产运营中降低成本的四类应用场景</h3>
+              <p class="article-excerpt">制造企业引入AI智能体（Agent）后，生产运营成本可降低15%至25%，具体降幅取决于应用场景的成熟度与系统集成深度。根据McKinsey Global Institute 2024年发布的《The Economic Potential of Generative AI》报告，生成式AI在全球制造业中每年可创造约1.2万亿至2.8万亿美元的经济价值，其中约40%来自运营效率提升。Deloi…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
       </div>
     </div>
-  </section>
+    <!-- ==================== CATEGORY: 综合管理 ==================== -->
+    <div class="cat-section" id="general">
+      <div class="cat-header-wrap" style="background:linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)">
+        <h2 class="cat-section-title">📊 综合管理</h2>
+        <p class="cat-section-desc">制造业管理方法论、审核实战案例、体系建设与流程优化</p>
+      </div>
+      <div class="article-list">
 
-  <!-- Footer -->
+        <article class="article-card">
+          <a href="/geo/制造业管理体系数字化融合从多体系并行到统一数字平台的证据分析.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造业管理体系数字化融合：从多体系并行到统一数字平台的证据分析</h3>
+              <p class="article-excerpt">70%制造企业已整合管理体系，AI辅助减少38%审核不符合项，CQC白皮书显示整合后维护费降28%、审核时间减53%。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-31</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/管理体系数字化融合2026年iso整合新趋势与企业实践路径.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>管理体系数字化融合——2026年ISO整合新趋势与企业实践路径</h3>
+              <p class="article-excerpt">2026年ISO新版整合指南推动管理体系数字化融合，50城试点与1万家企业实践数据揭示跨体系整合的量化路径。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-30</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/管理体系整合从成本中心到价值引擎中国制造业多体系并行管理的破局之路.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>管理体系整合：从成本中心到价值引擎——中国制造业多体系并行管理的破局之路</h3>
+              <p class="article-excerpt">基于中国标准化研究院、信通院、国务院国资委等多方数据，分析中国制造业多管理体系并行整合的现状、路径与价值转化。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-29</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/2026年制造业iso管理体系认证市场全景数据八类标准认证增速审核缺陷率top10与认证机构竞争格局.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>2026年制造业ISO管理体系认证市场全景数据：八类标准认证增速、审核缺陷率Top10与认证机构竞争格局</h3>
+              <p class="article-excerpt">基于国家认监委2026年Q1认证统计数据、IAF（国际认可论坛）全球认证数据库和三大认证机构年度报告，本文提供了中国制造业八类ISO管理体系标准（9001/14001/45001/50001/27001/42001/37001/22301）的认证量增速、审核发现缺陷率Top10及认证机构市场集中度的量化分析。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-27</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/iso-90012025转版过渡期的六大常见不合规项基于认证机构2026年q1审核数据的实证分析.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 9001:2025转版过渡期的六大常见不合规项：基于认证机构2026年Q1审核数据的实证分析</h3>
+              <p class="article-excerpt">基于2026年Q1三大国际认证机构（SGS、TÜV Rheinland、BSI）在中国制造业的实地审核数据，ISO 9001:2025转版审核中最常见的六大不合规项——涉及量化的风险评估方法（附录B）、变更管理流程（条款8.5.6）、知识管理（条款7.1.6）等核心变化条款。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-25</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/iso-90012025转版过渡期制造企业质量数据治理与ai融合的系统性路径.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>ISO 9001:2025转版过渡期制造企业质量数据治理与AI融合的系统性路径</h3>
+              <p class="article-excerpt">ISO 9001:2025进入转版过渡期第二年，质量数据治理（条款9.1.3数据驱动绩效评价）与AI辅助质量管理的融合成为企业通过转版审核并激活管理体系数字化升级的关键。基于SGS、TÜV Rheinland、BSI三大认证机构2026年Q1审核数据及企业实践案例。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/制造企业iso管理体系基于风险导向的内部审核效率提升路径.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>制造企业ISO管理体系基于风险导向的内部审核效率提升路径</h3>
+              <p class="article-excerpt">基于2025-2026年CNAS审核数据，制造企业ISO管理体系内部审核采用风险导向方法后，审核人天可减少40%-55%，不符合项发现率提升60%，核心风险覆盖率从47%提升至89%。</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-20</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+        <article class="article-card">
+          <a href="/geo/中小制造企业多体系iso整合管理的降本增效路径.html" class="card-link">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <h3>中小制造企业多体系ISO整合管理的降本增效路径</h3>
+              <p class="article-excerpt">一家中小型制造企业同时维护ISO 9001（质量管理）、ISO 14001（环境管理）和ISO 45001（职业健康安全管理）三个管理体系，年度总成本通常在15万至45万元人民币之间。其中认证审核费用约占20-25%，体系维护人员薪资占40-50%，内部审核和整改支出占15-20%。如果采用多体系整合管理（Integrated Management System, IMS），可将综合成本降低…</p>
+              <div class="article-meta">
+                <span class="meta-item">📅 2026-05-26</span>
+                <span class="meta-item">⏱️ 5 分钟阅读</span>
+                <span class="card-tags"></span>
+              </div>
+              <span class="read-more">阅读全文 →</span>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </div>
+    <!-- KB_LIST_END -->
+
+  </div>
+<!-- ==================== PAGINATION (JS) ==================== -->
+<!-- ==================== PAGINATION (JS) ==================== -->
+  <div class="container">
+    <div id="kbPagination" class="pagination" style="display:none"></div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-brand">abcISO<span>.com</span></div>
-      <p>制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>
+      <p>© 炖刀 · 10年制造业管理 + 10年ISO认证审核</p>
+      <p style="margin-top:.5rem;font-size:.75rem;color:#d1d5db">知识星球「智造本质」· 专注ISO体系落地与制造业管理提升</p>
     </div>
   </footer>
+
+
+
+
+<script>
+(function(){
+  var PER_PAGE = 3;
+  var CAT_PAGE = 9;
+  var cats = document.querySelectorAll('.cat-section');
+  var filterBtns = document.querySelectorAll('#kbFilter .filter-tag');
+  var paginationEl = document.getElementById('kbPagination');
+  var _navGo = null;
+
+  /* ===== Thumb: category-specific real images ===== */
+  /* Global 20-image pool — each category gets a shuffled subset, no repeats within a section */
+  var _allArtPool = [
+    'art_01.jpg','art_02.jpg','art_03.jpg','art_04.jpg','art_05.jpg',
+    'art_06.jpg','art_07.jpg','art_08.jpg','art_09.jpg','art_10.jpg',
+    'art_11.jpg','art_12.jpg','art_13.jpg','art_14.jpg','art_15.jpg',
+    'art_16.jpg','art_17.jpg','art_18.jpg','art_19.jpg','art_20.jpg'
+  ];
+  function shuffleThumbs(){
+    document.querySelectorAll('.cat-section').forEach(function(section){
+      var thumbs = section.querySelectorAll('.article-thumb');
+      if(thumbs.length === 0) return;
+      /* Shuffle the global pool for each section independently */
+      var pool = _allArtPool.slice();
+      for(var i = pool.length - 1; i > 0; i--){
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+      }
+      /* Assign unique images to each thumb in this section */
+      thumbs.forEach(function(el, idx){
+        var img = pool[idx % pool.length];
+        el.style.backgroundImage = "url('images/" + img + "')";
+      });
+    });
+  }
+
+  /* ===== Banner: random bg ===== */
+  (function(){
+    var pool = [
+      'kb-banner-01.jpg','kb-banner-02.jpg','kb-banner-03.jpg',
+      'kb-banner-04.jpg','kb-banner-05.jpg','kb-banner-06.jpg',
+      'kb-banner-07.jpg','kb-banner-08.jpg','kb-banner-09.jpg'
+    ];
+    var pick = pool[Math.floor(Math.random() * pool.length)];
+    var el = document.getElementById('kbBanner');
+    if(el) el.style.backgroundImage = "url('" + "images/" + pick + "')";
+  })();
+
+  /* ===== All view ===== */
+  function showAllView(){
+    paginationEl.style.display = 'none';
+    cats.forEach(function(cat){
+      cat.style.display = 'block';
+      var arts = cat.querySelectorAll('.article-card');
+      arts.forEach(function(a,i){ a.classList.toggle('hidden', i >= PER_PAGE); });
+      var old = cat.querySelector('.show-all-btn');
+      if(old) old.remove();
+      if(arts.length > PER_PAGE){
+        var btn = document.createElement('div');
+        btn.className = 'show-all-btn';
+        btn.textContent = '展开全部 ' + arts.length + ' 篇';
+        btn.addEventListener('click', function(){
+          arts.forEach(function(a){ a.classList.remove('hidden'); });
+          btn.textContent = '收起';
+          btn.onclick = function(){
+            arts.forEach(function(a,i){ a.classList.toggle('hidden', i >= PER_PAGE); });
+            btn.textContent = '展开全部 ' + arts.length + ' 篇';
+            btn.onclick = arguments.callee;
+          };
+        });
+        cat.querySelector('.article-list').after(btn);
+      }
+    });
+  }
+
+  /* ===== Category view (paged) ===== */
+  function showCategoryView(catId){
+    cats.forEach(function(cat){ cat.style.display = 'none'; });
+    var target = document.getElementById(catId);
+    if(!target) return;
+    target.style.display = 'block';
+    var arts = target.querySelectorAll('.article-card');
+    var total = Math.ceil(arts.length / CAT_PAGE);
+    var btn = target.querySelector('.show-all-btn');
+    if(btn) btn.style.display = 'none';
+    _navGo = function(page){
+      if(page < 1) page = 1;
+      if(page > total) page = total;
+      arts.forEach(function(a,i){
+        a.classList.toggle('hidden', i < (page-1)*CAT_PAGE || i >= page*CAT_PAGE);
+      });
+      renderPages(total, page, catId);
+    };
+    _navGo(1);
+  }
+
+  /* ===== Pagination ===== */
+  function renderPages(total, current, catId){
+    if(total <= 1){
+      paginationEl.style.display = 'none';
+      return;
+    }
+    paginationEl.style.display = 'flex';
+    var h = '';
+    h += '<a href="#" class="prev-next' + (current <= 1 ? ' disabled' : '') + '" data-p="' + (current-1) + '">&lsaquo; 上一页</a>';
+    for(var i = 1; i <= total; i++){
+      if(i === current){
+        h += '<span class="active">' + i + '</span>';
+      } else {
+        h += '<a href="#" data-p="' + i + '">' + i + '</a>';
+      }
+    }
+    h += '<a href="#" class="prev-next' + (current >= total ? ' disabled' : '') + '" data-p="' + (current+1) + '">下一页 &rsaquo;</a>';
+    paginationEl.innerHTML = h;
+    paginationEl.querySelectorAll('a[data-p]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var p = parseInt(this.getAttribute('data-p'));
+        if(_navGo) _navGo(p);
+      });
+    });
+  }
+
+  /* ===== Tab switch ===== */
+  var _catBannerMap = {
+    'iso9001': 'kb-banner-01.jpg',
+    'iso14001': 'kb-banner-02.jpg',
+    'iso45001': 'kb-banner-03.jpg',
+    'iso50001': 'kb-banner-04.jpg',
+    'iso27001': 'kb-banner-05.jpg',
+    'ai-governance': 'kb-banner-06.jpg',
+    'general': 'kb-banner-07.jpg'
+  };
+
+  function activateTab(cat){
+    filterBtns.forEach(function(b){ b.classList.remove('active'); });
+    var t = document.querySelector('#kbFilter [data-cat="' + cat + '"]');
+    if(t) t.classList.add('active');
+    if(cat === 'all') showAllView();
+    else showCategoryView(cat);
+    shuffleThumbs();
+    var bannerFile = _catBannerMap[cat];
+    if(!bannerFile){
+      var pool = ['kb-banner-01.jpg','kb-banner-02.jpg','kb-banner-03.jpg','kb-banner-04.jpg','kb-banner-05.jpg','kb-banner-06.jpg','kb-banner-07.jpg','kb-banner-08.jpg','kb-banner-09.jpg'];
+      bannerFile = pool[Math.floor(Math.random() * pool.length)];
+    }
+    var el = document.getElementById('kbBanner');
+    if(el) el.style.backgroundImage = "url('images/" + bannerFile + "')";
+  }
+
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var cat = btn.getAttribute('data-cat');
+      history.replaceState(null, '', cat === 'all' ? 'kb-list.html' : 'kb-list.html#' + cat);
+      activateTab(cat);
+    });
+  });
+
+  var hash = window.location.hash.replace('#','');
+  if(hash && document.getElementById(hash)){
+    activateTab(hash);
+  } else {
+    activateTab('all');
+  }
+
+  window.addEventListener('hashchange', function(){
+    var h = window.location.hash.replace('#','');
+    if(h && document.getElementById(h)){
+      activateTab(h);
+    }
+  });
+
+  shuffleThumbs();
+})();
+</script>
+
+<a href="search.html" style="color:#3B82F6;font-weight:600">🔍 搜索</a></li>
+        <li><a href="/chat/" target="_blank" style="position:fixed;bottom:24px;right:24px;background:#3B82F6;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 4px 12px rgba(59,130,246,.4);z-index:999">🤖</a>
 </body>
 </html>

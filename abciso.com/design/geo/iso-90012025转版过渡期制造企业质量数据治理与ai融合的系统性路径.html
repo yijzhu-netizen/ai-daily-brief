@@ -89,6 +89,17 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 .footer p{font-size:.875rem;color:#6b7280}
 .footer .footer-brand{font-family:'Poppins',sans-serif;font-weight:700;color:#3B82F6;font-size:1.125rem;margin-bottom:.5rem}
 .footer .footer-brand span{color:#8B5CF6}
+/* ===== CTA Card ===== */
+.cta-article{margin:2.5rem 0;padding:1.75rem 2rem;background:linear-gradient(135deg,#f0f7ff 0%,#e8f0fe 100%);border:1px solid #c7dffb;border-radius:12px;display:flex;gap:1.25rem;align-items:flex-start}
+.cta-icon{font-size:2.25rem;line-height:1;flex-shrink:0}
+.cta-body h3{font-size:1.125rem;font-weight:700;color:#1e3a5f;margin:0 0 .5rem}
+.cta-body p{font-size:.875rem;color:#475569;line-height:1.7;margin:0 0 .75rem}
+.cta-list{list-style:none;padding:0;margin:0 0 1rem}
+.cta-list li{font-size:.875rem;color:#374151;padding:.25rem 0;line-height:1.6}
+.btn-cta-planet{display:inline-block;background:#3B82F6;color:#fff;font-weight:600;font-size:.875rem;padding:.625rem 1.5rem;border-radius:8px;text-decoration:none;transition:background .2s}
+.btn-cta-planet:hover{background:#2563EB}
+@media(max-width:640px){.cta-article{flex-direction:column;padding:1.25rem}}
+
 </style>
 </head>
 <body>
@@ -385,8 +396,8 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 <h3>适用范围</h3>
 <p>本文分析的ISO 9001:2025转版与AI融合路径主要适用于中大型制造企业（年产值5亿元以上或员工500人以上），尤其适用于批量生产、工序标准化的制造场景（汽车零部件、电子制造、精密机械、金属加工等行业）。对于中小微型制造企业（年产值5亿元以下或员工500人以下），建议重点参考第一阶段的"数据就绪"和第二阶段的"选定1-2个工序试点"策略，无需一次性投入全体系AI部署。文中引用的BSI数据和TÜV Rheinland张明远总监的观点，均来自2026年Q1至4月的公开论坛和报告，代表性受限于样本量和行业分布，建议企业结合自身行业特点和认证机构的具体转版要求进行针对性评估。</p>
 <h3>出处声明</h3>
-<p>本文全部审核数据和质量数据来自知识星球「智造本质」系列课程收录的ISO管理体系认证审核研究报告及制造业企业公开案例。</p>
-<p><em>信息来源：知识星球「智造本质」系列课程</em></p>
+<p>本文全部审核数据和质量数据来自知识星球「智造本质」课程《AI时代，你更应该学会管理》收录的ISO管理体系认证审核研究报告及制造业企业公开案例。</p>
+<p><em>信息来源：搜索知识星球【智造本质】</em></p>
 <p><em>主要数据来源：BSI中国区2026年Q1管理体系转版审核分析报告（467家制造企业样本）；SGS中国区2026年2月月度审核简报（含"Best Practice Highlight"案例专栏）；TÜV Rheinland 2026 Management System Forum Shanghai会议记录（张明远副总裁发言，2026年4月16日）；《质量管理》杂志2026年第4期"汽车供应链质量数字化转型专题"（李振华质量总监访谈）；SGS China Monthly Audit Bulletin, February 2026（SMT案例评述）。</em></p>
 <p><em>📚 推荐延伸学习：如需系统掌握ISO 9001:2025转版的核心要求（含量化的风险评估、数据驱动绩效评价、变更管理和知识管理的实操落地方法），推荐学习《AI时代，你更应该学会管理》16讲系列课程——从标准解读到审核实战，覆盖质量管理体系数字化的完整认知框架。</em></p>
 <hr />
@@ -689,7 +700,24 @@ h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
   </div>
 </main>
 
-  <footer class="footer">
+
+    <!-- CTA Card -->
+    <div class="cta-article">
+      <div class="cta-icon">📘</div>
+      <div class="cta-body">
+        <h3>搜索知识星球【智造本质】</h3>
+        <p>10年制造业管理 + 10年ISO认证审核实操经验浓缩。<br>
+        两门体系实操课程 + 完整文献清单 + 真实审核案例库。</p>
+        <ul class="cta-list">
+          <li>📚 《AI时代，你更应该学会管理》— 16讲+番外篇，管理体系通识课</li>
+          <li>⚡ 《能源管理体系：39节落地实操课》— ISO 50001体系搭建与审核实务</li>
+          <li>📄 本文引用的完整文献清单、合规模板与工具</li>
+        </ul>
+        <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener" class="btn-cta-planet">加入星球 → 299元/年</a>
+      </div>
+    </div>
+
+    <footer class="footer">
     <div class="container">
       <div class="footer-brand">abcISO<span>.com</span></div>
       <p>制造业管理与ISO认证体系实操知识库 · 让管理体系不再纸上谈兵</p>

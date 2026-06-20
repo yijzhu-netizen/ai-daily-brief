@@ -238,13 +238,13 @@ def generate_article_page(title, date_str, description, tags, body_html, categor
     <div class="cta-article">
       <div class="cta-icon">📘</div>
       <div class="cta-body">
-        <h3>知识星球「智造本质」</h3>
+        <h3>搜索知识星球【智造本质】</h3>
         <p>10年制造业管理 + 10年ISO认证审核实操经验浓缩。<br>
-        完整数据来源、合规模板、课程序列，都在这里。</p>
+        两门体系实操课程 + 完整文献清单 + 真实审核案例库。</p>
         <ul class="cta-list">
-          <li>📄 本文引用的完整文献清单与工具模板</li>
-          <li>📚 从零落地的管理体系实操课程（39节）</li>
-          <li>🔍 审核员视角的真实案例库（持续更新）</li>
+          <li>📚 《AI时代，你更应该学会管理》— 16讲+番外篇，管理体系通识课</li>
+          <li>⚡ 《能源管理体系：39节落地实操课》— ISO 50001体系搭建与审核实务</li>
+          <li>📄 本文引用的完整文献清单、合规模板与工具</li>
         </ul>
         <a href="https://t.zsxq.com/lWQ5E" target="_blank" rel="noopener" class="btn-cta-planet">加入星球 → 299元/年</a>
       </div>
