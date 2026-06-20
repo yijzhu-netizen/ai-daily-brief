@@ -332,6 +332,9 @@ def main():
             
             # Convert markdown to HTML
             body_html = render_markdown_to_html(body)
+            # Strip duplicate h1 (template already renders title in header)
+            import re as _re
+            body_html = _re.sub(r"\s*<h1>[^<]*</h1>\s*(<hr\s*/?>)?\s*", "", body_html, count=1)
             
             # Generate full page
             page = generate_article_page(title, date_str, description, tags, body_html, info["name"], slug)

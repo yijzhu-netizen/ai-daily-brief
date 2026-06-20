@@ -1,5 +1,29 @@
 [
   {
+    "title": "国家发展改革委举行6月份新闻发布会",
+    "url": "https://www.ndrc.gov.cn/202606/t20260618_1405995.html",
+    "date": "2026-06-18",
+    "source": "发改委",
+    "icon": "📊",
+    "category": "policy"
+  },
+  {
+    "title": "国家发展改革委、人力资源社会保障部有关负责人就《实施就业优先战略“十五五”规划》答记者问",
+    "url": "https://www.ndrc.gov.cn/202606/t20260618_1405994.html",
+    "date": "2026-06-18",
+    "source": "发改委",
+    "icon": "📊",
+    "category": "policy"
+  },
+  {
+    "title": "2026年6月18日国内成品油价格调整",
+    "url": "https://www.ndrc.gov.cn/202606/t20260618_1405957.html",
+    "date": "2026-06-18",
+    "source": "发改委",
+    "icon": "📊",
+    "category": "policy"
+  },
+  {
     "title": "国家能源局成功举办“光明守护—2026”电力应急救援综合演练",
     "url": "https://www.nea.gov.cn/20260618/fd1e3751b9d448b1872f8887dedcf537/c.html",
     "date": "2026-06-18",
@@ -168,6 +192,46 @@
     "category": "policy"
   },
   {
+    "title": "ISO 14001:2026 published – raising the bar for environmental performance",
+    "url": "https://www.iso.org/news/2026/04/iso-14001-2026-published",
+    "date": "2026-04-01",
+    "source": "ISO官网",
+    "icon": "🌐",
+    "category": "iso"
+  },
+  {
+    "title": "市场监管总局发布合规提示\n规范“6·18”网络集中促销经营活动",
+    "url": "https://www.samr.gov.cn/xw/zj/art/2026/art_5f0f9bb7e94b4bcc9dc6a91149099b15.html",
+    "date": "2026-01-01",
+    "source": "市场监管总局",
+    "icon": "🔍",
+    "category": "standard"
+  },
+  {
+    "title": "罗文会见阿塞拜疆食品安全局局长\n戈什加尔·塔赫马兹利",
+    "url": "https://www.samr.gov.cn/xw/zj/art/2026/art_1fefc693f39b4e498abf0864a3ce64dc.html",
+    "date": "2026-01-01",
+    "source": "市场监管总局",
+    "icon": "🔍",
+    "category": "policy"
+  },
+  {
+    "title": "罗文会见阿塞拜疆食品安全局局长戈什加尔·塔赫马兹利",
+    "url": "https://www.samr.gov.cn/xw/zj/art/2026/art_1fefc693f39b4e498abf0864a3ce64dc.html",
+    "date": "2026-01-01",
+    "source": "市场监管总局",
+    "icon": "🔍",
+    "category": "policy"
+  },
+  {
+    "title": "湖北全面启动食品安全抽检“蓝军”行动",
+    "url": "https://www.samr.gov.cn/xw/df/art/2026/art_3702d75fa9aa4a4bada8379512d0c9ad.html",
+    "date": "2026-01-01",
+    "source": "市场监管总局",
+    "icon": "🔍",
+    "category": "policy"
+  },
+  {
     "title": "中国合格评定国家认可委员会第五届全体委员会第三次会议在京召开",
     "url": "https://www.cnca.gov.cn/xwjj/scjgyw/art/2026/art_ebbb0d36f7f64bb9bce7e2edcd1a52f4.html",
     "date": "2026-01-01",
@@ -237,6 +301,62 @@
     "date": "2025-01-01",
     "source": "市场监管总局",
     "icon": "🔍",
+    "category": "policy"
+  },
+  {
+    "title": "全国标准信息公共服务平台",
+    "url": "https://std.samr.gov.cn",
+    "date": "",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "食品安全国家标准",
+    "url": "https://sppt.cfsa.net.cn:8086/db",
+    "date": "",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "生态环境国家标准",
+    "url": "https://www.mee.gov.cn/ywgz/fgbz/bz/",
+    "date": "",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "司局负责人发布",
+    "url": "https://www.miit.gov.cn/xwfb/sjfzrfb/index.html",
+    "date": "",
+    "source": "工信部",
+    "icon": "🏭",
+    "category": "policy"
+  },
+  {
+    "title": "Opinion",
+    "url": "https://www.iso.org/news/thought-leadership/rethinking-environmental-management-with-iso-14001",
+    "date": "",
+    "source": "ISO官网",
+    "icon": "🌐",
+    "category": "iso"
+  },
+  {
+    "title": "发展改革委令",
+    "url": "https://www.ndrc.gov.cn/xxgk/wjk/index.html?tab=fzggwl",
+    "date": "",
+    "source": "发改委",
+    "icon": "📊",
+    "category": "policy"
+  },
+  {
+    "title": "全国投资项目在线审批监管",
+    "url": "https://new.tzxm.gov.cn/",
+    "date": "",
+    "source": "发改委",
+    "icon": "📊",
     "category": "policy"
   },
   {
