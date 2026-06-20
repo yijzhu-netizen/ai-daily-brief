@@ -7,12 +7,17 @@
 - 允许用户 ID: 5919515095
 - 依赖: pip install 'python-telegram-bot[webhooks]>=22.6,<23'
 - Gateway: systemctl status hermes-gateway-spark
+## 仅 Telegram（关闭 Photon）
 
-## 主模型（与 CLI 一致）
-- provider: xai-oauth
-- model: grok-composer-2.5-fast
-- base_url: https://api.x.ai/v1
-- 勿将 Gateway 主模型改为 Agnes（仅 fallback/辅助）
+- `plugins.disabled`: `photon-platform`
+- `photon.enabled` / `platforms.photon.enabled`: false
+- 活跃 `.env` 不含 `PHOTON_*`；恢复 iMessage 时从 `~/.hermes/profiles/spark/.env.photon.backup` 写回
+- 重启后日志：`Gateway running with 1 platform(s)`，仅 `telegram connected`
+
+## 主模型与 Fallback
+
+- 主：`xai-oauth` + `grok-composer-2.5-fast`
+- `fallback_providers`：`custom:Agnes` + `agnes-2.0-flash`（`hermes fallback list`）
 
 ## 常用
 ```bash
