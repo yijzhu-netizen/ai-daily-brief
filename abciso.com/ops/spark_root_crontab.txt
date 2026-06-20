@@ -1,0 +1,14 @@
+# Spark VPS Cron Jobs
+# 每天04:00 UTC（北京时间12:00）生成GEO文章
+0 4 * * * /usr/local/bin/geo-daily-wrapper.sh >> /var/log/geo-daily-update.log 2>&1
+
+# 每天05:00 UTC（北京时间13:00）运行abciso网站更新（不含新闻）
+0 5 * * * /data/www/abciso.com/daily_update.sh >> /var/log/abciso-daily.log 2>&1
+
+# 行业动态：北京10:00、16:00（UTC 02:00 / 08:00）
+0 2 * * * python3 /data/www/abciso.com/news_crawler.py --apply >> /var/log/abciso-news.log 2>&1
+0 8 * * * python3 /data/www/abciso.com/news_crawler.py --apply >> /var/log/abciso-news.log 2>&1
+
+# 每小时清理临时文件
+0 * * * * find /tmp -name "*.tmp" -mtime +1 -delete 2>/dev/null
+

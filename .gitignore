@@ -1,7 +1,8 @@
 vendor/
 Gemfile.lock
 ### 非GEO文章目录 - 不提交到GitHub ###
-abciso.com/
+abciso.com/*
+!abciso.com/ops/
 .report/
 _knowledge/
 # 设计文件/脚本
