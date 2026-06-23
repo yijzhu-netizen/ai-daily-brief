@@ -1,5 +1,101 @@
 [
   {
+    "title": "全国标准信息公共服务平台",
+    "url": "https://std.samr.gov.cn",
+    "date": "2026-06-23",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "食品安全国家标准",
+    "url": "https://sppt.cfsa.net.cn:8086/db",
+    "date": "2026-06-23",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "生态环境国家标准",
+    "url": "https://www.mee.gov.cn/ywgz/fgbz/bz/",
+    "date": "2026-06-23",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "司局负责人发布",
+    "url": "https://www.miit.gov.cn/xwfb/sjfzrfb/index.html",
+    "date": "2026-06-23",
+    "source": "工信部",
+    "icon": "🏭",
+    "category": "policy"
+  },
+  {
+    "title": "Opinion",
+    "url": "https://www.iso.org/news/thought-leadership/rethinking-environmental-management-with-iso-14001",
+    "date": "2026-06-23",
+    "source": "ISO官网",
+    "icon": "🌐",
+    "category": "iso"
+  },
+  {
+    "title": "国际认可动态",
+    "url": "https://www.cnas.org.cn/zxzx/gjrkdt/index.html",
+    "date": "2026-06-23",
+    "source": "CNAS",
+    "icon": "✅",
+    "category": "iso"
+  },
+  {
+    "title": "全国标准信息公共服务平台",
+    "url": "https://std.samr.gov.cn",
+    "date": "2026-06-22",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "食品安全国家标准",
+    "url": "https://sppt.cfsa.net.cn:8086/db",
+    "date": "2026-06-22",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "生态环境国家标准",
+    "url": "https://www.mee.gov.cn/ywgz/fgbz/bz/",
+    "date": "2026-06-22",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "司局负责人发布",
+    "url": "https://www.miit.gov.cn/xwfb/sjfzrfb/index.html",
+    "date": "2026-06-22",
+    "source": "工信部",
+    "icon": "🏭",
+    "category": "policy"
+  },
+  {
+    "title": "Opinion",
+    "url": "https://www.iso.org/news/thought-leadership/rethinking-environmental-management-with-iso-14001",
+    "date": "2026-06-22",
+    "source": "ISO官网",
+    "icon": "🌐",
+    "category": "iso"
+  },
+  {
+    "title": "国际认可动态",
+    "url": "https://www.cnas.org.cn/zxzx/gjrkdt/index.html",
+    "date": "2026-06-22",
+    "source": "CNAS",
+    "icon": "✅",
+    "category": "iso"
+  },
+  {
     "title": "国家发展改革委举行6月份新闻发布会",
     "url": "https://www.ndrc.gov.cn/202606/t20260618_1405995.html",
     "date": "2026-06-18",
@@ -198,6 +294,14 @@
     "source": "ISO官网",
     "icon": "🌐",
     "category": "iso"
+  },
+  {
+    "title": "市场监管总局部署各地强化监管\n全力保障端午假期食品安全",
+    "url": "https://www.samr.gov.cn/xw/zj/art/2026/art_a2f7eed2d2fc482d8a269f5f2a0a26b4.html",
+    "date": "2026-01-01",
+    "source": "市场监管总局",
+    "icon": "🔍",
+    "category": "policy"
   },
   {
     "title": "市场监管总局发布合规提示\n规范“6·18”网络集中促销经营活动",

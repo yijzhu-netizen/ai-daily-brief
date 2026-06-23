@@ -50,15 +50,15 @@ CSS_ARTICLE = """
 /* ===== Reset & Base ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:'Roboto',sans-serif;font-size:16px;line-height:1.6;color:#111827;background:#fff;}
-h1,h2,h3,h4{font-family:'Poppins',sans-serif;font-weight:600;color:#111827;line-height:1.25}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.6;color:#111827;background:#fff;}
+h1,h2,h3,h4{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;font-weight:600;color:#111827;line-height:1.25}
 h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1rem}
 .container{max-width:820px;margin:0 auto;padding:0 1.5rem}
 
 /* Nav */
 .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid #f0f0f0}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:3.5rem}
-.nav-logo{font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:700;color:#3B82F6;text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.nav-logo{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;font-size:1.25rem;font-weight:700;color:#3B82F6;text-decoration:none;display:flex;align-items:center;gap:.5rem}
 .nav-logo span{color:#8B5CF6}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
 .nav-links a{font-size:.875rem;font-weight:500;color:#4b5563;text-decoration:none;transition:color .2s;position:relative}
@@ -218,9 +218,6 @@ def generate_article_page(title, date_str, description, tags, body_html, categor
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} | abcISO</title>
 <meta name="description" content="{description[:160]}" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>{CSS_ARTICLE}</style>
 </head>
 <body>
