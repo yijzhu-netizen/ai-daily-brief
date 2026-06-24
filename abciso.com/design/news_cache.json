@@ -2,6 +2,94 @@
   {
     "title": "全国标准信息公共服务平台",
     "url": "https://std.samr.gov.cn",
+    "date": "2026-06-24",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "食品安全国家标准",
+    "url": "https://sppt.cfsa.net.cn:8086/db",
+    "date": "2026-06-24",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "生态环境国家标准",
+    "url": "https://www.mee.gov.cn/ywgz/fgbz/bz/",
+    "date": "2026-06-24",
+    "source": "全国标准信息平台",
+    "icon": "📋",
+    "category": "standard"
+  },
+  {
+    "title": "张国清在福建调研时强调 提升重点产业链自主可控水平 更好发挥标准引领保障作用",
+    "url": "https://www.gov.cn/yaowen/liebiao/202606/content_7072662.htm",
+    "date": "2026-06-24",
+    "source": "认监委",
+    "icon": "🏛️",
+    "category": "standard"
+  },
+  {
+    "title": "司局负责人发布",
+    "url": "https://www.miit.gov.cn/xwfb/sjfzrfb/index.html",
+    "date": "2026-06-24",
+    "source": "工信部",
+    "icon": "🏭",
+    "category": "policy"
+  },
+  {
+    "title": "Opinion",
+    "url": "https://www.iso.org/news/thought-leadership/rethinking-environmental-management-with-iso-14001",
+    "date": "2026-06-24",
+    "source": "ISO官网",
+    "icon": "🌐",
+    "category": "iso"
+  },
+  {
+    "title": "张国清在福建调研时强调 提升重点产业链自主可控水平 更好发挥标准引领保障作用",
+    "url": "https://www.gov.cn/yaowen/liebiao/202606/content_7072662.htm",
+    "date": "2026-06-24",
+    "source": "市场监管总局",
+    "icon": "🔍",
+    "category": "standard"
+  },
+  {
+    "title": "国际认可动态",
+    "url": "https://www.cnas.org.cn/zxzx/gjrkdt/index.html",
+    "date": "2026-06-24",
+    "source": "CNAS",
+    "icon": "✅",
+    "category": "iso"
+  },
+  {
+    "title": "2026年6月中旬流通领域重要生产资料市场价格变动情况",
+    "url": "https://www.stats.gov.cn/sj/zxfb/202606/t20260623_1963989.html",
+    "date": "2026-06-23",
+    "source": "国家统计局",
+    "icon": "📈",
+    "category": "policy"
+  },
+  {
+    "title": "张国清在福建调研时强调 提升重点产业链自主可控水平 更好发挥标准引领保障作用",
+    "url": "https://www.gov.cn/yaowen/liebiao/202606/content_7072662.htm",
+    "date": "2026-06-23",
+    "source": "认监委",
+    "icon": "🏛️",
+    "category": "standard"
+  },
+  {
+    "title": "张国清在福建调研时强调 提升重点产业链自主可控水平 更好发挥标准引领保障作用",
+    "url": "https://www.gov.cn/yaowen/liebiao/202606/content_7072662.htm",
+    "date": "2026-06-23",
+    "source": "市场监管总局",
+    "icon": "🔍",
+    "category": "standard"
+  },
+  {
+    "title": "全国标准信息公共服务平台",
+    "url": "https://std.samr.gov.cn",
     "date": "2026-06-23",
     "source": "全国标准信息平台",
     "icon": "📋",
