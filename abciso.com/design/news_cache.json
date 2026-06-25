@@ -1,43 +1,30 @@
 [
   {
-    "title": "全国标准信息公共服务平台",
-    "url": "https://std.samr.gov.cn",
-    "date": "2026-06-24",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
+    "title": "From reporting to results: Rethinking environmental management with ISO 14001",
+    "url": "https://www.iso.org/news/thought-leadership/rethinking-environmental-management-with-iso-14001",
+    "date": "2026-06-25",
+    "summary": "In a world where environmental expectations are rising as fast as the challenges themselves, organizations face a defining shift: it is no longer enough to state commitments, they must demonstrate how",
+    "source": "ISO官网",
+    "icon": "🌐",
+    "category": "iso"
   },
   {
-    "title": "食品安全国家标准",
-    "url": "https://sppt.cfsa.net.cn:8086/db",
-    "date": "2026-06-24",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
-  },
-  {
-    "title": "生态环境国家标准",
-    "url": "https://www.mee.gov.cn/ywgz/fgbz/bz/",
-    "date": "2026-06-24",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
-  },
-  {
-    "title": "张国清在福建调研时强调 提升重点产业链自主可控水平 更好发挥标准引领保障作用",
-    "url": "https://www.gov.cn/yaowen/liebiao/202606/content_7072662.htm",
-    "date": "2026-06-24",
-    "source": "认监委",
-    "icon": "🏛️",
-    "category": "standard"
-  },
-  {
-    "title": "司局负责人发布",
-    "url": "https://www.miit.gov.cn/xwfb/sjfzrfb/index.html",
-    "date": "2026-06-24",
-    "source": "工信部",
-    "icon": "🏭",
+    "title": "共青团国家市场监督管理总局直属机关 第二次代表大会召开",
+    "url": "https://www.samr.gov.cn/xw/gdt/art/2025/art_7091feab650d41668e13ee250cd925ed.html",
+    "date": "2026-06-25",
+    "summary": "7月31日，共青团国家市场监督管理总局直属机关第二次代表大会在京召开。",
+    "source": "市场监管总局",
+    "icon": "🔍",
     "category": "policy"
+  },
+  {
+    "title": "From reporting to results: Rethinking environmental management with ISO 14001",
+    "url": "https://www.iso.org/news/thought-leadership/rethinking-environmental-management-with-iso-14001",
+    "date": "2026-06-24",
+    "summary": "In a world where environmental expectations are rising as fast as the challenges themselves, organizations face a defining shift: it is no longer enough to state commitments, they must demonstrate how",
+    "source": "ISO官网",
+    "icon": "🌐",
+    "category": "iso"
   },
   {
     "title": "Opinion",
@@ -46,14 +33,6 @@
     "source": "ISO官网",
     "icon": "🌐",
     "category": "iso"
-  },
-  {
-    "title": "张国清在福建调研时强调 提升重点产业链自主可控水平 更好发挥标准引领保障作用",
-    "url": "https://www.gov.cn/yaowen/liebiao/202606/content_7072662.htm",
-    "date": "2026-06-24",
-    "source": "市场监管总局",
-    "icon": "🔍",
-    "category": "standard"
   },
   {
     "title": "国际认可动态",
@@ -72,54 +51,6 @@
     "category": "policy"
   },
   {
-    "title": "张国清在福建调研时强调 提升重点产业链自主可控水平 更好发挥标准引领保障作用",
-    "url": "https://www.gov.cn/yaowen/liebiao/202606/content_7072662.htm",
-    "date": "2026-06-23",
-    "source": "认监委",
-    "icon": "🏛️",
-    "category": "standard"
-  },
-  {
-    "title": "张国清在福建调研时强调 提升重点产业链自主可控水平 更好发挥标准引领保障作用",
-    "url": "https://www.gov.cn/yaowen/liebiao/202606/content_7072662.htm",
-    "date": "2026-06-23",
-    "source": "市场监管总局",
-    "icon": "🔍",
-    "category": "standard"
-  },
-  {
-    "title": "全国标准信息公共服务平台",
-    "url": "https://std.samr.gov.cn",
-    "date": "2026-06-23",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
-  },
-  {
-    "title": "食品安全国家标准",
-    "url": "https://sppt.cfsa.net.cn:8086/db",
-    "date": "2026-06-23",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
-  },
-  {
-    "title": "生态环境国家标准",
-    "url": "https://www.mee.gov.cn/ywgz/fgbz/bz/",
-    "date": "2026-06-23",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
-  },
-  {
-    "title": "司局负责人发布",
-    "url": "https://www.miit.gov.cn/xwfb/sjfzrfb/index.html",
-    "date": "2026-06-23",
-    "source": "工信部",
-    "icon": "🏭",
-    "category": "policy"
-  },
-  {
     "title": "Opinion",
     "url": "https://www.iso.org/news/thought-leadership/rethinking-environmental-management-with-iso-14001",
     "date": "2026-06-23",
@@ -136,35 +67,12 @@
     "category": "iso"
   },
   {
-    "title": "全国标准信息公共服务平台",
-    "url": "https://std.samr.gov.cn",
+    "title": "市场监管总局部署各地强化监管 全力保障端午假期食品安全",
+    "url": "https://www.samr.gov.cn/xw/zj/art/2026/art_a2f7eed2d2fc482d8a269f5f2a0a26b4.html",
     "date": "2026-06-22",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
-  },
-  {
-    "title": "食品安全国家标准",
-    "url": "https://sppt.cfsa.net.cn:8086/db",
-    "date": "2026-06-22",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
-  },
-  {
-    "title": "生态环境国家标准",
-    "url": "https://www.mee.gov.cn/ywgz/fgbz/bz/",
-    "date": "2026-06-22",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
-  },
-  {
-    "title": "司局负责人发布",
-    "url": "https://www.miit.gov.cn/xwfb/sjfzrfb/index.html",
-    "date": "2026-06-22",
-    "source": "工信部",
-    "icon": "🏭",
+    "summary": "2026年端午节期间，市场监管总局周密部署，指导各地市场监管部门针对节令食品热销、聚餐聚会增多等消费特点，聚焦重点领域、重点环节和重点场所，强化食品安全监管，全面压实各方责任，严厉打击违法违规行为，切实保障人民群众饮食安全。",
+    "source": "市场监管总局",
+    "icon": "🔍",
     "category": "policy"
   },
   {
@@ -216,12 +124,22 @@
     "category": "standard"
   },
   {
-    "title": "国家能源局召开核电科普工作座谈会暨“绿色核能”核电科普合作平台成立会议",
-    "url": "https://www.nea.gov.cn/20260617/5c9ecfb6eb0c47dc87347dd79b58e6f5/c.html",
-    "date": "2026-06-17",
-    "source": "国家能源局",
-    "icon": "⚡",
+    "title": "工业和信息化部制造业中试标准化技术委员会第二次全体会议在京召开",
+    "url": "http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_1d41de81792c49d792384615eb3ca6a7.html",
+    "date": "2026-06-16",
+    "summary": "6月10日，工业和信息化部制造业中试标准化技术委员会（以下简称“部制造业中试标委会”）第二次全体会议在北京召开。部党组成员、副部长柯吉欣出席会议并致辞。部制造业中试标委会主任委员、中国工程院院士尤政，部制造业中试标委会副主任委员、中国工程院院士付梦印作主题演讲。本次会议旨在贯彻落实党中央、国务院关于中试工作有关决策部署，以高质量标准引领制造业中试创新发展，赋能科技创新和产业创新深度融合。",
+    "source": "工信部",
+    "icon": "🏭",
     "category": "standard"
+  },
+  {
+    "title": "共青团国家市场监督管理总局直属机关 第二次代表大会召开",
+    "url": "https://www.samr.gov.cn/xw/gdt/art/2025/art_7091feab650d41668e13ee250cd925ed.html",
+    "date": "2026-06-16",
+    "summary": "7月31日，共青团国家市场监督管理总局直属机关第二次代表大会在京召开。",
+    "source": "市场监管总局",
+    "icon": "🔍",
+    "category": "policy"
   },
   {
     "title": "5月份国民经济运行总体平稳、向新向优",
@@ -272,6 +190,22 @@
     "category": "policy"
   },
   {
+    "title": "邢台市家庭教育促进条例",
+    "url": "https://flk.npc.gov.cn/detail?bbbs=ff8081819e48b493019eca3f66a03f70",
+    "date": "2026-06-15",
+    "source": "法律法规数据库",
+    "icon": "📜",
+    "category": "policy"
+  },
+  {
+    "title": "邢台市古树名木保护规定",
+    "url": "https://flk.npc.gov.cn/detail?bbbs=ff8081819e48b493019eca3366a73e98",
+    "date": "2026-06-15",
+    "source": "法律法规数据库",
+    "icon": "📜",
+    "category": "policy"
+  },
+  {
     "title": "2026年6月上旬流通领域重要生产资料市场价格变动情况",
     "url": "https://www.stats.gov.cn/sj/zxfb/202606/t20260612_1963938.html",
     "date": "2026-06-12",
@@ -280,12 +214,13 @@
     "category": "policy"
   },
   {
-    "title": "国家能源局负责人会见沙特阿美公司总裁",
-    "url": "https://www.nea.gov.cn/20260611/2ab38757947a4ee2989475336f206180/c.html",
-    "date": "2026-06-11",
-    "source": "国家能源局",
-    "icon": "⚡",
-    "category": "standard"
+    "title": "第三届认证认可大会在广州举办",
+    "url": "https://www.cnas.org.cn/zxzx/rkwyhxx/art/2026/art_2eb82cb824344a9d9dd2e2f427ee24fa.html",
+    "date": "2026-06-10",
+    "summary": "",
+    "source": "CNAS",
+    "icon": "✅",
+    "category": "iso"
   },
   {
     "title": "2026年5月份居民消费价格同比上涨1.2%",
@@ -304,6 +239,50 @@
     "category": "policy"
   },
   {
+    "title": "认证认可检验检测：创新与发展新质生产力 第三届认证认可大会在广州举办",
+    "url": "https://www.cnca.gov.cn/xwjj/scjgyw/art/2026/art_7ccfeba31e914ccf9100c2f386a40e6d.html",
+    "date": "2026-06-09",
+    "summary": "6月9日，第三届认证认可大会在广东省广州市举办，主题为“认证认可检验检测：创新与发展新质生产力”。市场监管总局党组成员、副局长，国家认监委主任束为，广东省人民政府党组成员陈良贤出席并致辞。会议指出近年来我国认证认可检验检测事业发展取得长足进步，在传递质量信任、规范市场秩序、激活创新要素、畅通经济循环等方面发挥了重要作用。",
+    "source": "认监委",
+    "icon": "🏛️",
+    "category": "iso"
+  },
+  {
+    "title": "CNAS发布《中国认可事业发展20年（2006-2026）》",
+    "url": "https://www.cnas.org.cn/zxzx/rkwyhxx/art/2026/art_e2f87385b0a846bc87194d159d1cfd47.html",
+    "date": "2026-06-09",
+    "summary": "近日，中国合格评定国家认可委员会（CNAS）正式发布《中国认可事业发展20年（2006-2026）》报告。报告系统回顾了2006年CNAS成立以来我国认可事业从分散管理走向统一体系、从国际跟跑到局部领跑的跨越式发展历程，全面展示了认可工作在服务国家战略、促进贸易便利、保障公共安全、推动国际合作等方面取得的显著成效，并对未来发展作出展望。报告指出，20年来，中国认可事业始终与时代同行，与改革共进。",
+    "source": "CNAS",
+    "icon": "✅",
+    "category": "iso"
+  },
+  {
+    "title": "邯郸市城市更新条例",
+    "url": "https://flk.npc.gov.cn/detail?bbbs=ff8081819e48b44c019eca42d3f97403",
+    "date": "2026-06-06",
+    "source": "法律法规数据库",
+    "icon": "📜",
+    "category": "policy"
+  },
+  {
+    "title": "工业和信息化领域基础研究工作研讨会在西北工业大学召开",
+    "url": "http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_509f58f26c39458aa6d349c18d5ca6bb.html",
+    "date": "2026-06-05",
+    "summary": "2026年6月5日，工业和信息化部在西北工业大学召开工业和信息化领域基础研究工作研讨会。会议深入学习贯彻习近平总书记在加强基础研究座谈会上的重要讲话精神，广泛听取产业界、科技界、地方有关主管部门意见建议，研讨加强基础研究工作思路举措。部党组成员、副部长柯吉欣出席会议并讲话。",
+    "source": "工信部",
+    "icon": "🏭",
+    "category": "standard"
+  },
+  {
+    "title": "第四次上海合作组织成员国工业部长会议在吉尔吉斯斯坦乔尔蓬阿塔市召开",
+    "url": "http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_507295e27b0c457889f9622a0e25f26b.html",
+    "date": "2026-06-05",
+    "summary": "2026年6月5日，第四次上海合作组织成员国工业部长会议在吉尔吉斯斯坦乔尔蓬阿塔市召开，上海合作组织成员国工业主管部门代表围绕工业领域合作现状、前景及深化合作举措等进行交流。工业和信息化部副部长辛国斌出席会议并作主旨发言。辛国斌指出，“十四五”时期，中国政府坚定不移推进新型工业化，推动中国工业高质量发展取得积极进展，为全球工业复苏和经济增长提供了稳定动能和广阔市场。",
+    "source": "工信部",
+    "icon": "🏭",
+    "category": "standard"
+  },
+  {
     "title": "清远市暴雨灾害预警与响应条例",
     "url": "https://flk.npc.gov.cn/detail?bbbs=ff8081819e48b3aa019ed36e7e612304",
     "date": "2026-06-05",
@@ -318,6 +297,15 @@
     "source": "法律法规数据库",
     "icon": "📜",
     "category": "policy"
+  },
+  {
+    "title": "CNAS举办产品碳足迹核查机构认可宣贯培训",
+    "url": "https://www.cnas.org.cn/zxzx/rkwyhxx/art/2026/art_d329e91b8bb647ae935c2edb1fed030c.html",
+    "date": "2026-06-04",
+    "summary": "",
+    "source": "CNAS",
+    "icon": "✅",
+    "category": "iso"
   },
   {
     "title": "2026年5月下旬流通领域重要生产资料市场价格变动情况",
@@ -376,11 +364,29 @@
     "category": "policy"
   },
   {
+    "title": "中国合格评定国家认可委员会第五届全体委员会第三次会议在京召开",
+    "url": "https://www.cnca.gov.cn/xwjj/scjgyw/art/2026/art_ebbb0d36f7f64bb9bce7e2edcd1a52f4.html",
+    "date": "2026-04-15",
+    "summary": "4月14日，中国合格评定国家认可委员会（CNAS）第五届全体委员会第三次会议在北京召开。市场监管总局党组成员、副局长，国家认监委主任束为出席会议并讲话。",
+    "source": "认监委",
+    "icon": "🏛️",
+    "category": "iso"
+  },
+  {
     "title": "ISO 14001:2026 published – raising the bar for environmental performance",
     "url": "https://www.iso.org/news/2026/04/iso-14001-2026-published",
     "date": "2026-04-01",
     "source": "ISO官网",
     "icon": "🌐",
+    "category": "iso"
+  },
+  {
+    "title": "市场监管总局启动检验检测智慧监管能力提升攻坚行动",
+    "url": "https://www.cnca.gov.cn/xwjj/scjgyw/art/2026/art_6afcaaf428f542e292b2821f9619fabc.html",
+    "date": "2026-03-02",
+    "summary": "近日，市场监管总局印发《检验检测智慧监管能力提升攻坚行动方案》，明确到2027年底基本建成全国统一的检验检测智慧监管平台，全面推动检验检测监管业务与数智化技术深度融合。《行动方案》围绕夯实数据基础、筑牢应用底座、强化数智赋能、鼓励示范引领四个方面部署了12项重点任务。",
+    "source": "认监委",
+    "icon": "🏛️",
     "category": "iso"
   },
   {
@@ -398,22 +404,6 @@
     "source": "市场监管总局",
     "icon": "🔍",
     "category": "standard"
-  },
-  {
-    "title": "罗文会见阿塞拜疆食品安全局局长\n戈什加尔·塔赫马兹利",
-    "url": "https://www.samr.gov.cn/xw/zj/art/2026/art_1fefc693f39b4e498abf0864a3ce64dc.html",
-    "date": "2026-01-01",
-    "source": "市场监管总局",
-    "icon": "🔍",
-    "category": "policy"
-  },
-  {
-    "title": "罗文会见阿塞拜疆食品安全局局长戈什加尔·塔赫马兹利",
-    "url": "https://www.samr.gov.cn/xw/zj/art/2026/art_1fefc693f39b4e498abf0864a3ce64dc.html",
-    "date": "2026-01-01",
-    "source": "市场监管总局",
-    "icon": "🔍",
-    "category": "policy"
   },
   {
     "title": "湖北全面启动食品安全抽检“蓝军”行动",
@@ -438,14 +428,6 @@
     "source": "认监委",
     "icon": "🏛️",
     "category": "iso"
-  },
-  {
-    "title": "李乐成在浙江调研新兴产业和未来产业发展",
-    "url": "http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_c585def8b8fc48e98cc015d9015c845e.html",
-    "date": "2026-01-01",
-    "source": "工信部",
-    "icon": "🏭",
-    "category": "policy"
   },
   {
     "title": "第四次上海合作组织成员国工业部长会议在吉尔吉斯斯坦乔尔蓬阿塔市召开",
@@ -480,14 +462,6 @@
     "category": "iso"
   },
   {
-    "title": "李乐成会见加拿大工业部长梅拉妮·乔利",
-    "url": "http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_f5ee162a1d28416780ad2e79c2fcc972.html",
-    "date": "2026-01-01",
-    "source": "工信部",
-    "icon": "🏭",
-    "category": "policy"
-  },
-  {
     "title": "共青团国家市场监督管理总局直属机关\n第二次代表大会召开",
     "url": "https://www.samr.gov.cn/xw/gdt/art/2025/art_7091feab650d41668e13ee250cd925ed.html",
     "date": "2025-01-01",
@@ -496,35 +470,30 @@
     "category": "policy"
   },
   {
-    "title": "全国标准信息公共服务平台",
-    "url": "https://std.samr.gov.cn",
-    "date": "",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
+    "title": "2026年6月中旬流通领域重要生产资料市场价格变动情况",
+    "url": "https://www.stats.gov.cn/sj/zxfb/202606/t20260623_1963989.html",
+    "date": "2026/06/24",
+    "summary": "",
+    "source": "国家统计局",
+    "icon": "📈",
+    "category": "policy"
   },
   {
-    "title": "食品安全国家标准",
-    "url": "https://sppt.cfsa.net.cn:8086/db",
-    "date": "",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
+    "title": "5月份国民经济运行总体平稳、向新向优",
+    "url": "https://www.stats.gov.cn/sj/zxfb/202606/t20260616_1963954.html",
+    "date": "2026/06/16",
+    "summary": "",
+    "source": "国家统计局",
+    "icon": "📈",
+    "category": "policy"
   },
   {
-    "title": "生态环境国家标准",
-    "url": "https://www.mee.gov.cn/ywgz/fgbz/bz/",
-    "date": "",
-    "source": "全国标准信息平台",
-    "icon": "📋",
-    "category": "standard"
-  },
-  {
-    "title": "司局负责人发布",
-    "url": "https://www.miit.gov.cn/xwfb/sjfzrfb/index.html",
-    "date": "",
-    "source": "工信部",
-    "icon": "🏭",
+    "title": "2026年5月份规模以上工业增加值增长4.5%",
+    "url": "https://www.stats.gov.cn/sj/zxfb/202606/t20260616_1963953.html",
+    "date": "2026/06/16",
+    "summary": "",
+    "source": "国家统计局",
+    "icon": "📈",
     "category": "policy"
   },
   {
