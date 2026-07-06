@@ -28,6 +28,8 @@ NAVBAR_HTML = """\
               <a href="../kb-list.html#iso45001">ISO 45001 职业健康安全</a>
               <a href="../kb-list.html#iso50001">ISO 50001 能源管理</a>
               <a href="../kb-list.html#iso27001">ISO 27001 信息安全</a>
+              <a href="../kb-list.html#food-safety">食品安全</a>
+              <a href="../kb-list.html#iatf16949">IATF 16949 汽车质量</a>
               <a href="../kb-list.html#ai-governance">AI 治理与合规</a>
               <a href="../kb-list.html#general">综合管理</a>
             </div>
@@ -140,17 +142,53 @@ def slugify(title):
 
 
 def parse_front_matter(content):
-    """Parse Jekyll front matter, return (front_matter_dict, body)."""
-    m = re.match(r"^---\n(.*?)\n---\n", content, re.DOTALL)
-    if not m:
-        return {}, content
+    """Parse front matter: standard YAML, JSON, or fenced YAML code block."""
+    DQ = chr(34)  # double quote
+    SQ = chr(39)  # single quote
     
-    fm = {}
-    for line in m.group(1).split("\n"):
-        if ":" in line:
-            key, _, val = line.partition(":")
-            fm[key.strip()] = val.strip()
-    return fm, content[m.end():]
+    # 1. Standard YAML (--- ... ---)
+    m = re.match(r"^---\n(.*?)\n---\n", content, re.DOTALL)
+    if m:
+        fm = {}
+        for line in m.group(1).split("\n"):
+            line = line.strip()
+            if ":" in line and not line.startswith("#"):
+                key, _, val = line.partition(":")
+                val = val.strip().strip(DQ).strip(SQ)
+                fm[key.strip()] = val
+        if fm:
+            return fm, content[m.end():]
+    
+    # 2. JSON format ({ ... })
+    m = re.match(r"^\{.*\}", content.strip(), re.DOTALL)
+    if m:
+        try:
+            import json
+            cleaned = content.strip()
+            # Remove trailing } if present
+            if cleaned.endswith("}"):
+                cleaned = cleaned[:-1]
+            if cleaned.startswith("{"):
+                cleaned = cleaned[1:]
+            fm = json.loads("{" + cleaned + "}")
+            return fm, content[len(content.strip()):].lstrip("\n")
+        except:
+            pass
+    
+    # 3. Fenced YAML code block (```yaml ... ```)
+    m = re.search(r"```(?:yaml|yml)\n(.*?)\n```", content, re.DOTALL)
+    if m:
+        fm = {}
+        for line in m.group(1).split("\n"):
+            line = line.strip()
+            if ":" in line:
+                key, _, val = line.partition(":")
+                val = val.strip().strip(DQ).strip(SQ)
+                fm[key.strip()] = val
+        if fm:
+            return fm, content[m.end():].lstrip("\n")
+    
+    return {}, content
 
 
 def extract_meta_from_body(content, fname):
@@ -277,6 +315,8 @@ CAT_INFO = {
     "iso27001":   {"name": "ISO 27001 信息安全"},
     "ai-governance": {"name": "AI 治理与合规"},
     "general":    {"name": "综合管理"},
+    "food-safety": {"name": "食品安全"},
+    "iatf16949":  {"name": "IATF 16949 汽车质量"},
 }
 
 

@@ -63,16 +63,19 @@ else:
     print('  No duplicates found')
 " >> "$LOG" 2>&1 || log "  WARN: dedup failed"
 
-# 4. 更新首页精选文章（动态扫描最新3篇）
-log "[3/6] update_index.py (dynamic)"
+# 4. 先同步index.html（让update_index.py能找到marker）
+log "[3/7] sync index.html first"
+cp /root/GEO文章/abciso.com/design/index.html /data/www/abciso.com/index.html 2>> "$LOG" || true
+
+# 5. 更新首页精选文章（动态扫描最新3篇）
+log "[4/7] update_index.py (dynamic)"
 python3 /data/www/abciso.com/update_index.py >> "$LOG" 2>&1 || log "  WARN: update_index failed"
 
-# 5. 同步文件到网站目录
-log "[4/6] sync files to /data/www/abciso.com"
+# 6. 同步其余文件到网站目录
+log "[5/7] sync remaining files"
 cp -r /root/GEO文章/abciso.com/design/geo/* /data/www/abciso.com/geo/ 2>> "$LOG" || true
 cp /root/GEO文章/abciso.com/design/kb-list.html /data/www/abciso.com/kb-list.html 2>> "$LOG" || true
 cp /root/GEO文章/abciso.com/design/news.html /data/www/abciso.com/news.html 2>> "$LOG" || true
-cp /root/GEO文章/abciso.com/design/index.html /data/www/abciso.com/index.html 2>> "$LOG" || true
 cp /root/GEO文章/abciso.com/design/sitemap.xml /data/www/abciso.com/sitemap.xml 2>> "$LOG" || true
 
 # 6. 统计
