@@ -257,6 +257,8 @@ def generate_article_page(title, date_str, description, tags, body_html, categor
 <title>{title} | abcISO</title>
 <meta name="description" content="{description[:160]}" />
 <style>{CSS_ARTICLE}</style>
+<!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9112301549922344" crossorigin="anonymous"></script>
 </head>
 <body>
 
