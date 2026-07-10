@@ -1,5 +1,32 @@
 [
   {
+    "title": "From reporting to results: Rethinking environmental management with ISO 14001",
+    "url": "https://www.iso.org/news/thought-leadership/rethinking-environmental-management-with-iso-14001",
+    "date": "2026-07-10",
+    "summary": "In a world where environmental expectations are rising as fast as the challenges themselves, organizations face a defining shift: it is no longer enough to state commitments, they must demonstrate how",
+    "source": "ISO官网",
+    "icon": "🌐",
+    "category": "iso"
+  },
+  {
+    "title": "共青团国家市场监督管理总局直属机关 第二次代表大会召开",
+    "url": "https://www.samr.gov.cn/xw/gdt/art/2025/art_7091feab650d41668e13ee250cd925ed.html",
+    "date": "2026-07-10",
+    "summary": "7月31日，共青团国家市场监督管理总局直属机关第二次代表大会在京召开。",
+    "source": "市场监管总局",
+    "icon": "🔍",
+    "category": "policy"
+  },
+  {
+    "title": "已获认可检测和校准实验室认可技术培训成功举办",
+    "url": "https://www.cnas.org.cn/zxzx/rkwyhxx/art/2026/art_ca7457a24ab04656a30f4d7f5bb19368.html",
+    "date": "2026-07-09",
+    "summary": "为贯彻落实国家质量基础设施建设工作部署，持续提升实验室能力和规范化运作水平，2026年7月1日至2日，已获认可检测和校准实验室认可技术培训在合肥成功举办。本次培训由中国合格评定国家认可委员会（CNAS）主办，中国出入境检验检疫协会（CIQA）承办。CNAS副秘书长刘昌宙和CIQA秘书长张琳出席开班式并讲话，来自全国已获认可的检测和校准实验室的200余名技术管理人员参加本次培训。",
+    "source": "CNAS",
+    "icon": "✅",
+    "category": "iso"
+  },
+  {
     "title": "广西南宁六蓝水库等地出现严重险情 信息通信行业全力开展应急通信保障工作",
     "url": "https://www.miit.gov.cn/xwfb/gxdt/sjdt/art/2026/art_51c730acb7d34cf499293e9c4d37cfc5.html",
     "date": "2026-07-09",
@@ -788,6 +815,15 @@
     "date": "2025-01-01",
     "source": "市场监管总局",
     "icon": "🔍",
+    "category": "policy"
+  },
+  {
+    "title": "国家统计局关于2026年夏粮产量数据的公告",
+    "url": "https://www.stats.gov.cn/sj/zxfb/202607/t20260710_1964090.html",
+    "date": "2026/07/10",
+    "summary": "",
+    "source": "国家统计局",
+    "icon": "📈",
     "category": "policy"
   },
   {
