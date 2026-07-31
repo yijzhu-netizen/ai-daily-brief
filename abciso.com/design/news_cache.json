@@ -1,5 +1,50 @@
 [
   {
+    "title": "中巴信息技术产业联合工作组第四次会议召开",
+    "url": "http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_d73a001210fa4985b24db50019626e04.html",
+    "date": "2026-07-31",
+    "summary": "7月29日，中巴信息技术产业联合工作组第四次会议以视频形式召开。工业和信息化部总工程师钟志红与巴基斯坦信息技术和通信部特任秘书赛义德·穆罕默德·阿马尔·纳克维主持会议。",
+    "source": "工信部",
+    "icon": "🏭",
+    "category": "standard"
+  },
+  {
+    "title": "工业和信息化部量子信息标准化技术委员会成立",
+    "url": "http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_79e6b8bde1974fc9b120b0e18cb0b262.html",
+    "date": "2026-07-30",
+    "summary": "2026年7月30日，工业和信息化部量子信息标准化技术委员会（以下简称“量子信息标委会”）成立大会在北京召开。工业和信息化部党组成员、副部长柯吉欣出席会议并讲话。工业和信息化部有关司局负责同志，量子信息标委会委员代表、相关行业专家等参加会议。",
+    "source": "工信部",
+    "icon": "🏭",
+    "category": "standard"
+  },
+  {
+    "title": "市场监管总局约谈8家强制性产品认证机构",
+    "url": "https://www.samr.gov.cn/xw/zj/art/2026/art_5fd8b24bec794b84bf8515456c605194.html",
+    "date": "2026-07-30",
+    "summary": "7月30日，市场监管总局对中国质量认证中心有限公司、中国市政工程华北设计研究总院有限公司、中国国检测试控股集团股份有限公司、应急管理部消防产品合格评定中心、北京鉴衡认证中心有限公司、广东质检中诚认证有限公司、威凯认证检测有限公司、深圳维天认证中心有限公司等8家强制性产品认证机构进行集体行政约谈。",
+    "source": "市场监管总局",
+    "icon": "🔍",
+    "category": "iso"
+  },
+  {
+    "title": "国家能源局召开扩大绿电应用专题会暨《可再生能源消费最低比重目标和可再生能源电力消纳责任权重制度实施办法》政策宣贯会",
+    "url": "https://www.nea.gov.cn/20260730/32394addd74a434c93d1a42e9d50366c/c.html",
+    "date": "2026-07-30",
+    "summary": "国家能源网",
+    "source": "国家能源局",
+    "icon": "⚡",
+    "category": "policy"
+  },
+  {
+    "title": "中国与南非签署认可领域合作谅解备忘录",
+    "url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7319c2565b7c4042858b0d1a793d4f46.html",
+    "date": "2026-07-30",
+    "summary": "近期，中国合格评定国家认可委员会（CNAS）与南非国家认可机构（SANAS）正式签署认可领域合作谅解备忘录。国家市场监督管理总局副局长束为和南非贸易、工业与竞争部部长帕克斯·陶出席签约仪式。SANAS是南非唯一的国家认可机构，也是非洲成立最早、规模最大的认可机构。",
+    "source": "市场监管总局",
+    "icon": "🔍",
+    "category": "iso"
+  },
+  {
     "title": "工业和信息化部系统坚持求真务实、真抓实干 推动学习教育走深走实",
     "url": "https://www.miit.gov.cn/xwfb/gxdt/art/2026/art_ffc6ad2dcd314f349d65188dcd28369a.html",
     "date": "2026-07-29",
@@ -439,6 +484,14 @@
     "source": "工信部",
     "icon": "🏭",
     "category": "standard"
+  },
+  {
+    "title": "城步苗族自治县自治条例",
+    "url": "https://flk.npc.gov.cn/detail?bbbs=ff8081819f691a91019f8922f31b2da3",
+    "date": "2026-07-06",
+    "source": "法律法规数据库",
+    "icon": "📜",
+    "category": "policy"
   },
   {
     "title": "共青团国家市场监督管理总局直属机关 第二次代表大会召开",
@@ -1183,6 +1236,24 @@
     "date": "2025-01-01",
     "source": "市场监管总局",
     "icon": "🔍",
+    "category": "policy"
+  },
+  {
+    "title": "2026年7月中国采购经理指数运行情况",
+    "url": "https://www.stats.gov.cn/sj/zxfb/202607/t20260731_1964253.html",
+    "date": "2026/07/31",
+    "summary": "",
+    "source": "国家统计局",
+    "icon": "📈",
+    "category": "policy"
+  },
+  {
+    "title": "2025年我国“三新”经济增加值占国内生产总值比重为18.39%",
+    "url": "https://www.stats.gov.cn/sj/zxfb/202607/t20260730_1964247.html",
+    "date": "2026/07/30",
+    "summary": "",
+    "source": "国家统计局",
+    "icon": "📈",
     "category": "policy"
   },
   {
